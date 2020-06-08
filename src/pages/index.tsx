@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Header from '../components/header'
-import sharedStyles from '../styles/shared.module.css'
 
 export default () => (
   <>
     <section className="container">
-      <h1 className={sharedStyles.title}>Steve Klabnik's personal website</h1>
+      <h1 className="title">Steve Klabnik's personal website</h1>
       <h2>About</h2>
       <p>
         Hi there! <code>/me waves</code>. I'm Steve.
@@ -18,25 +17,24 @@ export default () => (
       <h2>Links</h2>
       <ul>
         <li>
-          <Link href="mailto:steve@steveklabnik.com">Email</Link>
+          <a href="mailto:steve@steveklabnik.com">Email</a>
         </li>
         <li>
-          <Link href="https://twitter.com/steveklabnik">Twitter</Link>
+          <a href="https://twitter.com/steveklabnik">Twitter</a>
         </li>
         <li>
-          <Link href="https://github.com/steveklabnik">GitHub</Link>
+          <a href="https://github.com/steveklabnik">GitHub</a>
         </li>
         <li>
           <Link href="/blog">Writing</Link> (2020-present)
         </li>
         <li>
-          "<Link href="https://words.steveklabnik.com">Words</Link>" a blog by
-          me (2012-2020)
+          "<a href="https://words.steveklabnik.com">Words</a>" a blog by me
+          (2012-2020)
         </li>
         <li>
-          "
-          <Link href="https://blog.steveklabnik.com">Literate Programming</Link>
-          " a blog by me (2009-2015)
+          "<a href="https://blog.steveklabnik.com">Literate Programming</a>" a
+          blog by me (2009-2015)
         </li>
       </ul>
     </section>
