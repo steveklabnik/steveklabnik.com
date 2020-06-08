@@ -1,8 +1,4 @@
 import Link from 'next/link'
-import Header from '../../components/header'
-
-import blogStyles from '../../styles/blog.module.css'
-import sharedStyles from '../../styles/shared.module.css'
 
 import {
   getBlogLink,
@@ -43,39 +39,34 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 10,
+    unstable_revalidate: 10,
   }
 }
 
 export default ({ posts = [], preview }) => {
   return (
     <>
-      <Header titlePre="Blog" />
       {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
+        <div>
+          <div>
             <b>Note:</b>
             {` `}Viewing in preview mode{' '}
             <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
+              <button>Exit Preview</button>
             </Link>
           </div>
         </div>
       )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
+      <section className="container">
         <h1>My Notion Blog</h1>
-        {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
-        )}
+        {posts.length === 0 && <p>There are no posts yet</p>}
         {posts.map(post => {
           return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
+            <div key={post.Slug}>
               <h3>
                 <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                  <div className={blogStyles.titleContainer}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Draft</span>
-                    )}
+                  <div>
+                    {!post.Published && <span>Draft</span>}
                     <a>{post.Page}</a>
                   </div>
                 </Link>
@@ -96,7 +87,7 @@ export default ({ posts = [], preview }) => {
             </div>
           )
         })}
-      </div>
+      </section>
     </>
   )
 }

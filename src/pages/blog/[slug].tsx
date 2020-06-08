@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
-import Header from '../../components/header'
 import Heading from '../../components/heading'
 import components from '../../components/dynamic'
 import ReactJSXParser from '@zeit/react-jsx-parser'
-import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import getPageData from '../../lib/notion/getPageData'
 import React, { CSSProperties, useEffect } from 'react'
@@ -28,7 +26,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
         redirect: '/blog',
         preview: false,
       },
-      revalidate: 5,
+      unstable_revalidate: 5,
     }
   }
   const postData = await getPageData(post.id)
@@ -64,7 +62,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
       post,
       preview: preview || false,
     },
-    revalidate: 10,
+    unstable_revalidate: 10,
   }
 }
 
@@ -128,7 +126,7 @@ const RenderPost = ({ post, redirect, preview }) => {
   // loading one from fallback then  redirect back to the index
   if (!post) {
     return (
-      <div className={blogStyles.post}>
+      <div>
         <p>
           Woops! didn't find that post, redirecting you back to the blog index
         </p>
@@ -138,19 +136,18 @@ const RenderPost = ({ post, redirect, preview }) => {
 
   return (
     <>
-      <Header titlePre={post.Page} />
       {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
+        <div>
+          <div>
             <b>Note:</b>
             {` `}Viewing in preview mode{' '}
             <Link href={`/api/clear-preview?slug=${post.Slug}`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
+              <button>Exit Preview</button>
             </Link>
           </div>
         </div>
       )}
-      <div className={blogStyles.post}>
+      <section className="container">
         <h1>{post.Page || ''}</h1>
         {post.Authors.length > 0 && (
           <div className="authors">By: {post.Authors.join(' ')}</div>
@@ -407,7 +404,7 @@ const RenderPost = ({ post, redirect, preview }) => {
           }
           return toRender
         })}
-      </div>
+      </section>
     </>
   )
 }

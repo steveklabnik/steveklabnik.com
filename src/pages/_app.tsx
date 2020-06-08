@@ -1,9 +1,8 @@
-import '../styles/global.css'
-import Footer from '../components/footer'
+import 'normalize.css'
+import 'concrete.css'
 
 export default ({ Component, pageProps }) => (
   <>
     <Component {...pageProps} />
-    <Footer />
   </>
 )
