@@ -18,8 +18,11 @@ export default () => (
         back in the day.
       </p>
       <p>
-        You might have read <Link href="/writing">a post I wrote</Link>, or
-        maybe even a chapter or two of{' '}
+        You might have read{' '}
+        <Link href="/writing">
+          <a>a post I wrote</a>
+        </Link>
+        , or maybe even a chapter or two of{' '}
         <em>
           <a href="https://nostarch.com/Rust">The Rust Programming Language</a>
         </em>
