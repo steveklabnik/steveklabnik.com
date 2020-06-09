@@ -62,10 +62,10 @@ export default ({ posts = [], preview }) => {
         <ul>
           {posts.map(post => {
             return (
-              <li>
+              <li key={post.Slug}>
                 <p>
                   <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                    {post.Page}
+                    <a>{post.Page}</a>
                   </Link>
                 </p>
               </li>

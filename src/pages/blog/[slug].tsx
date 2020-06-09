@@ -149,11 +149,11 @@ const RenderPost = ({ post, redirect, preview }) => {
       )}
       <section className="container">
         <h1>{post.Page || ''}</h1>
-        {post.Authors.length > 0 && (
+        {post.Authors.length > 1 && (
           <div className="authors">By: {post.Authors.join(' ')}</div>
         )}
         {post.Date && (
-          <div className="posted">Posted: {getDateStr(post.Date)}</div>
+          <div className="posted">{getDateStr(post.Date)}</div>
         )}
 
         <hr />
