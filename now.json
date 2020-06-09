@@ -34,7 +34,34 @@
       "source": "/posts/2009-12-28-the-little-coder-s-predicament",
       "destination": "https://steveklabnik.com/writing/the-little-coder-s-predicament"
     },
-
+    {
+      "source": "/posts/2010-06-30-case-study-in-being-excellent-divvy",
+      "destination": "https://steveklabnik.com/writing/case-study-in-being-excellent-divvy"
+    },
+    {
+      "source": "/posts/2010-06-08-productivity-waves",
+      "destination": "https://steveklabnik.com/writing/productivity-waves"
+    },
+    {
+      "source": "/posts/2010-05-01-you-are-terrified-of-your-own-children-since-they-are-natives-in-a-world-where-you-will-always-be-immigrants",
+      "destination": "https://steveklabnik.com/writing/you-are-terrified-of-your-own-children-since-they-are-natives-in-a-world-where-you-will-always-be-immigrants"
+    },
+    {
+      "source": "/posts/2010-04-27-a-break-with-the-past",
+      "destination": "https://steveklabnik.com/writing/a-break-with-the-past"
+    },
+    {
+      "source": "/posts/2010-04-24-living-in-the-cloud",
+      "destination": "https://steveklabnik.com/writing/living-in-the-cloud"
+    },
+    {
+      "source": "/posts/2010-03-10-book-review-rework",
+      "destination": "https://steveklabnik.com/writing/book-review-rework"
+    },
+    {
+      "source": "/posts/2010-03-08-create-a-more-compelling-experience-for-your-users-through-game-mechanics",
+      "destination": "https://steveklabnik.com/writing/create-a-more-compelling-experience-for-your-users-through-game-mechanics"
+    },
     {
       "source": "/posts/2012-03-08-transmuting-philosophy-into-machinery",
       "destination": "https://steveklabnik.com/writing/transmuting-philosophy-into-machinery"
