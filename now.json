@@ -110,6 +110,78 @@
       "source": "/posts/2010-07-17-what-to-know-before-debating-type-systems",
       "destination": "https://cdsmith.wordpress.com/2011/01/09/an-old-article-i-wrote/"
     },
+    {
+      "source": "/posts/2011-09-28-real-modern-ruby-development",
+      "destination": "https://steveklabnik.com/writing/real-modern-ruby-development"
+    },
+    {
+      "source": "/posts/2011-09-26-im-deleting-my-facebook-tonight",
+      "destination": "https://steveklabnik.com/writing/im-deleting-my-facebook-tonight"
+    },
+    {
+      "source": "/posts/2011-09-23-more-rstat-dot-us-refactoring",
+      "destination": "https://steveklabnik.com/writing/more-rstat-dot-us-refactoring"
+    },
+    {
+      "source": "/posts/2011-09-22-extracting-domain-models-a-practical-example",
+      "destination": "https://steveklabnik.com/writing/extracting-domain-models-a-practical-example"
+    },
+    {
+      "source": "/posts/2011-09-09-better-ruby-presenters",
+      "destination": "https://steveklabnik.com/writing/better-ruby-presenters"
+    },
+    {
+      "source": "/posts/2011-03-23-announcing-rstat-us",
+      "destination": "https://steveklabnik.com/writing/announcing-rstat-us"
+    },
+    {
+      "source": "/posts/2011-03-30-the-first-week-of-rstat-us-users-press-scaling-oh-my",
+      "destination": "https://steveklabnik.com/writing/the-first-week-of-rstat-us-users-press-scaling-oh-my"
+    },
+    {
+      "source": "/posts/2011-05-10-contributing-to-ruby-s-documentation",
+      "destination": "https://steveklabnik.com/writing/contributing-to-ruby-s-documentation"
+    },
+    {
+      "source": "/posts/2011-05-12-the-next-iteration-of-my-blog",
+      "destination": "https://steveklabnik.com/writing/the-next-iteration-of-my-blog"
+    },
+    {
+      "source": "/posts/2011-05-21-single-text-many-masters",
+      "destination": "https://steveklabnik.com/writing/single-text-many-masters"
+    },
+    {
+      "source": "/posts/2011-07-03-nobody-understands-rest-or-http",
+      "destination": "https://steveklabnik.com/writing/nobody-understands-rest-or-http"
+    },
+    {
+      "source": "/posts/2011-07-24-twitter-is-to-important-to-be-owned-by-twitter",
+      "destination": "https://steveklabnik.com/writing/twitter-is-to-important-to-be-owned-by-twitter"
+    },
+    {
+      "source": "/posts/2011-08-07-some-people-understand-rest-and-http",
+      "destination": "https://steveklabnik.com/writing/some-people-understand-rest-and-http"
+    },
+    {
+      "source": "/posts/2011-08-12-we-forget-that-open-source-is-made-of-people",
+      "destination": "https://steveklabnik.com/writing/we-forget-that-open-source-is-made-of-people"
+    },
+    {
+      "source": "/posts/2011-08-19-matz-is-nice-so-we-are-nice",
+      "destination": "https://steveklabnik.com/writing/matz-is-nice-so-we-are-nice"
+    },
+    {
+      "source": "/posts/2011-08-22-im-making-it-dead-simple-to-contribute-to-ruby-s-documentation",
+      "destination": "https://steveklabnik.com/writing/im-making-it-dead-simple-to-contribute-to-ruby-s-documentation"
+    },
+    {
+      "source": "/posts/2011-09-04-the-self-improvement-pomodoro",
+      "destination": "https://steveklabnik.com/writing/the-self-improvement-pomodoro"
+    },
+    {
+      "source": "/posts/2011-09-06-the-secret-to-rails-oo-design",
+      "destination": "https://steveklabnik.com/writing/the-secret-to-rails-oo-design"
+    },
 
     {
       "source": "/posts/2012-03-08-transmuting-philosophy-into-machinery",
