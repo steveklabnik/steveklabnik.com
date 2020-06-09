@@ -182,6 +182,106 @@
       "source": "/posts/2011-09-06-the-secret-to-rails-oo-design",
       "destination": "https://steveklabnik.com/writing/the-secret-to-rails-oo-design"
     },
+    {
+      "source": "/posts/2011-10-01-github-is-anarchy-for-programmers",
+      "destination": "https://steveklabnik.com/writing/github-is-anarchy-for-programmers"
+    },
+    {
+      "source": "/posts/2011-10-19-for-science-im-killing-my-cell-phone",
+      "destination": "https://steveklabnik.com/writing/for-science-im-killing-my-cell-phone"
+    },
+    {
+      "source": "/posts/2011-10-25-your-startup-is-not-a-platform",
+      "destination": "https://steveklabnik.com/writing/your-startup-is-not-a-platform"
+    },
+    {
+      "source": "/posts/2011-11-17-burnout",
+      "destination": "https://steveklabnik.com/writing/burnout"
+    },
+    {
+      "source": "/posts/2011-11-28-book-review-new-programmers-survival-manual",
+      "destination": "https://steveklabnik.com/writing/book-review-new-programmers-survival-manual"
+    },
+    {
+      "source": "/posts/2011-12-11-devise-actioncontroller-routingerror-no-route-matches-get-slash-users-slash-sign-out",
+      "destination": "https://steveklabnik.com/writing/devise-actioncontroller-routingerror-no-route-matches-get-slash-users-slash-sign-out"
+    },
+    {
+      "source": "/posts/2011-12-12-fast-rails-tests-with-cancan",
+      "destination": "https://steveklabnik.com/writing/fast-rails-tests-with-cancan"
+    },
+    {
+      "source": "/posts/2011-12-15-marx-anarchism-and-web-standards",
+      "destination": "https://steveklabnik.com/writing/marx-anarchism-and-web-standards"
+    },
+    {
+      "source": "/posts/2011-12-20-write-better-cukes-with-the-rel-attribute",
+      "destination": "https://steveklabnik.com/writing/write-better-cukes-with-the-rel-attribute"
+    },
+    {
+      "source": "/posts/2011-12-21-redcarpet-is-awesome",
+      "destination": "https://steveklabnik.com/writing/redcarpet-is-awesome"
+    },
+    {
+      "source": "/posts/2011-12-30-active-record-considered-harmful",
+      "destination": "https://steveklabnik.com/writing/active-record-considered-harmful"
+    },
+    {
+      "source": "/posts/2012-01-06-implementing-hateoas-with-presenters",
+      "destination": "https://steveklabnik.com/writing/implementing-hateoas-with-presenters"
+    },
+    {
+      "source": "/posts/2012-01-17-moving-from-sinatra-to-rails",
+      "destination": "https://steveklabnik.com/writing/moving-from-sinatra-to-rails"
+    },
+    {
+      "source": "/posts/2012-01-23-introducing-metadown",
+      "destination": "https://steveklabnik.com/writing/introducing-metadown"
+    },
+    {
+      "source": "/posts/2012-02-13-an-api-ontology",
+      "destination": "https://steveklabnik.com/writing/an-api-ontology"
+    },
+    {
+      "source": "/posts/2012-02-22-two-pomodoros",
+      "destination": "https://steveklabnik.com/writing/two-pomodoros"
+    },
+    {
+      "source": "/posts/2012-02-23-rest-is-over",
+      "destination": "https://steveklabnik.com/writing/rest-is-over"
+    },
+    {
+      "source": "/posts/2012-02-27-hypermedia-api-reading-list",
+      "destination": "https://steveklabnik.com/writing/hypermedia-api-reading-list"
+    },
+    {
+      "source": "/posts/2012-03-26-birthday-cards-for-dad",
+      "destination": "https://steveklabnik.com/writing/birthday-cards-for-dad"
+    },
+    {
+      "source": "/posts/2012-03-31-anti-capitalism-101",
+      "destination": "https://steveklabnik.com/writing/anti-capitalism-101"
+    },
+    {
+      "source": "/posts/2012-04-03-about-antisocialne-ws",
+      "destination": "https://steveklabnik.com/writing/about-antisocialne-ws"
+    },
+    {
+      "source": "/posts/2012-04-05-building-storeengine",
+      "destination": "https://steveklabnik.com/writing/building-storeengine"
+    },
+    {
+      "source": "/posts/2012-04-22-cards-for-dad--follow-up",
+      "destination": "https://steveklabnik.com/writing/cards-for-dad--follow-up"
+    },
+    {
+      "source": "/posts/2012-04-30-on-the-eve-of--m1gs",
+      "destination": "https://steveklabnik.com/writing/on-the-eve-of--m1gs"
+    },
+    {
+      "source": "/posts/2012-05-07-mixins--a-refactoring-anti-pattern",
+      "destination": "https://steveklabnik.com/writing/mixins--a-refactoring-anti-pattern"
+    },
 
     {
       "source": "/posts/2012-03-08-transmuting-philosophy-into-machinery",
