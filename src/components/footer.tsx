@@ -8,7 +8,8 @@ export default () => (
       <p>
         <Link href="/">Home</Link> • <Link href="/writing">Writing</Link> •{' '}
         <a href="mailto:steve@steveklabnik.com">Email</a> •{' '}
-        <a href="/">Twitter</a> • <a href="/">GitHub</a>
+        <a href="https://twitter.com/steveklabnik">Twitter</a> •{' '}
+        <a href="https://github.com/steveklabnik">GitHub</a>
       </p>
     </footer>
   </>
