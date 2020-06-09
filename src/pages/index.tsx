@@ -3,40 +3,36 @@ import Header from '../components/header'
 
 export default () => (
   <>
+    <header className="container header">
+      <h1 className="title">Hi there!</h1>
+      <h2 className="subtitle">I'm Steve.</h2>
+    </header>
     <section className="container">
-      <h1 className="title">Steve Klabnik's personal website</h1>
-      <h2>About</h2>
+      <h2>Steve Klabnik, that is.</h2>
       <p>
-        Hi there! <code>/me waves</code>. I'm Steve.
+        You may know me from my work on <a href="https://rust-lang.org">Rust</a>
+        , or maybe even the stuff I did with{' '}
+        <a href="https://contributors.rubyonrails.org/contributors/steve-klabnik/commits">
+          Ruby on Rails
+        </a>{' '}
+        back in the day.
       </p>
       <p>
-        I'm generally known on the internet for tweeting way too much, speaking
-        at conferences, writing books, open source work, and having radical
-        politics.
+        You might have read <Link href="/writing">a post I wrote</Link>, or
+        maybe even a chapter or two of{' '}
+        <em>
+          <a href="https://nostarch.com/Rust">The Rust Programming Language</a>
+        </em>
+        .
       </p>
-      <h2>Links</h2>
-      <ul>
-        <li>
-          <a href="mailto:steve@steveklabnik.com">Email</a>
-        </li>
-        <li>
-          <a href="https://twitter.com/steveklabnik">Twitter</a>
-        </li>
-        <li>
-          <a href="https://github.com/steveklabnik">GitHub</a>
-        </li>
-        <li>
-          <Link href="/blog">Writing</Link> (2020-present)
-        </li>
-        <li>
-          "<a href="https://words.steveklabnik.com">Words</a>" a blog by me
-          (2012-2020)
-        </li>
-        <li>
-          "<a href="https://blog.steveklabnik.com">Literate Programming</a>" a
-          blog by me (2009-2015)
-        </li>
-      </ul>
+      <p>
+        Maybe you saw a conference talk of mine, or saw one of my (too many,
+        frankly) <a href="https://twitter.com/steveklabnik">tweets</a>.
+      </p>
+      <p>
+        It's also possible that you've used some code I've developed{' '}
+        <a href="https://github.com/steveklabnik">on GitHub</a>.
+      </p>
     </section>
   </>
 )

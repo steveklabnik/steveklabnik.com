@@ -58,13 +58,13 @@ export default ({ posts = [], preview }) => {
         </div>
       )}
       <section className="container">
-        <h1>Writing</h1>
+        <h1 className="title">Writing</h1>
         <ul>
           {posts.map(post => {
             return (
               <li key={post.Slug}>
                 <p>
-                  <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+                  <Link href="/writing/[slug]" as={getBlogLink(post.Slug)}>
                     <a>{post.Page}</a>
                   </Link>
                 </p>

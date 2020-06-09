@@ -404,7 +404,6 @@ const RenderPost = ({ post, redirect, preview }) => {
           }
           return toRender
         })}
-        <p><Link href="/blog">Go back to all writing</Link></p>
       </section>
     </>
   )
