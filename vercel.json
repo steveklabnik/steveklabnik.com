@@ -8,6 +8,10 @@
   "redirects": [
     { "source": "/me", "destination": "/lol.html" },
     {
+      "source": "/posts/2009-12-02-about-crows",
+      "destination": "https://steveklabnik.com/writing/about-crows"
+    },
+    {
       "source": "blog.steveklabnik.com/lol",
       "destination": "/foobar",
       "permanent": false
