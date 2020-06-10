@@ -35,19 +35,33 @@ export async function getStaticProps({ preview }) {
     post.Authors = post.Authors.map(id => users[id].full_name)
   })
 
-  // sort by date, newest first
-  posts.sort((a, b) => b['Date'] - a['Date'])
+  let postsByYear = {}
+
+  posts.map(post => {
+    //console.log(`${post.Page}: ${new Date(post.Date).getFullYear()}`)
+    let year = new Date(post.Date).getFullYear()
+    let array = postsByYear[year]
+
+    if (!array || !array.length) {
+      postsByYear[year] = []
+    }
+
+    postsByYear[year].push(post)
+  })
 
   return {
     props: {
       preview: preview || false,
-      posts,
+      posts: postsByYear,
     },
     unstable_revalidate: 10,
   }
 }
 
-export default ({ posts = [], preview }) => {
+export default ({ posts = {}, preview }) => {
+  var postsByYear: any[] = Object.entries(posts)
+  postsByYear.reverse()
+
   return (
     <>
       {preview && (
@@ -63,19 +77,29 @@ export default ({ posts = [], preview }) => {
       )}
       <section className="container">
         <h1 className="title">Writing</h1>
-        <ul>
-          {posts.map(post => {
-            return (
-              <li key={post.Slug}>
-                <p>
-                  <Link href="/writing/[slug]" as={getBlogLink(post.Slug)}>
-                    <a>{post.Page}</a>
-                  </Link>
-                </p>
-              </li>
-            )
-          })}
-        </ul>
+        {postsByYear.map(year => {
+          return (
+            <>
+              <h2>{year[0]}</h2>
+              <ul>
+                {year[1].map(post => {
+                  return (
+                    <li key={post.Slug}>
+                      <p>
+                        <Link
+                          href="/writing/[slug]"
+                          as={getBlogLink(post.Slug)}
+                        >
+                          <a>{post.Page}</a>
+                        </Link>
+                      </p>
+                    </li>
+                  )
+                })}
+              </ul>
+            </>
+          )
+        })}
       </section>
     </>
   )
