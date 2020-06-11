@@ -75,6 +75,10 @@
       "destination": "https://steveklabnik.com/writing/i-m-quitting-hacker-news"
     },
     {
+      "source": "i-m-quitting-hacker-news",
+      "destination": "https://steveklabnik.com/writing/i-m-quitting-hacker-news"
+    },
+    {
       "source": "/posts/2011-01-22-a-few-notes-on-foucault",
       "destination": "https://steveklabnik.com/writing/a-few-notes-on-foucault"
     },
@@ -216,6 +220,10 @@
     },
     {
       "source": "/posts/2011-12-15-marx-anarchism-and-web-standards",
+      "destination": "https://steveklabnik.com/writing/marx-anarchism-and-web-standards"
+    },
+    {
+      "source": "/posts/2011-12-15-marx-anarchism-and-web-standards.html",
       "destination": "https://steveklabnik.com/writing/marx-anarchism-and-web-standards"
     },
     {
