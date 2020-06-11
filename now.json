@@ -75,7 +75,7 @@
       "destination": "https://steveklabnik.com/writing/i-m-quitting-hacker-news"
     },
     {
-      "source": "i-m-quitting-hacker-news",
+      "source": "/i-m-quitting-hacker-news",
       "destination": "https://steveklabnik.com/writing/i-m-quitting-hacker-news"
     },
     {
@@ -223,7 +223,7 @@
       "destination": "https://steveklabnik.com/writing/marx-anarchism-and-web-standards"
     },
     {
-      "source": "/posts/2011-12-15-marx-anarchism-and-web-standards.html",
+      "source": "/2011/12/15/marx-anarchism-and-web-standards.html",
       "destination": "https://steveklabnik.com/writing/marx-anarchism-and-web-standards"
     },
     {
@@ -231,7 +231,7 @@
       "destination": "https://steveklabnik.com/writing/write-better-cukes-with-the-rel-attribute"
     },
     {
-      "source": "/posts/2011-12-20-write-better-cukes-with-the-rel-attribute.html",
+      "source": "/2011/12/20/write-better-cukes-with-the-rel-attribute.html",
       "destination": "https://steveklabnik.com/writing/write-better-cukes-with-the-rel-attribute"
     },
     {
