@@ -465,6 +465,10 @@
     {
       "source": "/posts/2012-03-08-transmuting-philosophy-into-machinery",
       "destination": "https://steveklabnik.com/writing/transmuting-philosophy-into-machinery"
+    },
+    {
+      "source": "protological-control-an-introduction",
+      "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
     }
   ]
 }
