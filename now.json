@@ -596,6 +596,118 @@
       "destination": "https://steveklabnik.com/writing/emoji-licensing"
     },
     {
+      "source": "c-is-not-how-the-computer-works-can-lead-to-inefficient-code",
+      "destination": "https://steveklabnik.com/writing/c-is-not-how-the-computer-works-can-lead-to-inefficient-code"
+    },
+    {
+      "source": "porting-steveklabnik-com-to-workers-sites-and-zola",
+      "destination": "https://steveklabnik.com/writing/porting-steveklabnik-com-to-workers-sites-and-zola"
+    },
+    {
+      "source": "rust-has-finally-outgrown-me",
+      "destination": "https://steveklabnik.com/writing/rust-has-finally-outgrown-me"
+    },
+    {
+      "source": "the-culture-war-at-the-heart-of-open-source",
+      "destination": "https://steveklabnik.com/writing/the-culture-war-at-the-heart-of-open-source"
+    },
+    {
+      "source": "thoughts-on-rust-in-2019",
+      "destination": "https://steveklabnik.com/writing/thoughts-on-rust-in-2019"
+    },
+    {
+      "source": "six-years-with-rust",
+      "destination": "https://steveklabnik.com/writing/six-years-with-rust"
+    },
+    {
+      "source": "why-is-clojure-so-stable",
+      "destination": "https://steveklabnik.com/writing/why-is-clojure-so-stable"
+    },
+    {
+      "source": "borrow-checking-escape-analysis-and-the-generational-hypothesis",
+      "destination": "https://steveklabnik.com/writing/borrow-checking-escape-analysis-and-the-generational-hypothesis"
+    },
+    {
+      "source": "who-authors-the-most-popular-crates-on-crates-io",
+      "destination": "https://steveklabnik.com/writing/who-authors-the-most-popular-crates-on-crates-io"
+    },
+    {
+      "source": "should-you-learn-c-to-learn-how-the-computer-works",
+      "destination": "https://steveklabnik.com/writing/should-you-learn-c-to-learn-how-the-computer-works"
+    },
+    {
+      "source": "you-can-t-turn-off-the-borrow-checker-in-rust",
+      "destination": "https://steveklabnik.com/writing/you-can-t-turn-off-the-borrow-checker-in-rust"
+    },
+    {
+      "source": "is-webassembly-the-return-of-java-applets-flash",
+      "destination": "https://steveklabnik.com/writing/is-webassembly-the-return-of-java-applets-flash"
+    },
+    {
+      "source": "the-expressive-c-17-coding-challenge-in-rust-revisited",
+      "destination": "https://steveklabnik.com/writing/the-expressive-c-17-coding-challenge-in-rust-revisited"
+    },
+    {
+      "source": "looking-back-at-rust-in-2018",
+      "destination": "https://steveklabnik.com/writing/looking-back-at-rust-in-2018"
+    },
+    {
+      "source": "user-agent-moz-a",
+      "destination": "https://steveklabnik.com/writing/user-agent-moz-a"
+    },
+    {
+      "source": "the-expressive-c-17-coding-challenge-in-rust",
+      "destination": "https://steveklabnik.com/writing/the-expressive-c-17-coding-challenge-in-rust"
+    },
+    {
+      "source": "want-to-join-the-rust-docs-team",
+      "destination": "https://steveklabnik.com/writing/want-to-join-the-rust-docs-team"
+    },
+    {
+      "source": "an-overview-of-macros-in-rust",
+      "destination": "https://steveklabnik.com/writing/an-overview-of-macros-in-rust"
+    },
+    {
+      "source": "announcing-rust-contributors",
+      "destination": "https://steveklabnik.com/writing/announcing-rust-contributors"
+    },
+    {
+      "source": "fire-mario-not-fire-flowers",
+      "destination": "https://steveklabnik.com/writing/fire-mario-not-fire-flowers"
+    },
+    {
+      "source": "rust-is-more-than-safety",
+      "destination": "https://steveklabnik.com/writing/rust-is-more-than-safety"
+    },
+    {
+      "source": "four-years-with-rust",
+      "destination": "https://steveklabnik.com/writing/four-years-with-rust"
+    },
+    {
+      "source": "whats-new-with-the-rust-programming-language",
+      "destination": "https://steveklabnik.com/writing/whats-new-with-the-rust-programming-language"
+    },
+    {
+      "source": "structure-literals-vs-constructors-in-rust",
+      "destination": "https://steveklabnik.com/writing/structure-literals-vs-constructors-in-rust"
+    },
+    {
+      "source": "rescuing-resque-again",
+      "destination": "https://steveklabnik.com/writing/rescuing-resque-again"
+    },
+    {
+      "source": "the-closure-companion",
+      "destination": "https://steveklabnik.com/writing/the-closure-companion"
+    },
+    {
+      "source": "hypermedia-fizzbuzz",
+      "destination": "https://steveklabnik.com/writing/hypermedia-fizzbuzz"
+    },
+    {
+      "source": "a-new-introduction-to-rust",
+      "destination": "https://steveklabnik.com/writing/a-new-introduction-to-rust"
+    },
+    {
       "source": "protological-control-an-introduction",
       "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
     }
