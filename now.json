@@ -467,6 +467,135 @@
       "destination": "https://steveklabnik.com/writing/transmuting-philosophy-into-machinery"
     },
     {
+      "source": "protocol-and-language",
+      "destination": "https://steveklabnik.com/writing/protocol-and-language"
+    },
+    {
+      "source": "software-and-community",
+      "destination": "https://steveklabnik.com/writing/software-and-community"
+    },
+    {
+      "source": "how-do-you-find-the-time",
+      "destination": "https://steveklabnik.com/writing/how-do-you-find-the-time"
+    },
+    {
+      "source": "living-with-a-terrible-taste-in-music",
+      "destination": "https://steveklabnik.com/writing/living-with-a-terrible-taste-in-music"
+    },
+    {
+      "source": "i-got-hit-by-a-car-today",
+      "destination": "https://steveklabnik.com/writing/i-got-hit-by-a-car-today"
+    },
+
+    {
+      "source": "theory-and-practice",
+      "destination": "https://steveklabnik.com/writing/theory-and-practice"
+    },
+    {
+      "source": "deleuze-for-developers-assemblages",
+      "destination": "https://steveklabnik.com/writing/deleuze-for-developers-assemblages"
+    },
+    {
+      "source": "narratives",
+      "destination": "https://steveklabnik.com/writing/narratives"
+    },
+    {
+      "source": "how-often-does-rust-change",
+      "destination": "https://steveklabnik.com/writing/how-often-does-rust-change"
+    },
+    {
+      "source": "c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers",
+      "destination": "https://steveklabnik.com/writing/c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers"
+    },
+    {
+      "source": "a-sad-day-for-rust",
+      "destination": "https://steveklabnik.com/writing/a-sad-day-for-rust"
+    },
+    {
+      "source": "i-m-joining-cloudflare",
+      "destination": "https://steveklabnik.com/writing/i-m-joining-cloudflare"
+    },
+    {
+      "source": "thank-u-next",
+      "destination": "https://steveklabnik.com/writing/thank-u-next"
+    },
+    {
+      "source": "learning-ada",
+      "destination": "https://steveklabnik.com/writing/learning-ada"
+    },
+    {
+      "source": "five-years-with-rust",
+      "destination": "https://steveklabnik.com/writing/five-years-with-rust"
+    },
+    {
+      "source": "webassembly-is-more-than-just-the-web",
+      "destination": "https://steveklabnik.com/writing/webassembly-is-more-than-just-the-web"
+    },
+    {
+      "source": "sf",
+      "destination": "https://steveklabnik.com/writing/sf"
+    },
+    {
+      "source": "deleuze-for-developers-deterritorialization",
+      "destination": "https://steveklabnik.com/writing/deleuze-for-developers-deterritorialization"
+    },
+    {
+      "source": "i-invented-hypermedia-apis-by-accident",
+      "destination": "https://steveklabnik.com/writing/i-invented-hypermedia-apis-by-accident"
+    },
+    {
+      "source": "is-npm-worth-26mm",
+      "destination": "https://steveklabnik.com/writing/is-npm-worth-26mm"
+    },
+    {
+      "source": "what-comes-after-open-source",
+      "destination": "https://steveklabnik.com/writing/what-comes-after-open-source"
+    },
+    {
+      "source": "what-s-next-for-semver",
+      "destination": "https://steveklabnik.com/writing/what-s-next-for-semver"
+    },
+    {
+      "source": "docember",
+      "destination": "https://steveklabnik.com/writing/docember"
+    },
+    {
+      "source": "a-eulogy-for-my-20s",
+      "destination": "https://steveklabnik.com/writing/a-eulogy-for-my-20s"
+    },
+    {
+      "source": "going-vimgan",
+      "destination": "https://steveklabnik.com/writing/going-vimgan"
+    },
+    {
+      "source": "closure",
+      "destination": "https://steveklabnik.com/writing/closure"
+    },
+    {
+      "source": "2-sup-5",
+      "destination": "https://steveklabnik.com/writing/2-sup-5"
+    },
+    {
+      "source": "hope",
+      "destination": "https://steveklabnik.com/writing/hope"
+    },
+    {
+      "source": "ouroboros",
+      "destination": "https://steveklabnik.com/writing/ouroboros"
+    },
+    {
+      "source": "thankfulness",
+      "destination": "https://steveklabnik.com/writing/thankfulness"
+    },
+    {
+      "source": "twitter-ghosts",
+      "destination": "https://steveklabnik.com/writing/twitter-ghosts"
+    },
+    {
+      "source": "emoji-licensing",
+      "destination": "https://steveklabnik.com/writing/emoji-licensing"
+    },
+    {
       "source": "protological-control-an-introduction",
       "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
     }
