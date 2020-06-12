@@ -63,7 +63,7 @@ function createRSS(blogPosts = []) {
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Steve Klabnik</title>
     <subtitle>Writing</subtitle>
-    <link href="https://steveklabnik.com/atom" rel="self" type="application/rss+xml"/>
+    <link href="https://steveklabnik.com/atom.rss" rel="self" type="application/rss+xml"/>
     <link href="https://steveklabnik.com/" />
     <updated>${NOW}</updated>
     <id>https://steveklabnik.com/</id>${postsString}
@@ -97,7 +97,7 @@ async function main() {
     post.date = post.Date
   })
 
-  const outputPath = './public/atom'
+  const outputPath = './public/atom.rss'
   await writeFile(resolve(outputPath), createRSS(blogPosts))
   console.log(`Atom feed file generated at \`${outputPath}\``)
 }
