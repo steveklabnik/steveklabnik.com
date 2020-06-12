@@ -66,7 +66,7 @@ function createRSS(blogPosts = []) {
     <link href="https://steveklabnik.com/atom" rel="self" type="application/rss+xml"/>
     <link href="https://steveklabnik.com/" />
     <updated>${NOW}</updated>
-    <id>https://steveklabnik.com</id>${postsString}
+    <id>https://steveklabnik.com/</id>${postsString}
   </feed>`
 }
 
