@@ -30,7 +30,7 @@ function decode(string) {
 function mapToEntry(post) {
   return `
     <entry>
-      <id>${post.link}</id>
+      <id>https://steveklabnik.com/writing/${post.link}</id>
       <title>${decode(post.title)}</title>
       <link href="${post.link}"/>
       <updated>${new Date(post.date).toJSON()}</updated>
@@ -61,12 +61,12 @@ function createRSS(blogPosts = []) {
 
   return `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>My Blog</title>
-    <subtitle>Blog</subtitle>
-    <link href="/atom" rel="self" type="application/rss+xml"/>
-    <link href="/" />
+    <title>Steve Klabnik</title>
+    <subtitle>Writing</subtitle>
+    <link href="https://steveklabnik.com/atom" rel="self" type="application/rss+xml"/>
+    <link href="https://steveklabnik.com/" />
     <updated>${NOW}</updated>
-    <id>My Notion Blog</id>${postsString}
+    <id>https://steveklabnik.com</id>${postsString}
   </feed>`
 }
 
