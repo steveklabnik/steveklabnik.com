@@ -467,248 +467,359 @@
       "destination": "https://steveklabnik.com/writing/transmuting-philosophy-into-machinery"
     },
     {
-      "source": "protocol-and-language",
+      "source": "/protocol-and-language",
       "destination": "https://steveklabnik.com/writing/protocol-and-language"
     },
     {
-      "source": "software-and-community",
+      "source": "/software-and-community",
       "destination": "https://steveklabnik.com/writing/software-and-community"
     },
     {
-      "source": "how-do-you-find-the-time",
+      "source": "/how-do-you-find-the-time",
       "destination": "https://steveklabnik.com/writing/how-do-you-find-the-time"
     },
     {
-      "source": "living-with-a-terrible-taste-in-music",
+      "source": "/living-with-a-terrible-taste-in-music",
       "destination": "https://steveklabnik.com/writing/living-with-a-terrible-taste-in-music"
     },
     {
-      "source": "i-got-hit-by-a-car-today",
+      "source": "/i-got-hit-by-a-car-today",
       "destination": "https://steveklabnik.com/writing/i-got-hit-by-a-car-today"
     },
-
     {
-      "source": "theory-and-practice",
+      "source": "/theory-and-practice",
       "destination": "https://steveklabnik.com/writing/theory-and-practice"
     },
     {
-      "source": "deleuze-for-developers-assemblages",
+      "source": "/deleuze-for-developers-assemblages",
       "destination": "https://steveklabnik.com/writing/deleuze-for-developers-assemblages"
     },
     {
-      "source": "narratives",
+      "source": "/narratives",
       "destination": "https://steveklabnik.com/writing/narratives"
     },
     {
-      "source": "how-often-does-rust-change",
+      "source": "/how-often-does-rust-change",
       "destination": "https://steveklabnik.com/writing/how-often-does-rust-change"
     },
     {
-      "source": "c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers",
+      "source": "/c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers",
       "destination": "https://steveklabnik.com/writing/c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers"
     },
     {
-      "source": "a-sad-day-for-rust",
+      "source": "/a-sad-day-for-rust",
       "destination": "https://steveklabnik.com/writing/a-sad-day-for-rust"
     },
     {
-      "source": "i-m-joining-cloudflare",
+      "source": "/i-m-joining-cloudflare",
       "destination": "https://steveklabnik.com/writing/i-m-joining-cloudflare"
     },
     {
-      "source": "thank-u-next",
+      "source": "/thank-u-next",
       "destination": "https://steveklabnik.com/writing/thank-u-next"
     },
     {
-      "source": "learning-ada",
+      "source": "/learning-ada",
       "destination": "https://steveklabnik.com/writing/learning-ada"
     },
     {
-      "source": "five-years-with-rust",
+      "source": "/five-years-with-rust",
       "destination": "https://steveklabnik.com/writing/five-years-with-rust"
     },
     {
-      "source": "webassembly-is-more-than-just-the-web",
+      "source": "/webassembly-is-more-than-just-the-web",
       "destination": "https://steveklabnik.com/writing/webassembly-is-more-than-just-the-web"
     },
     {
-      "source": "sf",
+      "source": "/sf",
       "destination": "https://steveklabnik.com/writing/sf"
     },
     {
-      "source": "deleuze-for-developers-deterritorialization",
+      "source": "/deleuze-for-developers-deterritorialization",
       "destination": "https://steveklabnik.com/writing/deleuze-for-developers-deterritorialization"
     },
     {
-      "source": "i-invented-hypermedia-apis-by-accident",
+      "source": "/i-invented-hypermedia-apis-by-accident",
       "destination": "https://steveklabnik.com/writing/i-invented-hypermedia-apis-by-accident"
     },
     {
-      "source": "is-npm-worth-26mm",
+      "source": "/is-npm-worth-26mm",
       "destination": "https://steveklabnik.com/writing/is-npm-worth-26mm"
     },
     {
-      "source": "what-comes-after-open-source",
+      "source": "/what-comes-after-open-source",
       "destination": "https://steveklabnik.com/writing/what-comes-after-open-source"
     },
     {
-      "source": "what-s-next-for-semver",
+      "source": "/what-s-next-for-semver",
       "destination": "https://steveklabnik.com/writing/what-s-next-for-semver"
     },
     {
-      "source": "docember",
+      "source": "/docember",
       "destination": "https://steveklabnik.com/writing/docember"
     },
     {
-      "source": "a-eulogy-for-my-20s",
+      "source": "/a-eulogy-for-my-20s",
       "destination": "https://steveklabnik.com/writing/a-eulogy-for-my-20s"
     },
     {
-      "source": "going-vimgan",
+      "source": "/going-vimgan",
       "destination": "https://steveklabnik.com/writing/going-vimgan"
     },
     {
-      "source": "closure",
+      "source": "/closure",
       "destination": "https://steveklabnik.com/writing/closure"
     },
     {
-      "source": "2-sup-5",
+      "source": "/2-sup-5",
       "destination": "https://steveklabnik.com/writing/2-sup-5"
     },
     {
-      "source": "hope",
+      "source": "/hope",
       "destination": "https://steveklabnik.com/writing/hope"
     },
     {
-      "source": "ouroboros",
+      "source": "/ouroboros",
       "destination": "https://steveklabnik.com/writing/ouroboros"
     },
     {
-      "source": "thankfulness",
+      "source": "/thankfulness",
       "destination": "https://steveklabnik.com/writing/thankfulness"
     },
     {
-      "source": "twitter-ghosts",
+      "source": "/twitter-ghosts",
       "destination": "https://steveklabnik.com/writing/twitter-ghosts"
     },
     {
-      "source": "emoji-licensing",
+      "source": "/emoji-licensing",
       "destination": "https://steveklabnik.com/writing/emoji-licensing"
     },
     {
-      "source": "c-is-not-how-the-computer-works-can-lead-to-inefficient-code",
+      "source": "/c-is-not-how-the-computer-works-can-lead-to-inefficient-code",
       "destination": "https://steveklabnik.com/writing/c-is-not-how-the-computer-works-can-lead-to-inefficient-code"
     },
     {
-      "source": "porting-steveklabnik-com-to-workers-sites-and-zola",
+      "source": "/porting-steveklabnik-com-to-workers-sites-and-zola",
       "destination": "https://steveklabnik.com/writing/porting-steveklabnik-com-to-workers-sites-and-zola"
     },
     {
-      "source": "rust-has-finally-outgrown-me",
+      "source": "/rust-has-finally-outgrown-me",
       "destination": "https://steveklabnik.com/writing/rust-has-finally-outgrown-me"
     },
     {
-      "source": "the-culture-war-at-the-heart-of-open-source",
+      "source": "/the-culture-war-at-the-heart-of-open-source",
       "destination": "https://steveklabnik.com/writing/the-culture-war-at-the-heart-of-open-source"
     },
     {
-      "source": "thoughts-on-rust-in-2019",
+      "source": "/thoughts-on-rust-in-2019",
       "destination": "https://steveklabnik.com/writing/thoughts-on-rust-in-2019"
     },
     {
-      "source": "six-years-with-rust",
+      "source": "/six-years-with-rust",
       "destination": "https://steveklabnik.com/writing/six-years-with-rust"
     },
     {
-      "source": "why-is-clojure-so-stable",
+      "source": "/why-is-clojure-so-stable",
       "destination": "https://steveklabnik.com/writing/why-is-clojure-so-stable"
     },
     {
-      "source": "borrow-checking-escape-analysis-and-the-generational-hypothesis",
+      "source": "/borrow-checking-escape-analysis-and-the-generational-hypothesis",
       "destination": "https://steveklabnik.com/writing/borrow-checking-escape-analysis-and-the-generational-hypothesis"
     },
     {
-      "source": "who-authors-the-most-popular-crates-on-crates-io",
+      "source": "/who-authors-the-most-popular-crates-on-crates-io",
       "destination": "https://steveklabnik.com/writing/who-authors-the-most-popular-crates-on-crates-io"
     },
     {
-      "source": "should-you-learn-c-to-learn-how-the-computer-works",
+      "source": "/should-you-learn-c-to-learn-how-the-computer-works",
       "destination": "https://steveklabnik.com/writing/should-you-learn-c-to-learn-how-the-computer-works"
     },
     {
-      "source": "you-can-t-turn-off-the-borrow-checker-in-rust",
+      "source": "/you-can-t-turn-off-the-borrow-checker-in-rust",
       "destination": "https://steveklabnik.com/writing/you-can-t-turn-off-the-borrow-checker-in-rust"
     },
     {
-      "source": "is-webassembly-the-return-of-java-applets-flash",
+      "source": "/is-webassembly-the-return-of-java-applets-flash",
       "destination": "https://steveklabnik.com/writing/is-webassembly-the-return-of-java-applets-flash"
     },
     {
-      "source": "the-expressive-c-17-coding-challenge-in-rust-revisited",
+      "source": "/the-expressive-c-17-coding-challenge-in-rust-revisited",
       "destination": "https://steveklabnik.com/writing/the-expressive-c-17-coding-challenge-in-rust-revisited"
     },
     {
-      "source": "looking-back-at-rust-in-2018",
+      "source": "/looking-back-at-rust-in-2018",
       "destination": "https://steveklabnik.com/writing/looking-back-at-rust-in-2018"
     },
     {
-      "source": "user-agent-moz-a",
+      "source": "/user-agent-moz-a",
       "destination": "https://steveklabnik.com/writing/user-agent-moz-a"
     },
     {
-      "source": "the-expressive-c-17-coding-challenge-in-rust",
+      "source": "/the-expressive-c-17-coding-challenge-in-rust",
       "destination": "https://steveklabnik.com/writing/the-expressive-c-17-coding-challenge-in-rust"
     },
     {
-      "source": "want-to-join-the-rust-docs-team",
+      "source": "/want-to-join-the-rust-docs-team",
       "destination": "https://steveklabnik.com/writing/want-to-join-the-rust-docs-team"
     },
     {
-      "source": "an-overview-of-macros-in-rust",
+      "source": "/an-overview-of-macros-in-rust",
       "destination": "https://steveklabnik.com/writing/an-overview-of-macros-in-rust"
     },
     {
-      "source": "announcing-rust-contributors",
+      "source": "/announcing-rust-contributors",
       "destination": "https://steveklabnik.com/writing/announcing-rust-contributors"
     },
     {
-      "source": "fire-mario-not-fire-flowers",
+      "source": "/fire-mario-not-fire-flowers",
       "destination": "https://steveklabnik.com/writing/fire-mario-not-fire-flowers"
     },
     {
-      "source": "rust-is-more-than-safety",
+      "source": "/rust-is-more-than-safety",
       "destination": "https://steveklabnik.com/writing/rust-is-more-than-safety"
     },
     {
-      "source": "four-years-with-rust",
+      "source": "/four-years-with-rust",
       "destination": "https://steveklabnik.com/writing/four-years-with-rust"
     },
     {
-      "source": "whats-new-with-the-rust-programming-language",
+      "source": "/whats-new-with-the-rust-programming-language",
       "destination": "https://steveklabnik.com/writing/whats-new-with-the-rust-programming-language"
     },
     {
-      "source": "structure-literals-vs-constructors-in-rust",
+      "source": "/structure-literals-vs-constructors-in-rust",
       "destination": "https://steveklabnik.com/writing/structure-literals-vs-constructors-in-rust"
     },
     {
-      "source": "rescuing-resque-again",
+      "source": "/rescuing-resque-again",
       "destination": "https://steveklabnik.com/writing/rescuing-resque-again"
     },
     {
-      "source": "the-closure-companion",
+      "source": "/the-closure-companion",
       "destination": "https://steveklabnik.com/writing/the-closure-companion"
     },
     {
-      "source": "hypermedia-fizzbuzz",
+      "source": "/hypermedia-fizzbuzz",
       "destination": "https://steveklabnik.com/writing/hypermedia-fizzbuzz"
     },
     {
-      "source": "a-new-introduction-to-rust",
+      "source": "/a-new-introduction-to-rust",
       "destination": "https://steveklabnik.com/writing/a-new-introduction-to-rust"
     },
     {
-      "source": "protological-control-an-introduction",
+      "source": "/the-rust-programming-language-will-be-published-by-no-starch-press",
+      "destination": "https://steveklabnik.com/writing/the-rust-programming-language-will-be-published-by-no-starch-press"
+    },
+    {
+      "source": "/community-versions-for-rust",
+      "destination": "https://steveklabnik.com/writing/community-versions-for-rust"
+    },
+    {
+      "source": "/the-language-strangeness-budget",
+      "destination": "https://steveklabnik.com/writing/the-language-strangeness-budget"
+    },
+    {
+      "source": "/an-introduction-to-economics-under-capitalism",
+      "destination": "https://steveklabnik.com/writing/an-introduction-to-economics-under-capitalism"
+    },
+    {
+      "source": "/update-github-pages-with-travis-ci",
+      "destination": "https://steveklabnik.com/writing/update-github-pages-with-travis-ci"
+    },
+    {
+      "source": "/im-going-writeonly-on-twitter-for-a-while",
+      "destination": "https://steveklabnik.com/writing/im-going-writeonly-on-twitter-for-a-while"
+    },
+    {
+      "source": "/rusts-documentation-is-about-to-drastically-improve",
+      "destination": "https://steveklabnik.com/writing/rusts-documentation-is-about-to-drastically-improve"
+    },
+    {
+      "source": "/how-to-be-an-open-source-gardener",
+      "destination": "https://steveklabnik.com/writing/how-to-be-an-open-source-gardener"
+    },
+    {
+      "source": "/a-30-minute-introduction-to-rust",
+      "destination": "https://steveklabnik.com/writing/a-30-minute-introduction-to-rust"
+    },
+    {
+      "source": "/rust-is-surprisingly-expressive",
+      "destination": "https://steveklabnik.com/writing/rust-is-surprisingly-expressive"
+    },
+    {
+      "source": "/most-things-i-do-are-interconnected",
+      "destination": "https://steveklabnik.com/writing/most-things-i-do-are-interconnected"
+    },
+    {
+      "source": "/rails-has-two-default-stacks",
+      "destination": "https://steveklabnik.com/writing/rails-has-two-default-stacks"
+    },
+    {
+      "source": "/how-dogecoin-changed-my-perspective-on-cryptocurrency",
+      "destination": "https://steveklabnik.com/writing/how-dogecoin-changed-my-perspective-on-cryptocurrency"
+    },
+    {
+      "source": "/why-is-a-role-not-a-person",
+      "destination": "https://steveklabnik.com/writing/why-is-a-role-not-a-person"
+    },
+    {
+      "source": "/how-to-not-rely-on-rubygemsorg-for-deployment",
+      "destination": "https://steveklabnik.com/writing/how-to-not-rely-on-rubygemsorg-for-deployment"
+    },
+    {
+      "source": "/announcing-securityreleasepractice",
+      "destination": "https://steveklabnik.com/writing/announcing-securityreleasepractice"
+    },
+    {
+      "source": "/git-history-modification-and-libuv",
+      "destination": "https://steveklabnik.com/writing/git-history-modification-and-libuv"
+    },
+    {
+      "source": "/deleuze-for-developers-will-smooth-spaceopen-source-suffice-to-save-us",
+      "destination": "https://steveklabnik.com/writing/deleuze-for-developers-will-smooth-spaceopen-source-suffice-to-save-us"
+    },
+    {
+      "source": "/the-profile-link-relation-and-you",
+      "destination": "https://steveklabnik.com/writing/the-profile-link-relation-and-you"
+    },
+    {
+      "source": "/emberjs-and-accessibility",
+      "destination": "https://steveklabnik.com/writing/emberjs-and-accessibility"
+    },
+    {
+      "source": "/returning-to-free-software-a-guide",
+      "destination": "https://steveklabnik.com/writing/returning-to-free-software-a-guide"
+    },
+    {
+      "source": "/beware-subclassing-ruby-core-classes",
+      "destination": "https://steveklabnik.com/writing/beware-subclassing-ruby-core-classes"
+    },
+    {
+      "source": "/just-the-regularly-scheduled-apocalypse",
+      "destination": "https://steveklabnik.com/writing/just-the-regularly-scheduled-apocalypse"
+    },
+    {
+      "source": "/keep-saturdays-sacred",
+      "destination": "https://steveklabnik.com/writing/keep-saturdays-sacred"
+    },
+    {
+      "source": "/pointers-in-rust-a-guide",
+      "destination": "https://steveklabnik.com/writing/pointers-in-rust-a-guide"
+    },
+    {
+      "source": "/abstract-vs-concrete",
+      "destination": "https://steveklabnik.com/writing/abstract-vs-concrete"
+    },
+    {
+      "source": "/on-leftist-infighting",
+      "destination": "https://steveklabnik.com/writing/on-leftist-infighting"
+    },
+    {
+      "source": "/why-im-partnering-with-balanced",
+      "destination": "https://steveklabnik.com/writing/why-im-partnering-with-balanced"
+    },
+    {
+      "source": "/protological-control-an-introduction",
       "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
     }
   ]
