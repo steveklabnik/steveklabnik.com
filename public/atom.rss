@@ -4,13 +4,13 @@
     <subtitle>Writing</subtitle>
     <link href="https://steveklabnik.com/atom.rss" rel="self" type="application/rss+xml"/>
     <link href="https://steveklabnik.com/" />
-    <updated>2020-06-12T21:00:23.497Z</updated>
+    <updated>2020-06-13T14:07:24.222Z</updated>
     <id>https://steveklabnik.com/</id>
     <entry>
       <id>https://steveklabnik.com/writing//writing/the-next-iteration-of-my-blogs</id>
       <title>The next iteration of my blogs</title>
       <link href="/writing/the-next-iteration-of-my-blogs"/>
-      <updated>2020-06-08T05:00:00.726Z</updated>
+      <updated>2020-06-08T05:00:00.727Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           <p>I&#x27;ve had a few different blogs over the years. Every so often, I change things. One of the nice things about having your own site is that you can do whatever you want! So, I&#x27;m folding my old blogs&#x27; content into my main website. I&#x27;m sick of adding new subdomains, and it all feels better in one place these days. The old URLs will redirect to posts on steveklabnik.com, but I wanted to record what they looked like at the time.</p>
@@ -25,7 +25,7 @@
       <id>https://steveklabnik.com/writing//writing/narratives</id>
       <title>Narratives</title>
       <link href="/writing/narratives"/>
-      <updated>2012-11-18T06:00:00.726Z</updated>
+      <updated>2012-11-18T06:00:00.727Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -40,7 +40,7 @@
       <id>https://steveklabnik.com/writing//writing/software-and-community</id>
       <title>Software and community</title>
       <link href="/writing/software-and-community"/>
-      <updated>2012-09-18T05:00:00.726Z</updated>
+      <updated>2012-09-18T05:00:00.727Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -70,7 +70,7 @@
       <id>https://steveklabnik.com/writing//writing/how-do-you-find-the-time</id>
       <title>How do you find the time?</title>
       <link href="/writing/how-do-you-find-the-time"/>
-      <updated>2012-09-27T05:00:00.727Z</updated>
+      <updated>2012-09-27T05:00:00.728Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -85,7 +85,7 @@
       <id>https://steveklabnik.com/writing//writing/living-with-a-terrible-taste-in-music</id>
       <title>Living with a terrible taste in music</title>
       <link href="/writing/living-with-a-terrible-taste-in-music"/>
-      <updated>2012-10-12T05:00:00.727Z</updated>
+      <updated>2012-10-12T05:00:00.728Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -100,7 +100,7 @@
       <id>https://steveklabnik.com/writing//writing/protocol-and-language</id>
       <title>Protocol and language</title>
       <link href="/writing/protocol-and-language"/>
-      <updated>2012-09-03T05:00:00.727Z</updated>
+      <updated>2012-09-03T05:00:00.728Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           <p>This is the second part of my series on protocol. The <a href="http://words.steveklabnik.com/protological-control-an-introduction">first part</a> contained a lot of background information, but now we’re ready to get into what Protocol actually <i>is</i>.</p>
@@ -115,7 +115,7 @@
       <id>https://steveklabnik.com/writing//writing/protological-control-an-introduction</id>
       <title>Protological Control: an introduction</title>
       <link href="/writing/protological-control-an-introduction"/>
-      <updated>2012-08-13T05:00:00.727Z</updated>
+      <updated>2012-08-13T05:00:00.728Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -130,7 +130,7 @@
       <id>https://steveklabnik.com/writing//writing/ember-data--ds-is-not-defined</id>
       <title>Ember Data: ‘DS’ is not defined</title>
       <link href="/writing/ember-data--ds-is-not-defined"/>
-      <updated>2015-07-05T05:00:00.727Z</updated>
+      <updated>2015-07-05T05:00:00.728Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -145,7 +145,7 @@
       <id>https://steveklabnik.com/writing//writing/announcing-emoji-1-0</id>
       <title>Announcing Emoji 1.0</title>
       <link href="/writing/announcing-emoji-1-0"/>
-      <updated>2014-02-10T06:00:00.727Z</updated>
+      <updated>2014-02-10T06:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -160,7 +160,7 @@
       <id>https://steveklabnik.com/writing//writing/2013--year-in-review</id>
       <title>2013: year in review</title>
       <link href="/writing/2013--year-in-review"/>
-      <updated>2013-12-31T06:00:00.728Z</updated>
+      <updated>2013-12-31T06:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -175,7 +175,7 @@
       <id>https://steveklabnik.com/writing//writing/new-beginnings</id>
       <title>New Beginnings</title>
       <link href="/writing/new-beginnings"/>
-      <updated>2013-10-01T05:00:00.728Z</updated>
+      <updated>2013-10-01T05:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -190,7 +190,7 @@
       <id>https://steveklabnik.com/writing//writing/resque-1-25-0-has-been-released</id>
       <title>Resque 1.25.0 has been released</title>
       <link href="/writing/resque-1-25-0-has-been-released"/>
-      <updated>2013-09-16T05:00:00.728Z</updated>
+      <updated>2013-09-16T05:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -205,7 +205,7 @@
       <id>https://steveklabnik.com/writing//writing/redis-namespace-1-3-1--security-release</id>
       <title>redis-namespace 1.3.1 security release</title>
       <link href="/writing/redis-namespace-1-3-1--security-release"/>
-      <updated>2013-08-03T05:00:00.728Z</updated>
+      <updated>2013-08-03T05:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -220,7 +220,7 @@
       <id>https://steveklabnik.com/writing//writing/resque-1-25-0-pre-has-been-released</id>
       <title>Resque 1.25.0.pre has been released</title>
       <link href="/writing/resque-1-25-0-pre-has-been-released"/>
-      <updated>2013-07-23T05:00:00.728Z</updated>
+      <updated>2013-07-23T05:00:00.729Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -235,7 +235,7 @@
       <id>https://steveklabnik.com/writing//writing/removing-turbolinks-from-rails-4</id>
       <title>Removing Turbolinks from Rails 4</title>
       <link href="/writing/removing-turbolinks-from-rails-4"/>
-      <updated>2013-06-25T05:00:00.728Z</updated>
+      <updated>2013-06-25T05:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -250,7 +250,7 @@
       <id>https://steveklabnik.com/writing//writing/rust--y-scraps--iterating-with-a-step</id>
       <title>Rust-y Scraps: iterating with a step</title>
       <link href="/writing/rust--y-scraps--iterating-with-a-step"/>
-      <updated>2013-05-30T05:00:00.728Z</updated>
+      <updated>2013-05-30T05:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -265,7 +265,7 @@
       <id>https://steveklabnik.com/writing//writing/rails-4-0-0-beta1-to-rails-4-0-0-rc1</id>
       <title>Rails 4.0.0-beta1 to Rails 4.0.0-rc1</title>
       <link href="/writing/rails-4-0-0-beta1-to-rails-4-0-0-rc1"/>
-      <updated>2013-05-21T05:00:00.729Z</updated>
+      <updated>2013-05-21T05:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -280,7 +280,7 @@
       <id>https://steveklabnik.com/writing//writing/ditching-google--chat-with-xmpp</id>
       <title>Ditching Google Chat with XMPP</title>
       <link href="/writing/ditching-google--chat-with-xmpp"/>
-      <updated>2013-05-16T05:00:00.729Z</updated>
+      <updated>2013-05-16T05:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -295,7 +295,7 @@
       <id>https://steveklabnik.com/writing//writing/upgrading-from-rust-0-5-to-0-6</id>
       <title>Upgrading from Rust 0.5 to 0.6</title>
       <link href="/writing/upgrading-from-rust-0-5-to-0-6"/>
-      <updated>2013-04-07T05:00:00.729Z</updated>
+      <updated>2013-04-07T05:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -310,7 +310,7 @@
       <id>https://steveklabnik.com/writing//writing/travis-build-matrix-for-rails</id>
       <title>Travis build matrix for Rails</title>
       <link href="/writing/travis-build-matrix-for-rails"/>
-      <updated>2013-03-10T06:00:00.729Z</updated>
+      <updated>2013-03-10T06:00:00.730Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -325,7 +325,7 @@
       <id>https://steveklabnik.com/writing//writing/using-puma-on-heroku</id>
       <title>Using puma on Heroku</title>
       <link href="/writing/using-puma-on-heroku"/>
-      <updated>2013-02-24T06:00:00.729Z</updated>
+      <updated>2013-02-24T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -340,7 +340,7 @@
       <id>https://steveklabnik.com/writing//writing/i-m-writing--rails-4-in-action--</id>
       <title>I&apos;m writing &quot;Rails 4 in Action&quot;!</title>
       <link href="/writing/i-m-writing--rails-4-in-action--"/>
-      <updated>2013-02-13T06:00:00.729Z</updated>
+      <updated>2013-02-13T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -355,7 +355,7 @@
       <id>https://steveklabnik.com/writing//writing/the-next-iteration-of-designing-hypermedia-apis</id>
       <title>The next iteration of &quot;Designing Hypermedia APIs&quot;</title>
       <link href="/writing/the-next-iteration-of-designing-hypermedia-apis"/>
-      <updated>2013-02-12T06:00:00.729Z</updated>
+      <updated>2013-02-12T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -370,7 +370,7 @@
       <id>https://steveklabnik.com/writing//writing/ruby-on-rails-maintenance-policy</id>
       <title>Ruby on Rails maintenance policy</title>
       <link href="/writing/ruby-on-rails-maintenance-policy"/>
-      <updated>2013-02-11T06:00:00.730Z</updated>
+      <updated>2013-02-11T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -385,7 +385,7 @@
       <id>https://steveklabnik.com/writing//writing/node</id>
       <title>Node</title>
       <link href="/writing/node"/>
-      <updated>2013-01-23T06:00:00.730Z</updated>
+      <updated>2013-01-23T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -400,7 +400,7 @@
       <id>https://steveklabnik.com/writing//writing/draper-1-0-0-released</id>
       <title>Draper 1.0.0 released</title>
       <link href="/writing/draper-1-0-0-released"/>
-      <updated>2013-01-14T06:00:00.730Z</updated>
+      <updated>2013-01-14T06:00:00.731Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -415,7 +415,7 @@
       <id>https://steveklabnik.com/writing//writing/2012-year-in-review</id>
       <title>2012: year in review</title>
       <link href="/writing/2012-year-in-review"/>
-      <updated>2012-12-29T06:00:00.730Z</updated>
+      <updated>2012-12-29T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -430,7 +430,7 @@
       <id>https://steveklabnik.com/writing//writing/an-early-christmas-present-for-you</id>
       <title>An early Christmas present for you</title>
       <link href="/writing/an-early-christmas-present-for-you"/>
-      <updated>2012-12-19T06:00:00.730Z</updated>
+      <updated>2012-12-19T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -445,7 +445,7 @@
       <id>https://steveklabnik.com/writing//writing/announcing-requeststore</id>
       <title>Announcing request_store</title>
       <link href="/writing/announcing-requeststore"/>
-      <updated>2012-12-17T06:00:00.730Z</updated>
+      <updated>2012-12-17T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -460,7 +460,7 @@
       <id>https://steveklabnik.com/writing//writing/getting-started-with-chruby</id>
       <title>Getting started with chruby</title>
       <link href="/writing/getting-started-with-chruby"/>
-      <updated>2012-12-13T06:00:00.730Z</updated>
+      <updated>2012-12-13T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -475,7 +475,7 @@
       <id>https://steveklabnik.com/writing//writing/draper-1-0-0-beta2-release</id>
       <title>Draper 1.0.0.beta2 release</title>
       <link href="/writing/draper-1-0-0-beta2-release"/>
-      <updated>2012-12-03T06:00:00.731Z</updated>
+      <updated>2012-12-03T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -490,7 +490,7 @@
       <id>https://steveklabnik.com/writing//writing/draper-1-0-0-beta1-release</id>
       <title>Draper 1.0.0.beta1 release</title>
       <link href="/writing/draper-1-0-0-beta1-release"/>
-      <updated>2012-11-30T06:00:00.731Z</updated>
+      <updated>2012-11-30T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -505,7 +505,7 @@
       <id>https://steveklabnik.com/writing//writing/introducing-the-rails-api-project</id>
       <title>Introducing the rails-api project</title>
       <link href="/writing/introducing-the-rails-api-project"/>
-      <updated>2012-11-22T06:00:00.731Z</updated>
+      <updated>2012-11-22T06:00:00.732Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -520,7 +520,7 @@
       <id>https://steveklabnik.com/writing//writing/how-to-squash-commits-in-a-github-pull-request</id>
       <title>How to squash commits in a GitHub pull request</title>
       <link href="/writing/how-to-squash-commits-in-a-github-pull-request"/>
-      <updated>2012-11-08T06:00:00.731Z</updated>
+      <updated>2012-11-08T06:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -535,7 +535,7 @@
       <id>https://steveklabnik.com/writing//writing/run-rails-with-custom-patches</id>
       <title>Run Rails with custom patches</title>
       <link href="/writing/run-rails-with-custom-patches"/>
-      <updated>2012-10-04T05:00:00.731Z</updated>
+      <updated>2012-10-04T05:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -550,7 +550,7 @@
       <id>https://steveklabnik.com/writing//writing/seriously--numbers--use-them-</id>
       <title>Seriously: numbers: use them!</title>
       <link href="/writing/seriously--numbers--use-them-"/>
-      <updated>2012-09-27T05:00:00.731Z</updated>
+      <updated>2012-09-27T05:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -565,7 +565,7 @@
       <id>https://steveklabnik.com/writing//writing/resque--let-s-do-this</id>
       <title>Resque: let&apos;s do this</title>
       <link href="/writing/resque--let-s-do-this"/>
-      <updated>2012-09-22T05:00:00.732Z</updated>
+      <updated>2012-09-22T05:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -580,7 +580,7 @@
       <id>https://steveklabnik.com/writing//writing/random-ruby-tricks--class-new</id>
       <title>Random Ruby Tricks: Class.new</title>
       <link href="/writing/random-ruby-tricks--class-new"/>
-      <updated>2012-09-09T05:00:00.732Z</updated>
+      <updated>2012-09-09T05:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -595,7 +595,7 @@
       <id>https://steveklabnik.com/writing//writing/random-ruby-tricks--struct-new</id>
       <title>Random Ruby Tricks: Struct.new</title>
       <link href="/writing/random-ruby-tricks--struct-new"/>
-      <updated>2012-09-01T05:00:00.732Z</updated>
+      <updated>2012-09-01T05:00:00.733Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -610,7 +610,7 @@
       <id>https://steveklabnik.com/writing//writing/new-blog--words</id>
       <title>New blog: Words</title>
       <link href="/writing/new-blog--words"/>
-      <updated>2012-08-31T05:00:00.732Z</updated>
+      <updated>2012-08-31T05:00:00.734Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -625,7 +625,7 @@
       <id>https://steveklabnik.com/writing//writing/dayz</id>
       <title>DayZ</title>
       <link href="/writing/dayz"/>
-      <updated>2012-07-25T05:00:00.732Z</updated>
+      <updated>2012-07-25T05:00:00.735Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -640,7 +640,7 @@
       <id>https://steveklabnik.com/writing//writing/sparrow</id>
       <title>Sparrow</title>
       <link href="/writing/sparrow"/>
-      <updated>2012-07-21T05:00:00.732Z</updated>
+      <updated>2012-07-21T05:00:00.735Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -655,7 +655,7 @@
       <id>https://steveklabnik.com/writing//writing/why-i-don-t-like-factory_girl</id>
       <title>Why I don&apos;t like factory_girl</title>
       <link href="/writing/why-i-don-t-like-factory_girl"/>
-      <updated>2012-07-14T05:00:00.732Z</updated>
+      <updated>2012-07-14T05:00:00.735Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -670,7 +670,7 @@
       <id>https://steveklabnik.com/writing//writing/how-can-i-contribute-to-ruby-on-rails-</id>
       <title>How can I contribute to Ruby on Rails?</title>
       <link href="/writing/how-can-i-contribute-to-ruby-on-rails-"/>
-      <updated>2012-07-05T05:00:00.732Z</updated>
+      <updated>2012-07-05T05:00:00.735Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -685,7 +685,7 @@
       <id>https://steveklabnik.com/writing//writing/introducing-issue2pr</id>
       <title>Introducing issue2pr</title>
       <link href="/writing/introducing-issue2pr"/>
-      <updated>2012-06-29T05:00:00.733Z</updated>
+      <updated>2012-06-29T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -700,7 +700,7 @@
       <id>https://steveklabnik.com/writing//writing/show-solidarity-to-all-who-resist</id>
       <title>Show solidarity to all who resist</title>
       <link href="/writing/show-solidarity-to-all-who-resist"/>
-      <updated>2012-05-31T05:00:00.733Z</updated>
+      <updated>2012-05-31T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -715,7 +715,7 @@
       <id>https://steveklabnik.com/writing//writing/finale</id>
       <title>Finale</title>
       <link href="/writing/finale"/>
-      <updated>2012-05-30T05:00:00.733Z</updated>
+      <updated>2012-05-30T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -730,7 +730,7 @@
       <id>https://steveklabnik.com/writing//writing/shoes-4-work-is-starting--get-involved</id>
       <title>Shoes 4 work is starting: get involved!</title>
       <link href="/writing/shoes-4-work-is-starting--get-involved"/>
-      <updated>2012-05-25T05:00:00.733Z</updated>
+      <updated>2012-05-25T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -745,7 +745,7 @@
       <id>https://steveklabnik.com/writing//writing/mixins--a-refactoring-anti-pattern</id>
       <title>Mixins: a refactoring anti-pattern</title>
       <link href="/writing/mixins--a-refactoring-anti-pattern"/>
-      <updated>2012-05-07T05:00:00.733Z</updated>
+      <updated>2012-05-07T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -760,7 +760,7 @@
       <id>https://steveklabnik.com/writing//writing/on-the-eve-of--m1gs</id>
       <title>On the eve of #m1gs</title>
       <link href="/writing/on-the-eve-of--m1gs"/>
-      <updated>2012-04-30T05:00:00.733Z</updated>
+      <updated>2012-04-30T05:00:00.736Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -775,7 +775,7 @@
       <id>https://steveklabnik.com/writing//writing/cards-for-dad--follow-up</id>
       <title>Cards for dad - follow-up</title>
       <link href="/writing/cards-for-dad--follow-up"/>
-      <updated>2012-04-22T05:00:00.733Z</updated>
+      <updated>2012-04-22T05:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -790,7 +790,7 @@
       <id>https://steveklabnik.com/writing//writing/building-storeengine</id>
       <title>Building StoreEngine</title>
       <link href="/writing/building-storeengine"/>
-      <updated>2012-04-05T05:00:00.734Z</updated>
+      <updated>2012-04-05T05:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -805,7 +805,7 @@
       <id>https://steveklabnik.com/writing//writing/about-antisocialne-ws</id>
       <title>About antisocialne.ws</title>
       <link href="/writing/about-antisocialne-ws"/>
-      <updated>2012-04-03T05:00:00.734Z</updated>
+      <updated>2012-04-03T05:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -820,7 +820,7 @@
       <id>https://steveklabnik.com/writing//writing/anti-capitalism-101</id>
       <title>Anti-capitalism 101</title>
       <link href="/writing/anti-capitalism-101"/>
-      <updated>2012-03-31T05:00:00.734Z</updated>
+      <updated>2012-03-31T05:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -835,7 +835,7 @@
       <id>https://steveklabnik.com/writing//writing/birthday-cards-for-dad</id>
       <title>Birthday cards for Dad</title>
       <link href="/writing/birthday-cards-for-dad"/>
-      <updated>2012-03-26T05:00:00.734Z</updated>
+      <updated>2012-03-26T05:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -850,7 +850,7 @@
       <id>https://steveklabnik.com/writing//writing/transmuting-philosophy-into-machinery</id>
       <title>Transmuting Philosophy into Machinery</title>
       <link href="/writing/transmuting-philosophy-into-machinery"/>
-      <updated>2012-03-08T06:00:00.734Z</updated>
+      <updated>2012-03-08T06:00:00.737Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -865,7 +865,7 @@
       <id>https://steveklabnik.com/writing//writing/hypermedia-api-reading-list</id>
       <title>Hypermedia API reading list</title>
       <link href="/writing/hypermedia-api-reading-list"/>
-      <updated>2012-02-27T06:00:00.734Z</updated>
+      <updated>2012-02-27T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -880,7 +880,7 @@
       <id>https://steveklabnik.com/writing//writing/rest-is-over</id>
       <title>REST is over</title>
       <link href="/writing/rest-is-over"/>
-      <updated>2012-02-23T06:00:00.734Z</updated>
+      <updated>2012-02-23T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -895,7 +895,7 @@
       <id>https://steveklabnik.com/writing//writing/two-pomodoros</id>
       <title>Two pomodoros</title>
       <link href="/writing/two-pomodoros"/>
-      <updated>2012-02-22T06:00:00.735Z</updated>
+      <updated>2012-02-22T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -910,7 +910,7 @@
       <id>https://steveklabnik.com/writing//writing/an-api-ontology</id>
       <title>An API ontology</title>
       <link href="/writing/an-api-ontology"/>
-      <updated>2012-02-13T06:00:00.735Z</updated>
+      <updated>2012-02-13T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -925,7 +925,7 @@
       <id>https://steveklabnik.com/writing//writing/introducing-metadown</id>
       <title>Introducing metadown</title>
       <link href="/writing/introducing-metadown"/>
-      <updated>2012-01-23T06:00:00.735Z</updated>
+      <updated>2012-01-23T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -940,7 +940,7 @@
       <id>https://steveklabnik.com/writing//writing/moving-from-sinatra-to-rails</id>
       <title>Moving from Sinatra to Rails</title>
       <link href="/writing/moving-from-sinatra-to-rails"/>
-      <updated>2012-01-17T06:00:00.735Z</updated>
+      <updated>2012-01-17T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -955,7 +955,7 @@
       <id>https://steveklabnik.com/writing//writing/implementing-hateoas-with-presenters</id>
       <title>Implementing HATEOS with presenters</title>
       <link href="/writing/implementing-hateoas-with-presenters"/>
-      <updated>2012-01-06T06:00:00.735Z</updated>
+      <updated>2012-01-06T06:00:00.738Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -970,7 +970,7 @@
       <id>https://steveklabnik.com/writing//writing/active-record-considered-harmful</id>
       <title>ActiveRecord considered harmful</title>
       <link href="/writing/active-record-considered-harmful"/>
-      <updated>2011-12-30T06:00:00.735Z</updated>
+      <updated>2011-12-30T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -985,7 +985,7 @@
       <id>https://steveklabnik.com/writing//writing/devise-actioncontroller-routingerror-no-route-matches-get-slash-users-slash-sign-out</id>
       <title>Devise: ActionController::RoutingError (No Route Matches [GET] /users/sign_out)</title>
       <link href="/writing/devise-actioncontroller-routingerror-no-route-matches-get-slash-users-slash-sign-out"/>
-      <updated>2011-12-22T06:00:00.735Z</updated>
+      <updated>2011-12-22T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1000,7 +1000,7 @@
       <id>https://steveklabnik.com/writing//writing/redcarpet-is-awesome</id>
       <title>Redcarpet is awesome</title>
       <link href="/writing/redcarpet-is-awesome"/>
-      <updated>2011-12-21T06:00:00.736Z</updated>
+      <updated>2011-12-21T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1015,7 +1015,7 @@
       <id>https://steveklabnik.com/writing//writing/write-better-cukes-with-the-rel-attribute</id>
       <title>Write better cukes with the rel attribute</title>
       <link href="/writing/write-better-cukes-with-the-rel-attribute"/>
-      <updated>2011-12-20T06:00:00.736Z</updated>
+      <updated>2011-12-20T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1030,7 +1030,7 @@
       <id>https://steveklabnik.com/writing//writing/marx-anarchism-and-web-standards</id>
       <title>Marx, anarchism, and web standards</title>
       <link href="/writing/marx-anarchism-and-web-standards"/>
-      <updated>2011-12-15T06:00:00.736Z</updated>
+      <updated>2011-12-15T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1045,7 +1045,7 @@
       <id>https://steveklabnik.com/writing//writing/fast-rails-tests-with-cancan</id>
       <title>Fast Rails tests with CanCan</title>
       <link href="/writing/fast-rails-tests-with-cancan"/>
-      <updated>2011-12-12T06:00:00.736Z</updated>
+      <updated>2011-12-12T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1060,7 +1060,7 @@
       <id>https://steveklabnik.com/writing//writing/book-review-new-programmers-survival-manual</id>
       <title>Book review: New Programmer&apos;s Survival Manual</title>
       <link href="/writing/book-review-new-programmers-survival-manual"/>
-      <updated>2011-11-28T06:00:00.736Z</updated>
+      <updated>2011-11-28T06:00:00.739Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1075,7 +1075,7 @@
       <id>https://steveklabnik.com/writing//writing/burnout</id>
       <title>Burnout</title>
       <link href="/writing/burnout"/>
-      <updated>2011-11-17T06:00:00.736Z</updated>
+      <updated>2011-11-17T06:00:00.740Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1090,7 +1090,7 @@
       <id>https://steveklabnik.com/writing//writing/your-startup-is-not-a-platform</id>
       <title>Your startup is not a platform</title>
       <link href="/writing/your-startup-is-not-a-platform"/>
-      <updated>2011-10-25T05:00:00.736Z</updated>
+      <updated>2011-10-25T05:00:00.740Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1105,7 +1105,7 @@
       <id>https://steveklabnik.com/writing//writing/for-science-im-killing-my-cell-phone</id>
       <title>For science: I&apos;m killing my cell phone</title>
       <link href="/writing/for-science-im-killing-my-cell-phone"/>
-      <updated>2011-10-19T05:00:00.736Z</updated>
+      <updated>2011-10-19T05:00:00.740Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1120,7 +1120,7 @@
       <id>https://steveklabnik.com/writing//writing/matz-is-nice-so-we-are-nice</id>
       <title>Matz is nice so we are nice</title>
       <link href="/writing/matz-is-nice-so-we-are-nice"/>
-      <updated>2011-10-19T05:00:00.737Z</updated>
+      <updated>2011-10-19T05:00:00.740Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1135,7 +1135,7 @@
       <id>https://steveklabnik.com/writing//writing/rubinius-is-awesome</id>
       <title>Rubinius is awesome</title>
       <link href="/writing/rubinius-is-awesome"/>
-      <updated>2011-10-04T05:00:00.737Z</updated>
+      <updated>2011-10-04T05:00:00.740Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1150,7 +1150,7 @@
       <id>https://steveklabnik.com/writing//writing/github-is-anarchy-for-programmers</id>
       <title>GitHub is anarchy for programmers</title>
       <link href="/writing/github-is-anarchy-for-programmers"/>
-      <updated>2011-10-01T05:00:00.737Z</updated>
+      <updated>2011-10-01T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1165,7 +1165,7 @@
       <id>https://steveklabnik.com/writing//writing/real-modern-ruby-development</id>
       <title>Real, modern Ruby development</title>
       <link href="/writing/real-modern-ruby-development"/>
-      <updated>2011-09-28T05:00:00.737Z</updated>
+      <updated>2011-09-28T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1180,7 +1180,7 @@
       <id>https://steveklabnik.com/writing//writing/im-deleting-my-facebook-tonight</id>
       <title>I&apos;m deleting my Facebook tonight</title>
       <link href="/writing/im-deleting-my-facebook-tonight"/>
-      <updated>2011-09-26T05:00:00.737Z</updated>
+      <updated>2011-09-26T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1195,7 +1195,7 @@
       <id>https://steveklabnik.com/writing//writing/more-rstat-dot-us-refactoring</id>
       <title>More</title>
       <link href="/writing/more-rstat-dot-us-refactoring"/>
-      <updated>2011-09-23T05:00:00.737Z</updated>
+      <updated>2011-09-23T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1210,7 +1210,7 @@
       <id>https://steveklabnik.com/writing//writing/extracting-domain-models-a-practical-example</id>
       <title>Extracting domain models: a practical example</title>
       <link href="/writing/extracting-domain-models-a-practical-example"/>
-      <updated>2011-09-22T05:00:00.737Z</updated>
+      <updated>2011-09-22T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1225,7 +1225,7 @@
       <id>https://steveklabnik.com/writing//writing/better-ruby-presenters</id>
       <title>Better Ruby Presenters</title>
       <link href="/writing/better-ruby-presenters"/>
-      <updated>2011-09-09T05:00:00.738Z</updated>
+      <updated>2011-09-09T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1240,7 +1240,7 @@
       <id>https://steveklabnik.com/writing//writing/the-secret-to-rails-oo-design</id>
       <title>The secret to Rails OO design</title>
       <link href="/writing/the-secret-to-rails-oo-design"/>
-      <updated>2011-09-06T05:00:00.738Z</updated>
+      <updated>2011-09-06T05:00:00.741Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1255,7 +1255,7 @@
       <id>https://steveklabnik.com/writing//writing/the-self-improvement-pomodoro</id>
       <title>The self improvement pomodoro</title>
       <link href="/writing/the-self-improvement-pomodoro"/>
-      <updated>2011-09-04T05:00:00.738Z</updated>
+      <updated>2011-09-04T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1270,7 +1270,7 @@
       <id>https://steveklabnik.com/writing//writing/im-making-it-dead-simple-to-contribute-to-ruby-s-documentation</id>
       <title>I&apos;m making it dead simple to contribute to Ruby&apos;s documentation</title>
       <link href="/writing/im-making-it-dead-simple-to-contribute-to-ruby-s-documentation"/>
-      <updated>2011-08-22T05:00:00.738Z</updated>
+      <updated>2011-08-22T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1285,7 +1285,7 @@
       <id>https://steveklabnik.com/writing//writing/we-forget-that-open-source-is-made-of-people</id>
       <title>We forget that open source is made of people</title>
       <link href="/writing/we-forget-that-open-source-is-made-of-people"/>
-      <updated>2011-08-12T05:00:00.738Z</updated>
+      <updated>2011-08-12T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1300,7 +1300,7 @@
       <id>https://steveklabnik.com/writing//writing/some-people-understand-rest-and-http</id>
       <title>Some people understand REST and HTTP</title>
       <link href="/writing/some-people-understand-rest-and-http"/>
-      <updated>2011-08-07T05:00:00.738Z</updated>
+      <updated>2011-08-07T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1315,7 +1315,7 @@
       <id>https://steveklabnik.com/writing//writing/twitter-is-to-important-to-be-owned-by-twitter</id>
       <title>Twitter is too important to be owned by Twitter</title>
       <link href="/writing/twitter-is-to-important-to-be-owned-by-twitter"/>
-      <updated>2011-07-24T05:00:00.738Z</updated>
+      <updated>2011-07-24T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1330,7 +1330,7 @@
       <id>https://steveklabnik.com/writing//writing/nobody-understands-rest-or-http</id>
       <title>Nobody understands REST or HTTP</title>
       <link href="/writing/nobody-understands-rest-or-http"/>
-      <updated>2011-07-03T05:00:00.738Z</updated>
+      <updated>2011-07-03T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1345,7 +1345,7 @@
       <id>https://steveklabnik.com/writing//writing/single-text-many-masters</id>
       <title>Single text, many masters</title>
       <link href="/writing/single-text-many-masters"/>
-      <updated>2011-05-21T05:00:00.739Z</updated>
+      <updated>2011-05-21T05:00:00.742Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1360,7 +1360,7 @@
       <id>https://steveklabnik.com/writing//writing/contributing-to-ruby-s-documentation</id>
       <title>Contributing to Ruby&apos;s documentation</title>
       <link href="/writing/contributing-to-ruby-s-documentation"/>
-      <updated>2011-05-20T05:00:00.739Z</updated>
+      <updated>2011-05-20T05:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1375,7 +1375,7 @@
       <id>https://steveklabnik.com/writing//writing/the-next-iteration-of-my-blog</id>
       <title>The next iteration of my blog</title>
       <link href="/writing/the-next-iteration-of-my-blog"/>
-      <updated>2011-05-12T05:00:00.739Z</updated>
+      <updated>2011-05-12T05:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1390,7 +1390,7 @@
       <id>https://steveklabnik.com/writing//writing/the-first-week-of-rstat-us-users-press-scaling-oh-my</id>
       <title>The first week of rstat.us: users, press, and scaling, oh my!</title>
       <link href="/writing/the-first-week-of-rstat-us-users-press-scaling-oh-my"/>
-      <updated>2011-03-30T05:00:00.739Z</updated>
+      <updated>2011-03-30T05:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1405,7 +1405,7 @@
       <id>https://steveklabnik.com/writing//writing/announcing-rstat-us</id>
       <title>Announcing rstat.us</title>
       <link href="/writing/announcing-rstat-us"/>
-      <updated>2011-03-23T05:00:00.739Z</updated>
+      <updated>2011-03-23T05:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1420,7 +1420,7 @@
       <id>https://steveklabnik.com/writing//writing/id-you-hear-i-m-ruby-mendicant-university-s-first-visiting-teacher</id>
       <title>Did you hear? I&apos;m Ruby Mendicant University&apos;s first visiting teacher</title>
       <link href="/writing/id-you-hear-i-m-ruby-mendicant-university-s-first-visiting-teacher"/>
-      <updated>2011-03-18T05:00:00.739Z</updated>
+      <updated>2011-03-18T05:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1435,7 +1435,7 @@
       <id>https://steveklabnik.com/writing//writing/i-m-quitting-hacker-news</id>
       <title>I&apos;m quitting Hacker News</title>
       <link href="/writing/i-m-quitting-hacker-news"/>
-      <updated>2011-03-03T06:00:00.740Z</updated>
+      <updated>2011-03-03T06:00:00.743Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1450,7 +1450,7 @@
       <id>https://steveklabnik.com/writing//writing/a-few-notes-on-foucault</id>
       <title>A few notes on Foucault</title>
       <link href="/writing/a-few-notes-on-foucault"/>
-      <updated>2011-01-22T06:00:00.740Z</updated>
+      <updated>2011-01-22T06:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1465,7 +1465,7 @@
       <id>https://steveklabnik.com/writing//writing/goals-for-2011</id>
       <title>Goals for 2011</title>
       <link href="/writing/goals-for-2011"/>
-      <updated>2011-01-02T06:00:00.740Z</updated>
+      <updated>2011-01-02T06:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1480,7 +1480,7 @@
       <id>https://steveklabnik.com/writing//writing/hackety-hack-v1-0</id>
       <title>Hackety Hack v1.0</title>
       <link href="/writing/hackety-hack-v1-0"/>
-      <updated>2010-12-25T06:00:00.740Z</updated>
+      <updated>2010-12-25T06:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1495,7 +1495,7 @@
       <id>https://steveklabnik.com/writing//writing/the-hardest-decision-i-ve-ever-made</id>
       <title>The hardest decision I&apos;ve ever made</title>
       <link href="/writing/the-hardest-decision-i-ve-ever-made"/>
-      <updated>2010-11-17T06:00:00.740Z</updated>
+      <updated>2010-11-17T06:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1510,7 +1510,7 @@
       <id>https://steveklabnik.com/writing//writing/trolling-is-a-art</id>
       <title>Trolling is a art</title>
       <link href="/writing/trolling-is-a-art"/>
-      <updated>2010-09-24T05:00:00.740Z</updated>
+      <updated>2010-09-24T05:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1525,7 +1525,7 @@
       <id>https://steveklabnik.com/writing//writing/80-of-success-is-showing-up</id>
       <title>80% of success is showing up</title>
       <link href="/writing/80-of-success-is-showing-up"/>
-      <updated>2010-09-21T05:00:00.740Z</updated>
+      <updated>2010-09-21T05:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1540,7 +1540,7 @@
       <id>https://steveklabnik.com/writing//writing/trouble-with-diaspora</id>
       <title>Trouble with Diaspora</title>
       <link href="/writing/trouble-with-diaspora"/>
-      <updated>2010-09-17T05:00:00.740Z</updated>
+      <updated>2010-09-17T05:00:00.744Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1555,7 +1555,7 @@
       <id>https://steveklabnik.com/writing//writing/a-word-about-why-whyday-and-hackety-hack</id>
       <title>A word about _why, Whyday, and Hackety Hack</title>
       <link href="/writing/a-word-about-why-whyday-and-hackety-hack"/>
-      <updated>2010-08-19T05:00:00.741Z</updated>
+      <updated>2010-08-19T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1570,7 +1570,7 @@
       <id>https://steveklabnik.com/writing//writing/a-blip-in-time</id>
       <title>A blip in time</title>
       <link href="/writing/a-blip-in-time"/>
-      <updated>2010-07-24T05:00:00.741Z</updated>
+      <updated>2010-07-24T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1585,7 +1585,7 @@
       <id>https://steveklabnik.com/writing//writing/case-study-in-being-excellent-divvy</id>
       <title>A case study in being excellent: Divvy</title>
       <link href="/writing/case-study-in-being-excellent-divvy"/>
-      <updated>2010-06-30T05:00:00.741Z</updated>
+      <updated>2010-06-30T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1600,7 +1600,7 @@
       <id>https://steveklabnik.com/writing//writing/productivity-waves</id>
       <title>Productivity Waves</title>
       <link href="/writing/productivity-waves"/>
-      <updated>2010-06-08T05:00:00.741Z</updated>
+      <updated>2010-06-08T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1615,7 +1615,7 @@
       <id>https://steveklabnik.com/writing//writing/you-are-terrified-of-your-own-children-since-they-are-natives-in-a-world-where-you-will-always-be-immigrants</id>
       <title>A Declaration of the Independence of Cyberspace</title>
       <link href="/writing/you-are-terrified-of-your-own-children-since-they-are-natives-in-a-world-where-you-will-always-be-immigrants"/>
-      <updated>2010-05-01T05:00:00.741Z</updated>
+      <updated>2010-05-01T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1630,7 +1630,7 @@
       <id>https://steveklabnik.com/writing//writing/a-break-with-the-past</id>
       <title>A break with the past</title>
       <link href="/writing/a-break-with-the-past"/>
-      <updated>2010-04-27T05:00:00.741Z</updated>
+      <updated>2010-04-27T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1645,7 +1645,7 @@
       <id>https://steveklabnik.com/writing//writing/living-in-the-cloud</id>
       <title>Living in the cloud</title>
       <link href="/writing/living-in-the-cloud"/>
-      <updated>2010-04-24T05:00:00.741Z</updated>
+      <updated>2010-04-24T05:00:00.745Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1660,7 +1660,7 @@
       <id>https://steveklabnik.com/writing//writing/book-review-rework</id>
       <title>Book review: Rework</title>
       <link href="/writing/book-review-rework"/>
-      <updated>2010-03-10T06:00:00.742Z</updated>
+      <updated>2010-03-10T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1675,7 +1675,7 @@
       <id>https://steveklabnik.com/writing//writing/create-a-more-compelling-experience-for-your-users-through-game-mechanics</id>
       <title>Create a more compelling experience for your users through game mechanics</title>
       <link href="/writing/create-a-more-compelling-experience-for-your-users-through-game-mechanics"/>
-      <updated>2010-03-08T06:00:00.742Z</updated>
+      <updated>2010-03-08T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1690,7 +1690,7 @@
       <id>https://steveklabnik.com/writing//writing/writing-a-su-feature-with-authlogic</id>
       <title>Writing a su feature with Authlogic</title>
       <link href="/writing/writing-a-su-feature-with-authlogic"/>
-      <updated>2010-03-05T06:00:00.742Z</updated>
+      <updated>2010-03-05T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1705,7 +1705,7 @@
       <id>https://steveklabnik.com/writing//writing/why-bother-creating</id>
       <title>Why bother creating?</title>
       <link href="/writing/why-bother-creating"/>
-      <updated>2010-03-03T06:00:00.742Z</updated>
+      <updated>2010-03-03T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1720,7 +1720,7 @@
       <id>https://steveklabnik.com/writing//writing/reddit-drama-an-interesting-look-at-community-values</id>
       <title>Reddit drama: an interesting look at community values</title>
       <link href="/writing/reddit-drama-an-interesting-look-at-community-values"/>
-      <updated>2010-03-01T06:00:00.742Z</updated>
+      <updated>2010-03-01T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1735,7 +1735,7 @@
       <id>https://steveklabnik.com/writing//writing/the-hackety-mainfesto</id>
       <title>The Hackety Manifesto</title>
       <link href="/writing/the-hackety-mainfesto"/>
-      <updated>2009-12-31T06:00:00.742Z</updated>
+      <updated>2009-12-31T06:00:00.746Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1750,7 +1750,7 @@
       <id>https://steveklabnik.com/writing//writing/the-little-coders-predicament</id>
       <title>The Little Coder&apos;s Predicament</title>
       <link href="/writing/the-little-coders-predicament"/>
-      <updated>2009-12-28T06:00:00.742Z</updated>
+      <updated>2009-12-28T06:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1765,7 +1765,7 @@
       <id>https://steveklabnik.com/writing//writing/about-crows</id>
       <title>About Crows</title>
       <link href="/writing/about-crows"/>
-      <updated>2009-12-02T06:00:00.742Z</updated>
+      <updated>2009-12-02T06:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1780,7 +1780,7 @@
       <id>https://steveklabnik.com/writing//writing/how-often-does-rust-change</id>
       <title>How often does Rust change?</title>
       <link href="/writing/how-often-does-rust-change"/>
-      <updated>2020-04-11T05:00:00.743Z</updated>
+      <updated>2020-04-11T05:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1795,7 +1795,7 @@
       <id>https://steveklabnik.com/writing//writing/c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers</id>
       <title>&quot;C is how the computer works&quot; is a dangerous mindset for C programmers</title>
       <link href="/writing/c-is-how-the-computer-works-is-a-dangerous-mindset-for-c-programmers"/>
-      <updated>2020-03-31T05:00:00.743Z</updated>
+      <updated>2020-03-31T05:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1810,7 +1810,7 @@
       <id>https://steveklabnik.com/writing//writing/a-sad-day-for-rust</id>
       <title>A sad day for Rust</title>
       <link href="/writing/a-sad-day-for-rust"/>
-      <updated>2020-01-17T06:00:00.743Z</updated>
+      <updated>2020-01-17T06:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1825,7 +1825,7 @@
       <id>https://steveklabnik.com/writing//writing/c-is-not-how-the-computer-works-can-lead-to-inefficient-code</id>
       <title>&quot;C is not how the computer works&quot; can lead to inefficient code</title>
       <link href="/writing/c-is-not-how-the-computer-works-can-lead-to-inefficient-code"/>
-      <updated>2019-10-25T05:00:00.743Z</updated>
+      <updated>2019-10-25T05:00:00.747Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1840,7 +1840,7 @@
       <id>https://steveklabnik.com/writing//writing/porting-steveklabnik-com-to-workers-sites-and-zola</id>
       <title>Porting</title>
       <link href="/writing/porting-steveklabnik-com-to-workers-sites-and-zola"/>
-      <updated>2019-09-26T05:00:00.743Z</updated>
+      <updated>2019-09-26T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1855,7 +1855,7 @@
       <id>https://steveklabnik.com/writing//writing/i-m-joining-cloudflare</id>
       <title>I&apos;m joining Cloudflare</title>
       <link href="/writing/i-m-joining-cloudflare"/>
-      <updated>2019-04-05T05:00:00.743Z</updated>
+      <updated>2019-04-05T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1870,7 +1870,7 @@
       <id>https://steveklabnik.com/writing//writing/what-comes-after-open-source</id>
       <title>What comes after open source</title>
       <link href="/writing/what-comes-after-open-source"/>
-      <updated>2019-04-02T05:00:00.743Z</updated>
+      <updated>2019-04-02T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1885,7 +1885,7 @@
       <id>https://steveklabnik.com/writing//writing/rust-has-finally-outgrown-me</id>
       <title>Rust has finally outgrown me</title>
       <link href="/writing/rust-has-finally-outgrown-me"/>
-      <updated>2019-03-29T05:00:00.743Z</updated>
+      <updated>2019-03-29T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1900,7 +1900,7 @@
       <id>https://steveklabnik.com/writing//writing/the-culture-war-at-the-heart-of-open-source</id>
       <title>The culture war at the heart of open source</title>
       <link href="/writing/the-culture-war-at-the-heart-of-open-source"/>
-      <updated>2019-03-26T05:00:00.744Z</updated>
+      <updated>2019-03-26T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1915,7 +1915,7 @@
       <id>https://steveklabnik.com/writing//writing/learning-ada</id>
       <title>Learning Ada</title>
       <link href="/writing/learning-ada"/>
-      <updated>2019-03-26T05:00:00.744Z</updated>
+      <updated>2019-03-26T05:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1930,7 +1930,7 @@
       <id>https://steveklabnik.com/writing//writing/what-s-next-for-semver</id>
       <title>What&apos;s next for SemVer</title>
       <link href="/writing/what-s-next-for-semver"/>
-      <updated>2019-02-11T06:00:00.744Z</updated>
+      <updated>2019-02-11T06:00:00.748Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1945,7 +1945,7 @@
       <id>https://steveklabnik.com/writing//writing/thank-u-next</id>
       <title>thank u, next</title>
       <link href="/writing/thank-u-next"/>
-      <updated>2019-01-06T06:00:00.744Z</updated>
+      <updated>2019-01-06T06:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1960,7 +1960,7 @@
       <id>https://steveklabnik.com/writing//writing/thoughts-on-rust-in-2019</id>
       <title>Thoughts on Rust in 2019</title>
       <link href="/writing/thoughts-on-rust-in-2019"/>
-      <updated>2018-12-27T06:00:00.744Z</updated>
+      <updated>2018-12-27T06:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1975,7 +1975,7 @@
       <id>https://steveklabnik.com/writing//writing/six-years-with-rust</id>
       <title>Six years with Rust</title>
       <link href="/writing/six-years-with-rust"/>
-      <updated>2018-12-21T06:00:00.744Z</updated>
+      <updated>2018-12-21T06:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -1990,7 +1990,7 @@
       <id>https://steveklabnik.com/writing//writing/why-is-clojure-so-stable</id>
       <title>Why is Clojure so stable?</title>
       <link href="/writing/why-is-clojure-so-stable"/>
-      <updated>2018-12-18T06:00:00.744Z</updated>
+      <updated>2018-12-18T06:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2005,7 +2005,7 @@
       <id>https://steveklabnik.com/writing//writing/borrow-checking-escape-analysis-and-the-generational-hypothesis</id>
       <title>Borrow checking, escape analysis, and the generational hypothesis</title>
       <link href="/writing/borrow-checking-escape-analysis-and-the-generational-hypothesis"/>
-      <updated>2018-10-10T05:00:00.745Z</updated>
+      <updated>2018-10-10T05:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2020,7 +2020,7 @@
       <id>https://steveklabnik.com/writing//writing/who-authors-the-most-popular-crates-on-crates-io</id>
       <title>Who authors the most popular crates on crates.io?</title>
       <link href="/writing/who-authors-the-most-popular-crates-on-crates-io"/>
-      <updated>2018-10-04T05:00:00.745Z</updated>
+      <updated>2018-10-04T05:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2035,7 +2035,7 @@
       <id>https://steveklabnik.com/writing//writing/should-you-learn-c-to-learn-how-the-computer-works</id>
       <title>Should you learn C to &quot;learn how the computer works&quot;?</title>
       <link href="/writing/should-you-learn-c-to-learn-how-the-computer-works"/>
-      <updated>2018-10-02T05:00:00.745Z</updated>
+      <updated>2018-10-02T05:00:00.749Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2050,7 +2050,7 @@
       <id>https://steveklabnik.com/writing//writing/you-can-t-turn-off-the-borrow-checker-in-rust</id>
       <title>You can&apos;t &quot;turn off the borrow checker&quot; in Rust</title>
       <link href="/writing/you-can-t-turn-off-the-borrow-checker-in-rust"/>
-      <updated>2018-09-14T05:00:00.745Z</updated>
+      <updated>2018-09-14T05:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2065,7 +2065,7 @@
       <id>https://steveklabnik.com/writing//writing/is-webassembly-the-return-of-java-applets-flash</id>
       <title>Is WebAssembly the return of Java Applets &amp; Flash?</title>
       <link href="/writing/is-webassembly-the-return-of-java-applets-flash"/>
-      <updated>2018-07-25T05:00:00.745Z</updated>
+      <updated>2018-07-25T05:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2080,7 +2080,7 @@
       <id>https://steveklabnik.com/writing//writing/webassembly-is-more-than-just-the-web</id>
       <title>WebAssembly is more than just the web</title>
       <link href="/writing/webassembly-is-more-than-just-the-web"/>
-      <updated>2018-07-13T05:00:00.745Z</updated>
+      <updated>2018-07-13T05:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2095,7 +2095,7 @@
       <id>https://steveklabnik.com/writing//writing/the-expressive-c-17-coding-challenge-in-rust-revisited</id>
       <title>&quot;The Expressive C++17 Coding Challenge (in Rust)&quot; revisited</title>
       <link href="/writing/the-expressive-c-17-coding-challenge-in-rust-revisited"/>
-      <updated>2018-02-14T06:00:00.745Z</updated>
+      <updated>2018-02-14T06:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2110,7 +2110,7 @@
       <id>https://steveklabnik.com/writing//writing/2-sup-5</id>
       <title>0b100000</title>
       <link href="/writing/2-sup-5"/>
-      <updated>2018-01-25T06:00:00.746Z</updated>
+      <updated>2018-01-25T06:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2125,7 +2125,7 @@
       <id>https://steveklabnik.com/writing//writing/looking-back-at-rust-in-2018</id>
       <title>Looking back at Rust in 2018</title>
       <link href="/writing/looking-back-at-rust-in-2018"/>
-      <updated>2018-01-09T06:00:00.746Z</updated>
+      <updated>2018-01-09T06:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2140,7 +2140,7 @@
       <id>https://steveklabnik.com/writing//writing/five-years-with-rust</id>
       <title>Five years with Rust</title>
       <link href="/writing/five-years-with-rust"/>
-      <updated>2017-12-21T06:00:00.746Z</updated>
+      <updated>2017-12-21T06:00:00.750Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2155,7 +2155,7 @@
       <id>https://steveklabnik.com/writing//writing/user-agent-moz-a</id>
       <title>User-Agent: moz://a</title>
       <link href="/writing/user-agent-moz-a"/>
-      <updated>2017-12-12T06:00:00.746Z</updated>
+      <updated>2017-12-12T06:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2170,7 +2170,7 @@
       <id>https://steveklabnik.com/writing//writing/the-expressive-c-17-coding-challenge-in-rust</id>
       <title>&quot;The Expressive C++17 Coding Challenge&quot; in Rust</title>
       <link href="/writing/the-expressive-c-17-coding-challenge-in-rust"/>
-      <updated>2017-10-25T05:00:00.746Z</updated>
+      <updated>2017-10-25T05:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2185,7 +2185,7 @@
       <id>https://steveklabnik.com/writing//writing/want-to-join-the-rust-docs-team</id>
       <title>Want to join the Rust docs team?</title>
       <link href="/writing/want-to-join-the-rust-docs-team"/>
-      <updated>2017-03-24T05:00:00.746Z</updated>
+      <updated>2017-03-24T05:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2200,7 +2200,7 @@
       <id>https://steveklabnik.com/writing//writing/an-overview-of-macros-in-rust</id>
       <title>An overview of macros in Rust</title>
       <link href="/writing/an-overview-of-macros-in-rust"/>
-      <updated>2017-01-24T06:00:00.746Z</updated>
+      <updated>2017-01-24T06:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2215,7 +2215,7 @@
       <id>https://steveklabnik.com/writing//writing/announcing-rust-contributors</id>
       <title>Announcing Rust Contributors</title>
       <link href="/writing/announcing-rust-contributors"/>
-      <updated>2017-01-12T06:00:00.747Z</updated>
+      <updated>2017-01-12T06:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2230,7 +2230,7 @@
       <id>https://steveklabnik.com/writing//writing/fire-mario-not-fire-flowers</id>
       <title>Fire Mario not fire flowers</title>
       <link href="/writing/fire-mario-not-fire-flowers"/>
-      <updated>2016-12-29T06:00:00.747Z</updated>
+      <updated>2016-12-29T06:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2245,7 +2245,7 @@
       <id>https://steveklabnik.com/writing//writing/rust-is-more-than-safety</id>
       <title>Rust is more than safety</title>
       <link href="/writing/rust-is-more-than-safety"/>
-      <updated>2016-12-28T06:00:00.747Z</updated>
+      <updated>2016-12-28T06:00:00.751Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2260,7 +2260,7 @@
       <id>https://steveklabnik.com/writing//writing/four-years-with-rust</id>
       <title>Four years with Rust</title>
       <link href="/writing/four-years-with-rust"/>
-      <updated>2016-12-21T06:00:00.747Z</updated>
+      <updated>2016-12-21T06:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2275,7 +2275,7 @@
       <id>https://steveklabnik.com/writing//writing/whats-new-with-the-rust-programming-language</id>
       <title>What&apos;s new with &quot;The Rust Programming Language&quot;</title>
       <link href="/writing/whats-new-with-the-rust-programming-language"/>
-      <updated>2016-08-15T05:00:00.747Z</updated>
+      <updated>2016-08-15T05:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2290,7 +2290,7 @@
       <id>https://steveklabnik.com/writing//writing/structure-literals-vs-constructors-in-rust</id>
       <title>Structure literals vs. constructors in Rust</title>
       <link href="/writing/structure-literals-vs-constructors-in-rust"/>
-      <updated>2016-07-26T05:00:00.747Z</updated>
+      <updated>2016-07-26T05:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2305,7 +2305,7 @@
       <id>https://steveklabnik.com/writing//writing/a-eulogy-for-my-20s</id>
       <title>A eulogy for my 20s</title>
       <link href="/writing/a-eulogy-for-my-20s"/>
-      <updated>2016-01-24T06:00:00.747Z</updated>
+      <updated>2016-01-24T06:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2320,7 +2320,7 @@
       <id>https://steveklabnik.com/writing//writing/docember</id>
       <title>Docember</title>
       <link href="/writing/docember"/>
-      <updated>2015-12-01T06:00:00.748Z</updated>
+      <updated>2015-12-01T06:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2335,7 +2335,7 @@
       <id>https://steveklabnik.com/writing//writing/rescuing-resque-again</id>
       <title>Rescuing Resque (again)</title>
       <link href="/writing/rescuing-resque-again"/>
-      <updated>2015-10-28T05:00:00.748Z</updated>
+      <updated>2015-10-28T05:00:00.752Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2350,7 +2350,7 @@
       <id>https://steveklabnik.com/writing//writing/the-rust-programming-language-will-be-published-by-no-starch-press</id>
       <title>&quot;The Rust Programming Language&quot; will be published by No Starch Press</title>
       <link href="/writing/the-rust-programming-language-will-be-published-by-no-starch-press"/>
-      <updated>2015-09-08T05:00:00.748Z</updated>
+      <updated>2015-09-08T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2365,7 +2365,7 @@
       <id>https://steveklabnik.com/writing//writing/community-versions-for-rust</id>
       <title>Community Versions for Rust</title>
       <link href="/writing/community-versions-for-rust"/>
-      <updated>2015-08-23T05:00:00.748Z</updated>
+      <updated>2015-08-23T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2380,7 +2380,7 @@
       <id>https://steveklabnik.com/writing//writing/the-language-strangeness-budget</id>
       <title>The language strangeness budget</title>
       <link href="/writing/the-language-strangeness-budget"/>
-      <updated>2015-06-26T05:00:00.748Z</updated>
+      <updated>2015-06-26T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2395,7 +2395,7 @@
       <id>https://steveklabnik.com/writing//writing/ouroboros</id>
       <title>Ouroboros</title>
       <link href="/writing/ouroboros"/>
-      <updated>2015-05-18T05:00:00.748Z</updated>
+      <updated>2015-05-18T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2410,7 +2410,7 @@
       <id>https://steveklabnik.com/writing//writing/hope</id>
       <title>Hope</title>
       <link href="/writing/hope"/>
-      <updated>2015-05-08T05:00:00.748Z</updated>
+      <updated>2015-05-08T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2425,7 +2425,7 @@
       <id>https://steveklabnik.com/writing//writing/an-introduction-to-economics-under-capitalism</id>
       <title>An introduction to economics under capitalism</title>
       <link href="/writing/an-introduction-to-economics-under-capitalism"/>
-      <updated>2015-03-10T05:00:00.749Z</updated>
+      <updated>2015-03-10T05:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2440,7 +2440,7 @@
       <id>https://steveklabnik.com/writing//writing/a-new-introduction-to-rust</id>
       <title>A new introduction to Rust</title>
       <link href="/writing/a-new-introduction-to-rust"/>
-      <updated>2015-02-27T06:00:00.749Z</updated>
+      <updated>2015-02-27T06:00:00.753Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2455,7 +2455,7 @@
       <id>https://steveklabnik.com/writing//writing/update-github-pages-with-travis-ci</id>
       <title>Update GitHub Pages with Travis CI</title>
       <link href="/writing/update-github-pages-with-travis-ci"/>
-      <updated>2014-12-16T06:00:00.749Z</updated>
+      <updated>2014-12-16T06:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2470,7 +2470,7 @@
       <id>https://steveklabnik.com/writing//writing/im-going-writeonly-on-twitter-for-a-while</id>
       <title>I&apos;m going writeonly on Twitter for a while</title>
       <link href="/writing/im-going-writeonly-on-twitter-for-a-while"/>
-      <updated>2014-09-03T05:00:00.749Z</updated>
+      <updated>2014-09-03T05:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2485,7 +2485,7 @@
       <id>https://steveklabnik.com/writing//writing/rusts-documentation-is-about-to-drastically-improve</id>
       <title>Rust&apos;s documentation is about to drastically improve</title>
       <link href="/writing/rusts-documentation-is-about-to-drastically-improve"/>
-      <updated>2014-06-16T05:00:00.749Z</updated>
+      <updated>2014-06-16T05:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2500,7 +2500,7 @@
       <id>https://steveklabnik.com/writing//writing/sf</id>
       <title>SF</title>
       <link href="/writing/sf"/>
-      <updated>2014-05-20T05:00:00.749Z</updated>
+      <updated>2014-05-20T05:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2515,7 +2515,7 @@
       <id>https://steveklabnik.com/writing//writing/hypermedia-fizzbuzz</id>
       <title>Hypermedia FizzBuzz</title>
       <link href="/writing/hypermedia-fizzbuzz"/>
-      <updated>2014-05-02T05:00:00.749Z</updated>
+      <updated>2014-05-02T05:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2530,7 +2530,7 @@
       <id>https://steveklabnik.com/writing//writing/how-to-be-an-open-source-gardener</id>
       <title>How to be an open source gardener</title>
       <link href="/writing/how-to-be-an-open-source-gardener"/>
-      <updated>2014-04-14T05:00:00.750Z</updated>
+      <updated>2014-04-14T05:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2545,7 +2545,7 @@
       <id>https://steveklabnik.com/writing//writing/is-npm-worth-26mm</id>
       <title>Is npm worth 26MM?</title>
       <link href="/writing/is-npm-worth-26mm"/>
-      <updated>2014-02-12T06:00:00.750Z</updated>
+      <updated>2014-02-12T06:00:00.754Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2560,7 +2560,7 @@
       <id>https://steveklabnik.com/writing//writing/a-30-minute-introduction-to-rust</id>
       <title>A 30 minute introduction to Rust</title>
       <link href="/writing/a-30-minute-introduction-to-rust"/>
-      <updated>2014-01-11T06:00:00.750Z</updated>
+      <updated>2014-01-11T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2575,7 +2575,7 @@
       <id>https://steveklabnik.com/writing//writing/rust-is-surprisingly-expressive</id>
       <title>Rust is surprisingly expressive</title>
       <link href="/writing/rust-is-surprisingly-expressive"/>
-      <updated>2013-12-28T06:00:00.750Z</updated>
+      <updated>2013-12-28T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2590,7 +2590,7 @@
       <id>https://steveklabnik.com/writing//writing/how-dogecoin-changed-my-perspective-on-cryptocurrency</id>
       <title>How Dogecoin changed my perspective on cryptocurrency</title>
       <link href="/writing/how-dogecoin-changed-my-perspective-on-cryptocurrency"/>
-      <updated>2013-12-21T06:00:00.750Z</updated>
+      <updated>2013-12-21T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2605,7 +2605,7 @@
       <id>https://steveklabnik.com/writing//writing/git-history-modification-and-libuv</id>
       <title>2013-11-30-git-history-modification-and-libuv</title>
       <link href="/writing/git-history-modification-and-libuv"/>
-      <updated>2013-11-30T06:00:00.750Z</updated>
+      <updated>2013-11-30T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2620,7 +2620,7 @@
       <id>https://steveklabnik.com/writing//writing/why-im-partnering-with-balanced</id>
       <title>Why I&apos;m partnering with Balanced</title>
       <link href="/writing/why-im-partnering-with-balanced"/>
-      <updated>2013-11-21T06:00:00.750Z</updated>
+      <updated>2013-11-21T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2635,7 +2635,7 @@
       <id>https://steveklabnik.com/writing//writing/on-leftist-infighting</id>
       <title>On leftist infighting</title>
       <link href="/writing/on-leftist-infighting"/>
-      <updated>2013-11-18T06:00:00.751Z</updated>
+      <updated>2013-11-18T06:00:00.755Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2650,7 +2650,7 @@
       <id>https://steveklabnik.com/writing//writing/abstract-vs-concrete</id>
       <title>Abstract vs concrete</title>
       <link href="/writing/abstract-vs-concrete"/>
-      <updated>2013-11-14T06:00:00.751Z</updated>
+      <updated>2013-11-14T06:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2665,7 +2665,7 @@
       <id>https://steveklabnik.com/writing//writing/pointers-in-rust-a-guide</id>
       <title>Pointers in Rust, a guide</title>
       <link href="/writing/pointers-in-rust-a-guide"/>
-      <updated>2013-10-18T05:00:00.751Z</updated>
+      <updated>2013-10-18T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2680,7 +2680,7 @@
       <id>https://steveklabnik.com/writing//writing/keep-saturdays-sacred</id>
       <title>Keep Saturdays sacred</title>
       <link href="/writing/keep-saturdays-sacred"/>
-      <updated>2013-09-28T05:00:00.751Z</updated>
+      <updated>2013-09-28T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2695,7 +2695,7 @@
       <id>https://steveklabnik.com/writing//writing/thankfulness</id>
       <title>Thankfulness</title>
       <link href="/writing/thankfulness"/>
-      <updated>2013-09-24T05:00:00.751Z</updated>
+      <updated>2013-09-24T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2710,7 +2710,7 @@
       <id>https://steveklabnik.com/writing//writing/just-the-regularly-scheduled-apocalypse</id>
       <title>Just the regularly scheduled apocalypse</title>
       <link href="/writing/just-the-regularly-scheduled-apocalypse"/>
-      <updated>2013-09-10T05:00:00.751Z</updated>
+      <updated>2013-09-10T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2725,7 +2725,7 @@
       <id>https://steveklabnik.com/writing//writing/the-closure-companion</id>
       <title>The CLOSURE companion</title>
       <link href="/writing/the-closure-companion"/>
-      <updated>2013-08-19T05:00:00.751Z</updated>
+      <updated>2013-08-19T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2740,7 +2740,7 @@
       <id>https://steveklabnik.com/writing//writing/emoji-licensing</id>
       <title>Emoji licensing</title>
       <link href="/writing/emoji-licensing"/>
-      <updated>2013-08-06T05:00:00.751Z</updated>
+      <updated>2013-08-06T05:00:00.756Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2755,7 +2755,7 @@
       <id>https://steveklabnik.com/writing//writing/beware-subclassing-ruby-core-classes</id>
       <title>Beware subclassing Ruby core classes</title>
       <link href="/writing/beware-subclassing-ruby-core-classes"/>
-      <updated>2013-07-24T05:00:00.752Z</updated>
+      <updated>2013-07-24T05:00:00.757Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2770,7 +2770,7 @@
       <id>https://steveklabnik.com/writing//writing/twitter-ghosts</id>
       <title>Twitter ghosts</title>
       <link href="/writing/twitter-ghosts"/>
-      <updated>2013-06-22T05:00:00.752Z</updated>
+      <updated>2013-06-22T05:00:00.757Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2785,7 +2785,7 @@
       <id>https://steveklabnik.com/writing//writing/returning-to-free-software-a-guide</id>
       <title>Returning to Free Software, a guide</title>
       <link href="/writing/returning-to-free-software-a-guide"/>
-      <updated>2013-06-15T05:00:00.752Z</updated>
+      <updated>2013-06-15T05:00:00.757Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2800,7 +2800,7 @@
       <id>https://steveklabnik.com/writing//writing/the-profile-link-relation-and-you</id>
       <title>The profile link relation and you</title>
       <link href="/writing/the-profile-link-relation-and-you"/>
-      <updated>2013-05-06T05:00:00.752Z</updated>
+      <updated>2013-05-06T05:00:00.757Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2815,7 +2815,7 @@
       <id>https://steveklabnik.com/writing//writing/closure</id>
       <title>Closure</title>
       <link href="/writing/closure"/>
-      <updated>2013-04-19T05:00:00.752Z</updated>
+      <updated>2013-04-19T05:00:00.757Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2830,7 +2830,7 @@
       <id>https://steveklabnik.com/writing//writing/deleuze-for-developers-will-smooth-spaceopen-source-suffice-to-save-us</id>
       <title>Deleuze for Developers: will smooth space/open source suffice to save us?</title>
       <link href="/writing/deleuze-for-developers-will-smooth-spaceopen-source-suffice-to-save-us"/>
-      <updated>2013-03-14T05:00:00.752Z</updated>
+      <updated>2013-03-14T05:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2845,7 +2845,7 @@
       <id>https://steveklabnik.com/writing//writing/announcing-securityreleasepractice</id>
       <title>Announcing security_release_practice</title>
       <link href="/writing/announcing-securityreleasepractice"/>
-      <updated>2013-03-08T06:00:00.752Z</updated>
+      <updated>2013-03-08T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2860,7 +2860,7 @@
       <id>https://steveklabnik.com/writing//writing/going-vimgan</id>
       <title>Going vimgan</title>
       <link href="/writing/going-vimgan"/>
-      <updated>2013-03-06T06:00:00.753Z</updated>
+      <updated>2013-03-06T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2875,7 +2875,7 @@
       <id>https://steveklabnik.com/writing//writing/emberjs-and-accessibility</id>
       <title>Ember.js and accessibility</title>
       <link href="/writing/emberjs-and-accessibility"/>
-      <updated>2013-02-07T06:00:00.753Z</updated>
+      <updated>2013-02-07T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2890,7 +2890,7 @@
       <id>https://steveklabnik.com/writing//writing/how-to-not-rely-on-rubygemsorg-for-deployment</id>
       <title>How to not rely on</title>
       <link href="/writing/how-to-not-rely-on-rubygemsorg-for-deployment"/>
-      <updated>2013-01-31T06:00:00.753Z</updated>
+      <updated>2013-01-31T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2905,7 +2905,7 @@
       <id>https://steveklabnik.com/writing//writing/rails-has-two-default-stacks</id>
       <title>Rails has two default stacks</title>
       <link href="/writing/rails-has-two-default-stacks"/>
-      <updated>2013-01-14T06:00:00.753Z</updated>
+      <updated>2013-01-14T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2920,7 +2920,7 @@
       <id>https://steveklabnik.com/writing//writing/why-is-a-role-not-a-person</id>
       <title>_why is a role, not a person</title>
       <link href="/writing/why-is-a-role-not-a-person"/>
-      <updated>2013-01-16T06:00:00.753Z</updated>
+      <updated>2013-01-16T06:00:00.758Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2935,7 +2935,7 @@
       <id>https://steveklabnik.com/writing//writing/most-things-i-do-are-interconnected</id>
       <title>Most things I do are interconnected</title>
       <link href="/writing/most-things-i-do-are-interconnected"/>
-      <updated>2012-12-28T06:00:00.753Z</updated>
+      <updated>2012-12-28T06:00:00.759Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2950,7 +2950,7 @@
       <id>https://steveklabnik.com/writing//writing/i-invented-hypermedia-apis-by-accident</id>
       <title>I invented hypermedia APIs by accident</title>
       <link href="/writing/i-invented-hypermedia-apis-by-accident"/>
-      <updated>2012-12-21T06:00:00.753Z</updated>
+      <updated>2012-12-21T06:00:00.759Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2965,7 +2965,7 @@
       <id>https://steveklabnik.com/writing//writing/deleuze-for-developers-deterritorialization</id>
       <title>Deleuze for developers: deterritorialization</title>
       <link href="/writing/deleuze-for-developers-deterritorialization"/>
-      <updated>2012-12-07T06:00:00.753Z</updated>
+      <updated>2012-12-07T06:00:00.759Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2980,7 +2980,7 @@
       <id>https://steveklabnik.com/writing//writing/deleuze-for-developers-assemblages</id>
       <title>Deleuze for developers: assemblages</title>
       <link href="/writing/deleuze-for-developers-assemblages"/>
-      <updated>2012-12-03T06:00:00.754Z</updated>
+      <updated>2012-12-03T06:00:00.759Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
@@ -2995,7 +2995,7 @@
       <id>https://steveklabnik.com/writing//writing/theory-and-practice</id>
       <title>Theory and practice</title>
       <link href="/writing/theory-and-practice"/>
-      <updated>2012-11-06T06:00:00.754Z</updated>
+      <updated>2012-11-06T06:00:00.759Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           

@@ -152,9 +152,7 @@ const RenderPost = ({ post, redirect, preview }) => {
         {post.Authors.length > 1 && (
           <div className="authors">By: {post.Authors.join(' ')}</div>
         )}
-        {post.Date && (
-          <div className="posted">{getDateStr(post.Date)}</div>
-        )}
+        {post.Date && <div className="posted">{getDateStr(post.Date)}</div>}
 
         <hr />
 
@@ -274,12 +272,20 @@ const RenderPost = ({ post, redirect, preview }) => {
 
               let child = null
 
+              let source = `/api/asset?assetUrl=${encodeURIComponent(
+                display_source as any
+              )}`
+
+              if (!display_source) {
+                source = properties.source[0][0]
+              }
+
               if (!isImage && !value.file_ids) {
                 // external resource use iframe
                 child = (
                   <iframe
                     style={childStyle}
-                    src={display_source}
+                    src={source}
                     key={!useWrapper ? id : undefined}
                     className={!useWrapper ? 'asset-wrapper' : undefined}
                   />
@@ -289,9 +295,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                 child = (
                   <Comp
                     key={!useWrapper ? id : undefined}
-                    src={`/api/asset?assetUrl=${encodeURIComponent(
-                      display_source as any
-                    )}&blockId=${id}`}
+                    src={source}
                     controls={!isImage}
                     alt={`An ${isImage ? 'image' : 'video'} from Notion`}
                     loop={!isImage}
