@@ -272,30 +272,28 @@ const RenderPost = ({ post, redirect, preview }) => {
 
               let child = null
 
-              let source = `/api/asset?assetUrl=${encodeURIComponent(
-                display_source as any
-              )}`
-
               if (!display_source) {
-                source = properties.source[0][0]
-              }
-
-              if (!isImage && !value.file_ids) {
-                // external resource use iframe
-                child = (
-                  <iframe
-                    style={childStyle}
-                    src={source}
-                    key={!useWrapper ? id : undefined}
-                    className={!useWrapper ? 'asset-wrapper' : undefined}
-                  />
-                )
-              } else {
-                // notion resource
                 child = (
                   <Comp
                     key={!useWrapper ? id : undefined}
-                    src={source}
+                    src={`/api/asset?assetUrl=${encodeURIComponent(
+                      properties.source[0][0] as any
+                    )}&blockId=${id}`}
+                    controls={!isImage}
+                    alt={`An ${isImage ? 'image' : 'video'} from Notion`}
+                    loop={!isImage}
+                    muted={!isImage}
+                    autoPlay={!isImage}
+                    style={childStyle}
+                  />
+                )
+              } else {
+                child = (
+                  <Comp
+                    key={!useWrapper ? id : undefined}
+                    src={`/api/asset?assetUrl=${encodeURIComponent(
+                      display_source as any
+                    )}&blockId=${id}`}
                     controls={!isImage}
                     alt={`An ${isImage ? 'image' : 'video'} from Notion`}
                     loop={!isImage}
