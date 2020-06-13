@@ -60,9 +60,7 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
               break
             }
 
-            const providedDate = new Date(
-              type[1].start_date + ' ' + (type[1].start_time || '')
-            ).getTime()
+            const providedDate = type[1].start_date
 
             val = providedDate
             break
