@@ -59,21 +59,12 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
             if (!type[1].start_date) {
               break
             }
-            // initial with provided date
+
             const providedDate = new Date(
               type[1].start_date + ' ' + (type[1].start_time || '')
             ).getTime()
 
-            // calculate offset from provided time zone
-            const timezoneOffset =
-              new Date(
-                new Date().toLocaleString('en-US', {
-                  timeZone: type[1].time_zone,
-                })
-              ).getTime() - new Date().getTime()
-
-            // initialize subtracting time zone offset
-            val = new Date(providedDate - timezoneOffset).getTime()
+            val = providedDate
             break
           default:
             console.error('unknown type', type[0], type)
