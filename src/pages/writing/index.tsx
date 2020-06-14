@@ -11,7 +11,6 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
-  // console.log(`postsTable ${JSON.stringify(postsTable)}`)
 
   const authorsToGet: Set<string> = new Set()
   const posts: any[] = Object.keys(postsTable)
@@ -38,7 +37,6 @@ export async function getStaticProps({ preview }) {
   let postsByYear = {}
 
   posts.map(post => {
-    //console.log(`${post.Page}: ${new Date(post.Date).getFullYear()}`)
     let year = new Date(post.Date).getFullYear()
     let array = postsByYear[year]
 
