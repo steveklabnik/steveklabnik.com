@@ -47,19 +47,38 @@ export async function getStaticProps({ preview }) {
     postsByYear[year].push(post)
   })
 
+  var sortedPostsByYear: [string, any][] = Object.entries(postsByYear)
+
+  sortedPostsByYear.forEach(year => {
+    year[1].sort((a, b) => {
+      if(b['Date'] > a['Date']) {
+        return 1;
+      };
+
+      return -1;
+    })
+  })
+
+
+  sortedPostsByYear.sort((a, b) => {
+    if(b[0] > a[0]) {
+      return 1;
+    };
+
+    return -1;
+  })
+
+
   return {
     props: {
       preview: preview || false,
-      posts: postsByYear,
+      posts: sortedPostsByYear,
     },
     unstable_revalidate: 10,
   }
 }
 
 export default ({ posts = {}, preview }) => {
-  var postsByYear: any[] = Object.entries(posts)
-  postsByYear.reverse()
-
   return (
     <>
       {preview && (
@@ -75,7 +94,7 @@ export default ({ posts = {}, preview }) => {
       )}
       <section className="container">
         <h1 className="title">Writing</h1>
-        {postsByYear.map(year => {
+        {posts.map(year => {
           return (
             <>
               <h2>{year[0]}</h2>
