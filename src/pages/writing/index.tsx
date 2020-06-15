@@ -78,7 +78,7 @@ export async function getStaticProps({ preview }) {
   }
 }
 
-export default ({ posts = {}, preview }) => {
+export default ({ posts = [], preview }) => {
   return (
     <>
       {preview && (
