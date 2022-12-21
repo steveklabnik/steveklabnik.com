@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import type { MarkdownInstance } from "astro";
+const pageTitle = "Blog";
+const allPosts = await Astro.glob('../pages/writing/*.md');
+
+let allPostsByDate: { [key: string]: MarkdownInstance<Record<string, any>>[] } = (() => {
+    let posts: { [key: string]: MarkdownInstance<Record<string, any>>[] } = {};
+    allPosts.map((post) => {
+        let year = new Date(post.frontmatter.pubDate).getFullYear();
+        let array = posts[year.toString()];
+
+        // if this is the first post of this year, we have to create the inner array
+        if (!array || !array.length) {
+            posts[year.toString()] = [];
+        }
+
+        posts[year.toString()].push(post);
+    })
+
+    return posts;
+})();
+
+const years = Object.keys(allPostsByDate).reverse();
+---
+<BaseLayout pageTitle={pageTitle}>
+    <p>This is my blog.</p>
+    {years.map((year) => (
+      <h3>{year}</h3>
+        <ul>
+            {allPostsByDate[year].map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+        </ul>
+    ))}
+</BaseLayout>
