@@ -4,10 +4,10 @@ title: Ten Years of Ru...ewriting my website
 pubDate: 2022-12-21
 ---
 
-December 21, 2012 is the anniversary of when I first heard about Rust. I used to
-write yearly posts about it; the last time I did was [in 2018](../six-years-with-rust).
-That makes today ten years. I thought I'd have something big to say here, but...
-I just don't.
+December 21 is the anniversary of when I first heard about Rust way back in
+2012. I used to write yearly posts about it; the last time I did was [in
+2018](../six-years-with-rust). That makes today ten years. I thought I'd have
+something big to say here, but... I just don't.
 
 Part of that is because I haven't written a blog post since late 2020.
 Part of *that* is well, *gestures wildly at everything*, but another part of it
