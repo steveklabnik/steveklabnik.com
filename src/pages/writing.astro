@@ -5,7 +5,7 @@ import type { MarkdownInstance } from "astro";
 const pageTitle = "Blog";
 const allPosts = await Astro.glob('../pages/writing/*.md');
 
-let allPostsByDate: { [key: string]: MarkdownInstance<Record<string, any>>[] } = (() => {
+let allPostsByDate = (() => {
     let posts: { [key: string]: MarkdownInstance<Record<string, any>>[] } = {};
     allPosts.map((post) => {
         let year = new Date(post.frontmatter.pubDate).getFullYear();
@@ -17,6 +17,7 @@ let allPostsByDate: { [key: string]: MarkdownInstance<Record<string, any>>[] } =
         }
 
         posts[year.toString()].push(post);
+        posts[year.toString()] = posts[year.toString()].sort((a, b) => a.frontmatter.pubDate > b.frontmatter.pubDate ? -1 : 0)
     })
 
     return posts;
