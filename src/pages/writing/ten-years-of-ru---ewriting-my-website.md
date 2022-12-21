@@ -29,7 +29,7 @@ Yeah yeah that's funny and all, but I actually feel much better about things
 this time. We'll see how I feel in six months. The framework this time is
 [Astro](https://astro.build/), and I think it's really neat. At some point after
 I do some more with it and digest some more of the way that it works, I'll give
-a more thorough writeup, but I find the [Why Astro?](why-astro) page on their
+a more thorough writeup, but I find the [Why Astro?][why-astro] page on their
 site does a good job of explaining.
 
 [why-astro]: https://docs.astro.build/en/concepts/why-astro/
