@@ -20,7 +20,24 @@ He goes on to elaborate a bit:
 
 This is one of the many things that the “Rust” name evokes. Rust was not intended to be a cutting-edge PLT (programming language theory) research language. It was challenging an assumption that I think many of us hold dear: that “progress” means that things always get better. Reality is a bit more complex than that. Yes, we’ve improved on some things, but there are some older things that were actually “better” in some sense, but never quite made it for other reasons. I’ve always phrased this sentiment like this:
 
-[Untitled](Rust%20is%20more%20than%20safety%20dbafb611620445cb9bab3d2ec5828e08/Untitled%20Database%201c7b46da754549118fcf5e3d14a9999a.csv)
+---
+
+Let’s look at the initial release dates of some of the top programming languages:
+
+* C: 1972
+* C++: 1983
+* C#: 2000
+* Java: 1995
+* JavaScript: 1995
+* Python: 1991
+* PHP: 1995
+* Ruby: 1995
+
+The first thing you’ll notice is: what the hell were they putting in the water in 1995?
+
+The second is that, other than C# in 2000, 1995 or earlier is where most of our programming languages come from. Have we really not made any advancements significant enough in the last 20 years to have gotten people’s attention?
+
+---
 
 Now, there are a multitude of newer languages, and people do use them. And these languages have had more releases since then. But none of these languages has fundamentally changed. They’re all pretty much the same, but better. And specifically, you’ll notice that many of these languages are scripting or higher-level languages: if we restrict ourselves to “what most operating systems are programmed in”, we haven’t had a new generation of programming languages in thirty or forty years!
 
