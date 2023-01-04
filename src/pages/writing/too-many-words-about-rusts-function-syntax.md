@@ -275,7 +275,7 @@ fn foo(x) = {
 ```
 
 This one... this may be too far afield. And, while Rust doesn't have named
-paramters, and possibly never will, I have no idea how this style of syntax
+parameters, and possibly never will, I have no idea how this style of syntax
 would work with that. There's also some repetition of `fn` here that might be
 worth trying to remove, but I'm trying to make the smallest possible deltas
 from existing syntax here, and `fn(i32) -> i32` *is* the type of that function
