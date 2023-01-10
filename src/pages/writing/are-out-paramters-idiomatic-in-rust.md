@@ -31,7 +31,7 @@ foo(&mut x);
 
 That is, does your function return a value, or modify a parameter?
 
-There are a number of different reasons you may or may not use one or the other of these techniques in different langauges, and they often depend on the semantics of the langauge itself.
+There are a number of different reasons you may or may not use one or the other of these techniques in different languages, and they often depend on the semantics of the language itself.
 
 In Rust, you almost always want to return a value from a function, that is, prefer option one over option two. There are a few reasons for this.
 

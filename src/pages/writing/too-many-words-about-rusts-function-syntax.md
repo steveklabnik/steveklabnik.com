@@ -12,7 +12,7 @@ There's a famous quote by Elanor Roosevelt:
 
 I'd like to preface this post that I do *not* consider this to be an actual
 proposal to change Rust, even a pre-RFC. I don't think that making changes like
-this has enough benefits once a langauge is as established as Rust is. Consider
+this has enough benefits once a language is as established as Rust is. Consider
 this post more of some musings about some things that there wasn't really time
 to truly consider when Rust was younger, so that maybe someone who's making a
 new language can learn from those things early enough in its life to do so.

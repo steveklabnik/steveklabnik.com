@@ -15,7 +15,7 @@ My [last blog post](/2011/09/06/the-secret-to-rails-oo-design.html) caused a bit
 
 … except helpers. Why is it in Ruby that everything is an object, even integers, yet as soon as we need to format a date, we all turn into Dijkstra and bust out structured programming? Actually, come to think of it, Dijkstra wouldn’t even write any code, because it’s beneath him, but you get the idea. (if you don’t get this, it’s a joke. About proofs, telescopes, and CS…) Helpers are like a compliment that you don’t want to give, but feel obligated to: “Yeah, I mean, well, you tried, and that’s what counts, right?”
 
-This is the topic of a future post, but when programming in a langauge, you want to work with its primary methods of abstraction. In Ruby, that’s objects, and there’s a good reason for that: functions don’t provide a sufficient amount of power to tackle hard problems. I don’t want to get into this either, but there’s a reason that objects exist, and that nobody’s making procedural languages anymore. No biggie. C has a special place in my heart.
+This is the topic of a future post, but when programming in a language, you want to work with its primary methods of abstraction. In Ruby, that’s objects, and there’s a good reason for that: functions don’t provide a sufficient amount of power to tackle hard problems. I don’t want to get into this either, but there’s a reason that objects exist, and that nobody’s making procedural languages anymore. No biggie. C has a special place in my heart.
 
 But I digress: objects > functions. At least in the context of getting stuff done in Ruby. This pretty much applies to most of the rest of the points in this post, so just keep that in the back of your brain.
 

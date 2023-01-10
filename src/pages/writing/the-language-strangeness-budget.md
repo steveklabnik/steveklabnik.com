@@ -21,4 +21,4 @@ On the other hand, if you’re trying to accomplish something different with you
 
 This is Simon Peyton-Jones knowing exactly what kind of language he wants to build, and in what way. Haskell’s embrace of strangeness in this sense is what makes Haskell Haskell, and actually furthers its goals.
 
-If you include *no* new features, then there’s no incentive to use your language. If you include too many, not enough people may be willing to invest the time to give it a try. Language designers should give careful thought to how strange their langauge is, and choose the right amount to accomplish what they’re trying to accomplish.
+If you include *no* new features, then there’s no incentive to use your language. If you include too many, not enough people may be willing to invest the time to give it a try. Language designers should give careful thought to how strange their language is, and choose the right amount to accomplish what they’re trying to accomplish.

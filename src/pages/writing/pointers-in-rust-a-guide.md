@@ -76,7 +76,7 @@ Five exceptions. That’s it. Otherwise, you shouldn’t need them. Be skeptical
 
 ## A note for those proficient in pointers
 
-If you’re coming to Rust from a language like C or C++, you may be used to passing things by reference, or passing things by pointer. In some langauges, like Java, you can’t even have objects without a pointer to them. Therefore, if you were writing this Rust code:
+If you’re coming to Rust from a language like C or C++, you may be used to passing things by reference, or passing things by pointer. In some languages, like Java, you can’t even have objects without a pointer to them. Therefore, if you were writing this Rust code:
 
 ```
 struct Point {
@@ -255,7 +255,7 @@ And it works:
 So why not just use managed pointers everywhere? There are two big drawbacks to managed pointers:
 
 1. They activate Rust’s garbage collector. Other pointer types don’t share this drawback.
-2. You cannot pass this data to another task. Shared ownership across concurrency boundaries is the source of endless pain in other langauges, so Rust does not let you do this.
+2. You cannot pass this data to another task. Shared ownership across concurrency boundaries is the source of endless pain in other languages, so Rust does not let you do this.
 
 # Borrowed Pointers
 

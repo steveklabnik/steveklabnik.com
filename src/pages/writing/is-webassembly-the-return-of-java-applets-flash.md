@@ -82,7 +82,7 @@ WebAssembly, on the other hand, was designed to be a small extension to existing
 
 ## Other technologies were too specific
 
-WebAssembly is fundamentally langauge-agnostic. Flash and Java Applets were built first and foremost to run ActionScript and Java. They’re deeply tied to their relative semantics. Even PNaCl suffers from this to some degree; LLVM is really designed for C-like languages, though not quite the same amount.
+WebAssembly is fundamentally language-agnostic. Flash and Java Applets were built first and foremost to run ActionScript and Java. They’re deeply tied to their relative semantics. Even PNaCl suffers from this to some degree; LLVM is really designed for C-like languages, though not quite the same amount.
 
 Do we really want to christen one language as the next language of the web? We already have JavaScript. Are we someday going to introduce a third language? A fourth? An agnostic approach is significantly better for longevity’s sake.
 
