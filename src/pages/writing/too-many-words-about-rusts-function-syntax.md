@@ -4,7 +4,7 @@ title: "Too many words about Rust's function syntax"
 pubDate: 2023-01-03
 ---
 
-There's a famous quote by Elanor Roosevelt:
+There's a famous quote by Eleanor Roosevelt:
 
 > great minds discuss semantics, average minds discuss syntax and small minds discuss syntax of comments
 
