@@ -4,7 +4,7 @@ title: "Too many words about Rust's function syntax"
 pubDate: 2023-01-03
 ---
 
-There's a famous quote by Elanor Roosevelt:
+There's a famous quote by Eleanor Roosevelt:
 
 > great minds discuss semantics, average minds discuss syntax and small minds discuss syntax of comments
 
@@ -76,7 +76,7 @@ int foo(int x) {
 }
 ```
 
-In general, most new languages have tended to settle closer to Rust's synatax
+In general, most new languages have tended to settle closer to Rust's syntax
 here than C's. There are a few reasons, and it's not like Rust invented this
 style in the first place. One of the core nice things about Rust style syntax
 is that `fn IDENTIFIER`, that is, if you want to find out where `foo()` is
