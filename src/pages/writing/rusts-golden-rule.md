@@ -7,9 +7,10 @@ pubDate: 2023-03-27
 I find myself thinking about a particular design principle of Rust today. I'm
 not sure I've ever seen it named specifically before, but it gets referred to
 from time to time, and I think it's an under-rated but very important aspect
-of why Rust works so well. I'm going to refer to it as "the signature is the
-contract" today, but if someone else has already written this out somewhere,
-and used a different name, please let me know!
+of why Rust works so well. I was going to refer to it as "the signature is the
+contract" today, but then I ended up changing it. Regardless of that, if someone
+else has already written this out somewhere, and used a different name, please
+let me know!
 
 Magic: the Gathering is a really interesting project. I say "project" rather
 than "card game" because while it is a card game, it also pioneered a whole
