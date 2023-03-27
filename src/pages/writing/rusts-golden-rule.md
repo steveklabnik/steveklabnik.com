@@ -65,7 +65,7 @@ fn foo(x: i32) -> i32 {
 
 This function prints out `x`, and then returns it. Nothing fancy going on here,
 this is just random stuff to make an example. This compiles just fine. But let's
-imagine that we have a verison of Rust that infers our signatures. So we could
+imagine that we have a version of Rust that infers our signatures. So we could
 type this instead:
 
 ```rust
