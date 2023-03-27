@@ -17,7 +17,7 @@ than "card game" because while it is a card game, it also pioneered a whole
 bunch of incedental other things that had big effects on related hobbies.
 
 I learned MtG in the late 90s. The rules were a bit different then, but many
-of them are the same. The very first rule I was tought was sort of the "Magic
+of them are the same. The very first rule I was taught was sort of the "Magic
 Golden Rule," though in today's Comprehensive Rulebook, there are four of them.
 This one is still the first, though:
 
