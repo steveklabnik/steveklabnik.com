@@ -167,7 +167,7 @@ fn main() {
 
 Here, we create our string outside of the loop, and then on each iteration of the loop, clear it. Clearing it does not deallocate the backing memory; it only changes the length to zero. When the next line is read in, if it's smaller than the existing size of the string, it won't allocate any new memory. This would not be possible if `stdin()` returned a new `String` every time, so even though the out parameter is a bit less nice to use, it can be much faster.
 
-It took 26 releases of Rust for `[std::fs::read](https://doc.rust-lang.org/stable/std/fs/fn.read.html)` and `[std::fs::read_to_string](https://doc.rust-lang.org/stable/std/fs/fn.read_to_string.html)` to be added for this reason; we eventually did because in many cases, you don't care about re-using the buffer, and these functions are nicer to use, but they weren't included originally because they're pretty simple, and are built on top of the re-usable solutions:
+It took 26 releases of Rust for [`std::fs::read`](https://doc.rust-lang.org/stable/std/fs/fn.read.html) and [`std::fs::read_to_string`](https://doc.rust-lang.org/stable/std/fs/fn.read_to_string.html) to be added for this reason; we eventually did because in many cases, you don't care about re-using the buffer, and these functions are nicer to use, but they weren't included originally because they're pretty simple, and are built on top of the re-usable solutions:
 
 ```rust
 pub fn read_to_string<P: AsRef<Path>>(path: P) -> io::Result<String> {
