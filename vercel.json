@@ -811,6 +811,10 @@
     {
       "source": "/protological-control-an-introduction",
       "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
+    },
+    {
+      "source": "blog/the-cxx-debate",
+      "destination": "https://steveklabnik.com/writing/the-cxx-debate"
     }
   ]
 }
