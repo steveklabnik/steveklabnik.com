@@ -273,6 +273,10 @@ at least it is easy to determine if there's a problem: dependency failures are
 loud, and if you're building with both in CI, you'll notice if stuff goes wrong.
 There also may be a solution to this I'm just not aware of.
 
+If you'd like to see the whole thing at this point, [this
+commit](https://github.com/steveklabnik/buck-rust-hello/commit/2abd1ada7dbbc7f89cd8678eace1e07b3df2ae2f)
+should have you covered.
+
 This should get you going with building more advanced projects in Rust using
 buck2. In the next post, we'll talk about fixups, which you'll need for
 dependencies that are more complex than `semver`.
