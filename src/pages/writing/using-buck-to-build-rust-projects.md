@@ -34,6 +34,13 @@ probably end up with a post giving better motivations at some point in the
 future, but I think it makes more sense once you see how it works, rather than
 starting there.
 
+## A series
+
+This post is part of a series:
+
+* [Using buck to build Rust projects](#) (you are here)
+* [Using Crates.io with Buck](using-cratesio-with-buck)
+
 ## Getting started with buck2
 
 [The Getting Started page](https://buck2.build/docs/getting_started/) will give
