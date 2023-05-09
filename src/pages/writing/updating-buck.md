@@ -324,14 +324,28 @@ jobs:
       - uses: dtolnay/install-buck2@latest
       - run: buck2 build ...
       - run: buck2 run //src/bin:hello_world
-      - uses: dtolnay/install@reindeer
-        if: matrix.os == 'ubuntu'
+
+      - uses: actions/cache/restore@v3
+        id: cache
+        with:
+          path: ~/.cargo/bin/reindeer${{matrix.os == 'windows' && '.exe' || ''}}
+          key: ${{matrix.os}}-reindeer
+
+      - run: cargo install --git https://github.com/facebookincubator/reindeer reindeer
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: buck2
+
+      - uses: actions/cache/save@v3
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          path: ~/.cargo/bin/reindeer${{matrix.os == 'windows' && '.exe' || ''}}
+          key: ${{steps.cache.outputs.cache-primary-key}}
+
       - run: reindeer buckify
-        if: matrix.os == 'ubuntu'
         working-directory: third-party
       - name: Check reindeer-generated BUCK file up to date
         run: git diff --exit-code
-        if: matrix.os == 'ubuntu'
+
 ```
 
 This is... you guessed it, based off of [dtolnay's CI for
