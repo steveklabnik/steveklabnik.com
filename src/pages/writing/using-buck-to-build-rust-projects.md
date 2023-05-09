@@ -38,8 +38,16 @@ starting there.
 
 This post is part of a series:
 
-* [Using buck to build Rust projects](#) (you are here)
+* [Using buck to build Rust projects](#) you are here
 * [Using Crates.io with Buck](using-cratesio-with-buck)
+* [Updating Buck](updating-buck)
+
+This post represents how to do this at the time that this was posted; future
+posts may update or change something that happens here. Here's a hopefully
+complete but possibly incomplete list of updates and the posts that talk
+about it:
+
+* `buck2 init` also creates a file named `.buckroot`, see "Updating Buck"
 
 ## Getting started with buck2
 
@@ -152,7 +160,7 @@ If you're that kind of person.
 
 ### `.gitignore`
 
-A very simple `.gitignore` will be created, that contains one line: `buck-out`.
+A very simple `.gitignore` will be created, that contains one line: `/buck-out`.
 This is where buck stores artifacts produced by your builds, so we don't want
 that checked into version control.
 

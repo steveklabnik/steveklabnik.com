@@ -16,6 +16,14 @@ This post is part of a series:
 
 * [Using buck to build Rust projects](using-buck-to-build-rust-projects)
 * [Using Crates.io with Buck](#) (you are here)
+* [Updating Buck](updating-buck)
+
+This post represents how to do this at the time that this was posted; future
+posts may update or change something that happens here. Here's a hopefully
+complete but possibly incomplete list of updates and the posts that talk
+about it:
+
+* `build-script-build` target is no longer generated, see "Updating Buck"
 
 ## Depending on semver
 
