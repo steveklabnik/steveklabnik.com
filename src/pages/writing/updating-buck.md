@@ -333,7 +333,6 @@ jobs:
 
       - run: cargo install --git https://github.com/facebookincubator/reindeer reindeer
         if: steps.cache.outputs.cache-hit != 'true'
-        working-directory: buck2
 
       - uses: actions/cache/save@v3
         if: steps.cache.outputs.cache-hit != 'true'
@@ -343,9 +342,10 @@ jobs:
 
       - run: reindeer buckify
         working-directory: third-party
+        if: matrix.os == 'ubuntu'
       - name: Check reindeer-generated BUCK file up to date
         run: git diff --exit-code
-
+        if: matrix.os == 'ubuntu'
 ```
 
 This is... you guessed it, based off of [dtolnay's CI for
@@ -374,4 +374,4 @@ And with that, we are done! Next post we're going to deal with that build
 script. And use some crates that have more intense dependencies, and get them
 all working.
 
-As always, you can [check out the code](https://github.com/steveklabnik/buck-rust-hello/tree/89e1df576ae43c3270ab22d77089ba9e9da965fc) at this point if you'd like.
+As always, you can [check out the code](https://github.com/steveklabnik/buck-rust-hello/commit/914e3aa7cdc269b2536f8118255eae12bf552f8d) at this point if you'd like.
