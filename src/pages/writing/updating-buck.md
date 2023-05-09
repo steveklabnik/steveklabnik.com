@@ -127,8 +127,11 @@ Build ID: 1a24b418-acdb-4d23-a5e1-6e9b644c01e6
 Jobs completed: 83. Time elapsed: 1.9s. Cache hits: 0%. Commands: 3 (cached: 0, remote: 0, local: 3)
 ```
 
-There's no reason for buck to be watching our `.git` directory for changes.
-Open up your `.buckconfig` and add this at the bottom:
+There's no reason for buck to be watching our `.git` directory for changes. And
+that's why [it is now put in the default
+configuration](https://github.com/facebook/buck2/commit/2083261102e867bce2b6385b78b598e758b424a8)
+when you `buck2 init --git`. But we've gotta make that change ourselves. Open
+up your `.buckconfig` and add this at the bottom:
 
 ```toml
 [project]
@@ -319,9 +322,6 @@ jobs:
         with:
           components: rust-src
       - uses: dtolnay/install-buck2@latest
-      - name: Install lld
-        run: sudo apt-get install lld
-        if: matrix.os == 'ubuntu'
       - run: buck2 build ...
       - run: buck2 run //src/bin:hello_world
       - uses: dtolnay/install@reindeer
