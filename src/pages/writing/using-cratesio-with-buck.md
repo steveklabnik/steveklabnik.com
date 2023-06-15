@@ -290,5 +290,5 @@ buck2. In the next post, we'll talk about fixups, which you'll need for
 dependencies that are more complex than `semver`.
 
 By the way, if you're interested in this stuff, I've [made a Discord for buck
-fans](https://discord.gg/SpH3Q9w2). Come hang out, chat about stuff, ask
+fans](https://discord.gg/ZTEmwypZ6K). Come hang out, chat about stuff, ask
 questions, it's gonna be a good time.
