@@ -127,7 +127,7 @@ safety:
 
 Okay, that's enough quoting from the report. And I swear I'm not about to say
 nice things about it becuase I am cited as #42, though to be honest it's real
-fucking weird that searing "klabnik" on a page on defense.gov returns 1/1.
+fucking weird that searching "klabnik" on a page on defense.gov returns 1/1.
 But I think this is an excellent formulation of the critical distinction between
 the languages on one side of the line versus the other, though they make the
 same conceptual mistake that I believe Rust may have: it's not just about
