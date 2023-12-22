@@ -12,9 +12,9 @@ languages is a bit of a red herring. The actual distinction is slightly bigger
 than that: languages which have defined behavior by default, with a superset
 where undefined behavior is possible, vs languages which allow for undefined
 behavior anywhere in your program. Memory safety is an important aspect of this, 
-but it is neccesary, not sufficient. Rust's marketing has historically focused
+but it is necessary, not sufficient. Rust's marketing has historically focused
 on memory safety, and I don't think that was a bad choice, but I do wonder
-sometimes. Finally, I wonder about the future of the C++ successor langauges in
+sometimes. Finally, I wonder about the future of the C++ successor languages in
 the face of coming legislation around MSLs for government procurement.
 
 Additionally, I would like to thank ixi for discussing some of this stuff with
@@ -65,20 +65,20 @@ and therefore, as a definition, it would be useless.
 
 If we instead make an exception for a language's runtime, which is allowed to
 make unsafe calls, but users' code is not, that would draw an appropriate
-boundary: only write code in the guest langauge, and you don't have to worry
+boundary: only write code in the guest language, and you don't have to worry
 about safety anymore. And I think that this sort of definition has been the
 default for many years. You have "managed" languages which are safe, and you have
 "unmanaged" languages which are unsafe. Unmanaged languages are used to implement
 managed languages. What's that? A Java runtime written in Java? A Ruby runtime
 written in Ruby? Yeah those are weird exceptions. Ignore those. And those
-"native extentions" that segfault? Well they aren't written in the host language,
+"native extensions" that segfault? Well they aren't written in the host language,
 so of course that will happen, and yeah it's kinda annoying when it happens, but
 it's fine. Sometimes you have to risk it for performance.
 
 I just don't find this satisfying. It's too vague. You just kinda know it when
 you see it. Ignore FFI, and we're good. And sometimes, you just can't have safety.
 What if you want to write a runtime? You're gonna need to call into the system
-directly, and now we're back to unsafe, so just use an unsafe langauge. It is
+directly, and now we're back to unsafe, so just use an unsafe language. It is
 what it is.
 
 ## ThreadId(3)
@@ -126,7 +126,7 @@ safety:
 > in data marshalling, error handling, concurrency, debugging, and versioning. 
 
 Okay, that's enough quoting from the report. And I swear I'm not about to say
-nice things about it becuase I am cited as #42, though to be honest it's real
+nice things about it because I am cited as #42, though to be honest it's real
 fucking weird that searching "klabnik" on a page on defense.gov returns 1/1.
 But I think this is an excellent formulation of the critical distinction between
 the languages on one side of the line versus the other, though they make the
@@ -151,7 +151,7 @@ race anyway? Here's [John Regehr](https://blog.regehr.org/archives/490):
 > 
 > There are other definitions but this one is fine; it’s from Sebastian Burckhardt at Microsoft Research.
 
-Oh. Well I guess "Here's Sebastian Burckhardt:" instead.
+Oh. Well, I guess "Here's Sebastian Burckhardt:" instead.
 
 Point is, data races are undefined behavior in Rust, and they're also undefined
 behavior in C++. When looking for a succinct citation for that fact, I came
@@ -178,13 +178,13 @@ Okay, the real citation was easier. The article by Bohm is still fascinating.
 
 But data races aren't undefined behavior in every programming language. For
 example, let's consider both Java and Go. Now I hate that I even have to
-pre-emptively say this, but I am *not* saying Java and Go are bad. I think
+preemptively say this, but I am *not* saying Java and Go are bad. I think
 these are good decisions for both of the two languages. And I think their
 decisions here are very informative. Language wars are stupid. Stop it.
 
-Java was the first time I remember hearing "yeah you can have data races but
+Java was the first time I remember hearing, "yeah you can have data races but
 like, it's fine" about. I kinda lodged that fact in the back of my brain, and
-didn't think about it much. But lately I was wondering. So I went and read
+didn't think about it much. But lately, I was wondering. So I went and read
 the Java specification, and more specifically, [Chapter
 17](https://docs.oracle.com/javase/specs/jls/se21/html/jls-17.html). It contains
 this text:
@@ -205,7 +205,7 @@ in a slightly different way:
 > When a program contains two conflicting accesses (§17.4.1) that are not
 > ordered by a happens-before relationship, it is said to contain a data race.
 
-Not just any ordering or synchronization primitive, an happens-before relation
+Not just any ordering or synchronization primitive, a happens-before relation
 specifically. Fun! We have three technically-slightly different but basically
 morally equivalent ways of defining a data race. Let's do a fourth. Go also
 allows data races. Sort of. From [the Go memory model](https://go.dev/ref/mem):
@@ -362,8 +362,8 @@ search into where the issues lie, should the abyss claim another soul.
 In some ways I'm also repeating another older slogan Rust had: "memory safety
 without garbage collection." But it's more like "no UB and no garbage collection."
 Gosh, why didn't we put *that* on the website? Practically rolls right off the
-tounge. What makes Rust appealing, and I think especially to the "non-systems"
-crowd, is that it shares a property of many managed languges, that of "no
+tongue. What makes Rust appealing, and I think especially to the "non-systems"
+crowd, is that it shares a property of many managed languages, that of "no
 undefined behavior by default," with a property of many systems languages, that
 of "no runtime, as little overhead as possible." And sure, there's an escape
 hatch, but it's rarely used, and clearly separates the two worlds. This is a
@@ -375,7 +375,7 @@ languages like Rust, Go, and Java, is that the boundary in the former is purely
 FFI, while in the latter, there are also unsafe faculties in the host language
 itself, as well as with FFI. In all three cases, they're behind either a specific
 package or `unsafe {}`, but they give you some interesting tools that don't
-require you to use another language to use. I think this is an under-apprecaited
+require you to use another language to use. I think this is an under-appreciated
 part of the overall design space.
 
 ## threads.into_iter().for_each(|t| t.join().unwrap());
@@ -402,11 +402,11 @@ declare said messaging a failure.
 
 However, I also wonder what else could have been. Could Rust have grown faster
 with a different message? Maybe. That said, what would that message be?
-"Undefined behavior is scary?" I'm not sure that's as compeling, even if I think
+"Undefined behavior is scary?" I'm not sure that's as compelling, even if I think
 it's actually a bigger deal. While memory unsafety is only part of undefined
 behavior, it is the part that is easy to understand: pointers are the bane of
 every C newbie. It has consequences that are easy to understand: security
-vulnerabilites are bad. Has Rust *really* conflated "memory safety" and "safety"
+vulnerabilities are bad. Has Rust *really* conflated "memory safety" and "safety"
 that much? I don't actually think so. People still talk about SQL injection,
 about Remote Code Execution, about Cross Site Scripting. People don't *really*
 believe that just because it's written in Rust, bugs are impossible. Sure you
@@ -416,7 +416,7 @@ Law](https://en.wikipedia.org/wiki/Amdahl%27s_law), if 70% of security
 vulnerabilities are related to memory safety, focusing so strongly on it makes
 sense, as fixing that will give you a much larger impact than other things.
 
-So what should new langauges do here? Well, pretty much the only language that
+So what should new languages do here? Well, pretty much the only language that
 is gaining developer mindshare that's new and is memory unsafe by default is
 Zig. I think Andrew is very sharp, and a tremendous engineer. I am very
 interested to see how things shake out there. But as a language, it does not
@@ -444,7 +444,7 @@ twist on things:
   programming, linear types are even better." Austral also believes that parsimony
   is a virtue in language design, and that linear types can replace a lot of
   different features in other programming languages, while also eschewing other
-  features that they deem as not carying their weight.
+  features that they deem as not carrying their weight.
 * [Mojo](https://www.modular.com/max/mojo), "the usability of Python with the
   performance of C." It also has this sort of "lower into a more complex language"
   idea; you can Just Write Python for the most part and it works, but if you want
@@ -492,7 +492,7 @@ out how these bills do this specifically, but to quote Sean:
 > through their channels. I don't have insight into when that will pass. The U.S.
 > one will almost certainly pass here within a month or two.
 
-This sounds much more realisitic, of course. Now, this does not mean that
+This sounds much more realistic, of course. Now, this does not mean that
 C++ is outlawed or something silly like that, but it does mean that using Rust
 could become a more serious competitive advantage when it comes to selling to
 government: if you don't need an exception for your product, that's an advantage
@@ -511,7 +511,7 @@ conversation is heading.
 
 So where does that leave existing widely used memory-unsafe languages? Well,
 the C++ community has... had a wide variety of discussions on this topic. I
-should also say I mean "community" at large, and the comittee feels like it
+should also say I mean "community" at large, and the committee feels like it
 has a big divide as well. Now I should re-iterate that while I pay attention to
 the C++ standardization process, I am very much an outsider: I have never
 attended a meeting, I have no direct involvement in these things, I just read
@@ -567,7 +567,7 @@ to C, or what TypeScript did to JavaScript: create a new language for new code,
 while allowing you to use the older language for older code. This allows them
 to break backwards compatibility more easily: new code can more easily be
 written under the new constraints. This gives them a larger degree of freedom
-to make changes, which may be neccesary to move the needle significantly on
+to make changes, which may be necessary to move the needle significantly on
 the safety issue. But to my knowledge, they do not attempt to be memory safe
 by default. They're conceptually similar to Zig in this way.
 
@@ -577,7 +577,7 @@ just Rust? (Interestingly, it is also sort of what Zig is with C: you can use
 the same compiler to compile a mixed codebase, which is close enough in my
 opinion.) What makes me worry about option #3 is that it doesn't pass the
 seeming test that is coming: memory safe by default. I still think moving
-to a #3 style soltuion is better than staying with #1, but is that enough?
+to a #3 style solution is better than staying with #1, but is that enough?
 I don't know, time will tell. I wonder to what degree you can get "C++ but memory
 safe" without just being Rust. As we talked about earlier, most languages that
 are trying to improve on Rust in this space are willing to trade off some core
@@ -585,11 +585,11 @@ constraints on Rust's design to get them, but C++ and Rust share the same
 constraints. That said, it would take a tremendous amount of hubris to declare
 that Rust is the final, ultimate, best language in the "memory safe without GC"
 space. Rust has made a lot of mistakes too. Maybe reflecting on those will make
-for a good twelth year post. Someone get started on Rust++, please!
+for a good twelfth year post. Someone get started on Rust++, please!
 
 The reason that today is my Rust-a-versary is that I usually play with a new
 language over Christmas break, and in 2012, that language was Rust. Maybe this
-Christmas I'll give cpp2 a try.
+Christmas, I'll give cpp2 a try.
 
 In the final minutes before publishing this, I also found another [interesting
 report](https://www.cisa.gov/sites/default/files/2023-12/CSAC_TAC_Recommendations-Memory-Safety_Final_20231205_508.pdf).
