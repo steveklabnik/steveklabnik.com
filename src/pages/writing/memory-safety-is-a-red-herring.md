@@ -375,7 +375,7 @@ languages like Rust, Go, and Java, is that the boundary in the former is purely
 FFI, while in the latter, there are also unsafe faculties in the host language
 itself, as well as with FFI. In all three cases, they're behind either a specific
 package or `unsafe {}`, but they give you some interesting tools that don't
-require you to use another language to use. I think this is an under-apprecaited
+require you to use another language to use. I think this is an under-appreciated
 part of the overall design space.
 
 ## threads.into_iter().for_each(|t| t.join().unwrap());
