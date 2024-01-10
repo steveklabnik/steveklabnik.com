@@ -452,7 +452,7 @@ twist on things:
   proposal.](https://github.com/modularml/mojo/blob/main/proposals/lifetimes-and-provenance.md)
 
 I think there are some other languages that are forming the next big cohort of
-programming languages, and they're interesting too, but these two I think have
+programming languages, and they're interesting too, but these three I think have
 the most explicit connection to Rust in the design and goals of the language
 itself. Shout out to Nu, Inko, Gleam, Roc, Oil Shell, Unison, and others. Lots
 of cool stuff going on.
