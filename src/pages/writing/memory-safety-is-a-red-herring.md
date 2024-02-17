@@ -240,6 +240,18 @@ While a Go program may exhibit what a Rust or C++ program would consider
 undefined behavior, and it does also consider it an error, the consequences are
 very different. You don't get time travel. You get 998 instead of 1,000.
 
+(After publication, Edoardo Spadolini reached out to me and we had a productive
+conversation about the above paragraph: while my overall point here is still
+valid, there are slightly more serious consequences to UB in a Go program than
+slightly incorrect sums. For example, torn writes to a slice can lead to serious
+consequences, and there are other ways to write code that exploits UB to be
+actively malicious, such as a function with the signature
+`func Cast[T any](addr uintptr) *T` that works. However, it's also worth mentioning
+that Go ships with a race detector, available by simply passing `-race`. For some
+interesting usage of this at scale, check out [this post by Uber](https://www.uber.com/blog/dynamic-data-race-detection-in-go-code/). At the end of the day, this is still
+very different than the "your whole program is invalid" style of issues you
+can end up with in C or C++, I am slightly underselling the danger above.)
+
 Go also provides [an unsafe package](https://go.dev/ref/spec#Package_unsafe):
 
 > The built-in package unsafe, known to the compiler and accessible through the
