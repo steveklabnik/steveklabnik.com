@@ -813,6 +813,10 @@
       "destination": "https://steveklabnik.com/writing/protological-control-an-introduction"
     },
     {
+      "source": "/are-out-paramters-idiomatic-in-rust",
+      "destination": "https://steveklabnik.com/writing/are-out-parameters-idiomatic-in-rust"
+    },
+    {
       "source": "blog/the-cxx-debate",
       "destination": "https://steveklabnik.com/writing/the-cxx-debate"
     }
