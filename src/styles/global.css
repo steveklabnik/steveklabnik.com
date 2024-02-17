@@ -3,7 +3,7 @@ html {
   font-family: sans-serif;
 }
 
-body {
+.container {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
@@ -18,4 +18,8 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+.container > img {
+  width: 100%;
 }
