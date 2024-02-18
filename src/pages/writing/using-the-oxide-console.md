@@ -87,7 +87,7 @@ fun in the past.
 We're using a Debian image that's been provided by this silo, because I am lazy
 and that's fine. Is four gigabytes of disk enough? I don't know, let's find out.
 
-A few seconds later, our instace is up and running:
+A few seconds later, our instance is up and running:
 
 <img src="../img/2024-02-17/instance.png">
 
