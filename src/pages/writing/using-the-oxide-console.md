@@ -31,7 +31,8 @@ Quoting [the README][console-readme]:
 > real API.
 
 I happen to think this is extremely cool. If you want to, you could stop reading
-this post and go play with that instead.
+this post and go play with that instead. It's also, like the rest of Oxide's software
+stack, fully open source!
 
 Before we begin, I would like to say that I am going to be doing this "manually"
 via the console and a web browser rather than via the CLI. I am doing this for
