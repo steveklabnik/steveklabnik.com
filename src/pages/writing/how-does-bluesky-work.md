@@ -298,13 +298,9 @@ The devil is in the details, and I think this is one of the more meaningful
 criticisms of BlueSky and atproto.
 
 You see, there are different "methods" of creating a DID. BlueSky supports
-two methods: `did:web`, which is based on domain names. Because this method
-is tied to the domain name, if you use it, you don't get the benefit I was
-talking about above, transitioning between different names while keeping the
-same DID: when your domain changes, so does the DID associated with it. You
-*can* apparently point at a new DID, so this isn't true in all cases, but
-if you have lost control of that domain for whatever reason, it still is, and
-so this is a concern to think about.
+two methods: `did:web`, which is based on domain names. There are some drawbacks
+with this method that I don't personally fully understand well enough to describe,
+I'm sure I'll write something in-depth about DIDs in the future.
 
 So because of that weakness, BlueSky has implemented their own DID method,
 called `did:plc`. The `plc` stands for "placeholder," because even though
