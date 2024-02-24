@@ -125,7 +125,7 @@ everything on the network, though bigger ones will, of course.
 
 Here this is in ASCII art:
 
-                                          
+```text
   ┌─────┐                    ┌──────────┐ 
   │ PDS ├───────┐            │ App View │ 
   └─────┘       │            └──────────┘ 
@@ -137,6 +137,7 @@ Here this is in ASCII art:
   ┌─────┐       │            ┌──────────┐ 
   │ PDS ├───────┘            │ App View │ 
   └─────┘                    └──────────┘ 
+```
 
 This is all you really need to know to understand the core of atproto: people
 create data, it's shared in the network, and applications can interact with
