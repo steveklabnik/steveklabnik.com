@@ -301,7 +301,10 @@ You see, there are different "methods" of creating a DID. BlueSky supports
 two methods: `did:web`, which is based on domain names. Because this method
 is tied to the domain name, if you use it, you don't get the benefit I was
 talking about above, transitioning between different names while keeping the
-same DID: when your domain changes, so does the DID associated with it.
+same DID: when your domain changes, so does the DID associated with it. You
+*can* apparently point at a new DID, so this isn't true in all cases, but
+if you have lost control of that domain for whatever reason, it still is, and
+so this is a concern to think about.
 
 So because of that weakness, BlueSky has implemented their own DID method,
 called `dld:plc`. The `plc` stands for "placeholder," because even though
@@ -320,7 +323,8 @@ Another is that the BlueSky team has demonstrated, in my personal opinion,
 enough understanding and uncomfortableness with being in control here, and it's
 designed in such a way that if other, better systems develop, you can move
 to them. They've also indicated that moving governance of `dld:plc` to some sort
-of consensus model in the future is possible. There are options.
+of consensus model in the future is possible. There are options. Also, others
+could run a `dld:plc` service and use that instead if they prefer, too.
 
 I personally see this as an example of pragmatically shipping something, others
 see it as a nefarious plot. You'll have to decide for yourself.
