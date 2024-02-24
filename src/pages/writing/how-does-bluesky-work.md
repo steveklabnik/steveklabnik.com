@@ -307,7 +307,7 @@ if you have lost control of that domain for whatever reason, it still is, and
 so this is a concern to think about.
 
 So because of that weakness, BlueSky has implemented their own DID method,
-called `dld:plc`. The `plc` stands for "placeholder," because even though
+called `did:plc`. The `plc` stands for "placeholder," because even though
 they plan on supporting it indefinitely, it too has its weaknesses. And that
 weakness is that it involves asking a service that BlueSky runs in order to
 resolve the proper information. For example, [here is my lookup][plc-dir].
@@ -316,15 +316,15 @@ possible thanks to the network design, which some people take to be a very
 serious issue.
 
 So, is the flaw fatal? I don't think so. The first reason is, if you really don't
-want to engage with it, you can use `dld:web`. Yes that isn't great for other
-reasons; that's why `dld:plc` was created. But you do get around this issue.
+want to engage with it, you can use `did:web`. Yes that isn't great for other
+reasons; that's why `did:plc` was created. But you do get around this issue.
 
 Another is that the BlueSky team has demonstrated, in my personal opinion,
 enough understanding and uncomfortableness with being in control here, and it's
 designed in such a way that if other, better systems develop, you can move
-to them. They've also indicated that moving governance of `dld:plc` to some sort
+to them. They've also indicated that moving governance of `did:plc` to some sort
 of consensus model in the future is possible. There are options. Also, others
-could run a `dld:plc` service and use that instead if they prefer, too.
+could run a `did:plc` service and use that instead if they prefer, too.
 
 I personally see this as an example of pragmatically shipping something, others
 see it as a nefarious plot. You'll have to decide for yourself.
