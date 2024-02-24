@@ -8,7 +8,7 @@ blog: literate-programming
 
 # REST is
 
-![Rest is OVER](../img/2012-02-23/restisover.png)
+![Rest is OVER](/img/2012-02-23/restisover.png)
 
 ---
 

@@ -4,7 +4,7 @@ title: "Today is my first day at Oxide Computer Company"
 pubDate: 2020-06-15
 ---
 
-![Oxide Logo](../img/2020-06-15/oxide.png)
+![Oxide Logo](/img/2020-06-15/oxide.png)
 
 Today is my first day at [Oxide Computer Company](https://oxide.computer/), where I will be doing engineering work.
 

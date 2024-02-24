@@ -10,9 +10,9 @@ I've had a few different blogs over the years. Every so often, I change things. 
 
 My oldest blog that's survived is [Literate Programming](https://web.archive.org/web/20200519230707/http://blog.steveklabnik.com/). It looked like this:
 
-![untitled](../img/2020-06-08/Untitled.png)
-![untitled 01](../img/2020-06-08/Untitled%201.png)
-![untitled 02](../img/2020-06-08/Untitled%202.png)
+![untitled](/img/2020-06-08/Untitled.png)
+![untitled 01](/img/2020-06-08/Untitled%201.png)
+![untitled 02](/img/2020-06-08/Untitled%202.png)
 
 This was my own static site generator! I loved making that table of contents stuff over on the left.
 
@@ -20,9 +20,9 @@ This was my own static site generator! I loved making that table of contents stu
 
 Then, there's [words](https://web.archive.org/web/20200604152340/https://words.steveklabnik.com/). This used [Svbtle](https://svbtle.com/), which is a great platform. I liked the Meeple, and the red, and the Kudos button that made random internet people *so mad* for some reason. Anyway, it looked like this:
 
-![untitled 03](../img/2020-06-08/Untitled%203.png)
-![untitled 04](../img/2020-06-08/Untitled%204.png)
-![untitled 05](../img/2020-06-08/Untitled%205.png)
+![untitled 03](/img/2020-06-08/Untitled%203.png)
+![untitled 04](/img/2020-06-08/Untitled%204.png)
+![untitled 05](/img/2020-06-08/Untitled%205.png)
 
 The kudos count does nothing, other than record that you did it. The style was really nice, it was easy to write Markdown. Then Medium got popular. Oh well.
 

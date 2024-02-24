@@ -59,7 +59,7 @@ Fortunately, this has been done for us, in the Use Cases above. Sweet!
 
 Taking all of this into account, I drew out this state machine:
 
-![state machine](../img/2012-03-08/state-machine.png)
+![state machine](/img/2012-03-08/state-machine.png)
 
 Basically, you start at a root. Two options: see the newest list of productions, or see them all. You can filter all of them by a category. Eventually, you end up picking one. This workflow should be enough to support all of our use cases.
 

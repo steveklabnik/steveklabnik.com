@@ -55,7 +55,7 @@ Eventually, though, torture became socially inconvenient, and people started cha
 
 Foucault also illustrates that control and power in modern society mirror Jeremy Bentham’s concept of the ‘Panopticon,’ which is a prison in a circular shape by which the rooms can all observe each other. The observation would help to keep them all in line, since the all-seeing tower in the middle would be able to observe everyone at all times.
 
-![panopticon](../img/2012-08-13/panopticon.png)
+![panopticon](/img/2012-08-13/panopticon.png)
 
 I found this concept amusing, [here](http://en.wikipedia.org/wiki/Litchfield_Towers) are the dorms I stayed in during my time at the University of Pittsburgh.
 
