@@ -220,7 +220,7 @@ and labeling them if they believe they contain NSFW content.
 
 
 Labeling exists, but I do not believe you can run your own labeler yet. BlueSky
-runs thier own, but there hasn't been an external release that I am aware of.
+runs their own, but there hasn't been an external release that I am aware of.
 But once they do, you can imagine communities running their own services, adding
 whatever kind of labels they'd like.
 
@@ -339,7 +339,7 @@ communicate with.
 
 They publish two Lexicons, one as `com.atproto.*` and one as `app.bsky.*`. The
 former are low level operations that any application on the network will need,
-and the ones specific to BlueSKy are in the latter.
+and the ones specific to BlueSky are in the latter.
 
 But one nice thing about BlueSky in particular is that they've taken the product
 goals that nobody should know any of this nerd shit to be able to use BlueSky.
