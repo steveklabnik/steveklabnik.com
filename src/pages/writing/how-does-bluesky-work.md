@@ -4,12 +4,6 @@ title: "How Does BlueSky Work?"
 pubDate: 2024-02-24
 ---
 
-I never wrote a post about quitting Twitter, and this post won't be about that
-either. I *am* very enthusiastic about BlueSky, though. And I am enthusiastic
-about it for more than just a Twitter replacement: I think it has the potential
-to be much more significant than that. But this post isn't about that either,
-though unlike the Twitter post, I expect to be writing that post soon.
-
 One of the reasons I am enthusiastic about BlueSky is because of the way that
 it works. So in this post, I am going to lay out some of the design and the
 principles behind this design, as I understand them. I am not on the BlueSky
