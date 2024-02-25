@@ -103,7 +103,7 @@ either run their own PDS, or use one that someone else hosts for them.
 
 Applications can be built by looking at the various records stored in the
 network, and doing things with them. These services all called *App Views*,
-becuase they are exposing a particular view of the information stored in the
+because they are exposing a particular view of the information stored in the
 network. This view is created via the Lexicon system: building an application
 means that you define a Lexicon, structuring the data that you want to deal with,
 and then look at records that use your lexicon, ignoring the rest.
@@ -244,7 +244,7 @@ someone in one place, and they can be blocked on every place, if you so choose.
 Maybe you subscribe to different moderation decisions in different applications.
 It is 100% up to you.
 
-This model is significantly different from other federated systems, becuase
+This model is significantly different from other federated systems, because
 you don't really have an "account" on an "instance," like in Mastodon. So a lot
 of people ask questions like "what happens when my instance gets defederated"
 which don't exactly make sense as stated. You can achieve the same goal, by
