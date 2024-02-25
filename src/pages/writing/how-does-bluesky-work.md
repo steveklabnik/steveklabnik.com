@@ -96,7 +96,7 @@ So that's the high level, but what does that mean concretely?
 In atproto, *users* create *records* that are cryptographically signed to
 demonstrate authorship. Records have a schema called a *Lexicon*.
 
-These are stored in *repositories*. Repositories run as a *service*, exposing
+Records are stored in *repositories*. Repositories run as a *service*, exposing
 HTTP and WebSockets. They then can then talk to each other and federate the
 records. These are often called PDSes, for "Personal Data Server." Users
 either run their own PDS, or use one that someone else hosts for them.
