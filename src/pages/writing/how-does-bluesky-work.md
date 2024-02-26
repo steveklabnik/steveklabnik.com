@@ -290,7 +290,7 @@ don't even have access to. If your PDS goes down, and you want to migrate to
 a new one, there's a way to backfill the contents of the PDS from the network
 itself, and inform the network that your PDS has moved. It is real, meaningful
 account portability, and that is radically different from any similar service
-running today.
+running today.[^1]
 
 But.
 
@@ -371,3 +371,5 @@ I'm sure I'll have more to say about all of this in the future.
 [did]: https://www.w3.org/TR/did-core/
 [plc-dir]: https://plc.directory/did:plc:3danwc67lo7obz2fmdg6jxcr
 [bsky]: https://bsky.app/
+[^1]: A commentor points out https://book.peergos.org/, which I had not heard of,
+      but apparently was known to the creators of BlueSky before they made it. Neat.
