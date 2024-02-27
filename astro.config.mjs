@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 import vercel from "@astrojs/vercel/serverless";
@@ -7,5 +8,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   output: "server",
   site: 'https://steveklabnik.com',
+  integrations: [mdx()],
   adapter: vercel()
 });
