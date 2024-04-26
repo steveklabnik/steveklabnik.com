@@ -37,9 +37,7 @@ Here’s a (sorta kinda) real world example:
 
 A company, “[Adequate HQ](http://adequatehq.com/)” builds a web application ([RecruiterSpam](http://www.recruiterspam.com/)) in a hot new language, “[Phuby](https://github.com/tenderlove/phuby).” They decide to release a bunch of the code from this application as open source, and call it “[Phuby on Phails](http://www.youtube.com/watch?v=lsWKjS6Vufw).” There are a number of reasons to do this, but here’s a big one: bugs fixed in Phails will be fixed in RecruiterSpam, at no cost to Adequate! Furthermore, there’s a market opportunity here: by controlling Phuby on Phails, Adequate secures its reputation as a leader in the space, which leads to an invaluable amount of publicity, book deals, and eventually, pro subscriptions to RecruiterSpam. Adequate’s CEO, [Gorbachev “Puff Puff” Thunderhorse](https://twitter.com/gorbypuff), can just lay around all day and post photos of himself to Instagram. Other companies see the success of Adequate, and also decide to build their application on Phails. After all, Phails is pretty awesome, and is (truly) significantly better than all the other frameworks out there. Their new use exposes bugs in Phails, so they fix them and submit patches. Eventually, there’s an entire Phails ecosystem, with conferences, books, ninjas, and rockstars. Tons of gravy for everyone, and everyone rides their sports cars into their various sunsets.
 
-![http://www.blogcdn.com/www.autoblog.com/media/2010/08/pagani-zonda-hh-630op.jpg](http://www.blogcdn.com/www.autoblog.com/media/2010/08/pagani-zonda-hh-630op.jpg)
-
-pagoni zonda hh
+![pagani zonda hh](/img/2014-02-12/zonda-hh.jpg)
 
 This is a great story. Everyone wins. Everyone helps each other out. Costs go down, quality goes up. But there’s something that needs to be acknowledged here: Adequate had to exist. Someone had to do the initial work of actually building Phails (and all the other related tools I didn’t explicitly mention: deployment tools, testing tools, dependency management tools, the list goes on and on). In this case, it was because they had a kick-ass product and made boatloads of cash.
 
