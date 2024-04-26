@@ -24,23 +24,43 @@ This is how you can write “portable” code that is portable in one sense, but
 
 If this idea seems silly to you, well, I can assure you it’s real. For example, let’s consider the actual C language, and some actual hardware, specifically, x86.
 
-Imagine we have an array of arrays, four by four: (markdown gives me a header even though I don’t want it, sorry about the weirdness)
+Imagine we have an array of arrays, four by four:
 
-[Untitled](C%20is%20not%20how%20the%20computer%20works%20can%20lead%20to%20ineffi%202b34895a7b344b0e93a0dbd0515139ca/Untitled%20Database%20df376e76bfe74a62abbdda51693c3dce.csv)
+```plaintext
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+```
 
 There are two naive ways to process it: row by row:
 
-[Untitled](C%20is%20not%20how%20the%20computer%20works%20can%20lead%20to%20ineffi%202b34895a7b344b0e93a0dbd0515139ca/Untitled%20Database%20c2687cd2b9814695ba63e3183581d2e6.csv)
+```plaintext
+1	2	3	4
+5	6	7	8
+9	10	11	12
+13	14	15	16
+```
 
 or column by column:
 
-[Untitled](C%20is%20not%20how%20the%20computer%20works%20can%20lead%20to%20ineffi%202b34895a7b344b0e93a0dbd0515139ca/Untitled%20Database%20e999f44a3a62483092c9065991f9768a.csv)
+```plaintext
+1	5	9	13	
+2	6	10	14
+3	7	11	15
+4	8	12	16
+```
 
 Here’s a fun question: is one of these faster than the other?
 
 At this small size, probably not. But there’s a way to do this that’s faster than either of these ways, and that’s called “blocking” or “tiling”. It means that you process a sub-set, or “block”, of the array each time. Something like this:
 
-[Untitled](C%20is%20not%20how%20the%20computer%20works%20can%20lead%20to%20ineffi%202b34895a7b344b0e93a0dbd0515139ca/Untitled%20Database%20f238e97cef4442efb1628470bf902868.csv)
+```plaintext
+1	2	5	6
+3	4	7	8
+9	10	13	14
+11	12	15	16
+```
 
 On x86, this is *meaningfully* faster in many circumstances. This has to do with the way that the CPU caches information. For more, see [this page from Intel](https://software.intel.com/en-us/articles/how-to-use-loop-blocking-to-optimize-memory-use-on-32-bit-intel-architecture), including a visualization that’s probably better than mine.
 
