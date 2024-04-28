@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { MarkdownInstance } from "astro";
+import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 const pageTitle = "Blog";
 const allPosts = await getCollection('blog');
 
 let allPostsByDate = (() => {
-    let posts = {};
+    let posts: Record<string, Array<CollectionEntry<"blog">>> = {};
     allPosts.map((post) => {
         let year = new Date(post.data.pubDate).getFullYear();
         let array = posts[year.toString()];
@@ -17,8 +18,9 @@ let allPostsByDate = (() => {
         }
 
         posts[year.toString()].push(post);
-        posts[year.toString()] = posts[year.toString()].sort((a, b) => a.data.pubDate > b.data.pubDate ? -1 : 0)
+        posts[year.toString()] = posts[year.toString()].sort((a, b) => b.data.pubDate - a.data.pubDate)
     })
+
 
     return posts;
 })();
