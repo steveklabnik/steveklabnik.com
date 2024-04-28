@@ -1,13 +1,15 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const posts = await pagesGlobToRssItems(import.meta.glob('../pages/writing/*.{md,mdx}'));
+  const posts = await await getCollection("blog")
   const items = posts
-    .sort((a, b) => Date.parse(b.pubDate) - Date.parse(a.pubDate))
-    .map(({ pubDate, title, link }) => ({
-      title,
-      link,
-      pubDate: new Date(pubDate),
+    .sort((a, b) => b.data.pubDate - a.data.pubDate)
+    .map((post) => ({
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      link: `/writing/${post.slug}/`,
     }));
 
   return rss({

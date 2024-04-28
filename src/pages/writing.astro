@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
 import type { MarkdownInstance } from "astro";
+import { getCollection } from "astro:content";
 const pageTitle = "Blog";
-const allPosts = await Astro.glob('../pages/writing/*.{md,mdx}');
+const allPosts = await getCollection('blog');
 
 let allPostsByDate = (() => {
-    let posts: { [key: string]: MarkdownInstance<Record<string, any>>[] } = {};
+    let posts = {};
     allPosts.map((post) => {
-        let year = new Date(post.frontmatter.pubDate).getFullYear();
+        let year = new Date(post.data.pubDate).getFullYear();
         let array = posts[year.toString()];
 
         // if this is the first post of this year, we have to create the inner array
@@ -17,7 +17,7 @@ let allPostsByDate = (() => {
         }
 
         posts[year.toString()].push(post);
-        posts[year.toString()] = posts[year.toString()].sort((a, b) => a.frontmatter.pubDate > b.frontmatter.pubDate ? -1 : 0)
+        posts[year.toString()] = posts[year.toString()].sort((a, b) => a.data.pubDate > b.data.pubDate ? -1 : 0)
     })
 
     return posts;
@@ -30,7 +30,11 @@ const years = Object.keys(allPostsByDate).reverse();
     {years.map((year) => (
       <h3>{year}</h3>
         <ul>
-            {allPostsByDate[year].map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+            {allPostsByDate[year].map((post) => (
+                <li>
+                    <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
+                </li>
+            ))}
         </ul>
     ))}
 </BaseLayout>
