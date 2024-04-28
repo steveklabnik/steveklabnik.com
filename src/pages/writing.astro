@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 import type { MarkdownInstance } from "astro";
 const pageTitle = "Blog";
-const allPosts = await Astro.glob('../pages/writing/*.md');
+const allPosts = await Astro.glob('../pages/writing/*.{md,mdx}');
 
 let allPostsByDate = (() => {
     let posts: { [key: string]: MarkdownInstance<Record<string, any>>[] } = {};
