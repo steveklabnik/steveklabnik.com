@@ -1,28 +1,37 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-const { pageTitle } = Astro.props;
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
 
-		<link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
-		<link rel="icon" href="/icon.svg" type="image/svg+xml">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
-		<link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/favicon.ico" sizes="any" /><!-- 32×32 -->
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" /><!-- 180×180 -->
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="alternate" type="application/rss+xml" title="Steve Klabnik" href="/feed.xml" />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<div class="container">
-		<h1>{pageTitle}</h1>
-		<Navigation />
-        <slot />
-		</div>
-	</body>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Steve Klabnik"
+      href="/feed.xml"
+    />
+    <title>{frontmatter.pageTitle}</title>
+  </head>
+  <body class="bg-slate-100">
+    <div class="container mx-auto">
+      <nav class="prose prose-slate mb-2">
+        <h1 class="tracking-tight mb-0 mt-3">
+          {frontmatter.pageTitle}
+        </h1>
+        <a href="/" class="mt-0 mr-4"> Home </a>
+        <a href="/writing" class="inline-block mt-0"> Blog </a>
+      </nav>
+      <slot />
+    </div>
+  </body>
 </html>

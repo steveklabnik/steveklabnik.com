@@ -1,20 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
+  const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const frontmatter = { pageTitle: entry.data.title };
 ---
 
-<BaseLayout pageTitle={entry.data.title}>
-<p>{entry.data.pubDate.toString().slice(4,15)}</p>
-<Content />
+<BaseLayout frontmatter={frontmatter}>
+  <article class="prose prose-slate">
+    <h2>{entry.data.pubDate.toString().slice(4, 15)}</h2>
+    <Content />
+  </article>
 </BaseLayout>
-

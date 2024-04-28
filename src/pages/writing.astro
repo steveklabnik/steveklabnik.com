@@ -1,44 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import type { MarkdownInstance } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-const pageTitle = "Blog";
-const allPosts = await getCollection('blog');
+import Link from "../components/Link";
+const pageTitle = "Steve Klabnik's Blog";
+const allPosts = await getCollection("blog");
 
 let allPostsByDate = (() => {
-    let posts: Record<string, Array<CollectionEntry<"blog">>> = {};
-    allPosts.map((post) => {
-        let year = new Date(post.data.pubDate).getFullYear();
-        let array = posts[year.toString()];
+  let posts: Record<string, Array<CollectionEntry<"blog">>> = {};
+  allPosts.map((post) => {
+    let year = new Date(post.data.pubDate).getFullYear();
+    let array = posts[year.toString()];
 
-        // if this is the first post of this year, we have to create the inner array
-        if (!array || !array.length) {
-            posts[year.toString()] = [];
-        }
-
-        posts[year.toString()].push(post);
-    })
-
-    for (const [key, value] of Object.entries(posts)) {
-        value.sort((a, b) => b.data.pubDate - a.data.pubDate)
+    // if this is the first post of this year, we have to create the inner array
+    if (!array || !array.length) {
+      posts[year.toString()] = [];
     }
 
-    return posts;
+    posts[year.toString()].push(post);
+  });
+
+  for (const [key, value] of Object.entries(posts)) {
+    value.sort((a, b) => b.data.pubDate - a.data.pubDate);
+  }
+
+  return posts;
 })();
 
 const years = Object.keys(allPostsByDate).reverse();
+const frontmatter = { pageTitle: pageTitle };
 ---
-<BaseLayout pageTitle={pageTitle}>
-    <p>This is my blog.</p>
-    {years.map((year) => (
-      <h3>{year}</h3>
-        <ul>
+
+<BaseLayout frontmatter={frontmatter}>
+  <h2 class="text-2xl py-2">This is my blog.</h2>
+  <div class="prose prose-slate">
+    {
+      years.map((year) => (
+        <>
+          <h2 class="m-1">{year}</h2>
+          <ul class="m-1 p-2">
             {allPostsByDate[year].map((post) => (
-                <li>
-                    <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
-                </li>
+              <li class="list-disc ml-10">
+                <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
+              </li>
             ))}
-        </ul>
-    ))}
+          </ul>
+        </>
+      ))
+    }
+  </div>
 </BaseLayout>
