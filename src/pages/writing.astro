@@ -18,9 +18,11 @@ let allPostsByDate = (() => {
         }
 
         posts[year.toString()].push(post);
-        posts[year.toString()] = posts[year.toString()].sort((a, b) => b.data.pubDate - a.data.pubDate)
     })
 
+    for (const [key, value] of Object.entries(posts)) {
+        value.sort((a, b) => b.data.pubDate - a.data.pubDate)
+    }
 
     return posts;
 })();
