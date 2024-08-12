@@ -126,7 +126,7 @@ for you. The abstraction is in building those utility classes. This means you're
 not writing new CSS when you need to add functionality, which to me is a great
 sign that the abstraction is working.
 
-It's also that there is some slight of hand going on here, as we do, on another
+It's also that there is some sleight of hand going on here, as we do, on another
 level. An objection that gets raised to doing things this way is "what happens
 when you need to update a bunch of similar styles?" And the answer for that is
 components. That is, it's not so much that utility CSS says that semantic names
