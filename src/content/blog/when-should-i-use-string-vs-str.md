@@ -1,0 +1,279 @@
+---
+title: "When should I use String vs &str?"
+pubDate: 2024-10-06
+---
+
+Rust has two main string types: `String` and `&str`. Sometimes, people argue
+that these two types make Rust code difficult to write, because you have to
+think about which one you should be using in a given situation. My experience
+of writing Rust is that I don't really think about this very much, and this
+post is about some rules of thumb that you can use to be like me.
+
+## Level 1: Don't think about it at all
+
+The very first thing you can do is follow the simplest rule:
+
+> Always use `String`, never use `&str`.
+
+That looks like this:
+
+```rust
+struct Person {
+    name: String,
+}
+
+fn first_word(words: String) -> String {
+    words
+        .split_whitespace()
+        .next()
+        .expect("words should not be empty")
+        .to_string()
+}
+```
+
+This style means you may need to add `.to_string()` or `.clone()`
+for things to work sometimes:
+
+```rust
+fn main() {
+    let sentence = "Hello, world!";
+
+    println!("{}", first_word(sentence.to_string()));
+
+    let owned = String::from("A string");
+
+    // if we don't clone here, we can't use owned the second time
+    println!("{}", first_word(owned.clone()));
+    println!("{}", first_word(owned));
+}
+```
+
+But that's okay, the compiler will let you know when you need to:
+
+```text
+error[E0382]: use of moved value: `owned`
+  --> src/main.rs:21:31
+   |
+18 |     let owned = String::from("A string");
+   |         ----- move occurs because `owned` has type `String`, which does not implement the `Copy` trait
+19 |
+20 |     println!("{}", first_word(owned));
+   |                               ----- value moved here
+21 |     println!("{}", first_word(owned));
+   |                               ^^^^^ value used here after move
+   |
+note: consider changing this parameter type in function `first_word` to borrow instead if owning the value isn't necessary
+  --> src/main.rs:5:22
+   |
+5  | fn first_word(words: String) -> String {
+   |    ----------        ^^^^^^ this parameter takes ownership of the value
+   |    |
+   |    in this function
+help: consider cloning the value if the performance cost is acceptable
+   |
+20 |     println!("{}", first_word(owned.clone()));
+   |                                    ++++++++
+```
+
+Hey, compiler, that's a great idea. Let's move on to level 2.
+
+## Level 2: prefer `&str` for function parameters
+
+A rule that's a little better is this one:
+
+> Always use `String` in structs, and for functions, use `&str` for parameters
+> and `String` types for return values.
+
+This is what the compiler error for level 1 was suggesting we do instead of `.clone`.
+
+That results in code that looks like this:
+
+```rust
+struct Person {
+    name: String,
+}
+
+fn first_word(words: &str) -> String {
+    words
+        .split_whitespace()
+        .next()
+        .expect("words should not be empty")
+        .to_string()
+}
+
+fn main() {
+    let sentence = "Hello, world!";
+
+    println!("{}", first_word(sentence));
+
+    let owned = String::from("A string");
+
+    println!("{}", first_word(&owned));
+    println!("{}", first_word(&owned));
+}
+```
+
+We're now doing much less copying. We do need to add a `&` on
+to `String` values that we wish to pass into `first_word`, but
+that's not too bad, the compiler will help us when we forget:
+
+```text
+error[E0308]: mismatched types
+  --> src/main.rs:20:31
+   |
+20 |     println!("{}", first_word(owned));
+   |                    ---------- ^^^^^ expected `&str`, found `String`
+   |                    |
+   |                    arguments to this function are incorrect
+   |
+note: function defined here
+  --> src/main.rs:5:4
+   |
+5  | fn first_word(words: &str) -> String {
+   |    ^^^^^^^^^^ -----------
+help: consider borrowing here
+   |
+20 |     println!("{}", first_word(&owned));
+   |                               +
+```
+
+Following this rule will get you through 95% of situations successfully. Yes,
+that number was found via the very scientific process of "I made it up, but it
+feels correct after writing Rust for the last twelve years."
+
+For 4% of that last 5%, we can go to level 3:
+
+## Level 3: return `&str` sometimes
+
+Here's a slightly more advanced rule for certain circumstances:
+
+> Always use `String` in structs, and for functions, use `&str` for parameters.
+> If the return type of your function is derived from an argument and isn’t
+> mutated by the body, return `&str`. If you run into any trouble here, return
+> `String` instead.
+
+That would look like this:
+
+```rust
+struct Person {
+    name: String,
+}
+
+// we're returning a substring of words, so &str is appropriate
+fn first_word(words: &str) -> &str {
+    words
+        .split_whitespace()
+        .next()
+        .expect("words should not be empty")
+}
+
+fn main() {
+    let sentence = "Hello, world!";
+
+    println!("{}", first_word(sentence));
+
+    let owned = String::from("A string");
+
+    println!("{}", first_word(&owned));
+    println!("{}", first_word(&owned));
+}
+```
+
+This lets us remove a copy, we no longer have a `.to_string` in the body of
+`first_word`.
+
+Sometimes, we can't do that though:
+
+```rust
+// because we are going to uppercase the first word, our return type can't
+// be &str anymore, because we aren't actually returning a substring: we are
+// creating our own new string.
+fn first_word_uppercase(words: &str) -> String {
+    words
+        .split_whitespace()
+        .next()
+        .expect("words should not be empty")
+        .to_uppercase()
+}
+
+fn main() {
+    let sentence = "Hello, world!";
+
+    println!("{}", first_word_uppercase(sentence));
+
+    let owned = String::from("A string");
+
+    println!("{}", first_word_uppercase(&owned));
+    println!("{}", first_word_uppercase(&owned));
+}
+```
+
+How do you know that this is the case? Well, in this specific case,
+`to_uppercase` already returns a `String`. So that's a great hint.
+If we tried to return a `&str`, we'd get an error:
+
+```rust
+// this can't work
+fn first_word_uppercase(words: &str) -> &str {
+    &words
+        .split_whitespace()
+        .next()
+        .expect("words should not be empty")
+        .to_uppercase()
+}
+```
+
+would give us
+
+```text
+error[E0515]: cannot return reference to temporary value
+  --> src/main.rs:7:5
+   |
+7  |        &words
+   |  ______^-
+   | | ______|
+8  | ||         .split_whitespace()
+9  | ||         .next()
+10 | ||         .expect("words should not be empty")
+11 | ||         .to_uppercase()
+   | ||                       ^
+   | ||_______________________|
+   |  |_______________________returns a reference to data owned by the current function
+   |                          temporary value created here
+```
+
+And that's really it. Following this rule will get you through virtually every
+scenario where you need to wonder about `String` and `&str`. With some practice,
+you'll internalize these rules, and when you feel comfortable with a level, you
+can go up to the next one.
+
+What about that last 1% though? Well, there is a next level...
+
+## Level 4: When to use `&str` in a struct
+
+Here's the rule for level 4:
+
+> Should you use a `&str` in a struct? If you're asking that question, use
+> `String`. When you need to use `&str` in a struct, you'll know.
+
+Storing references in structs is useful, for sure, and it's good that Rust
+supports it. But you're only going to need it in fairly specific scenarios,
+and if you feel like you're worring about `String` vs `&str`, you're just
+not in the position to be worrying about the complexity of storing a `&str`
+in a struct yet.
+
+In fact, some people believe in this rule so strongly that they're working
+on a language where storing references in structs isn't even possible, and
+it's a langauge I've found very interesting lately:
+[Hylo](https://www.hylo-lang.org/). They go a bit farther than that, even:
+in Hylo, you think of everything as being values, rather than having references
+at all. They think that you can write meaningful programs with this model.
+But this isn't a post about Hylo. I'll write one of those eventually. My point
+is just that you can really, truly, get away with not storing `&str`s in structs
+for a _lot_ of useful Rust programs. So it's not really worth spending mental
+energy on, until you determine that you must do so. That is the case when
+you've profiled your program and determined that copying strings to and from
+your struct is a big enough issue to bother with lifetimes.
+
+I hope you've found this helpful, and if you have any other rules of thumb
+like this, I'd love to hear about them!
