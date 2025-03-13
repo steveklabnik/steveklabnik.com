@@ -1,0 +1,173 @@
+---
+title: "Choosing Languages"
+pubDate: 2025-03-13
+---
+
+import BlueskyPost from "../../components/BlueskyPost.astro";
+
+I tried to write this post yesterday, but I didn't like my approach there. Last
+night, I had a conversation with one of my best friends about it, and he
+encouraged me to write this, but in a different way. I think this way is better,
+so thanks, dude.
+
+---
+
+The other day, Microsoft announced [that they are re-writing the TypeScript
+compiler in Go][ts]. A lot of people had a lot of feelings about this. I did
+too, but in a different way than many other people.
+
+The biggest questions people had were "Why not C#?" and "Why not Rust?". To
+be clear, I do think that asking why someone chooses a programming language
+can be valuable; as professionals, we need to make these sorts of decisions
+on a regular basis, and seeing how others make those decisions can be useful,
+to get an idea of how other people think about these things.
+
+But it can also... I dunno. Sometimes, I think people have little imagination
+when it comes to choosing a particular technology stack.
+
+<BlueskyPost src="https://bsky.app/profile/did:plc:3danwc67lo7obz2fmdg6jxcr/post/3lk6p4clry22p" />
+
+It is true that sometimes, there are hard requirements that means that choosing
+a particular technology is inappropriate. But I've found that often, these
+sorts of requirements are often more _contextually_ requirements than ones that
+would be the case in the abstract. For example, [you can write an OS in
+Lisp][lisp-machine] if you want. But in practice, you're probably not working with
+this hardware, or willing to port the environment to bare metal.
+
+But it's also the case that you often don't know what others' contextual
+situation actually is. I would have never guessed the main reason that Microsoft
+chose Go for, which is roughly "we are porting the existing codebase, rather
+than re-writing it, and our existing code looks kinda like Go, making it easy to
+port." That's a very good reason! I hadn't really thought about the differences
+between porting and re-writing in this light before, and it makes perfect sense
+to me.
+
+At the same time,
+
+<BlueskyPost src="https://bsky.app/profile/jakebailey.dev/post/3lk6t4a4xa22w" />
+
+people are going _way_ overboard here.
+
+<BlueskyPost src="https://bsky.app/profile/prattmic.com/post/3lk6was5n5227" />
+
+There's some sort of balance here to be struck. But at the same time, I hate
+"choose the right tool for the job" as a suggestion. Other than art projects,
+has anyone ever deliberately chosen the wrong tool? Often, something that
+seems like the wrong tool is chosen simply because the contextual requirements
+weren't obvious to you, the interlocutor.
+
+I think there's two other reasons why this situation is making me feel
+complicated things. The first is RIIR, and the second is a situation from a long
+time ago that changed my life.
+
+Many of you have probably heard of the "re-write it in Rust" meme. The idea is
+that there's this plague of programmers who are always suggesting that every
+single thing needs to be re-written in Rust. While I am sure this happens from
+time to time, I have yet to see real evidence that it is actually widespread. I
+almost even wrote a blog post about this, trying to actually quantify the effect
+here. But on some level, perception is reality, and if people believe it's true,
+it's real on some level, even if that's not actually the case. Regardless of the
+truth of the number of people who suggest this, on every thread about Rust,
+people end up complaining about this effect, and so it has an effect on the
+overall discourse regardless. And while I don't believe that this effect is real
+overall, it absolutely has happened in this specific situation. A bunch of
+people have been very aggressively suggesting that this should have been in
+Rust, and not Go, and I get where they're coming from, but also: really? Go is
+an absolutely fine choice here. It's fine. Why do you all have to reinforce a
+stereotype? It's frustrating.
+
+The second one is something that's been on my mind for over a decade, but I've
+only started talking about it in places other than conversations with close
+friends. Long-time readers may remember [that one time where I was an
+asshole][sorry]. I mean, I've been an asshole more than once in my life, but
+this one was probably the time that affected me the most. The overall shape of
+the situation is this:
+
+1. Someone wrote `grep`, but in Node.
+2. I made fun of it on the internet, because why would someone write a CLI tool in Node?
+3. The author found out that I did and felt bad about it.
+
+Looking back at my apology, I don't think it's necessarily the best one. It was
+better than the first draft or two of what I wrote, but I've gotten better at
+apologizing since then. Regardless, this incident changed the trajectory of my
+life, and if you happen to read this, Heather, I am truly, unequivocally, sorry.
+
+There was a couple of things that happened here. The first is just simply, in
+2013, I did not understand that the things I said had meaning. I hate talking
+about this because it makes me seem more important than I am, but it's also
+important to acknowledge. I saw myself at the time as just Steve, some random
+guy. If I say something on the internet, it's like I'm talking to a friend in
+real life, my words are just random words and I'm human and whatever. It is what
+it is.
+
+But at that time in my life, that wasn't actually the case. I was on the Rails
+team, I was speaking at conferences, and people were reading my blog and tweets.
+I was an "influencer," for better or worse. But I hadn't really internalized
+that change in my life yet. And so I didn't really understand that if I
+criticized something, it was something thousands of people would see. To me, I'm
+just Steve. This situation happened before we talked about "cancel culture" and
+all of that kind of stuff, but when the mob came for me, I realized: they were
+right, actually. I was being an asshole, and I should not have been. And I
+resolved myself to not being an asshole like that ever again.
+
+And to do that, I had to think long and hard about why I was like that. I love
+programming languages! I love people writing programs that they find
+interesting! I don't think that it's stupid to write a tool in a language that
+I wouldn't expect it to be written in! So why did I feel the reason to make fun
+of this in that situation?
+
+The answer? A pretty classic situation: the people I was hanging out with were
+affecting me, and in ways that, when I examined it, I didn't like very much.
+
+You see, in the Rails world at the time, there was a huge [contempt
+culture][contempt] at the time, especially around JavaScript and Node. And, when
+you're around people who talk shit all the time, you find yourself talking shit
+too. And once I realized that, well, I wanted to stop it. But there was a big
+problem: my entire professional, and most of my social, life was built around
+Ruby and Rails. So if I wanted to escape that culture... what should I do?
+
+If you clicked on the link to my apology above, you probably didn't make note of
+the date: Jan 23 2013. Something had just happened to me, in December of 2012: I
+had decided to check out this little programming language I had heard of called
+Rust.
+
+One of the things that struck me about the "Rust community" at the time, which
+was like forty people in an IRC room, was how nice they were. When I had trouble
+getting Hello World to compile, and I typed `/join #rust`, I fully expected an
+RTFM and flames. But instead, I was welcomed with open arms. People were chill.
+And it was really nice.
+
+And so, a month and a day later, I had this realization about the direction my
+life was heading, and how I wasn't really happy about it. And I thought about
+how much I enjoyed the Rust stuff so far... and combined with a few other
+factors, maybe of which I'll write about someday, this is when I decided that I
+wanted to make Rust a thing, and dedicated myself to achieving that.
+
+And part of that was being conscious about the culture, and how it developed,
+and the ways that that would evolve over time. I didn't want Rust to end up the
+way that Rails had ended up. And that meant a few things, but first of all,
+truly internalizing that I had to change. And understanding that I had to be
+intentional with what I did and said. And what that led to, among other things,
+was a "we talk about Rust on its own merits, not by trash talking other languages"
+culture. (That's also partially because of Nietzsche, but I'm already pretty far
+afield of the topic for this post, maybe someday.)
+
+Anyway, the Eternal September comes for us all. The "Rust Community," if it ever
+were a coherent concept, doesn't really make sense any more. And it is by no
+means perfect. I have a lot of criticism about how things turned out. But I do
+think that it's not a coincidence that "Rust makes you trans," for example, is
+a meme. I am deeply proud of what we all built.
+
+So yeah, anyway: people choose programming languages for projects based on a
+variety of reasons. And sure, there may be better or worse choices. But you
+probably have a different context than someone else, and so when someone
+makes a choice you don't agree with, there's no reason to be a jerk about it.
+
+---
+
+Here's my post about this post on BlueSky:
+
+[ts]: https://devblogs.microsoft.com/typescript/typescript-native-port/
+[lisp-machine]: https://en.wikipedia.org/wiki/Lisp_machine
+[sorry]: /writing/node/
+[contempt]: https://blog.aurynn.com/2015/12/16-contempt-culture
