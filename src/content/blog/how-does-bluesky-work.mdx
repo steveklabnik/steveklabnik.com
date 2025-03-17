@@ -2,7 +2,8 @@
 title: "How Does BlueSky Work?"
 pubDate: 2024-02-24
 ---
-import BlueskyPost from '../../components/BlueskyPost.astro';
+
+import BlueskyPost from "../../components/BlueskyPost.astro";
 
 One of the reasons I am enthusiastic about BlueSky is because of the way that
 it works. So in this post, I am going to lay out some of the design and the
@@ -21,7 +22,7 @@ Here's what [the BlueSky Website](https://bsky.social) says right now:
 
 This is the big picture.
 
-Okay so that's a great idea, but like, what does that *mean*? Currently,
+Okay so that's a great idea, but like, what does that _mean_? Currently,
 BlueSky is a microblogging application, similar to Twitter and Mastodon. How
 does that fit into the big picture? Well, while it's true that BlueSky is a
 microblogging application, that's not the whole story: BlueSky is an initial
@@ -32,7 +33,7 @@ Protocol][at-protocol], known as AT, ATP, or "atproto" for short. BlueSky is the
 An important thing to note: BlueSky is also a company. Some people look at a
 company saying "hey we're building something that's too big to be controlled
 by companies!" with skepticism. I think that's a healthy starting point, but
-the answer for me is atproto. 
+the answer for me is atproto.
 
 The interplay between these two things is important, but we're going to start
 by exploring atproto, and then talk about how BlueSky is built on top of it.
@@ -52,7 +53,7 @@ or NFTs, or any of that. Just some cryptography and merkle trees and the like.
 Here's what [the AT Protocol Overview][atp-overview] says:
 
 > The Authenticated Transfer Protocol, aka atproto, is a federated protocol for
-> large-scale distributed social applications. 
+> large-scale distributed social applications.
 
 Let's break that down:
 
@@ -93,16 +94,16 @@ whatever other messages from whatever other applications people create.
 
 So that's the high level, but what does that mean concretely?
 
-In atproto, *users* create *records* that are cryptographically signed to
-demonstrate authorship. Records have a schema called a *Lexicon*.
+In atproto, _users_ create _records_ that are cryptographically signed to
+demonstrate authorship. Records have a schema called a _Lexicon_.
 
-Records are stored in *repositories*. Repositories run as a *service*, exposing
+Records are stored in _repositories_. Repositories run as a _service_, exposing
 HTTP and WebSockets. They then can then talk to each other and federate the
 records. These are often called PDSes, for "Personal Data Server." Users
 either run their own PDS, or use one that someone else hosts for them.
 
 Applications can be built by looking at the various records stored in the
-network, and doing things with them. These services all called *App Views*,
+network, and doing things with them. These services all called _App Views_,
 because they are exposing a particular view of the information stored in the
 network. This view is created via the Lexicon system: building an application
 means that you define a Lexicon, structuring the data that you want to deal with,
@@ -112,7 +113,7 @@ Now, if this were all there is, there would be pretty serious scaling issues.
 For example, if every time I post a new update on BlueSky, if I had to send
 my post to every single one of my followers' repositories, that would be
 extremely inefficent, and make running a popular repository very expensive to
-run. To fix this, there's an additional kind of service, called a *relay*, that
+run. To fix this, there's an additional kind of service, called a _relay_, that
 aggregates information in the network, and exposes it as a firehose to others.
 So in practice, App Views don't look at Repositories, but instead, look at
 Relays. When I make a post, my respository won't notify my followers'
@@ -120,23 +121,23 @@ repositories individually. My repository will notify a Relay, and my followers
 will use an App View that filters the ouput of the Relay to show only the posts
 of people they're following. This does imply that Relays are often huge and
 expensive to run, however you could imagine running a smaller relay that only
-propogates posts from a smaller subset of users too. They don't *have* to show
+propogates posts from a smaller subset of users too. They don't _have_ to show
 everything on the network, though bigger ones will, of course.
 
 Here this is in ASCII art:
 
 ```text
-  ┌─────┐                    ┌──────────┐ 
-  │ PDS ├───────┐            │ App View │ 
-  └─────┘       │            └──────────┘ 
-               ┌▼────────┐       ▲        
-  ┌─────┐      │         ├───────┘        
-  │ PDS ├──────►  Relay  │                
-  └─────┘      │         ├───────┐        
-               └▲────────┘       ▼        
-  ┌─────┐       │            ┌──────────┐ 
-  │ PDS ├───────┘            │ App View │ 
-  └─────┘                    └──────────┘ 
+  ┌─────┐                    ┌──────────┐
+  │ PDS ├───────┐            │ App View │
+  └─────┘       │            └──────────┘
+               ┌▼────────┐       ▲
+  ┌─────┐      │         ├───────┘
+  │ PDS ├──────►  Relay  │
+  └─────┘      │         ├───────┐
+               └▲────────┘       ▼
+  ┌─────┐       │            ┌──────────┐
+  │ PDS ├───────┘            │ App View │
+  └─────┘                    └──────────┘
 ```
 
 This is all you really need to know to understand the core of atproto: people
@@ -175,7 +176,7 @@ and labelers.
 ## What are feed generators?
 
 Most social applications have the concept of a "feed" of content. This is broken
-out into its own kind of service in atproto, called a *feed generator*. A classic
+out into its own kind of service in atproto, called a _feed generator_. A classic
 example of a feed is "computer, show me the posts of the people I follow in
 reverse chronological order." Lately, algorithmic feeds have become popular with
 social networks, to the point of where some non-technical users refer to them
@@ -204,7 +205,7 @@ been following the lower level technical details.
 
 ## What are labelers?
 
-A *Labeler* is a service that applies *labels* to content or accounts. As a user,
+A _Labeler_ is a service that applies _labels_ to content or accounts. As a user,
 you can subscribe to a particular labeler, and then have your experience change
 based on the labels on posts.
 
@@ -217,7 +218,6 @@ An example of a labeling service would be a blocklist: a label on the posts
 authored by people whose content you don't want to see. Another example is
 an NSFW filter, which may run some sort of algorithm over pictures in posts,
 and labeling them if they believe they contain NSFW content.
-
 
 Labeling exists, but I do not believe you can run your own labeler yet. BlueSky
 runs their own, but there hasn't been an external release that I am aware of.
@@ -237,7 +237,7 @@ can do that. Want to produce a blocklist of people and share it with the
 world? You can do that.
 
 Because these moderation tools work at the network level, rather than at the
-application level, they actually go *further* than in other systems. If someone
+application level, they actually go _further_ than in other systems. If someone
 builds an Instagram clone on atproto, that could also use your blocklist
 labeller, since your blocklist labeller works at the protocol level. Block
 someone in one place, and they can be blocked on every place, if you so choose.
@@ -249,7 +249,7 @@ you don't really have an "account" on an "instance," like in Mastodon. So a lot
 of people ask questions like "what happens when my instance gets defederated"
 which don't exactly make sense as stated. You can achieve the same goal, by
 blocking a set of users based on some criteria, maybe you dislike a certain
-PDS and want to ignore posts that come from a certain one, but that is *your*
+PDS and want to ignore posts that come from a certain one, but that is _your_
 choice and yours alone, it is not dictated by some "server owner" that your
 account resides on.
 
@@ -262,9 +262,9 @@ parts that I find important. I am also going to focus on the part that is
 controversial, because that is important to talk about.
 
 At its core, users have an identity number, called a "Decentralized Identifier,"
-or *[DID][did]*. My DID looks like this: `did:plc:3danwc67lo7obz2fmdg6jxcr`.
+or _[DID][did]_. My DID looks like this: `did:plc:3danwc67lo7obz2fmdg6jxcr`.
 Feel free to follow me! Lol, of course that's not the interface that you'll see
-most of the time. Identity also involves a *handle*, which is a domain name.
+most of the time. Identity also involves a _handle_, which is a domain name.
 My handle is `steveklabnik.com`, unsurprisingly. You'll see my posts on BlueSky
 as coming from `@steveklabnik.com`. This system also works well for people who
 don't own a domain; if you sign up for BlueSky, it'll give you the ability to
@@ -363,11 +363,11 @@ applications on.
 
 I'm sure I'll have more to say about all of this in the future.
 
--------------------
+---
 
 Here's my post about this post on BlueSky:
 
-<BlueskyPost src="https://bsky.app/profile/steveklabnik.com/post/3km6y2x6cxk2f" />
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3km6y2x6cxk2f" />
 
 [at-protocol]: https://atproto.com/
 [atp-overview]: https://atproto.com/guides/overview
@@ -377,5 +377,7 @@ Here's my post about this post on BlueSky:
 [did]: https://www.w3.org/TR/did-core/
 [plc-dir]: https://plc.directory/did:plc:3danwc67lo7obz2fmdg6jxcr
 [bsky]: https://bsky.app/
-[^1]: A commentor points out https://book.peergos.org/, which I had not heard of,
-      but apparently was known to the creators of BlueSky before they made it. Neat.
+
+[^1]:
+    A commentor points out https://book.peergos.org/, which I had not heard of,
+    but apparently was known to the creators of BlueSky before they made it. Neat.

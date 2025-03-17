@@ -1,38 +1,23 @@
 ---
-import * as core from 'bluesky-post-embed/core';
-// import stylesUrl from 'bluesky-post-embed/style.css?url';
-import styles from 'bluesky-post-embed/style.css?inline';
+import { fetchPost, renderPost } from "bluesky-post-embed/core";
 
 interface Props {
-	src: string;
-	contextless?: boolean;
+  uri: string;
+  contextless?: boolean;
 }
 
-const { src, contextless = false } = Astro.props;
+const { uri, contextless = false } = Astro.props;
 
-const data = await core.get(src, contextless);
-const template = core.render(data, contextless);
+const data = await fetchPost({ uri, contextless });
+const render = renderPost(data);
 ---
 
-<bluesky-post theme="light">
-	<template shadowrootmode="open">
-		<!-- <link rel="stylesheet" href={stylesUrl} /> -->
-		<style set:html={styles}></style>
-		<Fragment set:html={template.value} />
-	</template>
+<bluesky-post src={data.thread?.post.uri}>
+  <Fragment set:html={render} />
 </bluesky-post>
 
-<script>
-	const dark = matchMedia('(prefers-color-scheme: dark)');
-
-	const update_theme = () => {
-		const is_dark = dark.matches;
-
-		for (const node of document.querySelectorAll('bluesky-post')) {
-			node.setAttribute('theme', !is_dark ? 'light' : 'dark');
-		}
-	};
-
-	update_theme();
-	dark.addEventListener('change', update_theme);
-</script>
+<style is:global>
+  @import "bluesky-post-embed/style.css";
+  @import "bluesky-post-embed/themes/light.css" (prefers-color-scheme: light);
+  @import "bluesky-post-embed/themes/dim.css" (prefers-color-scheme: dark);
+</style>
