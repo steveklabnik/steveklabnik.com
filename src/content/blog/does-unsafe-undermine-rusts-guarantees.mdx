@@ -629,8 +629,7 @@ impl<T> Vec<T> {
 This is because the unsafe code inside of other methods of `Vec<T>` need to be
 able to rely on the fact that `len <= capacity`. And so you'll find that
 `Vec<T>::set_len` in Rust is marked as unsafe, even though it doesn't contain
-unsafe code. It still requires judicious use of to not introduce memory
-unsafety.
+unsafe code.
 
 And this is why the module being the privacy boundary matters: the only way to
 set len directly in safe Rust code is code within the same privacy boundary as
