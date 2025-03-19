@@ -4,7 +4,6 @@ pubDate: 2013-07-24
 blog: words
 ---
 
-
 TL;DR: Subclassing core classes in Ruby can lead to unexpected side effects. I suggest composition over inheritance in all these cases.
 
 ## Subclassing Review
@@ -46,7 +45,7 @@ puts List.new.to_a.class
 
 If you said “it prints `Array`,” you’d be right. This behavior really confuses me, though, because `List` is already an `Array`; in my mind, this operation shouldn’t suddenly change the class.
 
-Why does this happen? Let’s check out the implementation of `[Array#to_a](https://github.com/ruby/ruby/blob/trunk/array.c#L2064-L2082)`:
+Why does this happen? Let’s check out the implementation of [Array#to_a](https://github.com/ruby/ruby/blob/trunk/array.c#L2064-L2082):
 
 ```c
 static VALUE
@@ -135,7 +134,7 @@ rb_ary_reverse_m(VALUE ary)
 }
 ```
 
-We get the length of the array, make a new blank array of the same length, then do some pointer stuff to copy everything over, and return the new copy. Unlike `#to_a`, this behavior is *not* currently documented.
+We get the length of the array, make a new blank array of the same length, then do some pointer stuff to copy everything over, and return the new copy. Unlike `#to_a`, this behavior is _not_ currently documented.
 
 Now: you could make the case that this behavior is expected, in both cases: after all, the point of the non-bang methods is to make a copy. However, there’s a difference to me between “make a new array with this stuff in it” and “make a new copy with this stuff in it”. Most of the time, I get the same class back, so I expect the same class back in these circumstances.
 
@@ -194,26 +193,26 @@ irb(main):013:0> x = RubyVM::InstructionSequence.new(%q{puts "hello #{'hey'}"})
 irb(main):014:0> puts x.disasm
 == disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========
 0000 trace            1                                               (   1)
-0002 putself          
+0002 putself
 0003 putstring        "hello hey"
 0005 opt_send_simple  <callinfo!mid:puts, argc:1, FCALL|ARGS_SKIP>
-0007 leave            
+0007 leave
 => nil
 irb(main):015:0> x = RubyVM::InstructionSequence.new(%q{puts "hello #{Object.new}"})
 => <RubyVM::InstructionSequence:<compiled>@<compiled>>
 irb(main):016:0> puts x.disasm
 == disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========
 0000 trace            1                                               (   1)
-0002 putself          
+0002 putself
 0003 putobject        "hello "
 0005 getinlinecache   12, <ic:0>
 0008 getconstant      :Object
 0010 setinlinecache   <ic:0>
 0012 opt_send_simple  <callinfo!mid:new, argc:0, ARGS_SKIP>
-0014 tostring         
+0014 tostring
 0015 concatstrings    2
 0017 opt_send_simple  <callinfo!mid:puts, argc:1, FCALL|ARGS_SKIP>
-0019 leave            
+0019 leave
 => nil
 ```
 
@@ -307,7 +306,7 @@ Again, unless you know exactly how this works at a low level, surprising things 
 
 ## The Solution
 
-Generally speaking, subclassing isn’t the right idea here. You want a data structure that *uses* one of these core classes internally, but isn’t exactly like one. Rather than this:
+Generally speaking, subclassing isn’t the right idea here. You want a data structure that _uses_ one of these core classes internally, but isn’t exactly like one. Rather than this:
 
 ```ruby
 class Name < String
@@ -358,23 +357,23 @@ puts l.reverse.class # => Array
 In general, I’d prefer to delegate things manually, anyway: a `Name` is not actually a drop-in for a `String` it’s something different that happens to be a lot like one:
 
 ```ruby
-class List 
+class List
   def initialize(list = [])
-    @list = list 
-  end 
- 
-  def <<(item) 
-    @list << item 
-  end 
- 
-  def reverse 
+    @list = list
+  end
+
+  def <<(item)
+    @list << item
+  end
+
+  def reverse
     List.new(@list.reverse)
-  end 
-end 
- 
-l = List.new 
-l << 1 
-l << 2 
+  end
+end
+
+l = List.new
+l << 1
+l << 2
 puts l.reverse.class  # => List
 ```
 
