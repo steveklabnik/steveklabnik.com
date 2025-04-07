@@ -1,0 +1,443 @@
+---
+title: "Thinking like a compiler: places and values in Rust"
+pubDate: 2025-04-07
+---
+
+A while back, someone on the internet asked about this syntax in Rust:
+
+```rust
+*pointer_of_some_kind = blah;
+```
+
+They wanted to know how the compiler understands this code, especially if the
+pointer wasn't a reference, but a smart pointer. I wrote them a lengthy reply,
+but wanted to expand and adapt it into a blog post in case a broader audience
+may be interested.
+
+Now, I don't work on the Rust compiler, and haven't really ever, but what I do
+know is language semantics. If you're a language nerd, this post may not be
+super interesting to you, other than to learn about Rust's value categories, but
+if you haven't spent a lot of time with the finer details of programming
+languages, I'm hoping that this may be a neat peek into that world.
+
+---
+
+Programming languages are themselves languages, in the same sense that human
+languages are. Well, mostly, anyway. The point is, to understand some Rust code
+like this:
+
+```rust
+*pointer_of_some_kind = blah;
+```
+
+We can apply similar tools to how we might understand some "English code" like
+this:
+
+```text
+You can't judge a book by its cover.
+```
+
+Oh, you also might ask yourself as you're reading the next sections, "why so
+many steps?" The short answer is a classic one: by breaking down the big problem
+of "what does this mean?" into smaller steps, each step is easier. Doing everything
+at once is way more difficult than a larger number of smaller steps. I'm going
+to cover the classical ways compilers work, there's a ton of variety when you
+start getting into more modern ways of doing things, and often these steps are
+blended together, or done out of order, all kinds of other things. Handling
+errors is a huge topic in and of itself! Consider this a starting point, not an
+ending one.
+
+Let's get into it.
+
+## Lexical Analysis (aka 'scanning' or 'tokenizing')
+
+The first thing we want to do is to try and figure out if these words are even
+valid words at all. With computer languages, this process is called "lexical
+analysis," though you'll also hear the term "tokenizing" to describe it. In other
+words, we're not interested in any sort of meaning at all at this stage, we just
+want to figure out what we're even talking about.
+
+So if we look at this English sentence:
+
+```text
+You can't judge a book by its cover.
+```
+
+We follow a two step process in order to tokenize it: we first "scan" it to
+produce a sequence of "lexemes." We do this by following some rules. I'm not
+going to give you a sample of the rules for English here, as this post is
+already long enough. But you might end up with something like this:
+
+```text
+You
+can't
+judge
+a
+book
+by
+its
+cover
+.
+```
+
+Note how we do have `'` in `can't`, but `.` is separate from `cover`. These
+are the kinds of rules we'd be following: the `'` is because this is a contraction,
+but the `.` is not really part of `cover`, but its own thing.
+
+We then run a second step and evaluate each individual string of characters, turning
+them into "tokens." A token is some sort of data type in your compiler, probably, so
+for example we could do this in Rust:
+
+```rust
+enum Token {
+    Word(String),
+    Punctuation(String),
+}
+```
+
+And so the output of our tokenizer might be an array of something like
+
+```rust
+[
+    Word("You"),
+    Word("can't"),
+    Word("judge"),
+    Word("a"),
+    Word("book"),
+    Word("by"),
+    Word("its"),
+    Word("cover"),
+    Punctuation("."),
+]
+```
+
+At this point, we know we have something semi-coherent, but we're still
+not sure it's valid yet. On to the next step!
+
+## Syntactic Analysis (aka 'parsing')
+
+Funny enough, this is an area where human-language linguistics and compilers
+mean things that are slightly different. With human language, parsing is often
+combined with our next step, which is semantic analysis. But we (most of the
+time) try to separate syntax and semantic analysis in compilers.
+
+Again, I'm going to massively simplify with the English. We're going to use
+these rules for what a sentence is:
+
+1. A sentence is a sequence of words.
+2. A sentence has a "subject," which is the first word, and must be capitalized.
+3. A sentence ends with a period.
+
+Obviously this is a tiny subset of English, but you get the idea. The goal of
+syntactic analysis is to turn our sequence of tokens into a richer data
+structure that's easier to work with. In other words, we've figured out that
+our sentence is made up of valid sequences of characters, but do they fit the
+grammatical rules of our language? Note that we also don't need to store everything;
+for example, maybe our English data structure looks like this:
+
+```rust
+struct Sentence {
+    subject: String,
+    words: Vec<String>,
+}
+```
+
+Where's the period? How do we know `subject` must be capitalized? That's the job
+of syntactic analysis. Since every sentence ends with a period, we don't need to
+track it in our data structure: the analysis makes sure that it's true, and then
+we aren't doing it again. Likewise, we don't need to store our subject as a
+capitalized string if we don't want to: we determined that the input was, but we
+can transform it as needed. So our value after syntax analysis might look like this:
+
+```rust
+Sentence {
+    subject: "you",
+    words: ["can't", "judge", "a", "book", "by", "its", "cover"],
+}
+```
+
+Often, for computer languages, a tree-like structure works well, and so you'd
+see an "abstract syntax tree," or "AST" at the end of this stage. But it's not
+strictly speaking required, whatever data structure makes sense for you can
+work.
+
+Now that we have a richer data structure, we're almost done. Now we have to get
+into meaning.
+
+## Semantic Analysis (aka 'wtf does this mean')
+
+Imagine our sentence wasn't "You can't judge a book by its cover." but instead
+this:
+
+```text
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+```
+
+This is a famous bit of text that's incoherent. The words are all Latin words,
+and it _feels_ like it might be a sentence, but it's nonsense. We could parse
+this into a `Sentence`:
+
+```rust
+Sentence {
+    subject: "Lorem",
+    words: ["ipsum", "dolor", "sit", "amet", /* and continued */ ],
+}
+```
+
+But it's not valid. How do we determine _that_?
+
+Well, in the context of English, "Lorem" isn't a valid English word. So if we
+were to check that the subject is a valid word, we'd successfully reject this
+sentence. In computer languages, we'd do similar things like type checking:
+`5 + "hello"` might lex and parse just fine, but when we try and figure out
+what it means, we learn it's nonsense. Except if your language lets you add
+numbers and strings!
+
+After semantic analysis, we've determined that our program is good, aka "well
+formed." In a compiler, we'd then go on to generate machine code or byte code
+to represent our program. But that stuff, while incredibly interesting, isn't
+what we're talking about here: remember our original objective? It was to
+understand this:
+
+```rust
+*pointer_of_some_kind = blah;
+```
+
+That's semantics. So now that we have some background, let's talk about how
+to understand this code.
+
+## So... how do I understand this code?
+
+Well, to understand the code, we first need to understand how it lexes and
+parses. In other words, what the _grammar_ of our language is. How our language
+would lex, tokenize, and then parse our code. In this case, it's Rust. Rust's
+grammar is large and complex, so we'll only be talking about part of it today.
+We're going to focus on statements vs expressions.
+
+You may have heard that Rust is an "expression based language" before. Well,
+this is what people mean. You see, when it comes to most of the things you say
+in a program, they're often one of these two things. Expressions are things that
+produce some sort of value, and statements are used to sequence the evaluation
+of expressions. That's a bit abstract, so let's get concrete.
+
+### Statements
+
+Rust has a few kinds of statements: first, there's "declaration statements"
+and "expression statements," and each have their own sub-kinds as well.
+
+Declaration statements have two kinds: _item declarations_, and _let statements_.
+Item declarations are things like `mod` or `struct` or `fn`: they declare certain
+things exist. `let` statements are probably the most famous form of statement in
+Rust, they look like this:
+
+```text
+ OuterAttribute* let PatternNoTopAlt ( : Type )? (= Expression † ( else BlockExpression) ? ) ? ;
+```
+
+That's... a mouthful. We haven't talked about `*` or `?` yet, and we don't really
+want to cover some of the more exotic parts of Rust right now. So we're going
+to talk about this via a simpler grammar first:
+
+```text
+let Variable = Expression;
+```
+
+This is how we create new variables in Rust: we say `let`, and then a name, an `=`,
+and then finally some expression. The result of evaluating that expression becomes
+the value of the variable.
+
+This is leaving out a lot: the name isn't just a name, it's a pattern, which is
+very cool. `let else` exists in Rust now, and that's cool. We're ignoring types
+here. But you can get the basics with just this simple version.
+
+Expression statements are much simpler:
+
+```text
+ExpressionWithoutBlock ; | ExpressionWithBlock ;?
+```
+
+The `|` there is an or, so we can either have a single expression followed by a `;`,
+or a block (denoted by `{}`s, which can optionally (the ? means it can exist or not)
+be followed by a `;`.)
+
+So to think like a compiler, you can start to figure out how to combine these rules.
+For example:
+
+```rust
+let x = {
+    5 + 6
+};
+```
+
+Here, we have a let statement, but the expression on the right hand side of the `=`
+is an `ExpressionWithBlock`. Here's a pop quiz for you: is the `?` part of the let
+expression, or part of the expression on the right hand side?
+
+The answer is, it's part of the `let`. The let expression has a mandatory `;`, but
+the block does not, and so:
+
+```text
+let x = ExpressionWithBlock;
+```
+
+If we had the semicolon with the block, we'd still need the one for the let, and
+so we'd have `};;`. Which the compiler accepts, but it warns about it.
+
+Going back to our original code:
+
+```rust
+*pointer_of_some_kind = blah;
+```
+
+We don't have a `let`, and this isn't an item declaration: this is an expression
+statement. We have a `ExpressionWithoutBlock`, followed by a `;`. So now we have
+to talk about expressions.
+
+### Expressions
+
+There are a _lot_ of expression types in Rust. [Section 8.2 of the
+Reference][reference] has 19 sub-sections. Whew! In this case, this code is an
+Operation Expression, and more specifically, an [Assignment Expression][opexpr]:
+
+```text
+Expression = Expression
+```
+
+Easy enough! So the left hand side of the `=` is an expression with `*pointer_of_some_kind`, and the right hand side is `blah`. Easy enough!
+
+But these two expressions are in some ways, the entire reason that I wrote this
+post. We just finally got here! You see, the reference has this to say about
+assignment expressions:
+
+> An assignment expression moves a value into a specified place.
+
+What are those?
+
+#### Places and Values
+
+C, and older versions of C++, called these two things "lvalue" and "rvalue,"
+for "left" and "right", like the sides of the `=`. More recent C++ standards
+have more categories. Rust splits the difference: it only has two categories,
+like C, but they map more cleanly to two of C++'s categories. Rust calls
+lvalues, the left hand side, a "place," and rvalues, the right hand side,
+a "value." Here's two more precise definitions, from the Unsafe Code Guidelines:
+
+- A [place][place] is basically a pointer, but might contain more information
+  such as size or alignment. A place has a type, indicating the type of values
+  that it stores.
+- A [value][value] A value is what gets stored in a place. A value has a type.
+
+Both of these have expression forms, so a _place expression_ produces a place
+when it's evaluated, and a _value expression_ produces a value. And that's
+how `=` works: we have a place expression on the left, a value expression
+on the right, and we put that value in that place. Easy enough!
+
+Once again, the code we were trying to figure out:
+
+```rust
+*pointer_of_some_kind = blah;
+```
+
+So `*`, the dereference operator, takes the pointer, and evaluates to the place
+where it points: its address. And `blah` gives us the value to put there.
+
+Case closed? Not quite!
+
+### Deref
+
+Rust has a trait, `Deref`, that lets us override the `*` operator. So let's
+talk about this example, to make things easier:
+
+```rust
+use std::ops::{Deref, DerefMut};
+
+struct DerefMutExample<T> {
+    value: T
+}
+
+impl<T> Deref for DerefMutExample<T> {
+    type Target = T;
+
+    fn deref(&self) -> &Self::Target {
+        &self.value
+    }
+}
+
+impl<T> DerefMut for DerefMutExample<T> {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.value
+    }
+}
+
+fn main () {
+    let mut x = DerefMutExample { value: 'a' };
+    *x = 'b';
+    assert_eq!('b', x.value);
+}
+```
+
+You can play with it [here][playground].
+
+We didn't talk about the kind of expression that's relevant here yet: a _path
+expression._
+
+> Path expressions that resolve to local or static variables are place
+> expressions, other paths are value expressions.
+
+We talked about `let` earlier: in `let mut x = DerefMutExample { value: 'a' };`
+above, the `x` is a path expression, and since it's resolving to our new variable,
+that means it's a place expression. The `DerefMutExample { value: 'a' }` is a
+value expression, because it doesn't resolve to a variable.
+
+Let's talk about `*x = 'b';`, remember our assignment expression:
+
+    expression = expression;
+
+And what it does: it moves a value into a place.
+
+To understand how `*` works, we only need to add one more thing: the Dereference
+expression. It's produced by the deference operator, `*`. It looks like this:
+
+    *expression
+
+Its semantics are pretty straightforward:
+
+- If the expression has the type `&T`, `&mut T`, `*const T`, or `*mut T`, then
+  this evaluates to the place of the value being pointed to, and gives it the
+  same mutability.
+- If the expression is not one of those types, then it is equivalent to either
+  `*std::ops::Deref::deref(&x)` if it's immutable or
+  `*std::ops::DerefMut::deref_mut(&mut x)`
+
+That's it. Now we have enough to fully understand `*x = 'b'`:
+
+- `'b'` is a value expression
+- `*x` is not a pointer type, so we expand it to
+  `*std::ops::DerefMut::deref_mut(&mut x)` and try again
+- `std::ops::DerefMut::deref_mut(&mut x)` returns the type `&mut char` in this
+  case, and it is pointing at the place of `self.value` (which I'm gonna call
+  `<that place>` for short), which currently has the value `'a'` stored in it. Now
+  we have `*&mut <that place>`.
+- We now use the other rule of the dereference operator, we're operating on a
+  `&mut T`, so `*&mut <that place>` refers to `<that place>`.
+- We now have `<that place> = 'b'`, and so we move that `'b'` into that place.
+
+Whew! That's that.
+
+## Conclusion
+
+Thinking like a compiler can be fun! Once you've mastered the idea of grammars
+and gotten used to substituting things, you can figure out all sorts of
+interesting stuff. In this specific case, sometimes people wonder why `Deref`
+returns a reference if the whole goal is to show where something should point...
+and if you didn't know that dereference expressions expanded to something with
+`*` in it, it would be confusing! But now you know. And hopefully learned some
+interesting things about values, places, and how compilers think about code
+along the way.
+
+[reference]: https://doc.rust-lang.org/stable/reference/expressions.html
+[opexpr]: https://doc.rust-lang.org/stable/reference/expressions/operator-expr.html#assignment-expressions
+[place]: https://rust-lang.github.io/unsafe-code-guidelines/glossary.html#place
+[value]: https://rust-lang.github.io/unsafe-code-guidelines/glossary.html#value
+[playground]: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=0d6c7f3d8a2c00bc79dabef47ab550e2

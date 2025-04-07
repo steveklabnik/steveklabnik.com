@@ -9,5 +9,17 @@
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "tailwindCSS.experimental.classRegex": ["classed.[a-z]+`([^`]*)`"],
-  "css.customData": ["./.vscode/css.json"]
+  "css.customData": ["./.vscode/css.json"],
+  "cSpell.words": [
+    "adipiscing",
+    "aliqua",
+    "amet",
+    "consectetur",
+    "dolore",
+    "eiusmod",
+    "elit",
+    "incididunt",
+    "labore",
+    "tempor"
+  ]
 }
