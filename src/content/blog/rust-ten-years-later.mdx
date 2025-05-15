@@ -1,0 +1,105 @@
+---
+title: "Rust 1.0, ten years later"
+pubDate: 2025-05-15
+---
+
+import BlueskyPost from "../../components/BlueskyPost.astro";
+
+It's kind of hard to believe it's been ten years since Rust 1.0 was released.
+
+I stopped working on Rust three years ago, and frankly, the last three years
+have been pretty rough. But 2025 is shaping up to be a really good year for me,
+with lots of positive changes.
+
+With that in mind, this post is going to be a bit of a different one than you
+might expect. For a fantastic post that's a bit more traditional, check out
+what Graydon wrote for the Rust Foundation: [10 years of stable Rust: an
+infrastructure story][graydon]. It's fantastic, of course.
+
+I'd instead like to reflect a bit on a comment I saw on the internet the other day:
+
+> [Rust is] not a great hobby language but it is a fantastic professional
+> language, precisely because of the ease of refactors and speed of development
+> that comes with the type system and borrow checker.
+
+[Patrick Walton][pcwalton], one of the earliest contributors to Rust, had this
+to say:
+
+> I never thought I'd live to see the day when someone would say this. The first
+> 5 years of Rust were all "this is interesting for hobby projects but nobody will
+> ever adopt this in industry".
+
+The release of Rust 1.0 was great, but it was also stressful. The few years
+before Rust 1.0 were marked by a deep, deep anxiety among the team. I'm sure
+someone else who was around back then will disagree with me, but that's my
+recollection. It may not have always been overt, but it was there. A large
+question was looming over us: would anyone actually use this thing? Would it
+become a hobbyist language, or would it be something that people actually
+used in production?
+
+At this point, we now know the answer: yes, Rust is used a lot. It's used
+for real, critical projects to do actual work by some of the largest companies
+in our industry. We did good.
+
+The release of 1.0 was the start of that journey in earnest. It was time to stop
+changing things all the time, and to start focusing on stability. It was time to
+gain more users, and to fix the issues that they found. We had to start shipping
+stable releases, and we had to start doing it on a regular basis. We had to
+start doing all of the things that a real programming language does.
+
+Over the last ten years, a lot changed. It wasn't easy, and it took a lot of
+blood, sweat, and many, many tears. But we did it. We built a real programming
+language, and we built a real community around it.
+
+Rust is very much not perfect. There's more work to be done, and arguably,
+someone out there should probably be starting a language that will someday eat
+Rust's lunch.
+
+But ten years ago, we were pushing a button and praying that it would all work
+out. And now, ten years later, I'm doing this:
+
+```text
+❯ rustup update stable
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: latest update on 2025-05-15, rust version 1.87.0 (17067e9ac 2025-05-09)
+info: downloading component 'rust-src'
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: removing previous version of component 'rust-src'
+info: removing previous version of component 'cargo'
+info: removing previous version of component 'clippy'
+info: removing previous version of component 'rust-docs'
+info: removing previous version of component 'rust-std'
+info: removing previous version of component 'rustc'
+info: removing previous version of component 'rustfmt'
+info: installing component 'rust-src'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+ 19.9 MiB /  19.9 MiB (100 %)  16.3 MiB/s in  1s ETA:  0s
+info: installing component 'rust-std'
+ 29.4 MiB /  29.4 MiB (100 %)  22.2 MiB/s in  1s ETA:  0s
+info: installing component 'rustc'
+ 76.3 MiB /  76.3 MiB (100 %)  23.9 MiB/s in  3s ETA:  0s
+info: installing component 'rustfmt'
+
+  stable-x86_64-unknown-linux-gnu updated - rustc 1.87.0 (17067e9ac 2025-05-09) (from rustc 1.86.0 (05f9846f8 2025-03-31))
+```
+
+and then going about my day. It is a rare privilege to be able to spend ten
+years building a tool you want to use, and then be able to spend your time at
+work using it. I am grateful to have had that opportunity, and I hope that
+everyone else who has worked on Rust over the years feels the same way.
+
+---
+
+Here's my post about this post on BlueSky:
+
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3ljnctebzec25" />
+
+[graydon]: https://rustfoundation.org/media/10-years-of-stable-rust-an-infrastructure-story/
+[pcwalton]: https://pcwalton.github.io/
