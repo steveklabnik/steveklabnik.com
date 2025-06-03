@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom focus styles for better accessibility */
+@layer base {
+  /* Remove default focus outlines */
+  *:focus {
+    outline: none;
+  }
+
+  /* Custom focus-visible styles */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-purple-600;
+  }
+
+  /* Skip link focus style (already handled by Tailwind classes) */
+  .sr-only:focus {
+    @apply not-sr-only;
+  }
+}
+
+/* Link improvements */
+@layer components {
+  /* Base link styles */
+  a {
+    @apply underline decoration-1 underline-offset-2 transition-all duration-150;
+  }
+
+  /* Link hover states */
+  a:hover {
+    @apply decoration-2;
+  }
+
+  /* Visited link color for better UX */
+  a:visited {
+    @apply text-purple-700;
+  }
+
+  /* Prose link overrides for better contrast */
+  .prose a {
+    @apply text-purple-600 no-underline hover:underline;
+  }
+
+  .prose a:visited {
+    @apply text-purple-900;
+  }
+
+  /* Navigation link styles */
+  nav a {
+    @apply text-purple-600 hover:text-purple-800;
+  }
+
+  /* Series badge link styles */
+  a.bg-blue-100 {
+    @apply no-underline focus:ring-2 focus:ring-purple-500 focus:ring-offset-1;
+  }
+
+  /* Site title link override */
+  .site-title {
+    @apply text-gray-900 hover:text-gray-700;
+  }
+
+  .site-title:visited {
+    @apply text-gray-900;
+  }
+}
+
+/* Typography improvements */
+@layer base {
+  /* Better font stack */
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Monospace font stack */
+  code, pre {
+    font-family: ui-monospace, 'SF Mono', Monaco, 'Cascadia Mono', 'Roboto Mono', monospace;
+  }
+}
+
+/* Color system for better contrast */
+@layer base {
+  :root {
+    /* WCAG AAA compliant colors - Purple theme */
+    --color-text: #1e293b;
+    --color-text-secondary: #475569;
+    --color-link: #7c3aed; /* Purple-600 */
+    --color-link-hover: #6d28d9; /* Purple-700 */
+    --color-link-visited: #581c87; /* Purple-900 */
+  }
+
+  /* Apply color system */
+  body {
+    color: var(--color-text);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  /* Hide navigation and non-essential elements */
+  nav, .sr-only, header {
+    display: none !important;
+  }
+
+  /* Better print typography */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+
+  /* Show link URLs in print */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* But not for internal links */
+  a[href^="/"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text: #000000;
+    --color-link: #5b21b6; /* High contrast purple */
+    --color-link-visited: #2e1065; /* Darker purple for visited */
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+}

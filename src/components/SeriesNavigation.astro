@@ -21,7 +21,7 @@ if (!seriesMetadata) {
   </div>
   
   <h3 class="text-lg font-semibold mb-1">
-    <a href={`/series/${seriesData.slug}`} class="hover:underline text-blue-600">
+    <a href={`/series/${seriesData.slug}`} class="hover:underline text-purple-600">
       {seriesMetadata.title}
     </a>
   </h3>
@@ -35,7 +35,7 @@ if (!seriesMetadata) {
       {seriesData.prev ? (
         <a 
           href={`/writing/${seriesData.prev.slug}`}
-          class="text-sm text-blue-600 hover:underline inline-flex items-start gap-1 group"
+          class="text-sm text-purple-600 hover:underline inline-flex items-start gap-1 group"
         >
           <span class="shrink-0 group-hover:translate-x-[-2px] transition-transform">←</span>
           <span class="break-words line-clamp-2">{seriesData.prev.data.title}</span>
@@ -49,7 +49,7 @@ if (!seriesMetadata) {
       {seriesData.next ? (
         <a 
           href={`/writing/${seriesData.next.slug}`}
-          class="text-sm text-blue-600 hover:underline inline-flex items-start gap-1 sm:justify-end group"
+          class="text-sm text-purple-600 hover:underline inline-flex items-start gap-1 sm:justify-end group"
         >
           <span class="break-words line-clamp-2 sm:text-right">{seriesData.next.data.title}</span>
           <span class="shrink-0 group-hover:translate-x-[2px] transition-transform">→</span>

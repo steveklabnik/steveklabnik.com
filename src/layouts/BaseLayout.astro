@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 const { frontmatter } = Astro.props;
+const description =
+  frontmatter.description || "Steve Klabnik's personal website and blog";
 ---
 
 <html lang="en">
@@ -14,6 +16,7 @@ const { frontmatter } = Astro.props;
 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -22,16 +25,43 @@ const { frontmatter } = Astro.props;
     />
     <title>{frontmatter.pageTitle}</title>
   </head>
-  <body class="bg-slate-100">
+  <body class="bg-purple-50/30">
+    <!-- Skip navigation link -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-purple-600 text-white px-4 py-2 rounded-md"
+    >
+      Skip to main content
+    </a>
+
     <div class="container mx-auto px-4 pb-16">
-      <nav class="prose prose-slate mb-2">
-        <h1 class="tracking-tight mb-0 mt-3">
-          {frontmatter.pageTitle}
-        </h1>
-        <a href="/" class="mt-0 mr-4">Home</a>
-        <a href="/writing" class="inline-block mt-0">Blog</a>
-      </nav>
-      <slot />
+      <header role="banner" class="border-b border-gray-200 pb-4 mb-8">
+        <nav aria-label="Main navigation" class="mb-2">
+          <div class="text-4xl font-bold tracking-tight mb-0 mt-3">
+            <a
+              href="/"
+              class="site-title no-underline text-gray-900 hover:text-gray-700"
+            >
+              Steve Klabnik
+            </a>
+          </div>
+          <div class="mt-2 space-x-4">
+            <a
+              href="/"
+              class="inline-block font-medium text-purple-600 hover:text-purple-800"
+              >Home</a
+            >
+            <a
+              href="/writing"
+              class="inline-block font-medium text-purple-600 hover:text-purple-800"
+              >Blog</a
+            >
+          </div>
+        </nav>
+      </header>
+      <main id="main-content">
+        <slot />
+      </main>
     </div>
   </body>
 </html>
