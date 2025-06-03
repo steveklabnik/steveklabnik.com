@@ -25,12 +25,18 @@ if (entry.data.series?.slug) {
   seriesNavigation = getSeriesNavigation(entry, seriesData);
 }
 
-const frontmatter = { pageTitle: entry.data.title };
+const frontmatter = { 
+  pageTitle: entry.data.title,
+  description: `Blog post: ${entry.data.title} by Steve Klabnik`
+};
 ---
 
 <BaseLayout frontmatter={frontmatter}>
   <article class="prose prose-slate">
-    <h2>{entry.data.pubDate.toString().slice(4, 15)}</h2>
+    <h1 class="mb-2">{entry.data.title}</h1>
+    <time datetime={entry.data.pubDate.toISOString()} class="text-gray-600">
+      {entry.data.pubDate.toString().slice(4, 15)}
+    </time>
     {seriesNavigation && (
       <SeriesNavigationComponent currentPost={entry} seriesData={seriesNavigation} />
     )}
