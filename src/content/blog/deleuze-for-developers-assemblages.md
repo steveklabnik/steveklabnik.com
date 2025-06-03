@@ -2,18 +2,14 @@
 title: "Deleuze for developers: assemblages"
 pubDate: 2012-12-03
 blog: words
----
-
-
-If you truly want to understand technology today, then you should at least be familiar with the philosophy of Gilles Deleuze. Unfortunately for technologists, Deleuze is rooted firmly in a philosophical tradition and a writing style that they probably find opaque. In this blog series, I plan on explaining Deleuze’s philosophy in terms that programmers can understand. This is the first in the series.
-
-Enjoy.
-
+series:
+  slug: "deleuze-for-developers"
+  order: 1
 ---
 
 The ancient Greeks thought that atoms were it. ἄτομος, Wikipedia will tell you, comes from ‘ἀ’- meaning “not” and ‘τέμνω’, meaning ‘I cut.’ Cells are the smallest thing that there is. You can’t cut them in half. Everything is composed of a bunch of atoms.
 
-Well, guess what? Modern science has found things smaller than atoms. Dammit! What we *do* know for sure, though, is that some things are made up of composites of other things. That’s for sure. We’re still not clear on what that fundamental stuff is, but composites are a pretty safe bet. Even if atoms are made up of other things, we know that other things are made up of a bunch of atoms.
+Well, guess what? Modern science has found things smaller than atoms. Dammit! What we _do_ know for sure, though, is that some things are made up of composites of other things. That’s for sure. We’re still not clear on what that fundamental stuff is, but composites are a pretty safe bet. Even if atoms are made up of other things, we know that other things are made up of a bunch of atoms.
 
 So how can we talk about composites? Well, a programmer’s fundamental tool is abstraction. So we can black-box any particular composite and treat it as a whole entity, without worrying about what we’ve encapsulated inside. That’s good, and that’s useful, but there’s a problem: when you start thinking of a collection of things as just one thing, you miss out on a lot of important details. As we know, all abstractions are leaky, so how does a black box leak?
 

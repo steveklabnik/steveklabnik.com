@@ -1,0 +1,68 @@
+---
+import { getSeriesMetadata } from '../utils/series.ts';
+import type { SeriesNavigation as SeriesNavigationType, SeriesMetadata } from '../utils/series.ts';
+
+export interface Props {
+  currentPost: any;
+  seriesData: SeriesNavigationType;
+}
+
+const { seriesData } = Astro.props;
+const seriesMetadata = getSeriesMetadata(seriesData.slug);
+
+if (!seriesMetadata) {
+  return null;
+}
+---
+
+<nav class="series-navigation border border-gray-200 rounded-lg p-4 my-8 bg-gray-50">
+  <div class="text-sm text-gray-600 mb-2">
+    This post is part of a series
+  </div>
+  
+  <h3 class="text-lg font-semibold mb-1">
+    <a href={`/series/${seriesData.slug}`} class="hover:underline text-blue-600">
+      {seriesMetadata.title}
+    </a>
+  </h3>
+  
+  <div class="text-sm text-gray-600 mb-3">
+    Part {seriesData.current} of {seriesData.total}
+  </div>
+  
+  <div class="flex flex-col sm:flex-row gap-3">
+    <div class="flex-1 min-w-0">
+      {seriesData.prev ? (
+        <a 
+          href={`/writing/${seriesData.prev.slug}`}
+          class="text-sm text-blue-600 hover:underline inline-flex items-start gap-1 group"
+        >
+          <span class="shrink-0 group-hover:translate-x-[-2px] transition-transform">←</span>
+          <span class="break-words line-clamp-2">{seriesData.prev.data.title}</span>
+        </a>
+      ) : (
+        <span class="text-sm text-gray-400 block">First post</span>
+      )}
+    </div>
+    
+    <div class="flex-1 min-w-0 sm:text-right">
+      {seriesData.next ? (
+        <a 
+          href={`/writing/${seriesData.next.slug}`}
+          class="text-sm text-blue-600 hover:underline inline-flex items-start gap-1 sm:justify-end group"
+        >
+          <span class="break-words line-clamp-2 sm:text-right">{seriesData.next.data.title}</span>
+          <span class="shrink-0 group-hover:translate-x-[2px] transition-transform">→</span>
+        </a>
+      ) : (
+        <span class="text-sm text-gray-400 block">Last post</span>
+      )}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .series-navigation {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+</style>
