@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { buildSeriesData, getSeriesMetadata } from "../../utils/series.ts";
+import type { CollectionEntry } from "astro:content";
+import type { SeriesMetadata } from "../../utils/series.ts";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  const seriesData = buildSeriesData(allPosts);
+  
+  const paths: Array<{
+    params: { slug: string };
+    props: { posts: CollectionEntry<'blog'>[]; metadata: SeriesMetadata };
+  }> = [];
+  
+  seriesData.forEach((posts, slug) => {
+    const metadata = getSeriesMetadata(slug);
+    if (metadata) {
+      paths.push({
+        params: { slug },
+        props: { posts, metadata }
+      });
+    }
+  });
+  
+  return paths;
+}
+
+const { posts, metadata } = Astro.props;
+const frontmatter = { pageTitle: "Steve Klabnik" };
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div class="prose prose-slate">
+    <h2>{metadata.title}</h2>
+    
+    {metadata.description && (
+      <p class="text-lg text-gray-600 mb-6">{metadata.description}</p>
+    )}
+    
+    {metadata.coverImage && (
+      <img 
+        src={metadata.coverImage} 
+        alt={`Cover image for ${metadata.title}`}
+        class="w-full rounded-lg mb-8"
+      />
+    )}
+    
+    <div class="bg-gray-50 rounded-lg p-4 mb-8">
+      <div class="text-sm text-gray-600">
+        <span>{posts.length} posts in this series</span>
+      </div>
+    </div>
+    
+    <h2>Posts in this series</h2>
+    
+    <ol class="space-y-4">
+      {posts.map((post: CollectionEntry<'blog'>, index: number) => (
+        <li class="border-l-4 border-blue-500 pl-4 -ml-4">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h3 class="mt-0 mb-1">
+                <a href={`/writing/${post.slug}`} class="no-underline hover:underline">
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-sm text-gray-600 m-0">
+                Part {index + 1} • {post.data.pubDate.toString().slice(4, 15)}
+              </p>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+    
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <a href="/series" class="text-blue-600 hover:underline">
+        ← Back to all series
+      </a>
+    </div>
+  </div>
+</BaseLayout>

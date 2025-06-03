@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { buildSeriesData, getAllSeriesWithMetadata } from "../../utils/series.ts";
+
+const allPosts = await getCollection("blog");
+const seriesData = buildSeriesData(allPosts);
+const allSeries = getAllSeriesWithMetadata(seriesData);
+
+const frontmatter = { pageTitle: "Steve Klabnik" };
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div class="prose prose-slate">
+    <h2>Series</h2>
+    
+    {allSeries.length === 0 ? (
+      <p class="text-gray-600">No series available yet. Check back soon!</p>
+    ) : (
+      <div class="grid gap-6 mt-8">
+        {allSeries.map((series) => (
+          <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <h2 class="mt-0 mb-2">
+              <a href={`/series/${series.slug}`} class="no-underline hover:underline">
+                {series.title}
+              </a>
+            </h2>
+            
+            {series.description && (
+              <p class="text-gray-600 mb-4">{series.description}</p>
+            )}
+            
+            <div class="flex items-center gap-4 text-sm text-gray-500">
+              <span>{series.postCount} posts</span>
+              <span>•</span>
+              <span>Last updated: {series.latestPost.data.pubDate.toString().slice(4, 15)}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

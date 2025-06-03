@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
+import { buildSeriesData, getSeriesNavigation } from "../../utils/series.ts";
+import type { SeriesNavigation } from "../../utils/series.ts";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -13,12 +16,27 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+// Build series data if this post is part of a series
+let seriesNavigation: SeriesNavigation | null = null;
+
+if (entry.data.series?.slug) {
+  const allPosts = await getCollection("blog");
+  const seriesData = buildSeriesData(allPosts);
+  seriesNavigation = getSeriesNavigation(entry, seriesData);
+}
+
 const frontmatter = { pageTitle: entry.data.title };
 ---
 
 <BaseLayout frontmatter={frontmatter}>
   <article class="prose prose-slate">
     <h2>{entry.data.pubDate.toString().slice(4, 15)}</h2>
+    {seriesNavigation && (
+      <SeriesNavigationComponent currentPost={entry} seriesData={seriesNavigation} />
+    )}
     <Content />
+    {seriesNavigation && (
+      <SeriesNavigationComponent currentPost={entry} seriesData={seriesNavigation} />
+    )}
   </article>
 </BaseLayout>

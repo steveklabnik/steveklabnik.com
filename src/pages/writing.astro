@@ -2,9 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import Link from "../components/Link";
+import { buildSeriesData, getSeriesMetadata } from "../utils/series.ts";
 const pageTitle = "Steve Klabnik's Blog";
 const allPosts = await getCollection("blog");
+
+// Build series data to add indicators
+const seriesData = buildSeriesData(allPosts);
+const seriesMetadataMap = new Map();
+seriesData.forEach((_, slug) => {
+  const metadata = getSeriesMetadata(slug);
+  if (metadata) {
+    seriesMetadataMap.set(slug, metadata);
+  }
+});
 
 let allPostsByDate = (() => {
   let posts: Record<string, Array<CollectionEntry<"blog">>> = {};
@@ -20,8 +30,8 @@ let allPostsByDate = (() => {
     posts[year.toString()].push(post);
   });
 
-  for (const [key, value] of Object.entries(posts)) {
-    value.sort((a, b) => b.data.pubDate - a.data.pubDate);
+  for (const value of Object.values(posts)) {
+    value.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   }
 
   return posts;
@@ -39,11 +49,24 @@ const frontmatter = { pageTitle: pageTitle };
         <>
           <h2 class="m-1">{year}</h2>
           <ul class="m-1 p-2">
-            {allPostsByDate[year].map((post) => (
-              <li class="list-disc ml-10">
-                <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
-              </li>
-            ))}
+            {allPostsByDate[year].map((post) => {
+              const series = post.data.series?.slug ? seriesMetadataMap.get(post.data.series.slug) : null;
+              return (
+                <li class="list-disc ml-10">
+                  <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
+                  {series && post.data.series && (
+                    <span class="ml-2">
+                      <a 
+                        href={`/series/${post.data.series.slug}`}
+                        class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200"
+                      >
+                        {series.title}
+                      </a>
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </>
       ))

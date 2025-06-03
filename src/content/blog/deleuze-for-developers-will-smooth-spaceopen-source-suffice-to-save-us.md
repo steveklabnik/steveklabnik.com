@@ -2,17 +2,14 @@
 title: "Deleuze for Developers: will smooth space/open source suffice to save us?"
 pubDate: 2013-03-14
 blog: words
+series:
+  slug: "deleuze-for-developers"
+  order: 3
 ---
 
-
-If you truly want to understand technology today, then you should at least be familiar with the philosophy of Gilles Deleuze. Unfortunately for technologists, Deleuze is rooted firmly in a philosophical tradition and a writing style that they probably find opaque. In this blog series, I plan on explaining Deleuze’s philosophy in terms that programmers can understand. This is the third in the series. You can find the first [here](/deleuze-for-developers-assemblages). Enjoy.
-
----
-
-Deleuze and Guattari employ the notion of ‘smooth space’ quite a bit in *A Thousand Plateaus*. I saw this quote about it the other day:
+Deleuze and Guattari employ the notion of ‘smooth space’ quite a bit in _A Thousand Plateaus_. I saw this quote about it the other day:
 
 > never believe that a smooth space will suffice to save us
-> 
 
 I’ve recently been giving a lot of thought to [‘cultural hegemony’](http://en.wikipedia.org/wiki/Cultural_hegemony) and its applicability to the web, specifically along the lines of Google. Basically, cultural hegemony is the idea that you don’t just have dominance through laws or economics, but through culture. So, for example, Google submitted SPDY to become HTTP 2.0: it’s going through the standards process, it’s ‘open,’ but it also gives Google a lot of cultural leverage.
 
@@ -57,14 +54,13 @@ One answer is genetic algorithms. So we can take our board’s current state and
   dHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHb
 ```
 
-So we want to keep going with our solution as long as it slopes up: we’ve found that our answers are at the maximum of each curve. Yay calculus! But here’s the thing: this curve only has two possible maxima: we will have more. And it might not be in 2-d space, it might be in 5-d space. And we can only ‘use math’ to find the maximum if we generate the *entire* curve, which seems computationally out of our reach. So how do we find the maximum without generating the whole curve? Genetic algorithms!
+So we want to keep going with our solution as long as it slopes up: we’ve found that our answers are at the maximum of each curve. Yay calculus! But here’s the thing: this curve only has two possible maxima: we will have more. And it might not be in 2-d space, it might be in 5-d space. And we can only ‘use math’ to find the maximum if we generate the _entire_ curve, which seems computationally out of our reach. So how do we find the maximum without generating the whole curve? Genetic algorithms!
 
 One such is ‘[simulated annealing](http://en.wikipedia.org/wiki/Simulated_annealing).’ Without getting too into it, let’s just say that there’s a ‘cooling factor’ that controls how tolerant we are of going back down a slope. So at first, we wildly go all over the search space, but then, as we progress, we tighten up our cooling factor, and we stop being so wild. Eventually, we’ll arrive at a solution that’s very likely to be the true global maxima/minima. Neat!
 
 ## Discrete vs. Continuous
 
 > If we know that the enemy is open to attack, and also know that our men are in a condition to attack, but are unaware that the nature of the ground makes fighting impracticable, we have still gone only halfway towards victory.Sun Tzu, “the Art of War”
-> 
 
 Another interesting feature of this particular projection is that it transforms our problem from a discrete problem into a continuous one. One great tactic for when you’re losing: change the battlefield. Our genetic algorithm tool needs a continuous space to operate, but our problem is that our chess board is discrete. What do I mean by this?
 
@@ -85,7 +81,6 @@ Our ‘scoring’ mechanism allows us to change the battlefield, it forms a func
 ## Striated vs Smooth Space
 
 > Military tactics are like unto water; for water in its natural course runs away from high places and hastens downwards. So in war, the way is to avoid what is strong and to strike at what is weak. Like water, taking the line of least resistance. Water shapes its course according to the nature of the ground over which it flows; the soldier works out his victory in relation to the foe whom he is facing. Therefore, just as water retains no constant shape, so in warfare there are no constant conditions.Sun Tzu, “the Art of War”
-> 
 
 Okay. NOW we’re ready to talk about smooth and striated space. They have a number of names for this concept, and the one that’s most direct from where we currently are is ‘Riemann space / Euclidean space’. Smooth -> Riemann, Euclidean -> Striated. Another isomorphism. ;)
 
@@ -108,7 +103,6 @@ You might remember Riemann from the ‘[Riemann sum](http://en.wikipedia.org/wik
 This interplay between smooth and striated spaces often happens, and there’s really no part of our world today that’s completely smooth or entirely striated. D&G posit that the left should be attempting to create as much smooth space as possible, and that capitalism is constantly attempting to striate space. That said, smooth space is necessary, but not sufficient: capitalism, in its hunger and lust for acquisition and totalitization, has managed to navigate some smooth spaces. I’ll just quote straight from ‘a thousand plateaus’, 492. It’s a little hard, but this is getting long enough as is. ;)
 
 > Not only does the user as such tend to be an employee, but capitalism operates less on a quantity of labor than by a complex qualitative process bringing into play modes of transportation, urban models, the media, the entertainment industries, ways of perceiving and feeling – every semiotic system. It is though, at the outcome of the striation that capitalism was able to carry to an unequaled point of perfection, circulating capital necessarily recreated, reconstituted, a sort of smooths pace in which the destiny of human beings is recast. … at the level of world capitalism, a new smooth space is produced in which capital reaches its ‘absolute’ speed, based on machinic components rather than the human component of labor. The multinationals fabricate a kind of deterritorialized smooth space in which points of occupation as well as poles of exchange become quite independent of the classical paths to striation. .. the essential thing is instead the distinction between striated capital and smooth capital, and the way in which the former gives rise to the latter through complexes that cut across territories and States, and even the different types of States.
-> 
 
 The first part about ‘users’ is very much drawing a parallel to “If you’re not paying for the product, you are the product.” When they talk about the ‘speed’ of capital, think of HFT. Multinational corporations have managed to overcome the striation that a State has imposed. McDonalds is only partially affected by US laws. They operate ‘outside’ of states.
 

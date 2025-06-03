@@ -2,11 +2,9 @@
 title: "Deleuze for developers: deterritorialization"
 pubDate: 2012-12-07
 blog: words
----
-
-
-If you truly want to understand technology today, then you should at least be familiar with the philosophy of Gilles Deleuze. Unfortunately for technologists, Deleuze is rooted firmly in a philosophical tradition and a writing style that they probably find opaque. In this blog series, I plan on explaining Deleuze’s philosophy in terms that programmers can understand. This is the second in the series. You can find the first [here](/deleuze-for-developers-assemblages), and the next one [here](http://words.steveklabnik.com/deleuze-for-developers-will-smooth-spaceopen-source-suffice-to-save-us). Enjoy.
-
+series:
+  slug: "deleuze-for-developers"
+  order: 2
 ---
 
 Let’s re-examine this diagram of the assemblage:
@@ -53,7 +51,7 @@ We can minimize the effects (or reterritorialize our service) by making sure to 
 
 Now, by containing the Twitter-assemblage entirely within our service, I don’t mean that it actually is. Obviously, the Twitter-assemblage is interconnected with a ton of other assemblages that represent other services. But from our perspective, they are now a part of our assemblage. The decisions they make affect us. While our code is separated, we’re not totally separate anymore: updates and policies of Twitter have a direct effect on us.
 
-There’s also a more sublte, secondary re/de-territorialization going on here: our code from our service. These used to be isomorphic, but now our code has claimed a territory of its own, and is now just one assemblage within our system-assemblage, instead of *being* our system-assemblage.
+There’s also a more sublte, secondary re/de-territorialization going on here: our code from our service. These used to be isomorphic, but now our code has claimed a territory of its own, and is now just one assemblage within our system-assemblage, instead of _being_ our system-assemblage.
 
 ## A git example
 
