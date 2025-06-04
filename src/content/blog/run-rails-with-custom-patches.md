@@ -5,7 +5,7 @@ blog: literate-programming
 ---
 
 
-I often see comments [like this](https://github.com/rails/rails/pull/7397#issuecomment-9132009) in the Rails bugtracker. Generally, someone is running an older version of Rails, and some bug they face has been fixed on edge. But they may be running a version that’s too old to recieve fixes, or need a fix that has yet to be included in an actual release. What to do?
+I often see comments [like this](https://github.com/rails/rails/pull/7397#issuecomment-9132009) in the Rails bugtracker. Generally, someone is running an older version of Rails, and some bug they face has been fixed on edge. But they may be running a version that’s too old to receive fixes, or need a fix that has yet to be included in an actual release. What to do?
 
 Luckily, [Bundler](http://gembundler.com/) exists. It makes it super easy to run your own Rails. Check it out:
 
