@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-  const posts = await await getCollection("blog");
+  const posts = await getCollection("blog");
   const items = posts
     .sort((a, b) => b.data.pubDate - a.data.pubDate)
     .map((post) => ({
