@@ -1,6 +1,6 @@
 ---
-import { getSeriesMetadata } from '../utils/series.ts';
-import type { SeriesNavigation as SeriesNavigationType, SeriesMetadata } from '../utils/series.ts';
+import { getSeriesMetadata } from '../utils/series';
+import type { SeriesNavigation as SeriesNavigationType } from '../utils/series';
 
 export interface Props {
   currentPost: any;
@@ -61,8 +61,3 @@ if (!seriesMetadata) {
   </div>
 </nav>
 
-<style>
-  .series-navigation {
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-</style>

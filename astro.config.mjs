@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 import vercel from "@astrojs/vercel";
@@ -10,6 +10,9 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   output: "static",
   site: "https://steveklabnik.com",
-  integrations: [mdx(), tailwind(), react()],
+  integrations: [mdx(), react()],
   adapter: vercel(),
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
