@@ -135,6 +135,33 @@ Is that "the same"? I don't know. What about an expert in each language, someone
 who knows Rust super well but doesn't know C, and vice versa, being given the
 same task? Is that different than a junior, or an "average" developer?
 
+## Compile time vs runtime?
+
+Another redditor asks:
+
+> I’m not Rust expert, but aren’t most (all?) of the safety checks compile time
+> checks? They shouldn’t have any runtime impact.
+
+A great question! Part of this is another example of defaults being different.
+
+`array[0]` is valid in both languages. 
+
+In Rust, there's a bounds check at runtime. In C, there is not. Does this mean
+that they're the same? In Rust, I could write `array.get_unchecked(0)`, and get
+C's semantics. In C, I could write a bounds check to get Rust's semantics. Are
+any of those "the same"?
+
+In Rust, that check may be optimized away, if the compiler can prove it's safe.
+In C, if we wrote the bounds check by hand, the check may be optimized away, if
+the compiler can prove it's safe. Are any of those "the same"?
+
+They aren't wrong that a lot of Rust's safety checks are at compile time. But
+some are at runtime. But this raises another interesting question: That compile-time
+check may cause you to write different code for the same task as in C. A common
+example is using indices rather than pointers. That may mean that the generated
+code performs differently. Is that check truly "at compile time"? Technically, 
+at the micro level, yes. At the engineering level? Possibly not!
+
 ## My Conclusions
 
 I think the most important part of this question is related to possibility, that
