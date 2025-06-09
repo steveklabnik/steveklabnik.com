@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
-import { buildSeriesData, getSeriesNavigation } from "../../utils/series.ts";
+import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
 
 export async function getStaticPaths() {
@@ -25,9 +25,9 @@ if (entry.data.series?.slug) {
   seriesNavigation = getSeriesNavigation(entry, seriesData);
 }
 
-const frontmatter = { 
+const frontmatter = {
   pageTitle: entry.data.title,
-  description: `Blog post: ${entry.data.title} by Steve Klabnik`
+  description: `Blog post: ${entry.data.title} by Steve Klabnik`,
 };
 ---
 
@@ -37,12 +37,22 @@ const frontmatter = {
     <time datetime={entry.data.pubDate.toISOString()} class="text-gray-600">
       {entry.data.pubDate.toString().slice(4, 15)}
     </time>
-    {seriesNavigation && (
-      <SeriesNavigationComponent currentPost={entry} seriesData={seriesNavigation} />
-    )}
+    {
+      seriesNavigation && (
+        <SeriesNavigationComponent
+          currentPost={entry}
+          seriesData={seriesNavigation}
+        />
+      )
+    }
     <Content />
-    {seriesNavigation && (
-      <SeriesNavigationComponent currentPost={entry} seriesData={seriesNavigation} />
-    )}
+    {
+      seriesNavigation && (
+        <SeriesNavigationComponent
+          currentPost={entry}
+          seriesData={seriesNavigation}
+        />
+      )
+    }
   </article>
 </BaseLayout>
