@@ -35,7 +35,7 @@ const frontmatter = {
   <article class="prose prose-slate">
     <h1 class="mb-2">{entry.data.title}</h1>
     <time datetime={entry.data.pubDate.toISOString()} class="text-gray-600">
-      {entry.data.pubDate.toString().slice(4, 15)}
+      {entry.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
     </time>
     {
       seriesNavigation && (

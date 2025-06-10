@@ -38,7 +38,7 @@ const frontmatter = {
             <div class="flex items-center gap-4 text-sm text-gray-500">
               <span>{series.postCount} posts</span>
               <span>•</span>
-              <span>Last updated: {series.latestPost.data.pubDate.toString().slice(4, 15)}</span>
+              <span>Last updated: {series.latestPost.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
             </div>
           </article>
         ))}
