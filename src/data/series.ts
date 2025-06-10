@@ -5,6 +5,10 @@ export const series: Record<string, SeriesMetadata> = {
     title: "AI musings",
     description: "Trying to figure out what I think about AI, and the implications of it for society, technology, and software development.",
   },
+  "ai-field-reports": {
+    title: "AI Field Reports",
+    description: "I share my experiences with AI tools, how I use them, what works and what doesn't, for me.",
+  },
   "deleuze-for-developers": {
     title: "Deleuze for Developers",
     description:
