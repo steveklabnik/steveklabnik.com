@@ -38,7 +38,7 @@ Who is “we”? The team roster will be [in a GitHub team](https://github.com/o
 
 (I’m putting myself as “Cargo,” because Cargo is the main client of my SemVer implementation. In most of these projects, the person who maintains the SemVer implementation is the same as the project, but in Rust, they’re separate. Cargo is the higher-order bit here, though.)
 
-We have not yet started the work on the next iteration of the specification, but we have agreed on a governance model for SemVer. Described in the new `[CONTRIBUTING.md](https://github.com/semver/semver/blob/master/CONTRIBUTING.md)`, we’re going with an RFC process, similar to the Rust programming language and many other projects. In short, “substantial” changes to the SemVer spec need to go through a process by which a written description of the changes are proposed, and the team reaches consensus on acceptance.
+We have not yet started the work on the next iteration of the specification, but we have agreed on a governance model for SemVer. Described in the new [CONTRIBUTING.md](https://github.com/semver/semver/blob/master/CONTRIBUTING.md), we’re going with an RFC process, similar to the Rust programming language and many other projects. In short, “substantial” changes to the SemVer spec need to go through a process by which a written description of the changes are proposed, and the team reaches consensus on acceptance.
 
 It also contains some principles we have for the future of SemVer. I’ve copied the important ones for the specification itself here:
 

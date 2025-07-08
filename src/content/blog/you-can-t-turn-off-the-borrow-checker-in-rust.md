@@ -97,7 +97,7 @@ fn main() {
 
 Why does this matter? Well, a lot of people think that as soon as you drop into `unsafe`, you’re missing the point of Rust, and that you lose all of its guarantees. It’s true that you have to do a lot more work when writing unsafe, since you don’t have the compiler helping you in certain situations, but that’s only for the unsafe constructs.
 
-For example, let’s look at Rust’s standard library, and the `[LinkedList<T>](https://doc.rust-lang.org/stable/std/collections/linked_list/struct.LinkedList.html)` that it contains. It looks like this:
+For example, let’s look at Rust’s standard library, and the [LinkedList<T>](https://doc.rust-lang.org/stable/std/collections/linked_list/struct.LinkedList.html) that it contains. It looks like this:
 
 ```
 pub struct LinkedList<T> {
@@ -108,7 +108,7 @@ pub struct LinkedList<T> {
 }
 ```
 
-I’m not gonna go into *too* much detail here, but it has a head pointer, a tail pointer, a length. `[NonNull<T>](https://doc.rust-lang.org/stable/std/ptr/struct.NonNull.html)` is like `*mut T`, but asserts that it will never be null. This means that we can combine it with `Option<T>`, and the option will use the `null` case for `None`:
+I’m not gonna go into *too* much detail here, but it has a head pointer, a tail pointer, a length. [NonNull<T>](https://doc.rust-lang.org/stable/std/ptr/struct.NonNull.html) is like `*mut T`, but asserts that it will never be null. This means that we can combine it with `Option<T>`, and the option will use the `null` case for `None`:
 
 ```
 fn main() {
@@ -128,7 +128,7 @@ This optimization is guaranteed due to guarantees on both `Option<T>` and `NonNu
 
 So now, we have a sort of hybrid construct: `Option<T>` is safe, and so we can do some operations entirely in safe code. Rust is now forcing us to handle the null checks, even though we have zero runtime overhead in representation.
 
-I think a good example of how this plays out in practice is in the implementation of `[append](https://doc.rust-lang.org/stable/std/collections/linked_list/struct.LinkedList.html#method.append)`, which takes two `LinkedList<T>`s and appends the contents of one to the end of the other:
+I think a good example of how this plays out in practice is in the implementation of [append](https://doc.rust-lang.org/stable/std/collections/linked_list/struct.LinkedList.html#method.append), which takes two `LinkedList<T>`s and appends the contents of one to the end of the other:
 
 ```
     pub fn append(&mut self, other: &mut Self) {
