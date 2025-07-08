@@ -165,7 +165,7 @@ So, as you can see, once you let people use external packages, the Rust gets *si
 
 I’m not going to do any performance comparisons here because that’s not really what the contest was about. I am mildly curious… if I really wanted to optimize performance, I’d also skip the string stuff and go for bytes directly. This isn’t a super tough transformation, but moves things to be slightly lower level.
 
-If you manipulate CSVs often, you should check out `[xsv](https://crates.io/crates/xsv)`, a command-line tool in Rust that lets you slice and dice these files with speed and ease.
+If you manipulate CSVs often, you should check out [xsv](https://crates.io/crates/xsv), a command-line tool in Rust that lets you slice and dice these files with speed and ease.
 
 ---
 

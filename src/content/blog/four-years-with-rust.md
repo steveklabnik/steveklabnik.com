@@ -50,7 +50,7 @@ Niko’s blog has a lot of great history in it, and [this topic is no exception]
 
 - Completed transition from `#fmt` extension syntax to `fmt!`
 
-Long ago, Rust had a “no keywords can have more than five letters” rule, and so many things were abbreviated. This particular extension lives on today, but with the longer name `[format!](https://doc.rust-lang.org/stable/std/macro.format.html)`.
+Long ago, Rust had a “no keywords can have more than five letters” rule, and so many things were abbreviated. This particular extension lives on today, but with the longer name [format!](https://doc.rust-lang.org/stable/std/macro.format.html).
 
 - Removed old fixed length vector syntax - `[T]/N`
 
@@ -202,7 +202,7 @@ Another “yay more features work” line. :)
 
 - Experimental: Traits may declare default methods for impls to use
 
-This works today, and is very useful. Consider `[Iterator](https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html)`: all of those methods have default implementations, so you only need to define `next()`, and you get the rest automatically.
+This works today, and is very useful. Consider [Iterator](https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html): all of those methods have default implementations, so you only need to define `next()`, and you get the rest automatically.
 
 ## Libraries
 
@@ -223,7 +223,7 @@ Conditions were a Lisp way of handling errors that Rust supported for a while. T
 
 - New priority queue, `std::priority_queue`
 
-Today this is `[std::collections::binary_heap](https://doc.rust-lang.org/std/collections/binary_heap/)`.
+Today this is [std::collections::binary_heap](https://doc.rust-lang.org/std/collections/binary_heap/).
 
 - Pipes for serializable types, `std::flatpipes’
 
@@ -231,7 +231,7 @@ No idea where this went.
 
 - Serialization overhauled to be trait-based
 
-This is true today. See the above comments about Serde, though. `[rustc-serialize](https://crates.io/crates/rustc-serialize)` got to cheat though, and the compiler understands `RustcEncodable` and `RustcDecodable`. Can’t wait for Rust 1.15.
+This is true today. See the above comments about Serde, though. [rustc-serialize](https://crates.io/crates/rustc-serialize) got to cheat though, and the compiler understands `RustcEncodable` and `RustcDecodable`. Can’t wait for Rust 1.15.
 
 - Expanded `getopts` definitions
 
@@ -243,7 +243,7 @@ Hoo boy! I forgot that we used to have futures in the standard library. Futures 
 
 - More functions are pure now
 
-Rust no longer has a notion of purity, though `[const fn](https://github.com/rust-lang/rfcs/blob/master/text/0911-const-fn.md)` (still unstable) sorta feels like it in some senses. For some history on purity in Rust, see [Niko’s blog](http://smallcultfollowing.com/babysteps/blog/2012/10/12/extending-the-definition-of-purity-in-rust/), or [this explanation by Graydon on why it was removed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003926.html).
+Rust no longer has a notion of purity, though [const fn](https://github.com/rust-lang/rfcs/blob/master/text/0911-const-fn.md) (still unstable) sorta feels like it in some senses. For some history on purity in Rust, see [Niko’s blog](http://smallcultfollowing.com/babysteps/blog/2012/10/12/extending-the-definition-of-purity-in-rust/), or [this explanation by Graydon on why it was removed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003926.html).
 
 - `core::comm` renamed to `oldcomm`. Still deprecated
 
@@ -251,7 +251,7 @@ Very, very long gone.
 
 - `rustdoc` and `cargo` are libraries now
 
-Rustdoc still exists, though not *really* as a library. Cargo however, is not the cargo you’re thinking of. [It’s a totally different one](https://github.com/rust-lang/rust-wiki-backup/blob/73816d6f888c24fb8115d78078a1601805cbecb5/Doc-using-cargo-to-manage-packages.md). Rust went through many iterations of package managers before coming up with today’s Cargo; there was also `[rustpkg](https://github.com/rust-lang/rust/blob/3e39e3e80dcf726a96ec0fe778f96e2a9dde620b/doc/guide-rustpkg.md)`, for example, which was *after* the Cargo referenced here, but before the Cargo we’re using today.
+Rustdoc still exists, though not *really* as a library. Cargo however, is not the cargo you’re thinking of. [It’s a totally different one](https://github.com/rust-lang/rust-wiki-backup/blob/73816d6f888c24fb8115d78078a1601805cbecb5/Doc-using-cargo-to-manage-packages.md). Rust went through many iterations of package managers before coming up with today’s Cargo; there was also [rustpkg](https://github.com/rust-lang/rust/blob/3e39e3e80dcf726a96ec0fe778f96e2a9dde620b/doc/guide-rustpkg.md), for example, which was *after* the Cargo referenced here, but before the Cargo we’re using today.
 
 ## Misc
 

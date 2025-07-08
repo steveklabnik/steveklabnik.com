@@ -47,7 +47,7 @@ Yep. Classes are just constants, so we assign a constant to that particular `Cla
 
 ## OStruct
 
-`[OStruct](http://ruby-doc.org/stdlib-1.9.3/libdoc/ostruct/rdoc/OpenStruct.html)`s are like `Struct` on steroids. Check it:
+[OStruct](http://ruby-doc.org/stdlib-1.9.3/libdoc/ostruct/rdoc/OpenStruct.html)s are like `Struct` on steroids. Check it:
 
 ```ruby
 require 'ostruct'
