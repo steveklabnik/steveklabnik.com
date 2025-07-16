@@ -1,5 +1,5 @@
 import { z, defineCollection } from 'astro:content';
-import path from 'path';
+import { basename } from 'node:path';
 
 const blogCollection = defineCollection({
     type: 'content',
@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
             order: z.number(),
         }).optional(),
     }),
-    slug: ({ defaultSlug }) => path.basename(defaultSlug),
+    slug: ({ defaultSlug }) => basename(defaultSlug),
 });
 
 export const collections = {
