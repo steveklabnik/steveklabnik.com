@@ -1,5 +1,5 @@
 import { z, defineCollection } from 'astro:content';
-import { basename } from 'node:path';
+import { basename, extname } from 'node:path';
 
 const blogCollection = defineCollection({
     type: 'content',
@@ -12,7 +12,8 @@ const blogCollection = defineCollection({
             order: z.number(),
         }).optional(),
     }),
-    slug: ({ defaultSlug }) => basename(defaultSlug),
+    // Keep slugs stable even when files are moved into subfolders
+    slug: ({ id }) => basename(id, extname(id)),
 });
 
 export const collections = {
