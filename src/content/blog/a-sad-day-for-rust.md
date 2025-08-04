@@ -30,7 +30,7 @@ So, someone takes a peek under the covers, and it turns out actix-web is using a
 
 The author of actix-web basically says “nah it’s fine.” This is basically the perfect storm of unsafe anxiety: a big, important, visible library, a bunch of `unsafe`, and an unresponsive author.
 
-Now, it’s important to mention that people were not just complaining: they were writing code. It is easy to frame this as a case of open source entitlement, and it still very may well be, but this isn’t just empty complaints. Patches were included, they just weren’t welcome. And that’s also not inherently wrong either; a project maintainer shouldn’t be required to accept a patch just because it exists…
+Now, it’s important to mention that people were not just complaining: they were writing code. It is easy to frame this as a case of open source entitlement, and it still very well may be, but this isn’t just empty complaints. Patches were included, they just weren’t welcome. And that’s also not inherently wrong either; a project maintainer shouldn’t be required to accept a patch just because it exists…
 
 Reddit whips itself into a frenzy. Lots of ugly things are said. More issues are opened, and closed, and locked. Eventually, the author accepts some code that drops the total unsafe count significantly and has more sound usage of what’s left.
 
