@@ -3,8 +3,13 @@ import { getCollection, render } from "astro:content";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import { loadRenderers } from "astro:container";
+import type { APIContext } from "astro";
 
-export async function GET(context) {
+export async function getStaticPaths() {
+  return [{ params: {} }];
+}
+
+export async function GET(context: APIContext) {
   const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
 
@@ -12,7 +17,7 @@ export async function GET(context) {
 
   const items = await Promise.all(
     posts
-      .sort((a, b) => b.data.pubDate - a.data.pubDate)
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
       .map(async (post) => {
         const { Content } = await render(post);
 
