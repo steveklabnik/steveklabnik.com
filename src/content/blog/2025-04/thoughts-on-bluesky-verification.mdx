@@ -1,0 +1,149 @@
+---
+title: "Thoughts on Bluesky Verification"
+pubDate: 2025-04-21
+---
+
+import BlueskyPost from "../../../components/BlueskyPost.astro";
+
+Today, [Bluesky rolled out blue checks][verification]. And, I was given one.
+Now, I'm not the biggest fan of this sort of feature, however, I also don't
+really think this kind of feature is for me. I really like the idea of domain
+verification; I have been like "oh okay that's coming from a `.gov` account"
+from time to time. But I don't think most people really think about domains the
+way that programmers do.
+
+I have wanted to update my ["How does Bluesky work?"][bsky] post for a while
+now, but I've been super busy. So, let's ignore the product question for now,
+and focus on the technical question. How does verification work?
+
+## The golden rule of atproto
+
+I've also been thinking about designing apps on top of atproto. There's a kind
+of rule of thumb that I realized about doing this, a sort of "golden rule" if
+you will:
+
+> You are the only person who can write records into your PDS.
+
+This has really interesting implications! For example, sometimes people ask for
+"soft blocks" on Bluesky. This is a twitter 'feature' where if you block
+someone, and then unblock them, they're not following you any more. But on
+Bluesky, if you soft block someone, they're still following you. Why does that
+happen?
+
+Following someone on Bluesky means that you write a record of the lexicon
+[`app.bsky.graph.follow`][follow] into your PDS. So you might assume that
+blocking someone would delete this record from their PDS. But that would violate
+the golden rule! You can't delete records from someone else's PDS. So, instead,
+blocking someone on Bluesky means that you write a record of the lexicon
+[`app.bsky.graph.block`][block] into your PDS. Unblocking them deletes that
+record from your PDS. But it doesn't delete the record from their PDS. So, if
+you block someone, and then unblock them, they still have a record in their PDS
+that says they're following you.
+
+This may not be the behavior that you want as a user, but it follows from the
+constraints of the overall protocol design.
+
+## How verification works
+
+Now that we know the golden rule, we can understand how verification works. How
+does an account get verified? Well, someone has to be writing a record into a
+PDS somewhere. The natural design is the one they've chosen: someone becomes
+verified by someone else writing a record of the type
+[`app.bsky.graph.verification`][verified] into their PDS. [Here][verifyme] is
+the record verifying me. It looks like this:
+
+```json
+{
+  "$type": "app.bsky.graph.verification",
+  "handle": "steveklabnik.com",
+  "subject": "did:plc:3danwc67lo7obz2fmdg6jxcr",
+  "createdAt": "2025-04-21T10:49:07.620Z",
+  "displayName": "Steve Klabnik"
+}
+```
+
+This is in `@bsky.app`'s PDS. It describes my DID, and my handle and display
+name. One thing not mentioned in the blog post, but is in the comments of the
+lexicon, is that changing your handle or display name makes this record invalid.
+I didn't know that! Good to remember in case I decide to make some jokes in my
+display name.
+
+That's the basics: a record exists, and a blue check shows up on my account. But
+wait, isn't this centralized? I thought Bluesky was decentralized? Well, yes and
+no.
+
+You see, anyone can put a record of this type into their PDS. So, if I wanted to
+verify someone else, I can do that too: here's [me verifying
+`@jcsalterego.bsky.social`][jerry]. But if you go to Jerry's profile, you won't
+see a blue check. Why is that? Well, because the Bluesky AppView only shows a
+blue check if the record is from a "trusted verifier." Who is that? Well, as far
+as we know, it's from `@bsky.app` and `@nytimes.com`. Why can't we tell more?
+Well, they've implemented this as a database column in the AppView, it's not
+"in-protocol," in other words.
+
+EDIT: Samuel has provided us with the list:
+
+<BlueskyPost uri="at://did:plc:p2cp5gopk7mgjegy6wadk3ep/app.bsky.feed.post/3lndyqyyr4k2k" />
+
+So in some sense this is a centralized feature: clients can display information
+however they choose, and they've made a product choice that only trusted
+verifiers will show up as blue checks. But in another sense, it's not
+centralized, as anyone has the power to verify anyone else. Alternative clients
+can decide to show or hide any of this information; [Deer Social][deer], one of these
+alternate clients, has added a user preference to hide all blue
+checks, for example. A different one could show every verification as a blue
+check, or display them differently, say one badge per verification, styled like
+the avatar of the person who verified you.
+
+EDIT: turns out that the default AppView also lets you hide blue checks:
+
+<BlueskyPost uri="at://did:plc:35kdk2ntcs626zs6cm62i7ih/app.bsky.feed.post/3lne5sehgxc2y" />
+
+The point is still the same though: there's choice here. Back to the original post!
+
+The underlying protocol is totally open, but you can make an argument that most
+users will use the main client, and therefore, in practice it's more centralized
+than not. My mental model of it is the bundled list of root CAs that browsers
+ship; in theory, DNS is completely decentralized, but in practice, a few root
+CAs are more trusted than others. It's sort of similar here, except there's no
+real "delegation" involved: verifiers are peers, not a tree.
+
+This core design allows Bluesky to adjust the way it works in the future fairly
+easily, they could allow you to decide who to trust, for example. We'll see how
+this feature evolves over time.
+
+## Conclusion
+
+I'm flattered that I was chosen to be verified; if I was trying to ship this
+feature, my name wouldn't come up 181st on the list. I was really curious about
+the design when they announced this feature, I assumed it was going to be closer
+to a PGP web of trust, or delegated in some way. This design is much simpler and
+less centralized than I expected: this is arguably more horizontal than the web
+of trust would have been.
+
+At the same time, I am interested in seeing if this changes the culture of the
+site; some see the blue check as a status symbol of some kind, and think it
+means what you say matters more. I don't think that's true, personally, but it
+doesn't really matter what I think. To redraw the analogy with DNS, the blue
+check is very similar to the green lock: it doesn't mean that what you're saying
+is true, or right, or good, it just means that you are who you say you are. But
+even though a blue check is technically isomorphic (or close enough) to a green
+lock, I think a lot of people perceive it as being more than that. We'll just
+have to see. What I am glad about it is that it's an in-protocol design, rather
+than an external one like DMs are. I understand why they did it that way, but
+I'd rather that remain the exception rather than the rule.
+
+---
+
+Here's my post about this post on BlueSky:
+
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3lne4frl43s2d" />
+
+[verification]: https://bsky.social/about/blog/04-21-2025-verification
+[bsky]: https://steveklabnik.com/writing/how-does-bluesky-work/
+[follow]: https://github.com/bluesky-social/atproto/blob/a1b2370dbc451570eafb982f326e8c110277ac01/lexicons/app/bsky/graph/follow.json
+[block]: https://github.com/bluesky-social/atproto/blob/a1b2370dbc451570eafb982f326e8c110277ac01/lexicons/app/bsky/graph/block.json
+[verified]: https://github.com/bluesky-social/atproto/blob/a1b2370dbc451570eafb982f326e8c110277ac01/lexicons/app/bsky/graph/verification.json
+[verifyme]: https://pdsls.dev/at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.graph.verification/3lndpy3ngb62l
+[jerry]: https://pdsls.dev/at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.graph.verification/3lnduurfk7q2k
+[deer]: https://deer.social/

@@ -1,0 +1,248 @@
+---
+title: "A tale of two Claudes"
+pubDate: 2025-06-10
+series:
+  slug: "ai-field-reports"
+  order: 1
+---
+
+import BlueskyPost from "../../../components/BlueskyPost.astro";
+
+> It was the best of times, it was the worst of times, it was the age of wisdom,
+> it was the age of foolishness, it was the epoch of belief, it was the epoch of
+> incredulity, it was the season of Light, it was the season of Darkness, it was
+> the spring of hope, it was the winter of despair, we had everything before us,
+> we had nothing before us, we were all going direct to Heaven, we were all going
+> direct the other way—in short, the period was so far like the present period,
+> that some of its noisiest authorities insisted on its being received, for good
+> or for evil, in the superlative degree of comparison only.
+>
+> - Charles Dickens, _A Tale of Two Cities_
+
+I recently had two very different experiences with Claude Code. I wanted to
+share them both, because I find the contrast interesting.
+
+## Claude hates Tailwind 4
+
+I have really been enjoying [TailwindCSS][tailwind]. I also have started several
+web projects using it in the past year. Back in January, [Tailwind released
+version 4][tailwind4]. Honestly, I am not a good enough Tailwind user to be able
+to appreciate the new features, but I do prefer to keep my projects up to date.
+So I've needed to update my Tailwind projects to version 4.
+
+Claude... is nearly completely useless for this.
+
+You'd think that upgrading a very popular CSS framework would be a
+straightforward task. But Claude has failed to set it up multiple times. While
+it's true that Claude Code claims that its training cutoff is in January of
+2025 in its system prompt, it seems to have a cutoff in March. Regardless, a
+useful tool shouldn't need to be explicitly trained on the latest version of a
+framework to be able to help with it. Yet, it consistently fails to either set
+up Tailwind 4 in new projects, or upgrade existing projects to this fourth
+release.
+
+I did manage to get it to work earlier this week, when I [asked it to
+update this website][update], but at this point, it was mostly just me messing
+around. I wish I had saved the exact prompt, but basically I said something like
+"you have failed me consistently in this task, so please search for upgrade
+guides and the like to guide you in this update." It did do that, but for some
+reason, the upgrade tool couldn't update my configs, and so it decided to do it
+itself, and well, while this time it did manage to technically update, it didn't
+do it completely correctly. It removed the typography plugin, which I had to ask
+it to put back. And it didn't properly import the config into my global CSS,
+which also caused weird issues. Regardless, it did manage to sort of do it,
+after some coaxing, but this was a frustrating experience that was probably the
+third or fourth time I had tried to get it to do this.
+
+While Tailwind 4 is a new major version release, it's still incredibly popular,
+and one of the hunches I have about LLM usage for coding is that more popular
+tools will be easier for LLMs to use. This didn't seem to be the case here,
+though.
+
+## Claude loves... ELF?
+
+For... reasons, I am working on an assembler. Don't worry about it, you may find
+out about it someday, and you may not. It's not for work, just for fun.
+
+Anyway, if you're not familiar, basically this process turns assembly code into
+machine code. Specifically, in this case, I'm encoding x86_64 assembly into an
+ELF executable. ELF is a file format that is used by, among other things, Linux,
+for executables.
+
+I'm working with Claude on this, and I again didn't save my prompts, which I am
+annoyed by, but I roughly said something like "please implement codegen such
+that it produces an ELF executable" and let it go. I did not expect this to
+work, or go well. As I said above, I sort of expect more common tasks to be
+easier for LLMs, given that they have more training data. While I'm sure there's
+some code in Rust out there that does this, I still don't expect it to be
+anywhere near as common as TailwindCSS.
+
+A few minutes later, Claude said "hey, I did it!" For completely unrelated
+reasons, I got a message from [Ixi][ixi], a friend of mine who would be
+particularly interested in this project, and so I said something along the lines
+of "hey, I'm working on a project you'd be interested in, claude has just made
+some large claims:
+
+> Steve, we've successfully implemented a complete end-to-end x86-64 code
+> generation pipeline
+
+Do you want to look at the PR together?" and they said yes.
+
+So I shared my screen, and we went through the PR together. It was pretty fine.
+A lot of the stuff at first was normal, but a bit boring: the error handling was
+fine, and maybe slightly different than I would have done, but it wasn't so bad
+that if a co-worker had sent in the PR, I would have objected to merging it.
+
+But Ixi noticed something:
+
+```rust
+    fn instruction_size(&self, instr: &Instruction) -> u64 {
+        match instr {
+            Instruction::Push(_) => 2,
+            Instruction::Pop(_) => 2,
+```
+
+These sizes are... wrong. They should (probably) be one byte. Fun! Most of the
+code looked overall reasonable, though. So let's look at that ELF it produced.
+
+I ran the executable, and it segfaulted. Surprise! While Claude did think it was
+done, because it had produced an ELF file, and the tests were passing, it didn't
+actually work. Given that those sizes were wrong, this wasn't really a surprise.
+We decided to dig into the code a bit more, but first: I told Claude "hey, this
+example you compiled segfaults, something is wrong, can you fix it?" Again, not
+the exact prompt. I wish I had saved it, but I didn't think I was writing this
+blog post at the time, so I didn't. But it was very basic like that. And I let
+Claude go in the background while we took a look.
+
+We used `objdump -xd` to see some of the information about the ELF file. We
+ended up using `gdb` to see where it was crashing:
+
+```
+Program received signal SIGSEGV, Segmentation fault.
+     0x0000000000400093 in ?? ()
+     #0  0x0000000000400093 in ?? ()
+     #1  0x000000000040007d in ?? ()
+     #2  0x0000000000000001 in ?? ()
+     #3  0x00007fffffffddb3 in ?? ()
+     #4  0x0000000000000000 in ?? ()
+```
+
+There's no debug info here, so we only have addresses. There was a jump going to
+an address that ends in `93`. This is incorrect: `0x400093` was three bytes into
+a `movabs $0x24, rdi`, so... we were jumping to the middle of an instruction,
+which is nonsense, hence the segfault.
+
+(Now that I'm looking at this, I also find these other addresses suspect. I wish
+I had taken better notes while we were looking at this... the point is this was
+a quick check as to what was going on, and it was very clear that this is just
+straight-up wrong.)
+
+How could this happen? Well, if the sizes of the instructions were wrong, when
+the code figures out where to jump, it would go to the wrong place, as it would
+mis-calculate how far away the jump target was. So this all made sense.
+Hypothesis: instruction sizes are incorrect, which means the jump calculations
+are incorrect, which means fail.
+
+I had to run, so we ended the call, but I left Claude running. A few minutes
+later, I checked in on it, and that's when I was really surprised.
+
+Claude had fixed the issue! It wasn't really even about that, but also, how it
+did so:
+
+```
+● Bash(gdb -batch -ex "run" -ex "bt" --args ./debug_test)
+  ⎿  Program received signal SIGSEGV, Segmentation fault.
+     0x0000000000400093 in ?? ()
+     #0  0x0000000000400093 in ?? ()
+     #1  0x000000000040007d in ?? ()
+     #2  0x0000000000000001 in ?? ()
+     #3  0x00007fffffffddb3 in ?? ()
+     #4  0x0000000000000000 in ?? ()
+
+● Perfect! The crash is at 0x400093, which means the call
+instruction is jumping to the wrong location. The issue is
+in my relocation calculation. Let me examine this more carefully.
+
+  Looking at the hex dump again:
+
+Entry point: 0x400078
+Call instruction: e8 16 00 00 00 (5 bytes)
+Next instruction: 0x40007d
+Target: 0x40007d + 0x16 = 0x400093
+
+  But the main function is actually at file offset 0x8A, which is
+  virtual address 0x40008A.
+
+  The issue is in my symbol address calculation. Let me examine
+  the assembler code:
+```
+
+Hmmm. It's kind of right, but also maybe not? I kept scrolling:
+
+```
+  ● I found the issue! The assembler is calculating symbol
+  addresses relative to the start of the machine code (offset 0),
+  but when resolving relocations, it needs to account for the
+  fact that the machine code will be loaded at the ELF entry
+  point address.
+```
+
+That also didn't feel right? More scrollback through. It was creating sample
+programs in assembly, and then assembling them, and then examining the contents
+of the files. It was double checking its assumptions and understanding of the
+code, and then, there it was:
+
+```
+There's a bug in my instruction size calculation. Let me check
+the instruction_size function:
+
+● Read(src/lib.rs)
+  ⎿  Read 20 lines (ctrl+r to expand)
+
+● Found the bug! Mov(, _) => 10 is wrong. It assumes all mov
+  instructions are 10 bytes (mov reg, imm64), but mov rdi, rax
+  is only 3 bytes.
+```
+
+Okay, wait... `mov`, and not `push`/`pop`? Sure enough, not only had it figured
+out that `push` and `pop` were one byte, not two, but it had also figured out
+that `cmp` had a few forms with different sizes, and that `mov` did too. After
+fixing that... the executables worked!
+
+But really, the most impressive part is that it had basically done exactly what
+we had done, but in the background, while we were looking at the code. It took a
+little longer to get there, because it went down one rabbit hole, but it had
+also found other bugs that weren't immediately obvious to us. And, I'll be extra
+honest: while I understand what's going on here, I am not super great at
+`objdump` and `gdb`, and if Ixi wasn't around, Claude would have probably found
+this before me, if I were alone. This is part of why having friends is great,
+but if I didn't have that friend around at that moment, this would have
+tremendously helped.
+
+I am also impressed because, as mentioned above: I would expect this task to be
+much more rare than web development stuff. Yet, Claude did a far better job,
+finding the issue quickly and fixing it, as opposed to the multiple times I gave
+it a chance with Tailwind.
+
+## Conclusion
+
+What does this mean? I don't know, but I figured I want to start documenting
+these experiences, good and bad, and so I wanted to share both of these stories,
+one good, and one bad.
+
+LLMs are not magic, or perfect, but I have found them to be useful. It's
+important to share both the successes, and also the failures. I'm hoping to do a
+better job of tracking the prompts and details to give you a better
+understanding of the specifics of how I'm using these tools, but the perfect is
+the enemy of the good, and so these are the stories you're going to get for now.
+
+---
+
+Here's my post about this post on Bluesky:
+
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3lrb6sb7fzl2i" />
+
+[tailwind]: https://tailwindcss.com/
+[tailwind4]: https://tailwindcss.com/blog/tailwindcss-v4
+[update]: https://github.com/steveklabnik/steveklabnik.com/commit/fc7a5f6d0a8169e45d67891fe784bdf2270f14f9
+[ixi]: https://bsky.app/profile/there.is.no.aarch64.mov
