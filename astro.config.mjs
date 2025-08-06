@@ -11,6 +11,10 @@ export default defineConfig({
   output: "static",
   site: "https://steveklabnik.com",
   integrations: [mdx(), react()],
+  server: {
+    host: true,
+    port: 4321,
+  },
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
