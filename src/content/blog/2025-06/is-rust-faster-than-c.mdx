@@ -1,0 +1,186 @@
+---
+title: "Is Rust faster than C?"
+pubDate: 2025-06-09
+---
+
+import BlueskyPost from "../../../components/BlueskyPost.astro";
+
+Someone on Reddit recently asked:
+
+> What would make a Rust implementation of something faster than a C
+> implementation, all things being the same?
+
+I think this is a great and interesting question! It's really tough because it
+ultimately relies on what exactly you mean by "all things being the same." And I
+think this is something that makes it hard to compare languages.
+
+Here's some ways in which you can argue that things are "the same" but also,
+that they're not, and what they imply for runtime performance.
+
+## Inline Assembly
+
+Rust has inline assembly built into the language. C has inline assembly as a
+very common compiler extension, to the degree where saying it's not part of the
+language is an arguable nitpick.
+
+Here's an example in Rust:
+
+```rust
+use std::arch::asm;
+
+#[unsafe(no_mangle)]
+pub fn rdtsc() -> u64 {
+    let lo:  u32;
+    let hi:  u32;
+    unsafe {
+        asm!(
+            "rdtsc",
+            out("eax") lo,
+            out("edx") hi,
+            options(nomem, nostack, preserves_flags),
+        );
+    }
+    ((hi as u64) << 32) | (lo as u64)
+}
+```
+
+This reads the time stamp counter with `rdtsc`, and returns its value.
+
+Here's the example in C:
+
+```c
+#include <stdint.h>
+
+uint64_t rdtsc(void)
+{
+    uint32_t lo, hi;
+    __asm__ __volatile__ (
+        "rdtsc"
+        : "=a"(lo), "=d"(hi)
+    );
+    return ((uint64_t)hi << 32) | lo;
+}
+```
+
+These (under `-0` in both rustc `1.87.0` and clang `20.1.0`) produce the same
+assembly:
+
+```asm
+rdtsc:
+        rdtsc
+        shl     rdx, 32
+        mov     eax, eax
+        or      rax, rdx
+        ret
+```
+
+Here's a link on Godbolt: https://godbolt.org/z/f7K8cfnx7
+
+Does this count? I don't know. I don't think it really speaks to the question
+asked, but it is one way to answer the question.
+
+## Similar code, different results
+
+Rust and C can have different semantics for similar code. Here's a struct in
+Rust:
+
+```rust
+struct Rust {
+    x: u32,
+    y: u64,
+    z: u32,
+}
+```
+
+Here's "the same" struct in C:
+
+```c
+struct C {
+    uint32_t x;
+    uint64_t y;
+    uint32_t z;
+};
+```
+
+In Rust, this struct is 16 bytes (on x86_64, again) and in C, it is 24. This is
+because Rust is free to reorder the fields to optimize for size, while C
+is not.
+
+Is this the same, or different?
+
+In C, you can re-order the fields to get the same size. In Rust, you can write
+`#[repr(C)]` to get the same layout as C. Does this mean we should have written
+different Rust or different C to get "the same" thing?
+
+## Social Factors
+
+Some people have reported that, thanks to Rust's checks, they are more willing
+to write code that's a bit more dangerous than in the equivalent C (or C++),
+where they'd do a bit more copying to play it a bit safer. This would be "the
+same" in the sense of the same devs on the same project, but the code would be
+different, due to judgement calls. You can make an argument that that's not the
+same, but is different too.
+
+An example of this from a long time ago is the Stylo project. Mozilla tried to
+parallelize Firefox's style layout twice in C++, and both times the project
+failed. The multithreading was too tricky to get right. The third time, they
+used Rust, and managed to ship. This is the same project, (though not the same
+programmers, I believe) by the same organization, but one was possible and one
+was not. Is that "the same"? In some senses, but not in others.
+
+This also goes for a similar question: assuming we have a junior developer
+writing Rust, and also writing C, for the same task. Are we going to get faster
+code in one or the other? This controls for ability, but not for the same code.
+Is that "the same"? I don't know. What about an expert in each language, someone
+who knows Rust super well but doesn't know C, and vice versa, being given the
+same task? Is that different than a junior, or an "average" developer?
+
+## Compile time vs runtime?
+
+Another redditor asks:
+
+> I’m not Rust expert, but aren’t most (all?) of the safety checks compile time
+> checks? They shouldn’t have any runtime impact.
+
+A great question! Part of this is another example of defaults being different.
+
+`array[0]` is valid in both languages. 
+
+In Rust, there's a bounds check at runtime. In C, there is not. Does this mean
+that they're the same? In Rust, I could write `array.get_unchecked(0)`, and get
+C's semantics. In C, I could write a bounds check to get Rust's semantics. Are
+any of those "the same"?
+
+In Rust, that check may be optimized away, if the compiler can prove it's safe.
+In C, if we wrote the bounds check by hand, the check may be optimized away, if
+the compiler can prove it's safe. Are any of those "the same"?
+
+They aren't wrong that a lot of Rust's safety checks are at compile time. But
+some are at runtime. But this raises another interesting question: That compile-time
+check may cause you to write different code for the same task as in C. A common
+example is using indices rather than pointers. That may mean that the generated
+code performs differently. Is that check truly "at compile time"? Technically, 
+at the micro level, yes. At the engineering level? Possibly not!
+
+## My Conclusions
+
+I think the most important part of this question is related to possibility, that
+is:
+
+1. If we assume C is the 'fastest language,' whatever that means.
+2. Is there any inherent reason why Rust could not do the same things?
+
+I think the answer to that is "no," even ignoring the inline assembly case. So
+on that most important, fundamental level, the answer is "there's no difference
+between the two."
+
+But we're not usually talking about that. We're usually talking about something
+in the context of engineering, a specific project, with specific developers,
+with specific time constraints, and so on. I think that there are so many
+variables that it is difficult to draw generalized conclusions.
+
+---
+
+Here's my post about this post on BlueSky:
+
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3lr6xouhoxc2i" />

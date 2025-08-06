@@ -7,10 +7,14 @@ import type { SeriesNavigation } from "../../utils/series.ts";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  return blogEntries.map((entry) => {
+    // Remove the date folder prefix (e.g., "2020-01/") from the slug
+    const cleanSlug = entry.slug.replace(/^\d{4}-\d{2}\//, '');
+    return {
+      params: { slug: cleanSlug },
+      props: { entry },
+    };
+  });
 }
 
 const { entry } = Astro.props;

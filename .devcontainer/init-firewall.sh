@@ -77,6 +77,7 @@ for domain in \
     "statsig.anthropic.com" \
     "crates.io" \
     "static.crates.io" \
+    "public.api.bsky.app" \
     "statsig.com"; do
     echo "Resolving $domain..."
     ips=$(host -t A "$domain" | awk '/has address/ { print $4 }')
