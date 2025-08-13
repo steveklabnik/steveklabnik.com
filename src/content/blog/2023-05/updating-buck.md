@@ -1,18 +1,14 @@
 ---
 title: Updating Buck
 pubDate: 2023-05-08
+series:
+  slug: "buck-rust"
+  order: 3
 ---
 
 Hey there! A shorter post today, but I wanted to continue my series on Buck
 by going over some things that have changed since this series started.
 
-## A series
-
-This post is part of a series:
-
-* [Using buck to build Rust projects](using-buck-to-build-rust-projects)
-* [Using Crates.io with Buck](using-cratesio-with-buck)
-* [Updating Buck](#) (you are here)
 
 ## Updating Buck
 

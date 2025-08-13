@@ -1,6 +1,9 @@
 ---
 title: Using buck to build Rust projects
 pubDate: 2023-04-13
+series:
+  slug: "buck-rust"
+  order: 1
 ---
 
 A few days ago, Facebook/Meta/idk [announced that buck2 is now open
@@ -31,14 +34,6 @@ this purely for the novelty of trying out some new tech right now. I will
 probably end up with a post giving better motivations at some point in the
 future, but I think it makes more sense once you see how it works, rather than
 starting there.
-
-## A series
-
-This post is part of a series:
-
-* [Using buck to build Rust projects](#) you are here
-* [Using Crates.io with Buck](using-cratesio-with-buck)
-* [Updating Buck](updating-buck)
 
 This post represents how to do this at the time that this was posted; future
 posts may update or change something that happens here. Here's a hopefully
