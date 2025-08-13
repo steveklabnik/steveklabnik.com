@@ -1,6 +1,9 @@
 ---
 title: Using Crates.io with Buck
 pubDate: 2023-04-27
+series:
+  slug: "buck-rust"
+  order: 2
 ---
 
 In [a previous post](using-buck-to-build-rust-projects), I laid out the basics
@@ -8,14 +11,6 @@ of building a Rust project with [buck2](https://buck2.build/). We compared and
 contrasted it with Cargo. But what about one of the biggest and best features
 that Cargo has to offer, the ability to use other Rust packages from crates.io?
 They don't use buck, so how can we integrate them into our build?
-
-## A series
-
-This post is part of a series:
-
-* [Using buck to build Rust projects](using-buck-to-build-rust-projects)
-* [Using Crates.io with Buck](#) (you are here)
-* [Updating Buck](updating-buck)
 
 This post represents how to do this at the time that this was posted; future
 posts may update or change something that happens here. Here's a hopefully
