@@ -9,7 +9,7 @@ There's a famous quote by Eleanor Roosevelt:
 
 (Apologies, Phil Wadler.)
 
-I'd like to preface this post that I do *not* consider this to be an actual
+I'd like to preface this post that I do _not_ consider this to be an actual
 proposal to change Rust, even a pre-RFC. I don't think that making changes like
 this has enough benefits once a language is as established as Rust is. Consider
 this post more of some musings about some things that there wasn't really time
@@ -108,7 +108,7 @@ const fn foo(x: i32) -> i32 {
 ```
 
 That's all well and good, we still even retain the "grep for `fn`" idea here,
-but these are *also* useful on arbitrary blocks of code:
+but these are _also_ useful on arbitrary blocks of code:
 
 ```rust
 let x = const {
@@ -199,7 +199,6 @@ We've now added one little extra bit to the grammar: a `=` after the return
 type, if any. This one little change allows us to unify the rest of the syntax
 around blocks more easily:
 
-
 ```rust
 // full signature
 fn foo(x: i32) -> i32 = {
@@ -217,7 +216,7 @@ fn foo(x: i32) -> i32 = const {
 };
 ```
 
-I happen to *really* like this. It's a pretty small tweak but I think it
+I happen to _really_ like this. It's a pretty small tweak but I think it
 cleans stuff up nicely.
 
 ```text
@@ -237,7 +236,7 @@ figured I'd mention that as well, yet another rabbit hole to chase down.)
 ## Going too far
 
 This of course raises another divergence. But I'm not sure that fixing this one
-is worth it; it starts to get *too* weird, I think. But maybe I'm wrong. This
+is worth it; it starts to get _too_ weird, I think. But maybe I'm wrong. This
 one is about the types.
 
 One of the things that makes `name: type` syntax nicer than `type name` syntax
@@ -277,11 +276,11 @@ This one... this may be too far afield. And, while Rust doesn't have named
 parameters, and possibly never will, I have no idea how this style of syntax
 would work with that. There's also some repetition of `fn` here that might be
 worth trying to remove, but I'm trying to make the smallest possible deltas
-from existing syntax here, and `fn(i32) -> i32` *is* the type of that function
+from existing syntax here, and `fn(i32) -> i32` _is_ the type of that function
 in today's syntax.
 
 What I mostly take away from this part of the exercise is that consistency is
-a good goal, but it's not the *only* goal. Even if Rust didn't allow for
+a good goal, but it's not the _only_ goal. Even if Rust didn't allow for
 inference, making its function declaration syntax be like this may have simply
 been a bridge too far for wide adoption. Rust already takes a lot of flak for
 being weird, and spending some [Strangeness Budget][strangeness] to unify these
@@ -289,9 +288,9 @@ syntaxes probably wouldn't be the right choice. But maybe I'm too conservative!
 Given that Rust already takes that flak, maybe a bigger jump would have been
 okay here. Who knows.
 
-[strangeness]: the-language-strangeness-budget
+[strangeness]: /writing/the-language-strangeness-budget
 
-... actually, we have one way to find out, I guess. This is *very* similar
+... actually, we have one way to find out, I guess. This is _very_ similar
 to the syntax that Herb Sutter came up with for [cppfront][cppfront]:
 
 ```rust
