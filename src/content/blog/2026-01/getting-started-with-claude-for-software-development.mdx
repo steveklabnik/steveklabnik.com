@@ -1,0 +1,310 @@
+---
+title: "Getting started with Claude for software development"
+pubDate: 2026-01-07
+---
+
+2025 was an interesting year in many ways. One way in which it was interesting
+for me is that I went from an AI hater to a pretty big user. And so I've had a
+few requests for a "using Claude" guide, so I figure new year, why not give it a
+shot? The lack of this kind of content was something that really frustrated me
+starting out, so feels like a good thing to contribute to the world.
+
+This post is going to be for software developers that are interested in learning
+about using these tools as of early 2026. I'm going to spend this post talking
+about some background, and then the first steps towards getting your feet wet.
+If folks like it, I'll follow up with more. There's a lot here. I'm going to be
+speaking about Claude directly, because it's the tool I use the most, but a lot
+of this should apply to other platforms as well.
+
+## There's a lot here
+
+The first thing I want to say on this topic is that there's a reason that this
+is the first post of possibly many: there's a lot here, as I just said above.
+This matters more than you might think at first. Becoming productive with LLMs
+is not actually easy, no matter what other people tell you. A lot of advice in
+this space is given by people who don't have a teaching background, and have
+forgotten how much work they've put in to get to where they are.
+
+I liken it to vim: everyone acknowledges that modal editing is a different way
+of working. We joke about how hard it is to learn how to quit vim if you've
+accidentally started it up. But many people also acknowledge that the learning
+curve is worth it, due to the power you get. I think of LLMs like vim: they're
+not super easy to get real results from, but the time invested can be worth it.
+
+It's also worth saying up front: maybe it's not worth it, for you. I don't fault
+anyone for not wanting to spend time learning a new tool, especially in a space
+that's moving as fast as this one. Effectively everything I'm going to talk
+about in this post has really only come into its own in the last 12-14 months.
+Maybe in another 12 months this post will be useless. I don't know. But just
+like we might not find the time to learn vim to be worth it over just using a
+more normal editor, that doesn't mean that deciding that all of this isn't worth
+your time isn't a rational, reasonable decision to make. You're not going to be
+"left behind" or whatever some of the boosters say, in the same way that you
+don't need to learn vim to do software dev. We aren't doing vim vs emacs wars
+here. We're saying "hey if you want to learn vim this is how I think you can,
+and if not, that's fine."
+
+Furthermore, because there's so much to cover, this post is going to be
+background and step 1. Because otherwise it would be too dang long. You can't
+just read ten thousand words on this stuff and be an expert, you have to go
+actually use the things. So you should be taking time between each post to go
+and do that, and so not putting it all in one place should give you natural
+breakpoints to go and actually try this stuff out.
+
+## Intentionality
+
+The very first thing I want to say on this entire topic is something that I
+think about a lot. I have generally had better outcomes with LLMs than a lot of
+people I know. And that's bothered me. And I'm not sure exactly why that is. But
+I do have one idea.
+
+I like to approach this space in a ... maybe "scientific" way is too strong, but
+at least a rational one. I try things out, discard what doesn't seem to work,
+and keep what seems to work. I try and think critically about this space.
+
+However.
+
+I do think that the whole "vibe" term, while complicated in this space, is also
+important. Vibes do matter, actually. I have some more science-y and some more
+folks-y reasons that I believe this. But I do think that the attitude you bring
+towards this process partially dictates your success, and I think you should be
+conscious of that while you go on this journey.
+
+Is that too woo-y for you? Okay, let me make it concrete: I un-ironically believe
+that swearing at Claude makes it perform worse. I think you will get better
+results working with an LLM if you treat them like you'd treat a respected
+co-worker, and you will get worse results if you berate, insult, or otherwise
+mistreat them.
+
+This matters because I think that for a lot of LLM-skeptical people who give
+this a shot, they may not actually go "Hey claude what's your fucking problem"
+(though I have literally seen this happen) they will tend to let their
+frustrations show a bit more when things don't work out. Use your emotional
+regulation skills. It's very okay to be critical in response to whatever Claude
+does, but do it in a way that wouldn't get you reported to HR in a healthy
+company. Do this:
+
+> Why did you do it that way? I would have preferred if we did \<this> instead.
+
+Not this:
+
+> Stop making such basic mistakes. You know that we do \<this> and not \<that>,
+> idiot.
+
+I think that being kind to people is good for you, but I also believe that even
+if you're a misanthrope, consider this a skill to get increased output from the
+tool. I think a bit of anthropomorphization is actually a good thing here. We'll
+come back to that later during the more practical steps, but basically, that's
+the higher level principle at work: an LLM is not a person. But it is working
+based off of language that people use. That's its API. And so interacting with
+it in the way you'd interact with a co-worker is, in my mind, the right way to
+do it.
+
+Maybe I'll elaborate on this belief someday. Or maybe not. I do this for
+personal belief reasons more than anything else. But it is something I want to
+share.
+
+## Claude web vs Claude Code
+
+Okay! Now that we've got that out of the way, let's talk about the various ways
+you can use Claude! There's a number of them, actually, but I want to focus on
+two: on the web at https://claude.ai, and with [Claude
+Code](https://www.claude.com/product/claude-code).
+
+Using Claude in these ways is fundamentally different. Both have pros and cons.
+For real actual software development, you want to use Claude Code. This is due
+to the "agentic loop", which you'll learn more about in a bit. But for your
+first steps, using it via the web is okay. It's mostly just important to know
+that your experience using the web interface is not going to be the same as
+using Claude Code. If I only had access to the web interface, I wouldn't be so
+bullish on this stuff. But it is and can be useful. Especially when getting your
+feet wet, as long as you can understand that they're meaningfully different.
+
+## Plans vs API pricing
+
+This gets into another topic that matters: money. Another reason I do not fault
+anyone for not spending time with these tools is that vim is free, whereas
+Claude is very much not. However.
+
+There are three major factors in the money equation: Claude Web vs Claude Code,
+which models you have access to, and the actual cost. Let's talk about them.
+
+You can load up https://claude.ai and talk to Claude right now for free. But
+you cannot use Claude Code without paying. So if you want to start incredibly
+small, using the website at first before you fork over many can make sense.
+Again, that's fine, just know that the experience is different. But it may be a
+good way to start.
+
+In 2024 and 2025, there was a good argument that you needed to be on a paid plan
+because that's how you got access to the latest models. While this is still true
+to some degree, models have advanced far enough that the changes are less
+important over time. I do think that in the first half of 2026, it still does
+matter to a degree. Basically, the difference between Claude 3, 4, and 4.5 is
+significant, but for me, Claude 4 was good enough a year ago to get real work
+done. I'm not 100% sure which one you get for free today, but it's at least
+fine. And I think that by the time the next round of models come out, the ones
+you'll have access to for free will be basically good enough to make this
+question moot. But do know that you get what you pay for, and paying for things
+does get you better performance.
+
+(Speaking of models, you'll hear Claude referred to in three ways: Haiku,
+Sonnet, and Opus. As the names imply, worst to best there, though also, fastest
+to slowest. Sonnet, especially the 4.5 version, is pretty good for everything.
+Opus 4.5 is wonderful. Haiku is great for certain things.)
+
+As for actual cost: there's $20/month, $100/month, and $200/month plans, as well
+as "you pay per API call." You might be tempted to think "I'll just pay per API
+call and keep my usage down." This is a reasonable thing to think, and also a
+terrible mistake to make. You get a lot of bang for your buck with the plans. To
+give you an idea, I recently hit my weekly limit last night on the $200/month
+plan, and my estimated usage for that week (which again, I'm paying $50 for)
+would have been $1440.73 if I were paying by the API call. Now, I am a very
+heavy user, but the point stands: as someone trying out these tools, it is way
+easy to spend more than $20 of API tokens. If you want to give these tools a
+real shot, come up with a spare $20, sign up for the cheap plan, and then cancel
+after your experiment is over. You get access to Claude Code and you've capped
+your spend. It's a win/win. There's some good secondary effects of trying to be
+frugal here but I think that's more of an intermediate than an advanced topic,
+to be honest.
+
+Okay, with all of that background out of the way: let's talk about your first
+steps here.
+
+## Your first steps: a conversation
+
+Everyone is interested in the ability of LLMs to generate code. But I think
+that's actually step 2, not step 1. The way I want you to start using these
+tools is purely _read-only_ at first. This is also why the website is okay to
+get started with too; Claude Code is far better at generating code than the site
+is, but we're not going to start by writing code.
+
+Find some code you've written recently. It can be literally anything. Load up
+https://claude.ai, and type:
+
+> Hi Claude! Can we talk about this code?
+
+And then paste your code in. You don't need any fancy prompting techniques. You
+don't even need to say what language it is. Just give it some code. It could be
+ten lines, it could be a hundred. I wouldn't recommend a thousand to start.
+
+Claude will probably respond with some sort of basic analysis of what you've
+done, and then a question. I gave it ~50 lines of code a friend and I were
+discussing recently, and it gave me this back:
+
+> Sure! This looks like \<description of what it does>. You've got \<three things
+> that the code does>.
+>
+> What's on your mind about it? Are you thinking through the design, running
+> into a specific issue, or wanting feedback on a particular aspect?
+
+From here, you have a ton of options of which way to go, but they really depend
+on what you've pasted in. Here's some fun prompt ideas:
+
+> Do you think this code is idiomatic?
+>
+> If you could improve one thing about this code, what might it be?
+>
+> If I wanted to modify this code to do \<something>, how would you go about
+> doing that?
+>
+> Are there any bugs in this code?
+>
+> Are there any security implications of this code I may not have thought about?
+
+And so on. Anyway, the goal here is to just get used to this whole thing. It's a
+bit weird! It's very different than talking to a compiler.
+
+If Claude says something you disagree with, push back a little, just like you
+would a co-worker:
+
+> I'm not sure I agree with that. The reason why is that in some other part of
+> the system, there's \<behavior> and so that would impact this sort of
+> decision.
+>
+> Why did you suggest that? I'd like to understand more.
+
+Claude will absolutely not be right all of the time. And that's okay! The goal
+is to work together, not that this is a magic tool that suddenly solves all of
+your problems.
+
+## Second steps: bigger questions
+
+Once you've done this a few times, you might want to graduate to Claude Code.
+The reason for this is that you can start to scale up your questions. Once
+you've installed it and logged in, you'll be at a terminal prompt. It might bug
+you about creating a CLAUDE.md, don't worry about that for now. Continue having
+conversations with Claude about your codebase. The reason that this is a a big
+step up is that before, you had to paste all of the code in. Now, Claude can go
+find your code itself. Some prompts for you to try:
+
+> Please give me a code review of my codebase and suggest five things I could do
+> to improve it.
+>
+> Can you find any bugs in \<component>?
+>
+> I'm curious about the performance of \<component>, can we talk about it?
+
+One thing I like to do here is have Claude double check my intuitions. A few
+months ago, working on an application in Rust, I was considering a refactoring.
+I hadn't done it because I was worried that it would be tedious, take a while,
+and maybe not improve the codebase. It might! But it might not. But putting in
+the day or two to do the refactor wasn't really worth finding out if maybe that
+would be wasted. So, I asked Claude. This is an example of a bit longer of a
+prompt:
+
+> Hi Claude! I am considering refactoring my code. In a function like this:
+> \<paste code>, I don't like how I did things, and I'm considering doing it
+> like this instead: \<paste code>. However, I know that changes the signature,
+> which impacts other code in the codebase. A few questions for you: 1. how many
+> function signatures would need to be updated if I made this change? 2. can you
+> show me what the code would look like if I did this refactoring on one of my
+> simpler endpoints? 3. can you show me what the code would look like if I did
+> this refactoring on one of my most complex endpoints?
+
+Claude came back and said something like "250 signatures would need to change,
+here's the before and after using these two examples from your codebase." Now,
+Claude isn't perfect: maybe it was actually 260 signatures. But the point is,
+this helped me characterize my intuition here: it would be a non-trivial amount
+of work. But I also got to see its impact on real code I had written, which
+helped me decide if this refactoring would actually help me in some of the more
+hairy parts of the codebase.
+
+Note that there's not really any special "prompt engineering" going on here. You
+don't need to do "as a senior software engineer" or stuff like that. Just talk
+to it like you'd talk to a person. It's fine. That doesn't mean that prompts are
+useless, but this sort of optimization is an intermediate to advanced topic, and
+frankly, I'm skeptical that at this point the "as an x" technique even helps.
+More on that someday. The point is, you can start asking more complex questions
+as you get more comfortable with the tool.
+
+Because Claude works asynchronously, you can just fire off questions like these
+in the background, and come back to them when it's done. Well, sorta. Let's talk
+about permissions before we wrap this up.
+
+## Permissions
+
+By default, Claude will put you in an "ask before edits" mode. This is a good
+way to start. It'll check in with you before doing certain things, and you can
+say yes or no. Please consider what it's about to do, and give the answer you're
+comfortable with. Advanced users basically let Claude do whatever it wants, but
+you're not there yet, and there's risks involved that aren't obvious to you just
+yet as a new user, so even though it can be a bit annoying to say yes every time
+it asks, I'd encourage you to start off with minimal permissions. It gives you
+the option to say "commands like this one are okay for the rest of my session"
+and so when it wants to `grep` or something, that can be nice to agree to, but
+I'd encourage you to not use it for writing code just yet, and tell it no if it
+asks. We'll do that in a follow-up post.
+
+## In conclusion
+
+So that's my intro to getting started with Claude. Spend $20, talk to it like
+you'd talk to a person, and use it as a means of getting feedback on your code,
+don't have it write anything just yet. Graduate to larger and larger questions
+as you get comfortable with what it can do. Gently push back when you think it
+gets out of line. But your goal here is a baseline understanding of what the
+tool is capable of, not to vibe code out an entire app in an afternoon. These
+skills may seem too basic, but I promise you, it gets harder from here, and so
+you'll want a solid foundation in read-only questions before we graduate to
+having Claude write some code.
+
+I hope this was helpful to you.
