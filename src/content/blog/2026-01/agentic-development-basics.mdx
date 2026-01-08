@@ -1,0 +1,587 @@
+---
+title: "Agentic development basics"
+pubDate: 2026-01-22
+series:
+  slug: "getting-started-with-claude-code"
+  order: 2
+---
+
+In my last post, I suggested that you should start using Claude in your software
+development process via read-only means at first. The idea is just to get used
+to interacting with the AI, seeing what it can do, and seeing what it struggles
+with.
+
+Once you've got a handle on that part, it's time to graduate to writing code.
+However, I'm going to warn you about this post: I hope that by the end of it,
+you're a little frustrated. This is because I don't think it's productive to
+skip to the tools and techniques that experienced users use yet. We have to
+walk before we run. And more importantly, we have to understand how and why we
+run. That is, I hope that this step will let you start producing code with
+Claude, but it will also show you some of the initial pitfalls when doing so, in
+order to motivate the techniques you're going to learn about in part 3.
+
+So with that in mind, let's begin.
+
+## Step 0: version control
+
+Okay I lied. Before we actually begin: you are using version control, right? If
+not, you may want to go learn a bit about it. Version control, like git (or my
+beloved jj) is pretty critical for software development, but it's in my opinion
+even _more_ critical for this sort of development. You really want to be able to
+restore to previous versions of the code, branch off and try things, and recover
+from mistakes. If you already use version control systems religiously, you might
+use this as an excuse to learn even more features of them. I never bothered with
+`git worktree`s in the past, but I use `jj workspace`s with agents all the time
+now.
+
+## Step 1: Mindset shift: stop writing code
+
+Okay, here's my first bit of advice: commit yourself to not writing code any
+more. I don't mean forever, I don't mean all the time, I mean, while you're
+trying to learn agentic software development, on the project that you're
+learning it with, just don't write any code manually.
+
+This might be a bit controversial! However, I think it is essential. Let me tell
+you a short story. Many years ago, I was in Brazil. I wanted to try scuba diving
+for the first time. Seemed like a good opportunity. Now, I don't remember the
+exact setup, but I do remember the hardest part for me. Our instructor
+told us to put the mask on, and then lean forward and put our faces in the water
+and breathe through the regulator. I simply could not do it. I got too in my
+head, it was like those "you are now breathing manually" memes. I forget if it
+was my idea or the instructor's idea, but what happened in practice: I just
+jumped in. My brain _very quickly_ went from "but how do I do this properly" to
+"oh God, if you don't figure this out right the fuck now you're gonna fuckin die
+idiot" and that's exactly what I needed to do it. A few seconds later, I was
+breathing just fine. I just needed the shock to my system, I needed to commit.
+And I figured it out.
+
+Now, I'm turning 40 and this happened long ago, and it's reached more of a
+personal myth status in my head, so maybe I got the details wrong, maybe this is
+horribly irresponsible and someone who knows about diving can tell me if that
+experience was wrong, but the point has always stuck with me: sometimes, you
+just gotta go for it.
+
+This dovetails into another part I snuck into there: "on the project that you're
+learning it with." I really think that you should undergo a new project for this
+endeavor. There's a few reasons for this:
+
+1. You can be less precious about the code. This isn't messing up one of your
+   projects, this is a throwaway scratch thing that doesn't matter.
+2. "AI does better on greenfield projects" is not exactly true, but there's
+   enough truth to it that I think you should do a new project. It's really more
+   about secondary factors than it is actual greenfield vs brownfield
+   development but whatever, doesn't matter: start new.
+
+Pick something to get started with, and create a new repo. I suggest something
+you've implemented before, or maybe something you know how to do but have never
+bothered to take the time to actually build. A small CLI tool might be a good
+idea. Doesn't super matter what it is.
+
+For the purposes of this example, I'm going to build a task tracking CLI
+application. Because there aren't enough of those in the world.
+
+## Step 2: Your first few steps with Claude
+
+I recommend making a new fresh directory, and initializing the project of your
+choice. I'm using Rust, of course, so I'll `cargo new tasks && cd tasks`. You
+can make Claude do it, but I don't think that starting from an initialized
+project is a bad idea either. I'm more likely to go the `cargo new` route if I
+know I'm building something small, and more of the "make Claude do it" route if
+I'm doing like, a web app with a frontend, backend, and several services. Anyway
+point is: get your project to exist, and then just run Claude Code. I guess you
+should [install it first][install], but anyway, you can just
+
+```
+$ claude
+```
+
+to get started. At the time of writing, Claude will ask you if you trust the
+files in this folder, you want to say yes, because you just created it. You'll
+also get some screens asking if you want to do light or dark mode, to log in
+with your Anthropic account, stuff like that.
+
+And then you'll be in.
+
+Claude will ask you to run `/init` to create a CLAUDE.md, but we're not gonna do
+that at the start. We need to talk about even more basic things than that first.
+
+You'll be at a prompt, and it'll even suggest something for you to get started
+with. Mine says "Try "fix typecheck errors"" at the moment. We're gonna try to get
+Claude to modify a few lines of our program. The `cargo new` in Rust produces
+this program:
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+so I'll ask Claude this:
+
+> Hi claude! right now my program prints "Hello, world", can we have it print
+> "Goodbye, world" instead?
+
+Claude does this for me:
+
+```text
+● I'll make that change for you.
+
+● Read(src/main.rs)
+  ⎿  Read 4 lines
+
+● Update(src/main.rs)
+```
+
+And then asks this:
+
+```text
+ Edit file src/main.rs
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ 1  fn main() {
+ 2 -    println!("Hello, world!");
+ 2 +    println!("Goodbye, world!");
+ 3  }
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ Do you want to make this edit to main.rs?
+ ❯ 1. Yes
+   2. Yes, allow all edits during this session (shift+tab)
+   3. No
+
+ Esc to cancel · Tab to add additional instructions
+```
+
+Claude wants to edit a file, and so by default, it has to ask us permission to
+do so. This is a terrible place to end up, but a great place to get started! We
+want to use these prompts at first to understand what Claude is doing, and sort
+of "code review" it as we go. More on that in a bit. Anyway, this is why you
+should answer "Yes" to this question, and not "Yes, allow all edits during this
+session." We want to keep reviewing the code for now. You want to be paying
+close attention to what Claude is doing, so you can build up some intuition
+about it.
+
+Before clicking yes, I want to talk about what Claude did in my case here. Note
+that my prompt said
+
+> right now my program prints "Hello, world", can we have it print "Goodbye,
+> world"
+
+Astute observers will have noticed that it actually says `Hello, world!` and not
+`Hello, world`. We also asked it to have it say `Goodbye, world` and it is
+showing a diff that will make it say `Goodbye, world!`. This is a tiny
+different, but it is also important to understand: Claude is going to try and
+figure out what you mean and do that. This is both the source of these tools'
+power and also the very thing that makes it hard to trust them. In this case,
+Claude was right, I didn't type the exact string when describing the current
+behavior, and I didn't mean to remove the `!`.
+
+In the previous post, I said that you shouldn't be mean to Claude. I think it
+makes the LLM perform worse. So now it's time to talk about your own reaction to
+the above: did you go "yeah Claude fucked up it didn't do exactly what I asked?"
+or did you go "yeah Claude did exactly what I asked?" I think it's important to
+try and let go of preconceived notions here, especially if your reaction here
+was negative. I know this is kind of woo, just like "be nice to Claude," but you
+have to approach this as "this is a technology that works a little differently
+than I'm used to, and that's why I'm learning how to meet it on its own terms"
+rather than "it didn't work the way I expected it to, so it is wrong." A non-woo
+way of putting it is this: the right way to approach "it didn't work" in this
+context is "that's a skill issue on my part, and I'm here to sharpen my skills."
+Yes, there are limits to this technology and it's not perfect. That's not the
+point. You're not doing that kind of work right now, you're doing `sed`.
+
+Now, I should also say that like, if you don't want to learn a new tool? 100%
+okay with me. Learned some things about a tool, and didn't like it? Sure! Some
+of you won't like agentic development. That's okay. No worries, thanks for
+reading, have a nice day. I mean that honestly. But for those folks who do want
+to learn this, I'm trying to communicate that I think you'll have a better time
+learning it if you try to get into the headspace of "how do I get the results I
+want" rather than getting upset and giving up when it doesn't work out.
+
+Okay, with that out of the way, if you asked a small enough question, Claude
+probably did the right thing. Let's accept.
+
+```text
+● Done. Your program will now print "Goodbye, world!" instead.
+```
+
+## Planning
+
+This might be a good time to commit & save your progress. You can use `!` to put
+Claude Code into "bash mode" and run commands, so I just `!jj commit -m "goodbye
+world"` and I'm good. You can also use another terminal, I just figured I'd let
+you know. It's good for short commands.
+
+Let's try something bigger. To do that, we're gonna invoke something called
+"plan mode." Claude Code has three (shhhh, we don't talk about the fourth yet)
+modes. The first one is the "ask to accept edits" mode. But if you hit
+`shift+tab`, you'll see `⏵⏵ accept edits on (shift+tab to cycle)` at the bottom
+left. We don't want to automatically accept edits. Hit `shift+tab` again, and
+you'll see this:
+
+```text
+⏸ plan mode on (shift+tab to cycle)
+```
+
+This is what we want. Plan mode. Plan mode is useful any time you're doing work
+that's on the larger side, or just when you want to think through something
+before you begin. In plan mode, Claude cannot modify your files until you accept
+the plan. With plan mode, you talk to Claude about what you want to do, and you
+collaborate on a plan together. A nice thing about it is that you can
+communicate the things you are sure of, and also ask about the things you're not
+sure of. So let's kick off some sort of plan to build the most baby parts of our
+app. In my case, I'm prompting it with this:
+
+> hi claude! i want this application to grow into a task tracking app. right
+> now, it's just hello world. I'd like to set up some command line argument
+> parsing infrastructure, with a `task version` command that prints the version.
+> can we talk about that?
+
+Yes, I almost always type `hi claude!`, feel free to not. And I always feel like
+a "can we talk about that" on the end is nice too. I try to talk to Claude the
+way I'd talk to a co-worker. Obviously this would be too minor of a thing to
+bother to talk to a co-worker about, but like, you know, baby steps. Note that
+what I'm asking is basically a slightly more complex "hello world", just getting
+some argument parsing up. You want something this sized: you know how it should
+be done, it should be pretty simple, but it's not a fancy `sed` command.
+
+With plan mode, Claude will end up responding to this by taking a look at your
+project, considering what you might need, and then coming up with a plan. Here's
+the first part of Claude's answer to me:
+
+```text
+● Sure! This is a great foundation to build on. Since the codebase is minimal right now (just the hello world in src/main.rs), I
+   can skip extensive exploration and go straight to planning.
+
+  For CLI argument parsing in Rust, the standard choice is clap - it's the most popular library with excellent subcommand
+  support, derive macros for clean code, and built-in version/help handling. This will scale well as you add more commands like
+  task add, task list, etc.
+
+  Let me write up a plan for you.
+```
+
+It'll then come up with a plan, and it usually write it out to a file somewhere:
+
+```text
+● Updated plan
+  ⎿  Wrote 56 lines to ../../.claude/plans/shiny-dancing-cray.md
+     # Plan: CLI Argument Parsing Infrastructure
+     ## Goal
+     Set up command line argument parsing for the task tracking app with a `task version` subcommand.
+     ## Approach
+     Use **clap** with derive macros - the standard Rust CLI library.
+     ## Changes
+     … +46 lines (ctrl+o to expand)
+```
+
+You can go read the file if you want to, but it's not needed. Claude is going to
+eventually present the plan to you directly, and you'll review it before moving on.
+Claude will also probably ask you a question or maybe even a couple, depending.
+There's a neat little TUI for responding to its questions, it can even handle
+multiple questions at once:
+
+```text
+● I've drafted a plan using clap with derive macros. Before finalizing, I have one question:
+
+────────────────────────────────────────────────────────────────────────────────────────────
+ ☐ CLI Library
+
+Which CLI parsing library would you prefer?
+
+❯ 1. clap (Recommended)
+     Most popular, feature-rich, excellent subcommand support, built-in help/version
+  2. argh
+     Simpler and lighter, derive-based, from Google
+  3. Manual parsing
+     Use std::env::args directly, no dependencies, more boilerplate
+  4. Type something.
+────────────────────────────────────────────────────────────────────────────────────────────
+  Chat about this
+  Skip interview and plan immediately
+
+Enter to select · ↑/↓ to navigate · Esc to cancel
+```
+
+For those of you that don't write Rust, this is a pretty good response! Clap is
+the default choice in the ecosystem, arg is a decent option too, and doing it
+yourself is always possible. I'm going to choose clap, it's great. If you're not
+sure about the question, you can arrow down to "Chat about this" and discuss it
+more.
+
+Here's why you don't need to read the file: Claude will pitch you on its plan:
+
+```text
+● User answered Claude's questions:
+  ⎿  · Which CLI parsing library would you prefer? → clap (Recommended)
+
+● Clap it is. The plan is ready - it adds clap with derive macros and sets up the subcommand structure with task version as the
+  first command. This gives you a solid foundation to add more commands later.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Ready to code?
+
+ Here is Claude's plan:
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ Plan: CLI Argument Parsing Infrastructure
+
+ Goal
+
+ Set up command line argument parsing for the task tracking app with a task version subcommand.
+
+ Approach
+
+ Use clap with derive macros - the standard Rust CLI library.
+
+ Changes
+
+ 1. Update Cargo.toml
+
+ Add clap dependency with derive feature:
+ [dependencies]
+ clap = { version = "4", features = ["derive"] }
+
+ 2. Update src/main.rs
+
+ - Define a Cli struct with clap derive macros
+ - Define a Commands enum for subcommands (starting with Version)
+ - Implement the version subcommand to print the version from Cargo.toml
+
+ Structure:
+ use clap::{Parser, Subcommand};
+
+ #[derive(Parser)]
+ #[command(name = "task")]
+ #[command(about = "A task tracking application")]
+ struct Cli {
+     #[command(subcommand)]
+     command: Commands,
+ }
+
+ #[derive(Subcommand)]
+ enum Commands {
+     /// Print version information
+     Version,
+ }
+
+ fn main() {
+     let cli = Cli::parse();
+
+     match cli.command {
+         Commands::Version => {
+             println!("task {}", env!("CARGO_PKG_VERSION"));
+         }
+     }
+ }
+
+ Verification
+
+ 1. Run cargo build to ensure it compiles
+ 2. Run ./target/debug/tasks version to verify it prints "task 0.1.0"
+ 3. Run ./target/debug/tasks --help to verify help output works
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+ Would you like to proceed?
+
+ ❯ 1. Yes, clear context and auto-accept edits (shift+tab)
+   2. Yes, auto-accept edits
+   3. Yes, manually approve edits
+   4. Type here to tell Claude what to change
+
+ ctrl-g to edit in VS Code · ~/.claude/plans/shiny-dancing-cray.md
+```
+
+This is pretty good! Now, if you like this plan, you can select #3. Remember,
+we're not auto accepting just yet! Don't worry about the difference between 1
+and 2 now, we'll talk about it someday. But, I actually want Claude to tweak
+this plan, I wouldn't run `./target/debug/tasks version`, I would do `cargo run
+-- version`. So I'm going to go down to four and type literally that to Claude:
+
+```text
+● Good point - let me update the verification section.
+
+● Updated plan
+  ⎿  /plan to preview
+      51
+      52  ## Verification
+      53  1. Run `cargo build` to ensure it compiles
+      54 -2. Run `./target/debug/tasks version` to verify it prints "task 0.1.0"
+      55 -3. Run `./target/debug/tasks --help` to verify help output works
+      54 +2. Run `cargo run -- version` to verify it prints "task 0.1.0"
+      55 +3. Run `cargo run -- --help` to verify help output works
+```
+
+and then presents the menu again. See, this is where the leverage of "Claude
+figures out what I mean" can be helpful: I only told it about `version`, but it
+also changed to `cargo run -- --help` as well. However, there's a drawback too:
+we didn't tell Claude we wanted to have help output! However, this is also a
+positive: Claude considered help output to be so basic that it's suggesting it
+for our plan. It's up to you to decide if this is an overreach on Claude's part.
+In my case, I'm okay with it because it's so nearly automatic with Clap and it's
+something I certainly want in my tool, so I'm going to accept this plan.
+
+Iterate with Claude until you're happy with the plan, and then do the same.
+
+I'm not going to paste all of the diffs here, but for me, Claude then went and
+did the plan: it added the dependency to `Cargo.toml`, it added the needed code
+to `src/main.rs`, it ran `cargo build` to try and do the build. Oh yeah, here's
+a menu we haven't seen yet:
+
+```text
+ Bash command
+
+   cargo build 2>&1
+   Build the Rust project
+
+ Do you want to proceed?
+ ❯ 1. Yes
+   2. Yes, and don't ask again for cargo build commands in /home/stat/tmp/tasks
+   3. No
+
+ Esc to cancel · Tab to add additional instructions
+```
+
+This is a more interesting question than the auto-edit thing. Claude won't run
+commands without you signing off on them. If you're okay with letting Claude run
+this command every time without asking, you can choose 2, and if you want to
+confirm every time, you can type 1. Completely up to you.
+
+Now it ran `cargo run -- version`, and `cargo run -- --help`. Everything looked
+good, so I see:
+
+```text
+● Done. The CLI infrastructure is set up:
+
+  - cargo run -- version outputs task 0.1.0
+  - cargo run -- --help shows the help with available commands
+
+  You now have a foundation to add more subcommands to the Commands enum as you build out the task tracking features.
+```
+
+And that's it, we've built our first feature! Yeah, it's pretty small, and in
+this case, we probably could have copy/pasted the documentation, but again,
+that's not the point right now: we're just trying to take very small steps
+forward to get used to working with the tool. We _want_ it to be something
+that's quick for us to verify. We are spending more time here than we would if
+we did it by hand, because that time isn't wasted: it's time learning. As we
+ramp up the complexity of what we can accomplish, we'll start seeing speed
+gains. But we're deliberately going slow and doing little right now.
+
+## Stretch your legs
+
+From here, that's exactly what I'd like you to do: figure out where the limits
+are. Try something slightly larger, slightly harder. Try to do stuff with just a
+prompt, and then throw that commit away and try it again with plan mode. See
+what stuff you need plan mode for, and what you can get away with with just a
+simple prompt.
+
+I'll leave you with an example of a prompt I might try next: asking Cladue for
+their opinion on what you should do. The next thing I'd do in this project is to
+switch back into planning mode and ask this:
+
+> what do you think is the best architecture for this tracking app? we haven't
+> discussed any real features, design, or requirements. this is mostly a little
+> sample application to practice with, and so we might not need a real database,
+> we might get away with a simple file or files to track todos. but maybe
+> something like sqlite would still be appropriate. if we wanted to implement a
+> next step for this app, what do you think it should be?
+
+Here's what Claude suggested:
+
+```text
+● Great question - this is the kind of design discussion that's valuable before diving into implementation. Let me share my
+  thoughts.
+
+  Storage: File vs SQLite
+
+  For a practice app, I'd recommend starting with a simple JSON file:
+
+  - No additional dependencies - just serde + serde_json
+  - Human-readable - you can inspect/edit ~/.tasks.json directly
+  - Focus on app logic - learn clap, error handling, and Rust patterns without database complexity
+  - Easy to migrate later - if you outgrow it, moving to SQLite is a good exercise in itself
+
+  SQLite is great but adds cognitive load (SQL, migrations, connection handling). For a practice app, that complexity might
+  distract from the core learning.
+
+  Recommended Next Step
+
+  The natural progression is the core CRUD operations. I'd suggest implementing task add next:
+
+  task add "Buy groceries"
+
+  This introduces:
+  - Taking arguments in subcommands (clap)
+  - Reading/writing a data file (serde)
+  - Defining your Task struct (what fields? id, description, created_at, completed?)
+  - Error handling patterns
+
+  After that: task list, then task done <id>, then task remove <id>.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ ☐ Next step
+
+What would you like to tackle next?
+
+❯ 1. task add (Recommended)
+     Add a task with a description, stored in a JSON file
+  2. task list first
+     Set up storage and list (empty at first), then add
+  3. Use SQLite instead
+     Start with SQLite from the beginning for the learning experience
+  4. Type something.
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Chat about this
+  Skip interview and plan immediately
+
+Enter to select · ↑/↓ to navigate · Esc to cancel
+```
+
+This plan is pretty solid. But again, it's a demo app. The important part is,
+you can always throw this away if you don't like it. So try some things. Give
+Claude some opinions and see how they react. Try small features, try something
+larger. Play around. But push it until Claude fails.
+
+## What to do when Claude fails
+
+At some point, you will run into problems. Maybe you already have! What you
+should do depends on the failure mode.
+
+The first failure you're gonna run into is "I don't like the code!" Maybe Claude
+just does a bad job. You have two options: the first is to just tell Claude to
+fix it. Claude made a mess, Claude can clean it up. In more extreme cases, you
+may want to just simply `jj abandon` or `git reset --hard` and start again.
+Honestly, the second approach is better in a lot of cases, but I'm not going to
+always recommend it just yet. The reason why it is is that it gives you some
+time to reflect on why Claude did a bad job. But we're gonna talk about that as
+the next post in this series! So for now, stick to the 'worse' option: just tell
+Claude to fix problems you find.
+
+The second kind of failure is one where Claude just really struggles to get
+things right. It looks in the wrong places in your codebase, it tries to find a
+bug and can't figure it out, it misreads output and that leads it astray, etc.
+This kind of failure is harder to fix with the tools you have available to you
+right now. What matters is taking note of them, so that you can email them to
+me, haha. I mean, feel free to do that, and I can incorporate specific
+suggestions into the next posts, but also, just being able to reflect on what
+Claude struggles with is a good idea generally. You'll be able to fix them
+eventually, so knowing what you need to improve matters.
+
+## What is "compaction"?
+
+If Claude works long enough, you'll see something about "compaction." We haven't
+discussed things at a deep enough level to really understand this yet, so don't
+worry about it! You may want to note one thing though: Claude tends to do worse
+after compaction, in my opinion. So one way to think about this is, "If I see
+compaction, I've tried to accomplish too large a task." Reflect on if you could
+have broken this up into something smaller.
+
+We'll talk about this more in the next post.
+
+## Conclusion
+
+So that's it! Let Claude write some code, in a project you don't care about. Try
+bigger and harder things until you're a bit frustrated with its failures. You
+will hit the limits, because you're not doing any of the intermediate techniques
+to help Claude do a good job. But my hope is, by running into these issues,
+you'll understand the motivation for those techniques, and will be able to
+better apply them in the future.
+
+[install]: https://code.claude.com/docs/en/quickstart
