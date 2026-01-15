@@ -18,4 +18,8 @@ export const series: Record<string, SeriesMetadata> = {
     title: "Using Buck to Build Rust Projects",
     description: "A guide to using Buck2, Meta's open-source build system, for building Rust projects. Covers the basics, integrating with crates.io, and keeping up with updates.",
   },
+  "getting-started-with-claude-code": {
+    title: "Getting Started with Claude Code",
+    description: "A step by step series to get started with Claude Code for software development",
+  },
 };

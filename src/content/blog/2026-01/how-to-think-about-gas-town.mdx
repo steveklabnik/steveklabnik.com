@@ -1,0 +1,188 @@
+---
+title: "How to think about Gas Town"
+pubDate: 2026-01-15
+---
+
+import BlueskyPost from "../../../components/BlueskyPost.astro";
+
+I want to continue with my [series on how you can use Claude Code for software
+development][claude-code-series], but I have at least two posts I need to write
+first. This post is one of those two. Thanks for all of the kind words you all
+have said about the first post in the series, I'll absolutely be continuing it,
+hopefully next week.
+
+With that out of the way... let's talk about Gas Town. If you're not familiar,
+it's a project from Steve Yegge that has a lot of people having a lot of
+feelings. Steve launched Gas Town just under two weeks ago, and in general, his
+posts about it have brought out a reaction that has varied from "what the
+fuck?!?" to "I don't get it." I'll link Bryan here, not to pick on him, but sort
+of the opposite: I think this is a very normal response to all of this, and
+especially from him:
+
+<BlueskyPost uri="at://did:plc:ucct3fwwarzd7rety6nzq4cc/app.bsky.feed.post/3mcft3omsa226" />
+
+However, I'm also not exactly a normal person:
+
+<BlueskyPost uri="at://did:plc:3danwc67lo7obz2fmdg6jxcr/app.bsky.feed.post/3mcfylftvw22s" />
+
+So, today I'd like to talk about Gas Town, and what I think Yegge is doing.
+
+## What is Gas Town?
+
+Gas town is two things simultaneously: something that's kind of boring and
+obvious, and something that's opaque and confusing, illegible almost.
+
+If you've found yourself saying "what?!?" when reading about Gas Town, this post
+is for you.
+
+I want to start with the boring and obvious, and move into the opaque and
+illegible.
+
+## Gas Town is inevitable
+
+Okay, so I almost went with "Gas Town is Inevitable" as the title of this post,
+but I think that's a bit too provocative, and not quite accurate. I do think
+_something like_ Gas Town was going to be tried by someone, sometime. That's the
+inevitable part. This is because Gas Town isn't really that novel, actually.
+
+Here's what Gas Town is: you have a workspace. In that workspace, you have
+projects. Each project has a bug tracker, used like normal: feature requests and
+bug reports. Gas Town is software that allows you to instruct AI agents to
+autonomously knock out those bugs.
+
+That's it.
+
+This isn't a fundamentally novel idea. The novel part comes in that it's agents
+doing the work, not humans.
+
+This is why I describe it as "inevitable," it's an idea that pretty logically
+follows from the idea of "a software agent can successfully complete programming
+tasks." Humans find a big list of tasks to be a useful way to organize work, so
+there's no reason to believe that agents would not. So you follow this idea
+wherever it takes you. That's the experimental part of Gas Town: does this work?
+Can it work? We don't know! Steve is trying.
+
+One level of abstraction deeper, Steve is using some pretty tried and true ideas
+here from Erlang. There's supervisor trees, mailboxes, stuff like that. This is
+a pretty solid base to work from! Erlang is legendary in these spaces for a reason.
+
+Anyway yeah. That's really just it. Unless you're particularly interested in
+this topic or question, that's really all you need to know about Gas Town to
+understand it.
+
+So why all of the weird terminology?
+
+## Opacity and community building
+
+AI is weird. The tools are very different than we're used to. If 2025 was any
+measure, 2026 is going to be a very interesting year for this profession. I know
+I'm personally re-thinking a lot of sacred cows that I've worshipped for my
+whole career. I don't think all of them are bad, but I do think that things are
+weird enough that it's worth trying to figure things out from first principles
+again.
+
+And that's where I think Steve is at too.
+
+And I'll also be honest, I've been slowly working myself into thinking about all
+of this stuff too. I even have my own little project I started this week,
+[docket][docket], which is sort of one step down a road that Gas Town is many
+miles down already. I wasn't going to talk about Docket for a while, if ever,
+but I think that maybe if Gas Town is too much, two thousand lines of Rust and a
+little CLI may make more sense to you.
+
+But that's sort of the problem here: while Steve and I are very different,
+there's one way in which we're the same: people read our blogs. I know that
+projects I do get attention, heck, [Rue][rue] is not really ready for public
+consumption, really. But because people find the stuff I mess around with to be
+interesting, it got a lot of attention, far disproportionate for what it is. You
+can put strings into an array, but you can't even get them out yet! It's just
+too early!
+
+So, what do you do if you:
+
+1. Know your projects get attention.
+2. You also want like-minded people to come on this journey with you.
+3. You don't want to waste time explaining things to people who don't get it.
+
+You reach for a tool that many people have used over the years: you get weird
+with it.
+
+There's many examples of this happening in art and political movements. A pretty
+famous one you might have heard of is [Surrealism][surrealism]. One of the core
+ideas of surrealism is that they're trying to unlock the power of the
+subconscious mind, bypassing the conscious to (hopefully) reveal deeper, more
+profound truths.
+
+One of my favorite surrealist works is ["La Trahison des images"][magritte] by
+René Magritte. It is a painting of a pipe, with some words below: "Ceci n'est
+pas une pipe" or "This is not a pipe." At first, most people's reaction to the
+work is "uhhhh but that is a pipe?" But what the work is asking you to do is
+think a little bit harder: this isn't a pipe. It's a painting of a pipe. That we
+tend to conflate the image of something with the thing is a bit weird, if you
+think about it a bit more. Why do we do that, anyway? What is the connection
+between language, reality, images, and thoughts?
+
+The painting was made in 1929, so these ideas are a bit more mainstream by now,
+so you may not find this particular line of inquiry to be illuminating, but you
+know, that's what happens 97 years later.
+
+Anyway. So if you're someone who is going to attract attention, and want to
+engage with a subset of those people, but also push away others, you could do
+worse than trying to go surreal. It's something that would be helpful both for
+challenging assumptions, as well as for finding fellow travelers while repelling
+those who aren't interested in the same goals.
+
+Maybe he is on metaphorical drugs. But that's deliberate, is all I'm saying. And
+maybe drugs aren't your thing, and that's fine too.
+
+## Is this a good thing?
+
+I also want to to make a few other things clear: I haven't talked to Steve about
+any of this, this is me just talking about what I see. Also, I haven't tried Gas
+Town myself, and I'm not sure I will. This is because while I'm somewhat aligned
+with Steve's train of thought here, I'm also not entirely.
+
+I'm more interested in watching from afar. And that's because, well, I have some
+concerns with the way that Gas Town is doing things. But I'm also glad that he's
+trying it. It's a rocket ship, and a lot of those exploded in the early days.
+Tons of people died trying to invent the airplane. Some of their ideas were bad,
+but eventually, enough of the conceptual space was explored to figure out the
+good ideas.
+
+## One example question
+
+What I want to leave you with is an example of the kind of experimentation I'm
+seeing in Gas Town.
+
+At Oxide, [they talk a lot about their values][values]. It was a thing I really
+appreciated about working there. On Monday, there was an episode of Oxide and
+Friends on the topic of one of Oxide's values as it applies to LLMs: Rigor.
+
+<BlueskyPost uri="at://did:plc:6235fybsui2cjt4fcspdbwpd/app.bsky.feed.post/3mcfgktcrbs2n" />
+
+Gas Town is _aggressively_ not rigorous. And while rigor is a great value to
+have, when you're in an experimental mindset, relaxing rigor can be a valid
+strategy to move forward.
+
+But I think there's a really interesting question to explore there: in the same
+way that we can use LLMs in a rigorous way, is there a form of rigor that works
+with AI agents merging code into trunk? What do we _really_ mean by "rigor"? Is
+it synonymous with "tests pass"? Does it mean that the state of the system must
+be fully rigorous up front? Or is rigor an end state we work towards?
+
+I am skeptical, but that's also exactly why I'm thinking about such things. For
+folks who are trying to reckon seriously with AI and the impact it will have on
+software development, I think 2026 is a year to open your mind, challenge
+assumptions, and re-consider what actually matters. The outcome of that might be
+"yeah, we were right before and these ideas are bad," but I have a sneaking
+suspicion that the world has changed, and some old assumptions do not hold any
+longer.
+
+We'll find out.
+
+[claude-code-series]: /series/getting-started-with-claude-code
+[docket]: https://github.com/steveklabnik/docket
+[rue]: https://rue-lang.dev/
+[surrealism]: https://en.wikipedia.org/wiki/Surrealism
+[magritte]: https://en.wikipedia.org/wiki/The_Treachery_of_Images
+[values]: https://oxide.computer/principles
