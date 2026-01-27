@@ -1,0 +1,317 @@
+---
+title: "The most important thing when working with LLMs"
+pubDate: 2026-01-27
+series:
+  slug: "getting-started-with-claude-code"
+  order: 3
+---
+
+Okay, so you've got the basics of working with Claude going. But you've probably
+run into some problems: Claude doesn't do what you want it to do, it gets
+confused about what's happening and goes off the rails, all sorts of things can
+go wrong. Let's talk about how to improve upon that.
+
+The most important thing that you can do when working with an LLM is give it a
+way to quickly evaluate if it's doing the right thing, and if it isn't, point it
+in the right direction.
+
+This is incredibly simple, yet, like many simple things, also wildly complex.
+But if you can keep this idea in mind, you'll be well equipped to become
+effective when working with agents.
+
+## Two lessons from teaching children
+
+A long time ago, I used to teach programming classes. Many of these were to
+adults, but some of them were to children. Teenaged children, but children
+nonetheless. We used to do an exercise to try and help them understand the
+difference between talking in English and talking in Ruby, or JavaScript, or
+whatever kind of programming language rather than human language. The exercise
+went like this:
+
+I would have a jar of peanut butter, a jar of jelly, a loaf of bread, a spoon,
+and a knife. I would ask the class to take a piece of paper and write down a
+series of steps to make a peanut butter and jelly sandwich. They'd all then give
+me their algorithms, and the fun part for me began: find one that's innocently
+written that I could hilariously misinterpret. For example, I might find one
+like:
+
+1. Put the peanut butter on the bread
+2. Put the jelly on the bread
+3. Put the bread together
+
+I'd read this aloud to the class, you all understand this is a recipe for a
+peanut butter and jelly sandwich, right? I'd take the jar of peanut butter and
+place it upon the unopened bag of bread. I'd do the same with the jar of jelly.
+This would of course, squish the bread, which feels slightly transgressive given
+that you're messing up the bread, so the kids would love that. I'd then say
+something like "the bread is already together, I do not understand this
+instruction."
+
+After the inevitable laughter died down, I'd make my point: the computer will do
+_exactly_ what you say, but not what you mean. So you have to get good at
+figuring out when you said something different than what you mean. Sort of
+ironically, LLMs are kind of the inverse of this: they'll sometimes try to
+figure out what you mean, and then do that, rather than simply doing what you
+say. But the core thing here is the same: semantic drift from what we intended
+our program to do, and what it actually does.
+
+The second lesson is something I came up with sometime, I don't even remember
+how exactly. But it's something I told my students a lot. And that's this:
+
+If your program did everything you wanted without problems, you wouldn't be
+programming: you'd be using your program. The act of programming is itself
+perpetually to be in a state where something is either inadequate or broken,
+and the job is to fix that.
+
+I also think this is a bit simplistic but also getting at something. I had
+originally come up with this in the context of trying to explain how you
+need to manage your frustrating when programming; if you get easily upset by
+something working, doing computer programming might not be for you. But I do
+think these two things combine into something that gets to the heart of what we
+do: we need to understand what it is we want our software to do, and then make
+it do that. Sometimes, our software doesn't do something yet. Sometimes, it does
+something, but incorrectly. Both of these cases result in a divergence from the
+program's intended behavior.
+
+So, how do we know if our program does what it should do?
+
+## Gotta go fast
+
+Well, what we've been doing so far is:
+
+1. Asking the LLM to do something by typing up what we want it to do
+2. Closely observing its behavior and course correcting it when it goes off of
+   the rails
+3. Eventually, after it says that it's finished, reviewing its output
+
+This is our little mini software development lifecycle, or "SDLC." This process
+works, but is slow. That's great for getting the feel of things, but programmers
+are process optimizers by trade. One of my favorite tools for optimization is
+called [Amdahl's law][amdahl]. The core idea is this, formulated in my own
+words:
+
+> If you have a process that takes multiple steps, and you want to speed it up,
+> if you optimize only one step, the maximum amount of speedup you'll get is
+> determined by the portion of the process that step takes.
+
+In other words, imagine we have a three step process:
+
+1. One minute
+2. Ten minutes
+3. Two minutes
+
+This process takes a total of 13 minutes to complete. If we speed up step 3 by
+double, it goes from two minutes to one minute, and now our process takes 12
+minutes. However, if we were able to speed up step 2 by double, we'd cut off
+five minutes, and our process would now take 8 minutes.
+
+We can use this style of analysis to guide our thinking in many ways, but the
+most common way, for me, is to decide where to put my effort. Given the process
+above, I'm going to look at step 2 first to try and figure out how to make it
+faster. That doesn't mean we can achieve the 2x speedup, but heck, if we get a
+10% decrease in time, that's the same time as if we did get a 2x on step 3. So
+it's at least the place where we should start.
+
+I chose the above because, well, I think it properly models the proportion of
+time we're taking when doing things with LLMs: we spend some time asking it to
+do something, and we spend a bit more time reviewing its output. But we spend a
+_lot_ of time clicking "accept edit," and a lot of time allowing Claude to
+execute tools. This will be our next step forward, as this will increase our
+velocity when working with the tools significantly. However, like with many
+optimization tasks, this is easier said than done.
+
+The actual mechanics of improving the speed of this step are simple at first:
+hit `shift-tab` to auto-accept edits, and "Yes, and don't ask again for `<cmd>`
+commands" when you think the `<cmd>` is safe for Claude to run. By doing this,
+once you have enough commands allowed, your input for step 2 of our development
+loop can drop to zero. Of course, it takes time for Claude to actually implement
+what you've asked, so it's not like our 13 minute process drops to three, but
+still, this is a major efficiency step.
+
+But we were actively monitoring Claude for a reason. Claude will sometimes do
+incorrect things, and we need to correct it. At some point, Claude will say
+"Hey I've finished doing what you asked of me!" and it doesn't matter how fast
+it does step 2 if we get to step 3 and it's just incorrect, and we need to
+throw everything out and try again.
+
+So, how do we get Claude to guide itself in the right direction?
+
+## Let's start at the end
+
+A useful technique for figuring out what you should do is to consider the
+ending: where do we want to go? That will inform what we need to do to get
+there. Well, the ending of step 2 is knowing when to transition to step 3. And
+that transition is gated by "does the software do what it is supposed to do?"
+That's a huge question! But in practice, we can do what we always do: start
+simple, and iterate from there. Right now, the transition from step 2 to step 3
+is left up to Claude. Claude will use its own judgement to decide when it thinks
+that the software is working. And it'll be right. But why leave that up to
+chance?
+
+I expect that some of you are thinking that maybe I'm belaboring this point.
+"Why not just skip to `cargo test`? That's the idea, right? We need tests." Well
+on some level: yes. But on another level, no. I'm trying to teach you how to
+think here, not give you the answer. Because it might be broader than just "run
+the tests." Maybe you are working on a project where the tests aren't very good
+yet. Maybe you're working on a behavior that's hard to automatically test.
+Maybe the test suite takes a very long time, and so isn't appropriate to be
+running over and over and over.
+
+Remember our plan from the last post? Where Claude finished the plan with this:
+
+```text
+ Verification
+
+ 1. Run cargo build to ensure it compiles
+ 2. Run `cargo run -- version` to verify it prints "task 0.1.0"
+ 3. Run `cargo run -- --help` to verify help output works
+```
+
+These aren't "tests" in the traditional sense of a test suite, but they _are_
+objective measures that Claude can invoke itself to understand if it's finished
+the task. Claude could run `cargo run -- version` after every file edit if it
+wanted to, and as soon as it sees `task 0.1.0`, it knows that it's finished.
+You don't _need_ a comprehensive test suite. You just need _some_ sort of way
+for Claude to detect if it's done in some sort of objective fashion.
+
+Of course, we can do better.
+
+## Improving from there
+
+While giving Claude a way to know if it's done working is important, there's a
+second thing we need to pay attention to: when Claude isn't done working, can we
+guide it towards doing the right thing, rather than the wrong thing?
+
+For example, those of you who are of a similar vintage as myself may remember the
+output of early compilers. It was often... not very helpful. Imagine that we told
+Claude that it should run `make test` to know if things are working, and the only
+output from it was the exit code: 0 if we succeeded, 1 if we failed. That would
+accomplish our objective of letting Claude know when things are done, but it
+wouldn't help Claude know what went wrong when it returns 1.
+
+This is one reason why I think Rust works well with LLMs. Take this incorrect Rust
+program:
+
+```rust
+fn main() {
+    let y
+}
+```
+
+The Rust compiler won't just say "yeah this program is incorrect," it'll give you
+this (as of Rust 1.93.0):
+
+```text
+error: expected `;`, found `}`
+ --> src/main.rs:2:10
+  |
+2 |     let y
+  |          ^ help: add `;` here
+3 | }
+  | - unexpected token
+
+error[E0282]: type annotations needed
+ --> src/main.rs:2:9
+  |
+2 |     let y
+  |         ^
+  |
+help: consider giving `y` an explicit type
+  |
+2 |     let y: /* Type */
+  |          ++++++++++++
+
+For more information about this error, try `rustc --explain E0282`.
+```
+
+The compiler will point out the exact place in the code itself of where there's
+an issue, and even make suggestions as to how to fix it. This goes beyond just
+simply saying "it doesn't work" and instead nudges you to what might fix the
+problem. Of course, this isn't perfect, but if it's helpful more than not,
+that's a win.
+
+Of course, too much verbosity isn't helpful either. A lot of tooling has
+gotten much more verbose lately. Often times, this is really nice as a human.
+Pleasant terminal output is, well... pleasant. But that doesn't mean that it's
+always good or useful. For example, here's the default output for `cargo test`:
+
+```text
+running 3 tests
+test bar ... ok
+test baz ... ok
+test foo ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
+This is not bad output. It's nice. But it's also not useful for an LLM. We don't
+need to read all of the tests that are passing, we really just want to see some
+sort of minimal output, and then what failed if something failed. In Cargo's case,
+that's `cargo test -q` for "quiet":
+
+```text
+running 3 tests
+...
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
+
+There is no point in giving a ton of verbose input to an LLM that it isn't even
+going to need to use. If you're feeding a tools' output to an LLM, you should
+consider both what the tool does in the failure case, but also the success case.
+Maybe configure things to be a bit simpler for Claude. You'll save some tokens
+and get better results.
+
+All of this has various implications for all sorts of things. For example, types
+are a great way to get quick feedback on what you're doing. A comprehensive test
+suite that completes quickly is useful for giving feedback to the LLM. But that
+also doesn't inherently mean that types must be better or that you need to be doing
+TDD; whatever gives you that underlying principle of "objective feedback for the
+success case and guidance for the failure case" will be golden, no matter what
+tech stack you use.
+
+## What's good for the ~~goose~~ human is good for the ~~gander~~ LLM
+
+This brings me to something that may be counter-intuitive, but I think is also
+true, and worth keeping in the back of your mind: what's good for Claude is also
+probably good for humans working on your system. A good test suite was
+considered golden before LLMs. That it's great for them is just a nice
+coincidence.
+
+At the end of the day, Claude is not a person, but it tackles programming
+problems in a similar fashion to how we do: take in the problem, attempt a
+solution, run the compiler/linter/tests, and then see what feedback it gets,
+then iterate. That core loop is the same, even if humans can exercise better
+judgement and can have more skill. And so even though I pitched fancy terminal
+output as an example of how humans and LLMs need different things, that's really
+just a superficial kind of thing. Good error messages are still critical for
+both. We're just better at having terminal spinners not take up space in our
+heads while we're solving a problem, and can appreciate the aesthetics in a way
+that Claude does not.
+
+Incidentally, this is one of the things that makes me hopeful about the future
+of software development under agentic influence. Engineers always complain that
+management doesn't give us time to do refactorings, to improve the test suite,
+to clean our code. Part of the reason for this is that we often didn't do a good
+job of pitching how it would actually help accomplish business goals. But even
+if you're on the fence about AI, and upset that management is all about AI:
+explain to management that this stuff is a force multiplier for your agents.
+Use the time you've saved by doing things the agentic way towards improving
+your test suite, or your documentation, or whatever else. I think there's a chance
+that all of this stuff leads to higher quality codebases than ones filled with
+slop. But it also requires us to make the decisions that will lead is in that
+direction.
+
+## In conclusion
+
+That's what I have for you today: consider how you can help Claude evaluate its
+own work. Give it explicit success criteria, and make evaluating that criteria
+as simple and objective as possible.
+
+In the next post, we're gonna finally talk about `Claude.md`. Can you believe
+that I've talked this much about how to use Claude and we haven't talked about
+`Claude.md`? There's good reason for that, as it turns out. We're going to talk
+a bit more about understanding how interacting with LLMs work, and how it can
+help us both improve step 1 in our process, but also continue to make step 2
+better and better.
+
+[amdahl]: https://www3.cs.stonybrook.edu/~rezaul/Spring-2012/CSE613/reading/Amdahl-1967.pdf
