@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 const { frontmatter } = Astro.props;
 const description =
   frontmatter.description || "Steve Klabnik's personal website and blog";
@@ -7,6 +8,7 @@ const description =
 
 <html lang="en">
   <head>
+    <ClientRouter />
     <meta charset="utf-8" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" /><!-- 32×32 -->
