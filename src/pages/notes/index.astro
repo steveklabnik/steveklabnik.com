@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { noteSlug } from "../../utils/notes";
+import DevCreateButton from "../../components/editor/DevCreateButton";
 
 const pageTitle = "Notes";
 const allNotes = await getCollection("notes");
@@ -51,4 +52,5 @@ const frontmatter = {
       ))}
     </ul>
   </div>
+  <DevCreateButton client:only="react" type="note" />
 </BaseLayout>

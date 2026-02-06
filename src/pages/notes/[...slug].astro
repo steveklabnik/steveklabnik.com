@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { buildBacklinks, noteSlug } from "../../utils/notes";
 import type { Backlink } from "../../utils/notes";
+import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
@@ -28,6 +29,8 @@ const frontmatter = {
   pageTitle: entry.data.title,
   description: `Note: ${entry.data.title} by Steve Klabnik`,
 };
+
+const currentSlug = noteSlug(entry.id);
 ---
 
 <BaseLayout frontmatter={frontmatter}>
@@ -67,4 +70,5 @@ const frontmatter = {
       </ul>
     </aside>
   )}
+  <DevEditorToggle client:only="react" type="note" slug={currentSlug} />
 </BaseLayout>

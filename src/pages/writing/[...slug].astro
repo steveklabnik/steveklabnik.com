@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
 import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
+import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -33,6 +34,8 @@ const frontmatter = {
   pageTitle: entry.data.title,
   description: `Blog post: ${entry.data.title} by Steve Klabnik`,
 };
+
+const cleanSlug = entry.slug.replace(/^\d{4}-\d{2}\//, '');
 ---
 
 <BaseLayout frontmatter={frontmatter}>
@@ -59,4 +62,5 @@ const frontmatter = {
       )
     }
   </article>
+  <DevEditorToggle client:only="react" type="post" slug={cleanSlug} />
 </BaseLayout>

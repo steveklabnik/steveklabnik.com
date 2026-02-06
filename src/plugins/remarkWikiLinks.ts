@@ -2,14 +2,7 @@ import { findAndReplace } from "mdast-util-find-and-replace";
 import fs from "node:fs";
 import path from "node:path";
 import type { Root } from "mdast";
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
-}
+import { slugify, wikiLinkRegex } from "../utils/wikilinks";
 
 function getExistingNoteSlugs(): Set<string> {
   const notesDir = path.resolve("src/content/notes");
@@ -27,9 +20,6 @@ function getExistingNoteSlugs(): Set<string> {
 
   return slugs;
 }
-
-// Match [[target]] or [[target|display text]], but not inside code
-const wikiLinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
 export default function remarkWikiLinks() {
   const existingSlugs = getExistingNoteSlugs();

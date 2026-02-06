@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import { buildSeriesData, getSeriesMetadata } from "../utils/series.ts";
+import DevCreateButton from "../components/editor/DevCreateButton";
 const pageTitle = "Steve Klabnik's Blog";
 const allPosts = await getCollection("blog");
 
@@ -38,10 +39,11 @@ let allPostsByDate = (() => {
 })();
 
 const years = Object.keys(allPostsByDate).reverse();
-const frontmatter = { 
+const frontmatter = {
   pageTitle: pageTitle,
   description: "Steve Klabnik's blog posts on programming, technology, and software development"
 };
+
 ---
 
 <BaseLayout frontmatter={frontmatter}>
@@ -81,4 +83,5 @@ const frontmatter = {
       ))
     }
   </div>
+  <DevCreateButton client:only="react" type="post" />
 </BaseLayout>

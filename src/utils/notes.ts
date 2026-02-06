@@ -1,16 +1,11 @@
 import type { CollectionEntry } from "astro:content";
+import { extractWikiLinkSlugs } from "./wikilinks";
+
+export { extractWikiLinkSlugs };
 
 export interface Backlink {
   slug: string;
   title: string;
-}
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
 }
 
 /**
@@ -18,19 +13,6 @@ function slugify(name: string): string {
  */
 export function noteSlug(id: string): string {
   return id.replace(/\.mdx?$/, "");
-}
-
-/**
- * Extract wiki link target slugs from raw markdown body.
- */
-export function extractWikiLinkSlugs(body: string): string[] {
-  const regex = /\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g;
-  const slugs: string[] = [];
-  let match;
-  while ((match = regex.exec(body)) !== null) {
-    slugs.push(slugify(match[1]));
-  }
-  return slugs;
 }
 
 /**
