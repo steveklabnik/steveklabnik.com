@@ -1,0 +1,60 @@
+import { findAndReplace } from "mdast-util-find-and-replace";
+import fs from "node:fs";
+import path from "node:path";
+import type { Root } from "mdast";
+
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]/g, "");
+}
+
+function getExistingNoteSlugs(): Set<string> {
+  const notesDir = path.resolve("src/content/notes");
+  const slugs = new Set<string>();
+
+  if (!fs.existsSync(notesDir)) {
+    return slugs;
+  }
+
+  for (const file of fs.readdirSync(notesDir)) {
+    if (file.endsWith(".md") || file.endsWith(".mdx")) {
+      slugs.add(file.replace(/\.mdx?$/, ""));
+    }
+  }
+
+  return slugs;
+}
+
+// Match [[target]] or [[target|display text]], but not inside code
+const wikiLinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
+
+export default function remarkWikiLinks() {
+  const existingSlugs = getExistingNoteSlugs();
+
+  return (tree: Root) => {
+    findAndReplace(tree, [
+      [
+        wikiLinkRegex,
+        (_match: string, target: string, displayText?: string) => {
+          const slug = slugify(target);
+          const text = displayText?.trim() || target.trim();
+          const exists = existingSlugs.has(slug);
+
+          return {
+            type: "link" as const,
+            url: `/notes/${slug}`,
+            data: {
+              hProperties: exists
+                ? {}
+                : { class: "wikilink-missing" },
+            },
+            children: [{ type: "text" as const, value: text }],
+          };
+        },
+      ],
+    ]);
+  };
+}

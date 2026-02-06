@@ -19,6 +19,7 @@
     "astro": "^5.16.11",
     "bluesky-post-embed": "^1.0.5",
     "markdown-it": "^14.1.0",
+    "mdast-util-find-and-replace": "^3.0.2",
     "sanitize-html": "^2.15.0"
   },
   "devDependencies": {

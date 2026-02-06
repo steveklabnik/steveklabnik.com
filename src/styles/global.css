@@ -146,6 +146,21 @@
   }
 }
 
+/* Wiki link missing (red link) styles */
+.wikilink-missing {
+  color: #b91c1c;
+  text-decoration: underline dashed;
+  text-underline-offset: 2px;
+}
+
+.wikilink-missing:visited {
+  color: #b91c1c;
+}
+
+.wikilink-missing:hover {
+  color: #991b1b;
+}
+
 /* Series navigation styles */
 .series-navigation {
   font-family: system-ui, -apple-system, sans-serif;
