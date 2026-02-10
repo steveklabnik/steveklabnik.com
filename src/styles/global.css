@@ -1,3 +1,5 @@
+@import "@fontsource-variable/literata" layer(base);
+@import "@fontsource-variable/literata/wght-italic.css" layer(base);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @config "../../tailwind.config.js";
@@ -152,7 +154,7 @@
 
 @layer base {
   html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Literata Variable', 'Georgia', 'Times New Roman', serif;
     scrollbar-gutter: stable;
   }
 
@@ -253,5 +255,5 @@
 
 /* Series navigation styles */
 .series-navigation {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Literata Variable', 'Georgia', 'Times New Roman', serif;
 }
