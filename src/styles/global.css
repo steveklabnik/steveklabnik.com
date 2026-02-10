@@ -71,6 +71,7 @@
   /* Better font stack */
   html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    scrollbar-gutter: stable;
   }
 
   /* Monospace font stack */
