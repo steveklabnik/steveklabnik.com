@@ -2,6 +2,7 @@
 title: "SF"
 pubDate: 2014-05-20
 blog: words
+topic: technology
 ---
 
 

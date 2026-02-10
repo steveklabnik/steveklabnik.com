@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPostsByTopic, getAllTopicsWithMetadata } from "../../utils/topics.ts";
+
+const allPosts = await getCollection("blog");
+const topicData = getPostsByTopic(allPosts);
+const allTopics = getAllTopicsWithMetadata(topicData).sort((a, b) => b.latestPost.data.pubDate.getTime() - a.latestPost.data.pubDate.getTime());
+
+const frontmatter = {
+  pageTitle: "Topics - Steve Klabnik",
+  description: "Browse blog posts by topic",
+};
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div class="max-w-none">
+    <h1 class="text-3xl font-bold mb-8">Topics</h1>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {allTopics.map((topic) => (
+        <a
+          href={`/topics/${topic.slug}/`}
+          class="block border border-base rounded-lg p-6 hover:shadow-lg transition-shadow no-underline"
+        >
+          <h2 class="text-xl font-semibold text-accent mb-2">{topic.title}</h2>
+          <p class="text-secondary mb-4">{topic.description}</p>
+          <div class="flex items-center gap-4 text-sm text-muted">
+            <span>{topic.postCount} posts</span>
+            <span>&middot;</span>
+            <span>
+              Latest: {topic.latestPost.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
+              })}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

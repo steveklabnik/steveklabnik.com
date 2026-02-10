@@ -2,6 +2,7 @@
 title: "Removing Turbolinks from Rails 4"
 pubDate: 2013-06-25
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

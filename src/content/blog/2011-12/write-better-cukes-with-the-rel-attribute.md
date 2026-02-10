@@ -2,6 +2,7 @@
 title: "Write better cukes with the rel attribute"
 pubDate: 2011-12-20
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

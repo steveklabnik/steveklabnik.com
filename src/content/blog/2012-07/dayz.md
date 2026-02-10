@@ -2,6 +2,7 @@
 title: "DayZ"
 pubDate: 2012-07-25
 blog: literate-programming
+topic: technology
 ---
 
 

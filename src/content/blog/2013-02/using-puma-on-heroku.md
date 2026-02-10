@@ -2,6 +2,7 @@
 title: "Using puma on Heroku"
 pubDate: 2013-02-24
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

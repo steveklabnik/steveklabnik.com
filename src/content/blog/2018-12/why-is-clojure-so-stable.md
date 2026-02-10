@@ -2,6 +2,7 @@
 title: "Why is Clojure so stable?"
 pubDate: 2018-12-18
 blog: words
+topic: technology
 ---
 
 

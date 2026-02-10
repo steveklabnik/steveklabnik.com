@@ -2,6 +2,7 @@
 title: "On the eve of #m1gs"
 pubDate: 2012-04-30
 blog: literate-programming
+topic: technology
 ---
 
 

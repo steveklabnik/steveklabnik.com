@@ -2,6 +2,7 @@
 title: "A new introduction to Rust"
 pubDate: 2015-02-27
 blog: words
+topic: rust
 ---
 
 

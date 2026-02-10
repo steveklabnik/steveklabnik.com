@@ -2,6 +2,7 @@
 title: "Transmuting Philosophy into Machinery"
 pubDate: 2012-03-08
 blog: literate-programming
+topic: philosophy-politics
 ---
 
 

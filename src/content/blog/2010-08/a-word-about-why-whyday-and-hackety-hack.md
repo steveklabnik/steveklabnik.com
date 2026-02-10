@@ -2,6 +2,7 @@
 title: "A word about _why, Whyday, and Hackety Hack"
 pubDate: 2010-08-19
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

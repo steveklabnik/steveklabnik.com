@@ -2,6 +2,7 @@
 title: "Better Ruby Presenters"
 pubDate: 2011-09-09
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Looking back at Rust in 2018"
 pubDate: 2018-01-09
 blog: words
+topic: rust
 ---
 
 

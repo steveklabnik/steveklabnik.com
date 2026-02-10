@@ -2,6 +2,7 @@
 title: "Software and community"
 pubDate: 2012-09-18
 blog: words
+topic: open-source
 ---
 
 

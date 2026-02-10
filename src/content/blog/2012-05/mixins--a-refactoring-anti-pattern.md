@@ -2,6 +2,7 @@
 title: "Mixins: a refactoring anti-pattern"
 pubDate: 2012-05-07
 blog: literate-programming
+topic: technology
 ---
 
 

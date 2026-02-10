@@ -2,6 +2,7 @@
 title: "User-Agent: moz://a"
 pubDate: 2017-12-12
 blog: words
+topic: technology
 ---
 
 

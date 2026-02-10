@@ -2,6 +2,7 @@
 title: "Resque: let's do this"
 pubDate: 2012-09-22
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

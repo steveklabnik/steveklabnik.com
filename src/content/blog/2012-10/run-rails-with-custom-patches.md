@@ -2,6 +2,7 @@
 title: "Run Rails with custom patches"
 pubDate: 2012-10-04
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

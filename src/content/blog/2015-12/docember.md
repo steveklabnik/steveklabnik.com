@@ -2,6 +2,7 @@
 title: "Docember"
 pubDate: 2015-12-01
 blog: words
+topic: ruby-rails
 ---
 
 

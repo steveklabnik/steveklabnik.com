@@ -2,6 +2,7 @@
 title: "Resque 1.25.0 has been released"
 pubDate: 2013-09-16
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

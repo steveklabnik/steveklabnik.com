@@ -2,6 +2,7 @@
 title: "Moving from Sinatra to Rails"
 pubDate: 2012-01-17
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

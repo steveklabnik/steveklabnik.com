@@ -2,6 +2,7 @@
 title: "Birthday cards for Dad"
 pubDate: 2012-03-26
 blog: literate-programming
+topic: life
 ---
 
 

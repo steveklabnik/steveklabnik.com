@@ -2,6 +2,7 @@
 title: "An introduction to economics under capitalism"
 pubDate: 2015-03-10
 blog: words
+topic: philosophy-politics
 ---
 
 

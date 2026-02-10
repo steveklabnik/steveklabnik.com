@@ -2,6 +2,7 @@
 title: "How often does Rust change?"
 pubDate: 2020-04-11
 blog: words
+topic: rust
 ---
 
 

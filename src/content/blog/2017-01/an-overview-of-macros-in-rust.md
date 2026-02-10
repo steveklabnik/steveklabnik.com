@@ -2,6 +2,7 @@
 title: "An overview of macros in Rust"
 pubDate: 2017-01-24
 blog: words
+topic: rust
 ---
 
 

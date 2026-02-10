@@ -2,6 +2,7 @@
 title: "An early Christmas present for you"
 pubDate: 2012-12-19
 blog: literate-programming
+topic: technology
 ---
 
 

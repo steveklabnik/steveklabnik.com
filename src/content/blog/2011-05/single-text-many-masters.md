@@ -2,6 +2,7 @@
 title: "Single text, many masters"
 pubDate: 2011-05-21
 blog: literate-programming
+topic: technology
 ---
 
 

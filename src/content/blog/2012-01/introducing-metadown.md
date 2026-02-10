@@ -2,6 +2,7 @@
 title: "Introducing metadown"
 pubDate: 2012-01-23
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

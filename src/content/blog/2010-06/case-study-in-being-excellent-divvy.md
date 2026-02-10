@@ -2,6 +2,7 @@
 title: "A case study in being excellent: Divvy"
 pubDate: 2010-06-30
 blog: literate-programming
+topic: technology
 ---
 
 The images in this post have been lost to time. Oh well. Original post below, images removed.

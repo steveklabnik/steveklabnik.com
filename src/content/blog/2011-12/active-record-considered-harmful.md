@@ -2,6 +2,7 @@
 title: "ActiveRecord considered harmful"
 pubDate: 2011-12-30
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Ruby on Rails maintenance policy"
 pubDate: 2013-02-11
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

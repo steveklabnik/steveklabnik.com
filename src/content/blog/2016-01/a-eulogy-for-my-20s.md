@@ -2,6 +2,7 @@
 title: "A eulogy for my 20s"
 pubDate: 2016-01-24
 blog: words
+topic: life
 ---
 
 Today is the last day of my 29th year of existence. I’ve been thinking about it a lot, which is extra strange because I don’t generally care about birthdays. I’m not much of one for holidays in general. So why do I care about this one?

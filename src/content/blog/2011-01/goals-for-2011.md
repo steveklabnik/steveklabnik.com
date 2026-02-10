@@ -2,6 +2,7 @@
 title: "Goals for 2011"
 pubDate: 2011-01-02
 blog: literate-programming
+topic: life
 ---
 
 

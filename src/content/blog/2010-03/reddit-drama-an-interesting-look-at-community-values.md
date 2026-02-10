@@ -2,6 +2,7 @@
 title: "Reddit drama: an interesting look at community values"
 pubDate: 2010-03-01
 blog: literate-programming
+topic: open-source
 ---
 
 

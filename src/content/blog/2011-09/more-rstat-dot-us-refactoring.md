@@ -2,6 +2,7 @@
 title: "More rstat.us refactoring"
 pubDate: 2011-09-23
 blog: literate-programming
+topic: open-source
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Ouroboros"
 pubDate: 2015-05-18
 blog: words
+topic: technology
 ---
 
 

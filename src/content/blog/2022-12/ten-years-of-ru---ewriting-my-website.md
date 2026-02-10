@@ -1,6 +1,7 @@
 ---
 title: Ten Years of Ru...ewriting my website
 pubDate: 2022-12-21
+topic: life
 ---
 
 December 21 is the anniversary of when I first heard about Rust way back in

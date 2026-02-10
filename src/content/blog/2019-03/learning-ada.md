@@ -2,6 +2,7 @@
 title: "Learning Ada"
 pubDate: 2019-03-26
 blog: words
+topic: rust
 ---
 
 

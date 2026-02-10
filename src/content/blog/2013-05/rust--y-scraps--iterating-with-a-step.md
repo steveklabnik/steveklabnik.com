@@ -2,6 +2,7 @@
 title: "Rust-y Scraps: iterating with a step"
 pubDate: 2013-05-30
 blog: literate-programming
+topic: rust
 ---
 
 

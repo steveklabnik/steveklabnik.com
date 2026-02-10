@@ -2,6 +2,7 @@
 title: "Announcing rstat.us"
 pubDate: 2011-03-23
 blog: literate-programming
+topic: open-source
 ---
 
 

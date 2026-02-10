@@ -2,6 +2,7 @@
 title: "For science: I'm killing my cell phone"
 pubDate: 2011-10-19
 blog: literate-programming
+topic: life
 ---
 
 

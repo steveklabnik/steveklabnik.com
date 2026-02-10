@@ -2,6 +2,7 @@
 title: "Protological Control: an introduction"
 pubDate: 2012-08-13
 blog: words
+topic: philosophy-politics
 ---
 
 

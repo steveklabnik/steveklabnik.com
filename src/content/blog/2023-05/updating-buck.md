@@ -4,6 +4,7 @@ pubDate: 2023-05-08
 series:
   slug: "buck-rust"
   order: 3
+topic: rust
 ---
 
 Hey there! A shorter post today, but I wanted to continue my series on Buck

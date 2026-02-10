@@ -2,6 +2,7 @@
 title: "Productivity Waves"
 pubDate: 2010-06-08
 blog: literate-programming
+topic: technology
 ---
 
 

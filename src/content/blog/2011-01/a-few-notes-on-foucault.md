@@ -2,6 +2,7 @@
 title: "A few notes on Foucault"
 pubDate: 2011-01-22
 blog: literate-programming
+topic: philosophy-politics
 ---
 
 I’ve almost always been in a habit of reading. When I was younger, I spent a lot of time in the library. I’d just grab an entire series of novels, and read them all, right in a row. Sometimes I’d end up reading non-fiction too. I ended up with a lot of books on software.

@@ -2,6 +2,7 @@
 title: "Rails 4.0.0-beta1 to Rails 4.0.0-rc1"
 pubDate: 2013-05-21
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

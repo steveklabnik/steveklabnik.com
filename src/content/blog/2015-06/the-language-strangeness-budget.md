@@ -2,6 +2,7 @@
 title: "The language strangeness budget"
 pubDate: 2015-06-26
 blog: words
+topic: open-source
 ---
 
 

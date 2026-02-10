@@ -2,6 +2,7 @@
 title: "\"The Rust Programming Language\" will be published by No Starch Press"
 pubDate: 2015-09-08
 blog: words
+topic: rust
 ---
 
 

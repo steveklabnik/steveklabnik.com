@@ -2,6 +2,7 @@
 title: "How to not rely on rubygems.org for development"
 pubDate: 2013-01-31
 blog: words
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "I'm writing \"Rails 4 in Action\"!"
 pubDate: 2013-02-13
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

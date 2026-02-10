@@ -2,6 +2,7 @@
 title: "How do you find the time?"
 pubDate: 2012-09-27
 blog: words
+topic: technology
 ---
 
 

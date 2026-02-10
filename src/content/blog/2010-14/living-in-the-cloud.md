@@ -2,6 +2,7 @@
 title: "Living in the cloud"
 pubDate: 2010-14-24
 blog: literate-programming
+topic: technology
 ---
 
 

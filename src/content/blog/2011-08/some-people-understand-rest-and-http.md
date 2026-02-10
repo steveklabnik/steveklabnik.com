@@ -2,6 +2,7 @@
 title: "Some people understand REST and HTTP"
 pubDate: 2011-08-07
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

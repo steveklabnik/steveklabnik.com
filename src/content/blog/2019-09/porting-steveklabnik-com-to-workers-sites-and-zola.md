@@ -2,6 +2,7 @@
 title: "Porting steveklabnik.com to Workers Sites and Zola"
 pubDate: 2019-09-26
 blog: words
+topic: life
 ---
 
 

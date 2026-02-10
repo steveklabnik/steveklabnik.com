@@ -10,6 +10,17 @@ const SERIES_OPTIONS = [
   { slug: "getting-started-with-claude-code", title: "Getting Started with Claude Code" },
 ];
 
+const TOPIC_OPTIONS = [
+  { slug: "rust", title: "Rust" },
+  { slug: "ruby-rails", title: "Ruby & Rails" },
+  { slug: "open-source", title: "Open Source & Community" },
+  { slug: "life", title: "Life" },
+  { slug: "philosophy-politics", title: "Philosophy & Politics" },
+  { slug: "rest-hypermedia", title: "REST & Hypermedia" },
+  { slug: "ai-llms", title: "AI & LLMs" },
+  { slug: "technology", title: "Technology" },
+];
+
 interface Props {
   slug: string;
   onClose: () => void;
@@ -21,6 +32,7 @@ export default function PostEditor({ slug, onClose }: Props) {
   const [blog, setBlog] = useState("");
   const [seriesSlug, setSeriesSlug] = useState("");
   const [seriesOrder, setSeriesOrder] = useState(1);
+  const [topic, setTopic] = useState("");
 
   useEffect(() => {
     fetchPost(slug).then((p) => {
@@ -29,6 +41,7 @@ export default function PostEditor({ slug, onClose }: Props) {
       setBlog(p.blog ?? "");
       setSeriesSlug(p.series?.slug ?? "");
       setSeriesOrder(p.series?.order ?? 1);
+      setTopic(p.topic ?? "");
     });
   }, [slug]);
 
@@ -41,10 +54,11 @@ export default function PostEditor({ slug, onClose }: Props) {
         series: seriesSlug
           ? { slug: seriesSlug, order: seriesOrder }
           : null,
+        topic: topic || null,
         body: data.body,
       });
     },
-    [slug, pubDate, blog, seriesSlug, seriesOrder]
+    [slug, pubDate, blog, seriesSlug, seriesOrder, topic]
   );
 
   if (!post) {
@@ -103,6 +117,21 @@ export default function PostEditor({ slug, onClose }: Props) {
           />
         </label>
       )}
+      <label className="flex items-center gap-2 text-sm">
+        <span className="text-gray-600">Topic:</span>
+        <select
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          className="border border-gray-300 rounded px-2 py-1 text-sm"
+        >
+          <option value="">None</option>
+          {TOPIC_OPTIONS.map((t) => (
+            <option key={t.slug} value={t.slug}>
+              {t.title}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 

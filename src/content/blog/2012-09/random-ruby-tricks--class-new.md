@@ -2,6 +2,7 @@
 title: "Random Ruby Tricks: Class.new"
 pubDate: 2012-09-09
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

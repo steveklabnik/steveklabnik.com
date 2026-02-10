@@ -2,6 +2,7 @@
 title: "Trouble with Diaspora"
 pubDate: 2010-09-17
 blog: literate-programming
+topic: technology
 ---
 
 

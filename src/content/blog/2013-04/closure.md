@@ -2,6 +2,7 @@
 title: "Closure"
 pubDate: 2013-04-19
 blog: words
+topic: life
 ---
 
 

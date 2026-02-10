@@ -1,6 +1,7 @@
 ---
 title: "The next iteration of my blogs"
 pubDate: 2020-06-08
+topic: life
 ---
 
 I've had a few different blogs over the years. Every so often, I change things. One of the nice things about having your own site is that you can do whatever you want! So, I'm folding my old blogs' content into my main website. I'm sick of adding new subdomains, and it all feels better in one place these days. The old URLs will redirect to posts on steveklabnik.com, but I wanted to record what they looked like at the time.

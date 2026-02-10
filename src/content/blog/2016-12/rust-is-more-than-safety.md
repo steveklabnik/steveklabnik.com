@@ -2,6 +2,7 @@
 title: "Rust is more than safety"
 pubDate: 2016-12-28
 blog: words
+topic: rust
 ---
 
 

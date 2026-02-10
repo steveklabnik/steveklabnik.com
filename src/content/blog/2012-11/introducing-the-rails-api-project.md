@@ -2,6 +2,7 @@
 title: "Introducing the rails-api project"
 pubDate: 2012-11-22
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

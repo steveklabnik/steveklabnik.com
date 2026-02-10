@@ -2,6 +2,7 @@
 title: "Ember.js and accessibility"
 pubDate: 2013-02-07
 blog: words
+topic: ruby-rails
 ---
 
 

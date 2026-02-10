@@ -2,6 +2,7 @@
 title: "A 30 minute introduction to Rust"
 pubDate: 2014-01-11
 blog: words
+topic: rust
 ---
 
 I recently gave a [proposal for Rust’s documentation](https://air.mozilla.org/rust-meetup-december-2013/). An important component of my overall proposal is a short, simple introduction for people who may have heard of Rust, so that they can figure out if Rust is right for them. The other day, I saw [this excellent presentation](http://www.youtube.com/watch?v=gfCtbGiHcg0), and thought it might serve as a great basis for this introduction. Consider this an RFC for such an introduction. Feedback very welcome on [the rust-dev mailing list](https://mail.mozilla.org/pipermail/rust-dev/2014-January/007903.html) or [on Twitter](https://twitter.com/steveklabnik).

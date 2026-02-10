@@ -2,6 +2,7 @@
 title: "_why is a role, not a person"
 pubDate: 2013-01-16
 blog: words
+topic: technology
 ---
 
 http://whytheluckystiff.net/ has re-ignited a discussion about _why, and while I have tons and tons and tons of things to say on the subject, this is all I can give you for now: _why is a role, not a person.

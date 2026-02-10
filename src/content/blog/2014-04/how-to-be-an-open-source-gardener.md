@@ -2,6 +2,7 @@
 title: "How to be an open source gardener"
 pubDate: 2014-04-14
 blog: words
+topic: open-source
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Sparrow"
 pubDate: 2012-07-21
 blog: literate-programming
+topic: technology
 ---
 
 

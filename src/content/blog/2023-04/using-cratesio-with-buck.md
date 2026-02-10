@@ -4,6 +4,7 @@ pubDate: 2023-04-27
 series:
   slug: "buck-rust"
   order: 2
+topic: rust
 ---
 
 In [a previous post](using-buck-to-build-rust-projects), I laid out the basics

@@ -2,6 +2,7 @@
 title: "Devise: ActionController::RoutingError (No Route Matches [GET] /users/sign_out)"
 pubDate: 2011-12-22
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

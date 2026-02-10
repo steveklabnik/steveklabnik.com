@@ -2,6 +2,7 @@
 title: "Rescuing Resque (again)"
 pubDate: 2015-10-28
 blog: words
+topic: ruby-rails
 ---
 
 

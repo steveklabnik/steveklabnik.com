@@ -2,6 +2,7 @@
 title: "A Declaration of the Independence of Cyberspace"
 pubDate: 2010-05-01
 blog: literate-programming
+topic: technology
 ---
 
 I just saw this today. It kind of goes along with my “Move to the Internet” post from a few days ago.

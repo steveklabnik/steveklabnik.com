@@ -2,6 +2,7 @@
 title: "80% of success is showing up"
 pubDate: 2010-09-21
 blog: literate-programming
+topic: technology
 ---
 
 It’s funny how true this quote is.

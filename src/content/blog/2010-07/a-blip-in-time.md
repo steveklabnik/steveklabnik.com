@@ -2,6 +2,7 @@
 title: "A blip in time"
 pubDate: 2010-07-24
 blog: literate-programming
+topic: life
 ---
 
 Sometimes, insight comes from very unlikely places.

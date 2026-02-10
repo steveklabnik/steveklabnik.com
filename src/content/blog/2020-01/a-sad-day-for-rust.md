@@ -2,6 +2,7 @@
 title: "A sad day for Rust"
 pubDate: 2020-01-17
 blog: words
+topic: rust
 ---
 
 `actix-web` is dead.

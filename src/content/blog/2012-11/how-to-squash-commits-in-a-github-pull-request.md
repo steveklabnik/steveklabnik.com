@@ -2,6 +2,7 @@
 title: "How to squash commits in a GitHub pull request"
 pubDate: 2012-11-08
 blog: literate-programming
+topic: technology
 ---
 
 

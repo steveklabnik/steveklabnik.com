@@ -2,6 +2,7 @@
 title: "Upgrading from Rust 0.5 to 0.6"
 pubDate: 2013-04-07
 blog: literate-programming
+topic: rust
 ---
 
 

@@ -2,6 +2,7 @@
 title: "What's new with \"The Rust Programming Language\""
 pubDate: 2016-08-15
 blog: words
+topic: rust
 ---
 
 

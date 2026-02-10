@@ -2,6 +2,7 @@
 title: "Real, modern Ruby development"
 pubDate: 2011-09-28
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Returning to Free Software, a guide"
 pubDate: 2013-06-15
 blog: words
+topic: technology
 ---
 
 

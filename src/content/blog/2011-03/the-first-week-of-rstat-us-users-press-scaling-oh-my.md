@@ -2,6 +2,7 @@
 title: "The first week of rstat.us: users, press, and scaling, oh my!"
 pubDate: 2011-03-30
 blog: literate-programming
+topic: open-source
 ---
 
 

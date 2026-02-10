@@ -2,6 +2,7 @@
 title: "New Beginnings"
 pubDate: 2013-10-01
 blog: literate-programming
+topic: technology
 ---
 
 

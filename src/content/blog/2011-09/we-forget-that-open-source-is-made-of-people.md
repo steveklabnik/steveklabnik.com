@@ -2,6 +2,7 @@
 title: "We forget that open source is made of people"
 pubDate: 2011-09-12
 blog: literate-programming
+topic: open-source
 ---
 
 

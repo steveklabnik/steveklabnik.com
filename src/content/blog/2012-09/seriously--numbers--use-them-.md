@@ -2,6 +2,7 @@
 title: "Seriously: numbers: use them!"
 pubDate: 2012-09-27
 blog: literate-programming
+topic: technology
 ---
 
 

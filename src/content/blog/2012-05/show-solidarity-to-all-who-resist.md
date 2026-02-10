@@ -2,6 +2,7 @@
 title: "Show solidarity to all who resist"
 pubDate: 2012-05-31
 blog: literate-programming
+topic: philosophy-politics
 ---
 
 

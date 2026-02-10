@@ -2,6 +2,7 @@
 title: "redis-namespace 1.3.1 security release"
 pubDate: 2013-08-03
 blog: literate-programming
+topic: open-source
 ---
 
 

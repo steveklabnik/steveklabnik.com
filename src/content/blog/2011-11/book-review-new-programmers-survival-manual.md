@@ -2,6 +2,7 @@
 title: "Book review: New Programmer's Survival Manual"
 pubDate: 2011-11-28
 blog: literate-programming
+topic: technology
 ---
 
 

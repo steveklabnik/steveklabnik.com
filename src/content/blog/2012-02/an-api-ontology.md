@@ -2,6 +2,7 @@
 title: "An API ontology"
 pubDate: 2012-02-13
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

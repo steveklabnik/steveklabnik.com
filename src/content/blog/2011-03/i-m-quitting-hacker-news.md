@@ -2,6 +2,7 @@
 title: "I'm quitting Hacker News"
 pubDate: 2011-03-03
 blog: literate-programming
+topic: life
 ---
 
 

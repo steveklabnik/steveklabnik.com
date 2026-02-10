@@ -2,6 +2,7 @@
 title: "Redcarpet is awesome"
 pubDate: 2011-12-21
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

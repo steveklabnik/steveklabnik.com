@@ -2,6 +2,7 @@
 title: "The Hackety Manifesto"
 pubDate: 2009-12-31
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

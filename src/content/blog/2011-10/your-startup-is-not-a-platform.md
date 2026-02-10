@@ -2,6 +2,7 @@
 title: "Your startup is not a platform"
 pubDate: 2011-10-25
 blog: literate-programming
+topic: technology
 ---
 
 

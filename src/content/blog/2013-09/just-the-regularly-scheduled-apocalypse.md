@@ -2,6 +2,7 @@
 title: "Just the regularly scheduled apocalypse"
 pubDate: 2013-09-10
 blog: words
+topic: technology
 ---
 
 

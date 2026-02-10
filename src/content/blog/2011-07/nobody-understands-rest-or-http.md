@@ -2,6 +2,7 @@
 title: "Nobody understands REST or HTTP"
 pubDate: 2011-07-03
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

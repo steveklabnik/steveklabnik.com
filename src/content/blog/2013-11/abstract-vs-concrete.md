@@ -2,6 +2,7 @@
 title: "Abstract vs concrete"
 pubDate: 2013-11-14
 blog: words
+topic: technology
 ---
 
 

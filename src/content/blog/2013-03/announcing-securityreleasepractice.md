@@ -2,6 +2,7 @@
 title: "Announcing security_release_practice"
 pubDate: 2013-03-08
 blog: words
+topic: open-source
 ---
 
 

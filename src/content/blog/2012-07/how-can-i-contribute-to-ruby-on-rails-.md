@@ -2,6 +2,7 @@
 title: "How can I contribute to Ruby on Rails?"
 pubDate: 2012-07-05
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

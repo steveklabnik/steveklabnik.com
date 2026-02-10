@@ -2,6 +2,7 @@
 title: "Is npm worth 26MM?"
 pubDate: 2014-02-12
 blog: words
+topic: technology
 ---
 
 

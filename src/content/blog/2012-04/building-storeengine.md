@@ -2,6 +2,7 @@
 title: "Building StoreEngine"
 pubDate: 2012-04-05
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

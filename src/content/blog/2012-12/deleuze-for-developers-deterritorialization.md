@@ -5,6 +5,7 @@ blog: words
 series:
   slug: "deleuze-for-developers"
   order: 2
+topic: philosophy-politics
 ---
 
 Let’s re-examine this diagram of the assemblage:

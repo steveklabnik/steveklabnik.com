@@ -1,6 +1,7 @@
 ---
 title: "Rust's Golden Rule"
 pubDate: 2023-03-27
+topic: rust
 ---
 
 I find myself thinking about a particular design principle of Rust today. I'm

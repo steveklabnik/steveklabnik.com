@@ -2,6 +2,7 @@
 title: "The secret to Rails OO design"
 pubDate: 2011-09-06
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

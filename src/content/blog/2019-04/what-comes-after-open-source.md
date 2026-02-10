@@ -2,6 +2,7 @@
 title: "What comes after open source"
 pubDate: 2019-04-02
 blog: words
+topic: open-source
 ---
 
 

@@ -2,6 +2,7 @@
 title: You can't "turn off the borrow checker" in Rust
 pubDate: 2018-09-14
 blog: words
+topic: rust
 ---
 
 

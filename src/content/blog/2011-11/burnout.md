@@ -2,6 +2,7 @@
 title: "Burnout"
 pubDate: 2011-11-17
 blog: literate-programming
+topic: life
 ---
 
 

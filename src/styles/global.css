@@ -136,6 +136,17 @@
     outline-offset: 1px;
   }
 
+  /* Topic badge link styles */
+  a.topic-badge {
+    @apply no-underline;
+    outline: 2px solid transparent;
+    outline-offset: 1px;
+  }
+  a.topic-badge:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+
   /* Site title link override */
   .site-title {
     color: var(--color-text);

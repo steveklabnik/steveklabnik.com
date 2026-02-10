@@ -2,6 +2,7 @@
 title: "Implementing HATEOS with presenters"
 pubDate: 2012-01-06
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

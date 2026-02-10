@@ -2,6 +2,7 @@
 title: "Ember Data: ‘DS’ is not defined"
 pubDate: 2015-07-05
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

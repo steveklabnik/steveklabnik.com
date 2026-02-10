@@ -2,6 +2,7 @@
 title: "Announcing request_store"
 pubDate: 2012-12-17
 blog: literate-programming
+topic: open-source
 ---
 
 

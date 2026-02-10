@@ -2,6 +2,7 @@
 title: "Hackety Hack v1.0"
 pubDate: 2010-12-25
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

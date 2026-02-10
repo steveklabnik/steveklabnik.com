@@ -2,6 +2,7 @@
 title: "Travis build matrix for Rails"
 pubDate: 2013-03-10
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

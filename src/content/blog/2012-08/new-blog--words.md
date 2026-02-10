@@ -2,6 +2,7 @@
 title: "New blog: Words"
 pubDate: 2012-08-31
 blog: literate-programming
+topic: life
 ---
 
 

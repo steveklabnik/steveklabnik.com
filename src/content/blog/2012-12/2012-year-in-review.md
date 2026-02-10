@@ -2,6 +2,7 @@
 title: "2012: year in review"
 pubDate: 2012-12-29
 blog: literate-programming
+topic: life
 ---
 
 I always enjoy reading [patio11’s year in review posts](http://www.kalzumeus.com/2012/12/29/bingo-card-creator-and-other-stuff-year-in-review-2012/), and while I didn’t take enough notes for this year to do a GOOD one, I figure that I should at least leave some notes so that when I do one next year, I’ll have something to benchmark against.

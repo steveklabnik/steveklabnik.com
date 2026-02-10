@@ -2,6 +2,7 @@
 title: "Why I don't like factory_girl"
 pubDate: 2012-07-14
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

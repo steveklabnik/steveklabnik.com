@@ -2,6 +2,7 @@
 title: "The culture war at the heart of open source"
 pubDate: 2019-05-26
 blog: words
+topic: open-source
 ---
 
 

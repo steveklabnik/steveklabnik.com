@@ -2,6 +2,7 @@
 title: "Pointers in Rust, a guide"
 pubDate: 2013-10-18
 blog: words
+topic: rust
 ---
 
 

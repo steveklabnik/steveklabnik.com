@@ -2,6 +2,7 @@
 title: "The next iteration of \"Designing Hypermedia APIs\""
 pubDate: 2013-02-12
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

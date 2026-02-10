@@ -2,6 +2,7 @@
 title: "Create a more compelling experience for your users through game mechanics"
 pubDate: 2010-03-08
 blog: literate-programming
+topic: technology
 ---
 
 

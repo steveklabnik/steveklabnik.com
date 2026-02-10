@@ -60,6 +60,7 @@ function parsePost(filePath: string) {
     pubDate: fm.pubDate ?? null,
     blog: fm.blog ?? null,
     series: seriesSlug ? { slug: seriesSlug, order: seriesOrder ?? 1 } : null,
+    topic: fm.topic ?? null,
     body,
   };
 }
@@ -264,6 +265,7 @@ function savePost(
     pubDate: string;
     blog?: string | null;
     series?: { slug: string; order: number } | null;
+    topic?: string | null;
     body: string;
   }
 ): Response {
@@ -276,6 +278,7 @@ function savePost(
   if (data.series) {
     fm += `\nseries:\n  slug: ${data.series.slug}\n  order: ${data.series.order}`;
   }
+  if (data.topic) fm += `\ntopic: ${data.topic}`;
   fm += `\n---\n`;
 
   fs.writeFileSync(filePath, fm + data.body, "utf-8");
@@ -288,6 +291,7 @@ function createPost(data: {
   slug?: string;
   blog?: string | null;
   series?: { slug: string; order: number } | null;
+  topic?: string | null;
 }): Response {
   const slug =
     data.slug ??
@@ -313,6 +317,7 @@ function createPost(data: {
   if (data.series) {
     fm += `\nseries:\n  slug: ${data.series.slug}\n  order: ${data.series.order}`;
   }
+  if (data.topic) fm += `\ntopic: ${data.topic}`;
   fm += `\n---\n\n`;
 
   fs.writeFileSync(filePath, fm, "utf-8");

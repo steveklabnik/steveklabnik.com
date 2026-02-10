@@ -2,6 +2,7 @@
 title: "Anti-capitalism 101"
 pubDate: 2012-03-31
 blog: literate-programming
+topic: philosophy-politics
 ---
 
 

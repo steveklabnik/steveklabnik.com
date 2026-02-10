@@ -2,6 +2,7 @@
 title: "Six years with Rust"
 pubDate: 2018-12-21
 blog: words
+topic: rust
 ---
 
 

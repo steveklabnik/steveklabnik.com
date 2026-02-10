@@ -2,6 +2,7 @@
 title: "Rust is surprisingly expressive"
 pubDate: 2013-12-28
 blog: words
+topic: rust
 ---
 
 

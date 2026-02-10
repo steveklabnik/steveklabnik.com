@@ -1,6 +1,7 @@
 ---
 title: "Today is my first day at Oxide Computer Company"
 pubDate: 2020-06-15
+topic: life
 ---
 
 ![Oxide Logo](/img/2020-06-15/oxide.png)

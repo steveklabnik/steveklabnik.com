@@ -2,6 +2,7 @@
 title: "About antisocialne.ws"
 pubDate: 2012-04-03
 blog: literate-programming
+topic: technology
 ---
 
 

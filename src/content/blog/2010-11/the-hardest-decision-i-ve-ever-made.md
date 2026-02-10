@@ -2,6 +2,7 @@
 title: "The hardest decision I've ever made"
 pubDate: 2010-11-17
 blog: literate-programming
+topic: life
 ---
 
 

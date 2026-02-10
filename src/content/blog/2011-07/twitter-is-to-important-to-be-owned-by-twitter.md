@@ -2,6 +2,7 @@
 title: "Twitter is too important to be owned by Twitter"
 pubDate: 2011-07-24
 blog: literate-programming
+topic: technology
 ---
 
 

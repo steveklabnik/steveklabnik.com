@@ -2,6 +2,7 @@
 title: "Random Ruby Tricks: Struct.new"
 pubDate: 2012-09-01
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

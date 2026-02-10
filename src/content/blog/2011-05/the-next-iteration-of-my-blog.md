@@ -2,6 +2,7 @@
 title: "The next iteration of my blog"
 pubDate: 2011-05-12
 blog: literate-programming
+topic: life
 ---
 
 

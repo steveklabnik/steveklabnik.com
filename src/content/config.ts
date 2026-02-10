@@ -10,6 +10,10 @@ const blogCollection = defineCollection({
             slug: z.string(),
             order: z.number(),
         }).optional(),
+        topic: z.enum([
+            "rust", "ruby-rails", "open-source", "life",
+            "philosophy-politics", "rest-hypermedia", "ai-llms", "technology"
+        ]).optional(),
     }),
 });
 

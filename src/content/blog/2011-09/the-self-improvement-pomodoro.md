@@ -2,6 +2,7 @@
 title: "The self improvement pomodoro"
 pubDate: 2011-09-04
 blog: literate-programming
+topic: life
 ---
 
 

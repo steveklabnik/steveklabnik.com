@@ -2,6 +2,7 @@
 title: "Writing a su feature with Authlogic"
 pubDate: 2010-03-05
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Update GitHub Pages with Travis CI"
 pubDate: 2014-12-16
 blog: words
+topic: technology
 ---
 
 

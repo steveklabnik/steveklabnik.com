@@ -2,6 +2,7 @@
 title: "0b100000"
 pubDate: 2018-01-25
 blog: words
+topic: life
 ---
 As someone who has [significantly different beliefs than Peter Thiel](https://www.inc.com/jeff-bercovici/peter-thiel-young-blood.html), today is likely my second-to-last power of two years alive.
 

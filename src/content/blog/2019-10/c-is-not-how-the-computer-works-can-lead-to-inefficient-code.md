@@ -2,6 +2,7 @@
 title: "\"C is not how the computer works\" can lead to inefficient code"
 pubDate: 2019-10-25
 blog: words
+topic: technology
 ---
 
 

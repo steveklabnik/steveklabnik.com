@@ -2,6 +2,7 @@
 title: "Hypermedia API reading list"
 pubDate: 2012-02-27
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

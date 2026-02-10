@@ -2,6 +2,7 @@
 title: "Should you learn C to \"learn how the computer works\"?"
 pubDate: 2018-10-02
 blog: words
+topic: technology
 ---
 
 

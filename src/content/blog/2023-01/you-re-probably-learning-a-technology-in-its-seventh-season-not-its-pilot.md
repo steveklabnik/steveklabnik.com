@@ -2,6 +2,7 @@
 title: You're probably learning a technology in its seventh season, not its pilot
 pubDate: 2023-01-27
 blog: words
+topic: technology
 ---
 
 I first heard this adage in the Rails space. I don't know who to attribute this

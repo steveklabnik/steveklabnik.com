@@ -2,6 +2,7 @@
 title: "Borrow checking, escape analysis, and the generational hypothesis"
 pubDate: 2018-10-10
 blog: words
+topic: technology
 ---
 
 

@@ -2,6 +2,7 @@
 title: "\"C is how the computer works\" is a dangerous mindset for C programmers"
 pubDate: 2020-03-31
 blog: words
+topic: technology
 ---
 
 

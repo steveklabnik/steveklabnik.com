@@ -2,6 +2,7 @@
 title: "WebAssembly is more than just the web"
 pubDate: 2018-07-13
 blog: words
+topic: rust
 ---
 
 

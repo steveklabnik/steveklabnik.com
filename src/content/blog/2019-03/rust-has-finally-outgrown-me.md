@@ -2,6 +2,7 @@
 title: "Rust has finally outgrown me"
 pubDate: 2019-03-29
 blog: words
+topic: rust
 ---
 
 

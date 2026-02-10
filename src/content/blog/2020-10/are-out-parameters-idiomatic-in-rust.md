@@ -2,6 +2,7 @@
 title: "Are out parameters idiomatic in Rust?"
 pubDate: 2020-10-16
 blog: words
+topic: rust
 ---
 
 There is a pretty straightforward design pattern called "out parameters" that you may have heard of before. In short, the question is, does your function wear pants... err, I mean, does your function modify data like this:

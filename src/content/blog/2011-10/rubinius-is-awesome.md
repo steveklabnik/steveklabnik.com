@@ -2,6 +2,7 @@
 title: "Rubinius is awesome"
 pubDate: 2011-10-04
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

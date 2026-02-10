@@ -2,6 +2,7 @@
 title: "Emoji licensing"
 pubDate: 2013-08-06
 blog: words
+topic: technology
 ---
 
 

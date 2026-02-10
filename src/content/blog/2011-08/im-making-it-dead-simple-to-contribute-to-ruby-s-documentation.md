@@ -2,6 +2,7 @@
 title: "I'm making it dead simple to contribute to Ruby's documentation"
 pubDate: 2011-08-22
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

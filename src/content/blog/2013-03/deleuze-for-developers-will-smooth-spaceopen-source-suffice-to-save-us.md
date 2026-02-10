@@ -5,6 +5,7 @@ blog: words
 series:
   slug: "deleuze-for-developers"
   order: 3
+topic: philosophy-politics
 ---
 
 Deleuze and Guattari employ the notion of ‘smooth space’ quite a bit in _A Thousand Plateaus_. I saw this quote about it the other day:

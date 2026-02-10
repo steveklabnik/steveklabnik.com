@@ -4,6 +4,7 @@ pubDate: 2023-04-13
 series:
   slug: "buck-rust"
   order: 1
+topic: rust
 ---
 
 A few days ago, Facebook/Meta/idk [announced that buck2 is now open

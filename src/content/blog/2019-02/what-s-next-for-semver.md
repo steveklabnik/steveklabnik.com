@@ -2,6 +2,7 @@
 title: "What's next for SemVer"
 pubDate: 2019-02-11
 blog: words
+topic: open-source
 ---
 
 

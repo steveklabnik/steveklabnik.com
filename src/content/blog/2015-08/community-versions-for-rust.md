@@ -2,6 +2,7 @@
 title: "Community Versions for Rust"
 pubDate: 2015-08-23
 blog: words
+topic: rust
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Living with a terrible taste in music"
 pubDate: 2012-10-12
 blog: words
+topic: life
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Is WebAssembly the return of Java Applets & Flash?"
 pubDate: 2018-07-25
 blog: words
+topic: rust
 ---
 
 

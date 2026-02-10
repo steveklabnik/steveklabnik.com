@@ -2,6 +2,7 @@
 title: "Rust's documentation is about to drastically improve"
 pubDate: 2014-06-16
 blog: words
+topic: rust
 ---
 
 

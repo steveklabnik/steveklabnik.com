@@ -2,6 +2,7 @@
 title: "Hypermedia FizzBuzz"
 pubDate: 2014-05-02
 blog: words
+topic: rest-hypermedia
 ---
 
 

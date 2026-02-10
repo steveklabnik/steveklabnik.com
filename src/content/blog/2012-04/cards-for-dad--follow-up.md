@@ -2,6 +2,7 @@
 title: "Cards for dad - follow-up"
 pubDate: 2012-04-22
 blog: literate-programming
+topic: life
 ---
 
 

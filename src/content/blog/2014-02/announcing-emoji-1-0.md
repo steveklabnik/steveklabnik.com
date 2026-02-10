@@ -2,6 +2,7 @@
 title: "Announcing Emoji 1.0"
 pubDate: 2014-02-10
 blog: literate-programming
+topic: open-source
 ---
 
 

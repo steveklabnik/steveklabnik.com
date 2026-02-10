@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import { buildSeriesData, getSeriesMetadata } from "../utils/series.ts";
+import { getTopicMetadata } from "../utils/topics.ts";
 import DevCreateButton from "../components/editor/DevCreateButton";
 const pageTitle = "Steve Klabnik's Blog";
 const allPosts = await getCollection("blog");
@@ -56,6 +57,7 @@ const frontmatter = {
           <ul class="space-y-2 list-none">
             {allPostsByDate[year].map((post) => {
               const series = post.data.series?.slug ? seriesMetadataMap.get(post.data.series.slug) : null;
+              const topicMeta = post.data.topic ? getTopicMetadata(post.data.topic) : null;
               return (
                 <li class="pl-6 relative">
                   <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
@@ -69,6 +71,16 @@ const frontmatter = {
                         class="series-badge text-xs bg-accent-light text-accent px-2 py-1 rounded hover:bg-accent-light-hover transition-colors"
                       >
                         {series.title}
+                      </a>
+                    </span>
+                  )}
+                  {topicMeta && post.data.topic && (
+                    <span class="ml-2">
+                      <a
+                        href={`/topics/${post.data.topic}/`}
+                        class="topic-badge text-xs bg-accent-light text-accent px-2 py-1 rounded hover:bg-accent-light-hover transition-colors"
+                      >
+                        {topicMeta.title}
                       </a>
                     </span>
                   )}

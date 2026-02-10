@@ -2,6 +2,7 @@
 title: "GitHub is anarchy for programmers"
 pubDate: 2011-10-01
 blog: literate-programming
+topic: technology
 ---
 
 

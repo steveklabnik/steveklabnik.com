@@ -1,6 +1,7 @@
 ---
 title: "Too many words about Rust's function syntax"
 pubDate: 2023-01-03
+topic: rust
 ---
 
 There's a famous quote by Eleanor Roosevelt:

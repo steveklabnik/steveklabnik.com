@@ -2,6 +2,7 @@
 title: "Matz is nice so we are nice"
 pubDate: 2011-10-19
 blog: literate-programming
+topic: open-source
 ---
 
 

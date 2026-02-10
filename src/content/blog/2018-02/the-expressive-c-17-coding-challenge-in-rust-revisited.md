@@ -2,6 +2,7 @@
 title: "\"The Expressive C++17 Coding Challenge (in Rust)\" revisited"
 pubDate: 2018-02-14
 blog: words
+topic: rust
 ---
 
 

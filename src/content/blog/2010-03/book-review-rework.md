@@ -2,6 +2,7 @@
 title: "Book review: Rework"
 pubDate: 2010-03-10
 blog: literate-programming
+topic: technology
 ---
 
 

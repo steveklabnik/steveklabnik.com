@@ -2,6 +2,7 @@
 title: "Draper 1.0.0.beta2 release"
 pubDate: 2012-12-03
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

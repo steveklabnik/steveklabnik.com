@@ -2,6 +2,7 @@
 title: "A break with the past"
 pubDate: 2010-04-27
 blog: literate-programming
+topic: life
 ---
 [Pretty soon](http://www.countdowntooauth.com/), Twitter is going to turn off Basic Authentication and switch entirely to OAuth. [People are upset](http://www.scripting.com/stories/2010/04/26/theToxicCoralReef.html). It’s natural. If apps aren’t updated, they’ll stop working, entirely. This could be bad.
 

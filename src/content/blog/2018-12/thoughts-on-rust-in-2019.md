@@ -2,6 +2,7 @@
 title: "Thoughts on Rust in 2019"
 pubDate: 2018-12-27
 blog: words
+topic: rust
 ---
 
 

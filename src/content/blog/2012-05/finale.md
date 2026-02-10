@@ -2,6 +2,7 @@
 title: "Finale"
 pubDate: 2012-05-30
 blog: literate-programming
+topic: life
 ---
 
 

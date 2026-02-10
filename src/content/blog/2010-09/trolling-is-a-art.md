@@ -2,6 +2,7 @@
 title: "Trolling is a art"
 pubDate: 2010-09-24
 blog: literate-programming
+topic: technology
 ---
 
 

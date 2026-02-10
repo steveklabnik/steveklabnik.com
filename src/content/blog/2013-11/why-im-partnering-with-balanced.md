@@ -2,6 +2,7 @@
 title: "Why I'm partnering with Balanced"
 pubDate: 2013-11-21
 blog: words
+topic: life
 ---
 
 

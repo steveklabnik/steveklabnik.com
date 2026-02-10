@@ -13,6 +13,7 @@ export interface PostData {
   pubDate: string | null;
   blog: string | null;
   series: { slug: string; order: number } | null;
+  topic: string | null;
   body: string;
 }
 
@@ -84,6 +85,7 @@ export async function savePost(
     pubDate: string;
     blog?: string | null;
     series?: { slug: string; order: number } | null;
+    topic?: string | null;
     body: string;
   }
 ): Promise<void> {
@@ -101,6 +103,7 @@ export async function createPost(data: {
   slug?: string;
   blog?: string | null;
   series?: { slug: string; order: number } | null;
+  topic?: string | null;
 }): Promise<{ slug: string }> {
   const res = await fetch("/__editor/posts", {
     method: "POST",

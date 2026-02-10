@@ -5,6 +5,7 @@ blog: words
 series:
   slug: "deleuze-for-developers"
   order: 1
+topic: philosophy-politics
 ---
 
 The ancient Greeks thought that atoms were it. ἄτομος, Wikipedia will tell you, comes from ‘ἀ’- meaning “not” and ‘τέμνω’, meaning ‘I cut.’ Cells are the smallest thing that there is. You can’t cut them in half. Everything is composed of a bunch of atoms.

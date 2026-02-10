@@ -2,6 +2,7 @@
 title: "Shoes 4 work is starting: get involved!"
 pubDate: 2012-05-25
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

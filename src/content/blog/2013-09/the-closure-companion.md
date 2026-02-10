@@ -2,6 +2,7 @@
 title: "The CLOSURE companion"
 pubDate: 2013-09-19
 blog: words
+topic: technology
 ---
 
 

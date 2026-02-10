@@ -2,6 +2,7 @@
 title: "Beware subclassing Ruby core classes"
 pubDate: 2013-07-24
 blog: words
+topic: ruby-rails
 ---
 
 TL;DR: Subclassing core classes in Ruby can lead to unexpected side effects. I suggest composition over inheritance in all these cases.

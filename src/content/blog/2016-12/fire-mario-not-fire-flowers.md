@@ -2,6 +2,7 @@
 title: "Fire Mario not fire flowers"
 pubDate: 2016-12-29
 blog: words
+topic: rust
 ---
 
 

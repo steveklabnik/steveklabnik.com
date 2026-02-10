@@ -2,6 +2,7 @@
 title: "I'm deleting my Facebook tonight"
 pubDate: 2011-09-26
 blog: literate-programming
+topic: life
 ---
 
 

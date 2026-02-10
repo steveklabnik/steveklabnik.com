@@ -2,6 +2,7 @@
 title: "REST is over"
 pubDate: 2012-02-23
 blog: literate-programming
+topic: rest-hypermedia
 ---
 
 

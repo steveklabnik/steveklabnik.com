@@ -1,6 +1,7 @@
 ---
 title: "The CXX Debate"
 pubDate: 2020-08-22
+topic: rust
 ---
 
 Let's talk about safe and unsafe in Rust.

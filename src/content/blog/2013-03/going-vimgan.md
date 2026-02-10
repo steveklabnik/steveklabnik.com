@@ -2,6 +2,7 @@
 title: "Going vimgan"
 pubDate: 2013-03-06
 blog: words
+topic: open-source
 ---
 
 

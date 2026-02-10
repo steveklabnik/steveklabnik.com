@@ -2,6 +2,7 @@
 title: "Ditching Google Chat with XMPP"
 pubDate: 2013-05-16
 blog: literate-programming
+topic: technology
 ---
 
 

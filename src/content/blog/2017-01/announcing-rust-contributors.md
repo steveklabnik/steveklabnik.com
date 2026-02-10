@@ -2,6 +2,7 @@
 title: "Announcing Rust Contributors"
 pubDate: 2017-01-12
 blog: words
+topic: rust
 ---
 
 

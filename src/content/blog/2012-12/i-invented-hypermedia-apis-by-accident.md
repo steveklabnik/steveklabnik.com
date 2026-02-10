@@ -2,6 +2,7 @@
 title: "I invented hypermedia APIs by accident"
 pubDate: 2012-12-21
 blog: words
+topic: rest-hypermedia
 ---
 
 

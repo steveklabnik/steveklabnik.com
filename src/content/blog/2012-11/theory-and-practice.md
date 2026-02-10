@@ -2,6 +2,7 @@
 title: "Theory and practice"
 pubDate: 2012-11-06
 blog: words
+topic: technology
 ---
 
 

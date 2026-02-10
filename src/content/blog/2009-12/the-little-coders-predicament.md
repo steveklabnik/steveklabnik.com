@@ -2,6 +2,7 @@
 title: "The Little Coder's Predicament"
 pubDate: 2009-12-28
 blog: literate-programming
+topic: technology
 ---
 
 

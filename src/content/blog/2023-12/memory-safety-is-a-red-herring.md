@@ -1,6 +1,7 @@
 ---
 title: "Memory Safety is a Red Herring"
 pubDate: 2023-12-21
+topic: rust
 ---
 
 TL;DR:

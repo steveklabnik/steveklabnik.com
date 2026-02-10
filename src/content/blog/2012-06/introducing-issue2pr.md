@@ -2,6 +2,7 @@
 title: "Introducing issue2pr"
 pubDate: 2012-06-29
 blog: literate-programming
+topic: open-source
 ---
 
 

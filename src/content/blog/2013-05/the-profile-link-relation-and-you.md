@@ -2,6 +2,7 @@
 title: "The profile link relation and you"
 pubDate: 2013-05-06
 blog: words
+topic: rest-hypermedia
 ---
 
 

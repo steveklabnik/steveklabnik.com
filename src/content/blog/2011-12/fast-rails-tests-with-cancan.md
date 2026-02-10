@@ -2,6 +2,7 @@
 title: "Fast Rails tests with CanCan"
 pubDate: 2011-12-12
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

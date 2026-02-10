@@ -2,6 +2,7 @@
 title: "Did you hear? I'm Ruby Mendicant University's first visiting teacher"
 pubDate: 2011-03-18
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Extracting domain models: a practical example"
 pubDate: 2011-09-22
 blog: literate-programming
+topic: technology
 ---
 
 

@@ -2,6 +2,7 @@
 title: "How Dogecoin changed my perspective on cryptocurrency"
 pubDate: 2013-12-21
 blog: words
+topic: technology
 ---
 
 

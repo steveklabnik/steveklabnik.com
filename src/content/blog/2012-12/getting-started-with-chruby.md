@@ -2,6 +2,7 @@
 title: "Getting started with chruby"
 pubDate: 2012-12-13
 blog: literate-programming
+topic: ruby-rails
 ---
 
 

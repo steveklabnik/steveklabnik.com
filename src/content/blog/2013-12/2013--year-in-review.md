@@ -2,6 +2,7 @@
 title: "2013: year in review"
 pubDate: 2013-12-31
 blog: literate-programming
+topic: life
 ---
 
 Every year I try to do a “year in Review” blog post, and every year I realize I didn’t keep good notes. Sigh.

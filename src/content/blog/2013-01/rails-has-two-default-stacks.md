@@ -2,6 +2,7 @@
 title: "Rails has two default stacks"
 pubDate: 2013-01-14
 blog: words
+topic: ruby-rails
 ---
 
 

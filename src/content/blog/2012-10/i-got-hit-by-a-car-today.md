@@ -2,6 +2,7 @@
 title: "I got hit by a car today"
 pubDate: 2012-10-25
 blog: words
+topic: life
 ---
 
 

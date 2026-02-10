@@ -2,6 +2,7 @@
 title: "Marx, anarchism, and web standards"
 pubDate: 2011-12-15
 blog: literate-programming
+topic: philosophy-politics
 ---
 
 

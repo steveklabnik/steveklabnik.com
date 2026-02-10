@@ -1,6 +1,7 @@
 ---
 title: "Using the Oxide Console"
 pubDate: 2024-02-17
+topic: technology
 ---
 
 A very, very long time ago, I was introduced to [Gerrit][gerrit]. To be honest,

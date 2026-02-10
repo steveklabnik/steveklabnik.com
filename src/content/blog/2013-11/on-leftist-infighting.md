@@ -2,6 +2,7 @@
 title: "On leftist infighting"
 pubDate: 2013-11-18
 blog: words
+topic: philosophy-politics
 ---
 
 

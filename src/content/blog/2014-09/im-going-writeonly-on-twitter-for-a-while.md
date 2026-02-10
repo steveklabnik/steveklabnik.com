@@ -2,6 +2,7 @@
 title: "I'm going writeonly on Twitter for a while"
 pubDate: 2014-09-03
 blog: words
+topic: life
 ---
 
 

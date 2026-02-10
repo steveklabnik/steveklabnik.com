@@ -2,6 +2,7 @@
 title: "Twitter ghosts"
 pubDate: 2013-06-22
 blog: words
+topic: life
 ---
 
 

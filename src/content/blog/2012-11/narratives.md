@@ -2,6 +2,7 @@
 title: "Narratives"
 pubDate: 2012-11-18
 blog: words
+topic: technology
 ---
 
 

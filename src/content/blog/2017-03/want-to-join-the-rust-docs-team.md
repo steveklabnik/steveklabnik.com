@@ -2,6 +2,7 @@
 title: "Want to join the Rust docs team?"
 pubDate: 2017-03-24
 blog: words
+topic: rust
 ---
 
 
