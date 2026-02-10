@@ -33,11 +33,11 @@ const frontmatter = {
 const currentSlug = noteSlug(entry.id);
 ---
 
-<BaseLayout frontmatter={frontmatter}>
-  <article class="prose prose-slate">
+<BaseLayout frontmatter={frontmatter} section="notes">
+  <article class="prose prose-slate dark:prose-invert">
     <h1 class="mb-2">{entry.data.title}</h1>
     {entry.data.lastUpdated && (
-      <p class="text-sm text-gray-600 mt-0">
+      <p class="text-sm text-secondary mt-0">
         Last updated{" "}
         <time datetime={entry.data.lastUpdated.toISOString()}>
           {entry.data.lastUpdated.toLocaleDateString("en-US", {
@@ -53,15 +53,15 @@ const currentSlug = noteSlug(entry.id);
   </article>
 
   {backlinks.length > 0 && (
-    <aside class="mt-12 pt-8 border-t border-gray-200">
-      <h2 class="text-lg font-semibold text-gray-700 mb-3">Linked from</h2>
+    <aside class="mt-12 pt-8 border-t border-base">
+      <h2 class="text-lg font-semibold text-secondary mb-3">Linked from</h2>
       <ul class="space-y-1 list-none">
         {backlinks.map((bl) => (
           <li class="pl-6 relative">
-            <span class="absolute left-0 top-2 w-2 h-2 bg-gray-400 rounded-full"></span>
+            <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
             <a
               href={`/notes/${bl.slug}/`}
-              class="text-purple-600 hover:text-purple-800"
+              class="text-accent hover:text-accent-hover"
             >
               {bl.title}
             </a>

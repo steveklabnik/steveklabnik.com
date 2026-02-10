@@ -3,7 +3,32 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      typography: (theme) => ({
+      colors: {
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          visited: 'var(--color-accent-visited)',
+          light: 'var(--color-accent-light)',
+          'light-hover': 'var(--color-accent-light-hover)',
+          muted: 'var(--color-accent-muted)',
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          alt: 'var(--color-surface-alt)',
+        },
+      },
+      textColor: {
+        primary: 'var(--color-text)',
+        secondary: 'var(--color-text-secondary)',
+        muted: 'var(--color-text-muted)',
+      },
+      borderColor: {
+        base: 'var(--color-border)',
+      },
+      backgroundColor: {
+        page: 'var(--color-bg)',
+      },
+      typography: () => ({
         DEFAULT: {
           css: {
             // Better readability with larger font size
@@ -36,9 +61,9 @@ export default {
               marginTop: '1.25em',
               marginBottom: '1.25em',
             },
-            // Improved link styles (will be overridden by our custom CSS)
+            // Link styles using CSS variables
             a: {
-              color: theme('colors.purple.600'),
+              color: 'var(--color-accent)',
               textDecoration: 'underline',
               textDecorationThickness: '1px',
               textUnderlineOffset: '2px',
@@ -48,7 +73,7 @@ export default {
             },
             // Better code blocks
             code: {
-              backgroundColor: theme('colors.gray.100'),
+              backgroundColor: 'var(--color-surface-alt, #f1f5f9)',
               padding: '0.125em 0.25em',
               borderRadius: '0.25rem',
               fontSize: '0.875em',
@@ -60,8 +85,8 @@ export default {
               content: '""',
             },
             pre: {
-              backgroundColor: theme('colors.gray.900'),
-              color: theme('colors.gray.100'),
+              backgroundColor: '#1e293b',
+              color: '#e2e8f0',
               padding: '1em',
               borderRadius: '0.375rem',
               overflowX: 'auto',
@@ -81,11 +106,11 @@ export default {
             },
             // Blockquote styling
             blockquote: {
-              borderLeftColor: theme('colors.purple.600'),
+              borderLeftColor: 'var(--color-accent)',
               borderLeftWidth: '4px',
               paddingLeft: '1em',
               fontStyle: 'italic',
-              color: theme('colors.gray.700'),
+              color: 'var(--color-text-secondary)',
             },
           },
         },

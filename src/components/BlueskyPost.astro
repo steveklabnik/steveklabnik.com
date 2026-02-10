@@ -18,6 +18,36 @@ const render = renderPost(data);
 
 <style is:global>
   @import "bluesky-post-embed/style.css";
-  @import "bluesky-post-embed/themes/light.css" (prefers-color-scheme: light);
-  @import "bluesky-post-embed/themes/dim.css" (prefers-color-scheme: dark);
+
+  /* Light theme (default) */
+  .bluesky-embed {
+    --font-size: 16px;
+    --font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji';
+    --max-feed-height: 600px;
+    --text-primary: #000000;
+    --text-secondary: #455668;
+    --text-link: #1083fe;
+    --background-primary: #ffffff;
+    --background-secondary: #455668;
+    --divider-hover: #a9b7c5;
+    --divider: #d4dbe2;
+    --button: #1083fe;
+    --button-text: #ffffff;
+    --button-hover: #0168d5;
+  }
+
+  /* Dim theme (follows .dark class toggle) */
+  :where(.dark, .dark *) .bluesky-embed {
+    --text-primary: #f1f3f5;
+    --text-secondary: #aebbc9;
+    --text-link: #1083fe;
+    --background-primary: #161e27;
+    --background-secondary: #212d3b;
+    --divider: #2e4052;
+    --divider-hover: #4a6179;
+    --button: #208bfe;
+    --button-text: #ffffff;
+    --button-hover: #4ca2fe;
+  }
 </style>

@@ -8,12 +8,12 @@ import type { SeriesMetadata } from "../../utils/series.ts";
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
   const seriesData = buildSeriesData(allPosts);
-  
+
   const paths: Array<{
     params: { slug: string };
     props: { posts: CollectionEntry<'blog'>[]; metadata: SeriesMetadata };
   }> = [];
-  
+
   seriesData.forEach((posts, slug) => {
     const metadata = getSeriesMetadata(slug);
     if (metadata) {
@@ -23,44 +23,44 @@ export async function getStaticPaths() {
       });
     }
   });
-  
+
   return paths;
 }
 
 const { posts, metadata } = Astro.props;
-const frontmatter = { 
+const frontmatter = {
   pageTitle: `${metadata.title} - Series`,
   description: metadata.description || `A ${posts.length}-part series on ${metadata.title}`
 };
 ---
 
 <BaseLayout frontmatter={frontmatter}>
-  <div class="prose prose-slate">
+  <div class="prose prose-slate dark:prose-invert">
     <h1>{metadata.title}</h1>
-    
+
     {metadata.description && (
-      <p class="text-lg text-gray-600 mb-6">{metadata.description}</p>
+      <p class="text-lg text-secondary mb-6">{metadata.description}</p>
     )}
-    
+
     {metadata.coverImage && (
-      <img 
-        src={metadata.coverImage} 
+      <img
+        src={metadata.coverImage}
         alt={`Cover image for ${metadata.title}`}
         class="w-full rounded-lg mb-8"
       />
     )}
-    
-    <div class="bg-gray-50 rounded-lg p-4 mb-8">
-      <div class="text-sm text-gray-600">
+
+    <div class="bg-surface-alt rounded-lg p-4 mb-8">
+      <div class="text-sm text-secondary">
         <span>{posts.length} posts in this series</span>
       </div>
     </div>
-    
+
     <h2>Posts in this series</h2>
-    
+
     <ol class="space-y-4">
       {posts.map((post: CollectionEntry<'blog'>, index: number) => (
-        <li class="border-l-4 border-purple-500 pl-4 -ml-4">
+        <li class="border-l-4 border-accent-muted pl-4 -ml-4">
           <div class="flex items-start justify-between">
             <div class="flex-1">
               <h3 class="mt-0 mb-1">
@@ -68,7 +68,7 @@ const frontmatter = {
                   {post.data.title}
                 </a>
               </h3>
-              <p class="text-sm text-gray-600 m-0">
+              <p class="text-sm text-secondary m-0">
                 Part {index + 1} • {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
               </p>
             </div>
@@ -76,9 +76,9 @@ const frontmatter = {
         </li>
       ))}
     </ol>
-    
-    <div class="mt-8 pt-8 border-t border-gray-200">
-      <a href="/series" class="text-purple-600 hover:underline">
+
+    <div class="mt-8 pt-8 border-t border-base">
+      <a href="/series" class="text-accent hover:underline">
         ← Back to all series
       </a>
     </div>

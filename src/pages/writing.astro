@@ -58,21 +58,21 @@ const frontmatter = {
               const series = post.data.series?.slug ? seriesMetadataMap.get(post.data.series.slug) : null;
               return (
                 <li class="pl-6 relative">
-                  <span class="absolute left-0 top-2 w-2 h-2 bg-gray-400 rounded-full"></span>
-                  <a href={`/writing/${post.slug.replace(/^\d{4}-\d{2}\//, '')}/`} class="text-purple-600 hover:text-purple-800 visited:text-purple-900 font-medium">
+                  <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
+                  <a href={`/writing/${post.slug.replace(/^\d{4}-\d{2}\//, '')}/`} class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium">
                     {post.data.title}
                   </a>
                   {series && post.data.series && (
                     <span class="ml-2">
-                      <a 
+                      <a
                         href={`/series/${post.data.series.slug}`}
-                        class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded hover:bg-purple-200 transition-colors"
+                        class="series-badge text-xs bg-accent-light text-accent px-2 py-1 rounded hover:bg-accent-light-hover transition-colors"
                       >
                         {series.title}
                       </a>
                     </span>
                   )}
-                  <time class="block text-sm text-gray-600 mt-1">
+                  <time class="block text-sm text-secondary mt-1">
                     {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
                   </time>
                 </li>

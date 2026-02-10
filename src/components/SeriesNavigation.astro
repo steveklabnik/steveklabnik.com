@@ -15,49 +15,48 @@ if (!seriesMetadata) {
 }
 ---
 
-<nav class="series-navigation border border-gray-200 rounded-lg p-4 my-8 bg-gray-50">
-  <div class="text-sm text-gray-600 mb-2">
+<nav class="series-navigation border border-base rounded-lg p-4 my-8 bg-surface-alt">
+  <div class="text-sm text-secondary mb-2">
     This post is part of a series
   </div>
-  
+
   <h3 class="text-lg font-semibold mb-1">
-    <a href={`/series/${seriesData.slug}`} class="hover:underline text-purple-600">
+    <a href={`/series/${seriesData.slug}`} class="hover:underline text-accent">
       {seriesMetadata.title}
     </a>
   </h3>
-  
-  <div class="text-sm text-gray-600 mb-3">
+
+  <div class="text-sm text-secondary mb-3">
     Part {seriesData.current} of {seriesData.total}
   </div>
-  
+
   <div class="flex flex-col sm:flex-row gap-3">
     <div class="flex-1 min-w-0">
       {seriesData.prev ? (
-        <a 
+        <a
           href={`/writing/${seriesData.prev.slug.replace(/^\d{4}-\d{2}\//, '')}`}
-          class="text-sm text-purple-600 hover:underline inline-flex items-start gap-1 group"
+          class="text-sm text-accent hover:underline inline-flex items-start gap-1 group"
         >
           <span class="shrink-0 group-hover:translate-x-[-2px] transition-transform">←</span>
           <span class="break-words line-clamp-2">{seriesData.prev.data.title}</span>
         </a>
       ) : (
-        <span class="text-sm text-gray-400 block">First post</span>
+        <span class="text-sm text-muted block">First post</span>
       )}
     </div>
-    
+
     <div class="flex-1 min-w-0 sm:text-right">
       {seriesData.next ? (
-        <a 
+        <a
           href={`/writing/${seriesData.next.slug.replace(/^\d{4}-\d{2}\//, '')}`}
-          class="text-sm text-purple-600 hover:underline inline-flex items-start gap-1 sm:justify-end group"
+          class="text-sm text-accent hover:underline inline-flex items-start gap-1 sm:justify-end group"
         >
           <span class="break-words line-clamp-2 sm:text-right">{seriesData.next.data.title}</span>
           <span class="shrink-0 group-hover:translate-x-[2px] transition-transform">→</span>
         </a>
       ) : (
-        <span class="text-sm text-gray-400 block">Last post</span>
+        <span class="text-sm text-muted block">Last post</span>
       )}
     </div>
   </div>
 </nav>
-

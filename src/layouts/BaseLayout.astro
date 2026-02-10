@@ -1,7 +1,9 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
-const { frontmatter } = Astro.props;
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+const { frontmatter, section } = Astro.props;
 const description =
   frontmatter.description || "Steve Klabnik's personal website and blog";
 ---
@@ -9,6 +11,15 @@ const description =
 <html lang="en">
   <head>
     <ClientRouter />
+    <!-- Anti-flash: apply dark class before first paint -->
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <meta charset="utf-8" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" /><!-- 32×32 -->
@@ -27,40 +38,43 @@ const description =
     />
     <title>{frontmatter.pageTitle}</title>
   </head>
-  <body class="bg-purple-50/30">
+  <body data-section={section}>
     <!-- Skip navigation link -->
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-purple-600 text-white px-4 py-2 rounded-md"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-accent text-white px-4 py-2 rounded-md"
     >
       Skip to main content
     </a>
 
     <div class="container mx-auto px-4 pb-16">
-      <header role="banner" class="border-b border-gray-200 pb-4 mb-8">
+      <header role="banner" class="border-b border-base pb-4 mb-8">
         <nav aria-label="Main navigation" class="mb-2">
-          <div class="text-4xl font-bold tracking-tight mb-0 mt-3">
-            <a
-              href="/"
-              class="site-title no-underline text-gray-900 hover:text-gray-700"
-            >
-              Steve Klabnik
-            </a>
+          <div class="flex items-center justify-between mt-3">
+            <div class="text-4xl font-bold tracking-tight mb-0">
+              <a
+                href="/"
+                class="site-title no-underline"
+              >
+                Steve Klabnik
+              </a>
+            </div>
+            <ThemeToggle />
           </div>
           <div class="mt-2 space-x-4">
             <a
               href="/"
-              class="inline-block font-medium text-purple-600 hover:text-purple-800"
+              class="inline-block font-medium"
               >Home</a
             >
             <a
               href="/writing"
-              class="inline-block font-medium text-purple-600 hover:text-purple-800"
+              class="inline-block font-medium"
               >Blog</a
             >
             <a
               href="/notes"
-              class="inline-block font-medium text-purple-600 hover:text-purple-800"
+              class="inline-block font-medium"
               >Notes</a
             >
           </div>
@@ -70,5 +84,17 @@ const description =
         <slot />
       </main>
     </div>
+
+    <!-- Reapply dark class after view transitions -->
+    <script is:inline>
+      document.addEventListener('astro:after-swap', () => {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      });
+    </script>
   </body>
 </html>

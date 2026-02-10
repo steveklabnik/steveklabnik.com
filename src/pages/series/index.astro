@@ -5,37 +5,37 @@ import { buildSeriesData, getAllSeriesWithMetadata } from "../../utils/series.ts
 
 const allPosts = await getCollection("blog");
 const seriesData = buildSeriesData(allPosts);
-const allSeries = getAllSeriesWithMetadata(seriesData).sort((a, b) => 
+const allSeries = getAllSeriesWithMetadata(seriesData).sort((a, b) =>
   b.latestPost.data.pubDate.getTime() - a.latestPost.data.pubDate.getTime()
 );
 
-const frontmatter = { 
+const frontmatter = {
   pageTitle: "Blog Series - Steve Klabnik",
   description: "Browse all blog post series by Steve Klabnik"
 };
 ---
 
 <BaseLayout frontmatter={frontmatter}>
-  <div class="prose prose-slate">
+  <div class="prose prose-slate dark:prose-invert">
     <h1>Series</h1>
-    
+
     {allSeries.length === 0 ? (
-      <p class="text-gray-600">No series available yet. Check back soon!</p>
+      <p class="text-secondary">No series available yet. Check back soon!</p>
     ) : (
       <div class="grid gap-6 mt-8">
         {allSeries.map((series) => (
-          <article class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <article class="border border-base rounded-lg p-6 hover:shadow-lg transition-shadow">
             <h2 class="mt-0 mb-2 text-xl">
               <a href={`/series/${series.slug}`} class="no-underline hover:underline">
                 {series.title}
               </a>
             </h2>
-            
+
             {series.description && (
-              <p class="text-gray-600 mb-4">{series.description}</p>
+              <p class="text-secondary mb-4">{series.description}</p>
             )}
-            
-            <div class="flex items-center gap-4 text-sm text-gray-500">
+
+            <div class="flex items-center gap-4 text-sm text-muted">
               <span>{series.postCount} posts</span>
               <span>•</span>
               <span>Last updated: {series.latestPost.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
