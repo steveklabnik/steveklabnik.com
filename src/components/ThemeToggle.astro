@@ -83,18 +83,18 @@
       const stored = localStorage.getItem('theme');
 
       if (stored === 'light') {
-        // Light → Dark
-        localStorage.setItem('theme', 'dark');
-        document.documentElement.classList.add('dark');
-      } else if (stored === 'dark') {
-        // Dark → System
+        // Light → System
         localStorage.removeItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.classList.toggle('dark', prefersDark);
-      } else {
-        // System → Light
+      } else if (stored === 'dark') {
+        // Dark → Light
         localStorage.setItem('theme', 'light');
         document.documentElement.classList.remove('dark');
+      } else {
+        // System → Dark
+        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.add('dark');
       }
 
       updateToggleIcons();
