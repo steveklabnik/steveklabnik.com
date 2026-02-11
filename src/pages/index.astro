@@ -18,13 +18,16 @@ const recentPosts = [...allPosts]
 
 // Series data
 const seriesData = buildSeriesData(allPosts);
-const allSeries = getAllSeriesWithMetadata(seriesData)
-  .sort((a, b) => b.latestPost.data.pubDate.getTime() - a.latestPost.data.pubDate.getTime());
+const allSeries = getAllSeriesWithMetadata(seriesData).sort(
+  (a, b) =>
+    b.latestPost.data.pubDate.getTime() - a.latestPost.data.pubDate.getTime(),
+);
 const recentSeries = allSeries.slice(0, 3);
 
 const frontmatter = {
   pageTitle: "Steve Klabnik",
-  description: "Steve Klabnik's personal website — writing about Rust, Ruby, open source, philosophy, and more.",
+  description:
+    "Steve Klabnik's personal website — writing about Rust, Ruby, open source, philosophy, and more.",
 };
 ---
 
@@ -33,11 +36,16 @@ const frontmatter = {
     {/* Bio */}
     <section class="prose prose-slate dark:prose-invert mb-12">
       <p class="text-lg">
-        I'm Steve. I write code, I write words, and sometimes I write about writing code.
-        These days I'm at <a href="https://ersc.io">East River Source Control</a>. Before that I spent a decade
-        on <a href="https://rust-lang.org">Rust</a>, co-authored
-        <a href="https://nostarch.com/Rust"><em>The Rust Programming Language</em></a>, and worked
-        at <a href="https://oxide.computer">Oxide</a>. I read too much French philosophy for a programmer.
+        I'm Steve. I write code, I write words, and sometimes I write words
+        about writing code. These days I'm at <a href="https://ersc.io"
+          >East River Source Control</a
+        >. Before that I spent a decade on <a href="https://rust-lang.org"
+          >Rust</a
+        >, co-authored
+        <a href="https://nostarch.com/Rust"
+          ><em>The Rust Programming Language</em></a
+        >, and worked at <a href="https://oxide.computer">Oxide</a>. I read too
+        much French philosophy for a programmer.
       </p>
     </section>
 
@@ -45,21 +53,27 @@ const frontmatter = {
     <section class="mb-12">
       <h2 class="text-2xl font-semibold mb-4">Recent Topics</h2>
       <ul class="space-y-2 list-none">
-        {recentTopics.map((topic) => (
-          <li class="pl-6 relative">
-            <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
-            <a
-              href={`/topics/${topic.slug}/`}
-              class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-            >
-              {topic.title}
-            </a>
-            <span class="text-sm text-secondary ml-2">({topic.postCount} posts)</span>
-          </li>
-        ))}
+        {
+          recentTopics.map((topic) => (
+            <li class="pl-6 relative">
+              <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full" />
+              <a
+                href={`/topics/${topic.slug}/`}
+                class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
+              >
+                {topic.title}
+              </a>
+              <span class="text-sm text-secondary ml-2">
+                ({topic.postCount} posts)
+              </span>
+            </li>
+          ))
+        }
       </ul>
       <p class="mt-4">
-        <a href="/topics" class="text-accent hover:text-accent-hover">All topics &rarr;</a>
+        <a href="/topics" class="text-accent hover:text-accent-hover"
+          >All topics &rarr;</a
+        >
       </p>
     </section>
 
@@ -67,74 +81,96 @@ const frontmatter = {
     <section class="mb-12">
       <h2 class="text-2xl font-semibold mb-4">Recent Writing</h2>
       <ul class="space-y-2 list-none">
-        {recentPosts.map((post) => {
-          const topicMeta = post.data.topic ? getTopicMetadata(post.data.topic) : null;
-          return (
-            <li class="pl-6 relative">
-              <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
-              <a
-                href={`/writing/${post.slug.replace(/^\d{4}-\d{2}\//, '')}/`}
-                class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-              >
-                {post.data.title}
-              </a>
-              {topicMeta && post.data.topic && (
-                <span class="ml-2">
-                  <a
-                    href={`/topics/${post.data.topic}/`}
-                    class="topic-badge text-xs bg-accent-light text-accent px-2 py-1 rounded hover:bg-accent-light-hover transition-colors"
-                  >
-                    {topicMeta.title}
-                  </a>
-                </span>
-              )}
-              <time class="block text-sm text-secondary mt-1">
-                {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
-              </time>
-            </li>
-          );
-        })}
+        {
+          recentPosts.map((post) => {
+            const topicMeta = post.data.topic
+              ? getTopicMetadata(post.data.topic)
+              : null;
+            return (
+              <li class="pl-6 relative">
+                <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full" />
+                <a
+                  href={`/writing/${post.slug.replace(/^\d{4}-\d{2}\//, "")}/`}
+                  class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
+                >
+                  {post.data.title}
+                </a>
+                {topicMeta && post.data.topic && (
+                  <span class="ml-2">
+                    <a
+                      href={`/topics/${post.data.topic}/`}
+                      class="topic-badge text-xs bg-accent-light text-accent px-2 py-1 rounded hover:bg-accent-light-hover transition-colors"
+                    >
+                      {topicMeta.title}
+                    </a>
+                  </span>
+                )}
+                <time class="block text-sm text-secondary mt-1">
+                  {post.data.pubDate.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    timeZone: "UTC",
+                  })}
+                </time>
+              </li>
+            );
+          })
+        }
       </ul>
       <p class="mt-4">
-        <a href="/writing" class="text-accent hover:text-accent-hover">All writing &rarr;</a>
+        <a href="/writing" class="text-accent hover:text-accent-hover"
+          >All writing &rarr;</a
+        >
       </p>
     </section>
 
     {/* Notes */}
-    {allNotes.length > 0 && (
-      <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-4">Notes</h2>
-        <p class="text-secondary mb-4">
-          Interconnected, living documents that get updated over time as my understanding evolves.
-        </p>
-        <p>
-          <a href="/notes" class="text-accent hover:text-accent-hover">Browse notes &rarr;</a>
-        </p>
-      </section>
-    )}
+    {
+      allNotes.length > 0 && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4">Notes</h2>
+          <p class="text-secondary mb-4">
+            Interconnected, living documents that get updated over time as my
+            understanding evolves.
+          </p>
+          <p>
+            <a href="/notes" class="text-accent hover:text-accent-hover">
+              Browse notes &rarr;
+            </a>
+          </p>
+        </section>
+      )
+    }
 
     {/* Recent Series */}
-    {recentSeries.length > 0 && (
-      <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-4">Recent Series</h2>
-        <ul class="space-y-2 list-none">
-          {recentSeries.map((s) => (
-            <li class="pl-6 relative">
-              <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
-              <a
-                href={`/series/${s.slug}`}
-                class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-              >
-                {s.title}
-              </a>
-              <span class="text-sm text-secondary ml-2">({s.postCount} posts)</span>
-            </li>
-          ))}
-        </ul>
-        <p class="mt-4">
-          <a href="/series" class="text-accent hover:text-accent-hover">All series &rarr;</a>
-        </p>
-      </section>
-    )}
+    {
+      recentSeries.length > 0 && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4">Recent Series</h2>
+          <ul class="space-y-2 list-none">
+            {recentSeries.map((s) => (
+              <li class="pl-6 relative">
+                <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full" />
+                <a
+                  href={`/series/${s.slug}`}
+                  class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
+                >
+                  {s.title}
+                </a>
+                <span class="text-sm text-secondary ml-2">
+                  ({s.postCount} posts)
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4">
+            <a href="/series" class="text-accent hover:text-accent-hover">
+              All series &rarr;
+            </a>
+          </p>
+        </section>
+      )
+    }
   </div>
 </BaseLayout>
