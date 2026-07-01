@@ -29,6 +29,10 @@ export const topics: Record<string, TopicMetadata> = {
     title: "AI & LLMs",
     description: "Artificial intelligence, large language models, and their implications.",
   },
+  "atproto": {
+    title: "ATProto & Bluesky",
+    description: "Bluesky, the AT Protocol, and decentralized social networking.",
+  },
   "technology": {
     title: "Technology",
     description: "General technology topics, tools, and software development practices.",
