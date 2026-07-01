@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
         }).optional(),
         topic: z.enum([
             "rust", "ruby-rails", "open-source", "life",
-            "philosophy-politics", "rest-hypermedia", "ai-llms", "technology"
+            "philosophy-politics", "rest-hypermedia", "ai-llms", "atproto", "technology"
         ]).optional(),
     }),
 });
