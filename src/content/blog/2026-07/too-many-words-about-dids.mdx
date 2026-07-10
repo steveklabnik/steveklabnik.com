@@ -1,0 +1,238 @@
+---
+title: "Too many words about DIDs"
+pubDate: 2026-07-14
+topic: atproto
+---
+
+Your "Bluesky account" is not _just_ a Bluesky account: it is an account that
+can be used with a variety of other applications. This post is going to be an
+exploration of part of what that means from a technical perspective, so if you're
+not a software developer, this post isn't for you. But what I'm going to explain
+is the technical mechanism for how your account works separate from Bluesky, and
+in fact, separate from any particular app.
+
+Let's talk about identity: who are you, anyway? Users of a system need some sort
+of way to describe who they are to use it. If you want to log in, you need to
+present who you are. If you want to make a post, well, we need to know who the
+author of that post is. For atproto, the protocol that underlies Bluesky and
+other apps in the ATmosphere, they use the "Decentralized Identity" standard,
+also known as DID. The [W3C standardized DIDs in
+2022](https://www.w3.org/TR/did-1.0/). As you might guess from the name, DIDs
+are, an identifier that you can use as the basis of identity for building
+applications. And the idea is that these identifiers are decentralized. However,
+a lot of people have a lot of feelings about that specific word, and often
+accuse atproto of not being properly decentralized. We're going to go over the
+details so you can understand how this works, and you can decide for yourself if
+this approach suits you or not.
+
+## DIDs and DID Documents
+
+Here is my DID, we'll use this as an example: `did:plc:3danwc67lo7obz2fmdg6jxcr`
+
+There are three parts, separated by colons: The scheme (`did`), the method (`plc`),
+and the DID method-specific identifier (`3danwc67lo7obz2fmdg6jxcr`).
+
+To use a DID, such as `did:plc:3danwc67lo7obz2fmdg6jxcr`, you resolve it into a
+[DID Document](https://www.w3.org/TR/did-1.0/#dfn-did-documents)
+
+> A set of data describing the DID subject, including mechanisms, such as
+> cryptographic public keys, that the DID subject or a DID delegate can use to
+> authenticate itself and prove its association with the DID.
+
+That document contains [various
+properties](https://www.w3.org/TR/did-1.0/#core-properties) that describe the
+identity. Here's my DID Document, at the time of writing:
+
+```json
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1",
+    "https://w3id.org/security/suites/secp256k1-2019/v1"
+  ],
+  "id": "did:plc:3danwc67lo7obz2fmdg6jxcr",
+  "alsoKnownAs": ["at://steveklabnik.com"],
+  "verificationMethod": [
+    {
+      "id": "did:plc:3danwc67lo7obz2fmdg6jxcr#atproto",
+      "type": "Multikey",
+      "controller": "did:plc:3danwc67lo7obz2fmdg6jxcr",
+      "publicKeyMultibase": "zQ3shfNec2kPEb8cL77gSRMbCwbWE27p9nxKkcc4E82xtW8RJ"
+    }
+  ],
+  "service": [
+    {
+      "id": "#atproto_pds",
+      "type": "AtprotoPersonalDataServer",
+      "serviceEndpoint": "https://morel.us-east.host.bsky.network"
+    }
+  ]
+}
+```
+
+This document gives you everything you need to know to determine who I am, that is,
+given an arbitrary post that claims it's written by me, this document describes how
+you'd verify that claim.
+
+We'll get into how to do that that in a moment, but first, how do you resolve
+that DID into that DID document? Well, it's pretty easy: each method is a
+standard that describes how you do that. So when you see `did:plc`, that means
+we use the PLC standard, which we'll be going over in a moment. Another method
+supported by Bluesky is `did:web`. In that case, you wouldn't use the PLC
+standard, you'd use the Web one.
+
+This is the sense in which DIDs are decentralized: when you present your
+identity, you get to decide what method validates that that is a real identity.
+There's no centralized authority that determines which DID types are valid. Now,
+of course, that doesn't mean that every application supports every DID method,
+because while this specification is _very_ generic, you're still going to have
+to write some code to implement that particular method. I could say "Hey I'm
+`did:foo:1243`" and unless your app supports the `foo` method, it's not gonna
+inherently just know what to do. So that is one important caveat.
+
+## `did:web`
+
+Let's explain this resolution process for the `web` method. While supported by
+Bluesky, a very small number of users actually use `did:web`, but it's a simpler
+method and so I think it's illustrative to go over first. I'll be using [Liz
+Fong-Jones](https://bsky.app/profile/web.lizthegrey.com) `did:web` account as an
+example here. Her identity for that account is `did:web:lizthegrey.com`.
+
+So how do we resolve this DID into a DID Document? We take the method-specific
+identifier, which in this case is `lizthegrey.com`, and put it into this URL template:
+
+`https://<id>/.well-known/did.json`
+
+You can then go fetch this URL to resolve it into the DID Document, which at the
+time of writing, looks like this:
+
+```json
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1",
+    "https://w3id.org/security/suites/secp256k1-2019/v1"
+  ],
+  "id": "did:web:lizthegrey.com",
+  "alsoKnownAs": [
+    "at://web.lizthegrey.com",
+    "did:plc:i4tfenpfog244rxry5uz4vtk"
+  ],
+  "verificationMethod": [
+    {
+      "id": "did:web:lizthegrey.com#atproto",
+      "type": "Multikey",
+      "controller": "did:web:lizthegrey.com",
+      "publicKeyMultibase": "zQ3shnEqBNR5cuTePW8FyvnrRQaFf6Y7sCi5NBmDpteVXFjb6"
+    }
+  ],
+  "service": [
+    {
+      "id": "#atproto_pds",
+      "type": "AtprotoPersonalDataServer",
+      "serviceEndpoint": "https://pds.lizthegrey.com"
+    }
+  ]
+}
+```
+
+This is very simple! So why might we not want to use `did:web`? Why bother with
+any other system? Well, this relies on the DNS system. One could make the
+argument that ultimately, this is still centralized in some form. If Liz's
+domain registrar were to take away her domain, she would also lose control of
+this DID. In a more generic sense, if Liz decides she wants to not use that
+domain anymore, she will lose control of that identity to whoever does. That
+could be through non-malicious means, like letting it expire and someone else
+purchases it, or through malicious ones, like a hack which would compromise her
+registrar account and take the domain over.
+
+Also, you need to have a web server running on that domain with infinite uptime;
+if the server goes down, so does your ability to get the document.
+
+When this DID document changes, there's no mechanism for clients to know that
+it's changed, which means applications may use one that's out of date, or that
+there is lag between updating the document and updating the application built on
+it, which may cause temporary problems until the latest document is fetched.
+
+## `did:plc`
+
+All of these drawbacks led Bluesky to develop their own DID method, which
+attempts to fix these problems and others. This method is called
+[`did:plc`](https://web.plc.directory/spec/v0.1/did-plc). To resolve a `did:plc`,
+you take the entire DID, and put it in this template:
+
+`https://plc.directory/<did>`
+
+You can then fetch that URL and get the DID document.
+
+So... what's the difference? Well, in this case, both nothing and something. In
+a very literal sense, both are resolved in the same way: you fetch a URL.
+However, the details matter. There is already two ways in which this is different
+than DID:Web:
+
+1. Your DID is no longer tied to a specific domain name. I can let
+   `steveklabnik.com` expire and move to `steve.klabnik.com` and my `did:plc`
+   stays the same.
+2. While a web server still needs to be running, that's the job of plc.directory, not
+   my own job. This is operationally much simpler.
+
+I've presented the above as pros, but there are also cons. Before, I had to
+trust the DNS system and domain registrars, now I have to trust plc.directory.
+All of the same caveats apply in that sense, I have to trust that they don't
+take my ID away from me, or that it doesn't get stolen, etc. However, there are
+also some important details that mitigate this, which we'll get to. But for some
+people, neither trusting DNS nor trusting plc.directory is acceptable, and there
+are other DID methods that use, for example, a blockchain to resolve the name.
+Bluesky does not support using any of those DID methods, so for this
+application, it's not really relevant, but it's important to know that they
+exist.
+
+Why do it this way? Well, the simplest way to put it is this: setting up a
+`did:web` involves a lot of "nerd stuff." You have to register a domain, and
+that's also an ongoing monetary cost. You have to know how to set up a web
+server, and author some JSON to put on that server. You have to keep it running.
+You have to know how to store your private keys, and keep them safe. It's a
+non-starter compared to "sign up for this web app." And Bluesky's goals involves
+making this platform accessible to non-nerds. By having plc.directory manage
+all of this, we eliminate all of those steps.
+
+While drafting this post, I have also been made aware of
+[`did:webvh`][did-webvh], which expands on `did:web` and attempts to rectify
+some of its shortcomings. I have not read the spec yet, but it has reached 1.0,
+so it is probably worth checking out. I wanted to get this post shipped last
+week, and didn't want to delay it further by adding another section, but if
+I were writing this post in the future, I'd probably want to talk about it as
+well, so just a little heads-up there.
+
+## Does Bluesky own your identity?
+
+But it does also mean that, in some sense, Bluesky still owns your identity.
+They've generated a keypair for you, and the have access to the secret key.
+That's unacceptable for some people. So how do you fix that?
+
+Well, `did:plc` has some additional features that `did:web` does not. For
+example, `did:plc` will allow you to register additional keypairs with your ID
+and use them to rotate your signing keys. This allows you to remove the Bluesky
+generated keys and insert your own.
+
+While that is true, it's also the case that your PDS needs to use your keys to
+sign your posts. As such, most people are likely to store their keys in their PDS,
+and so if you are using a Bluesky managed PDS, well, you've uploaded your keys to
+their infrastructure, and that's probably not acceptable if you're trying to keep
+your identity away from Bluesky. Of course, the solution there is to run your own
+PDS and then rotate your keys. At that point, your key is living on infrastructure
+you own, and Bluesky has no say over it any more.
+
+I think that this possibility is an important design property, and allows
+motivated users to meaningfully own their identity. A criticism of this boils
+down to "well, most users won't do that," and while that's true, I also think
+that's okay for most people, and that having the choice is more important than
+forcing every user to deal with their own key management.
+
+## In summary
+
+This is kind of an abrupt end to this post, but I just wanted to get some things
+down 'on paper' as it were. I hope you've learned a bit about identity and how
+it works with atproto.
+
+[did-webvh]: https://identity.foundation/didwebvh/v1.0/
