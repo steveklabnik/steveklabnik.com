@@ -1,0 +1,78 @@
+---
+title: "Compilers and AI 'cyber' defense"
+pubDate: 2026-07-10
+topic: ai-llms
+---
+
+I haven't had time to blog in a while, I have a lot to say, but have been doing
+a lot of things and so haven't gotten words down in a while.
+
+One of those things in the past few weeks has been picking back up my [Rue][]
+project. I'm really excited for what it's turning into, even though it's not
+really ready for anyone else to use just yet. So go take a look if you want, but
+don't expect anything amazing, it's very much a work in progress.
+
+Anyway, one of the things that got me back into working on it is the releases of
+Fable and Sol. I hadn't really touched Rue since January, and a lot of things have
+changed since then. It's fun to have new models take a look at older projects and
+see what their new perspectives are.
+
+Unfortunately, due to the intelligence of these new models, the US government
+has asked for and imposed restrictions. These are largely around things like
+cybersecurity. Since I don't do cybersecurity work, I didn't think they would
+affect me.
+
+(Aside: I put 'cyber' in quotes in the title because I hate that apparently
+that's the term folks are using now. Sigh.)
+
+Well:
+
+```
+ⓘ This content can't be shown
+  We take extra caution with cybersecurity requests. If you're a security professional, you may be able to apply for
+  Trusted Access.
+  Trusted Access: https://openai.com/form/enterprise-trusted-access-for-cyber/
+  Learn more: https://help.openai.com/en/articles/20001326
+
+
+› please continue
+
+
+ⓘ This content can't be shown
+  We take extra caution with cybersecurity requests. If you're a security professional, you may be able to apply for
+  Trusted Access.
+  Trusted Access: https://openai.com/form/enterprise-trusted-access-for-cyber/
+  Learn more: https://help.openai.com/en/articles/20001326
+```
+
+This is the output from Sol, but the same thing happens with Fable too. I asked Sol
+about it, and this is what it says:
+
+```
+• It is a false positive from the safety layer, not a judgment that you asked for anything malicious. Rue contains
+  fuzzers, crash reproducers, sanitizer hooks, child processes, deliberate out-of-bounds writes, and compiler-panic
+  tests. Those patterns look similar to exploit-development activity when a classifier sees commands or snippets without
+  fully trusting the repository-ownership context.
+
+  RUE-560 is an especially likely trigger because the correct regression test deliberately performs a one-byte overflow
+  in an ASan-instrumented child and requires that child to crash. That is defensive testing, but the surface pattern is
+  still “construct an overflow and observe the failure.”
+
+  I cannot disable or bypass that layer. I can reduce interruptions by keeping work tightly scoped to this repository,
+  putting negative behavior inside the existing test harness, describing the defensive purpose explicitly, avoiding
+  reusable attack tooling, and checkpointing progress before risky-looking verification. The persistent goal means that
+  if a turn is interrupted, the next continuation can inspect the workspace and resume without needing you. Nothing I’ve
+  found suggests the project or your request is dangerous.
+```
+
+It is really unfortunate that, in order to make sure my compiler isn't going to
+produce incorrect codegen, this trips the safety guards. I guess that simply
+saying "hey this is a toy language nobody uses and so it's fine I'm not hacking
+anyone" and that not allowing me around the guards is a "good" thing, but at the
+same time, it is unfortunate if these policies end up making it so that individuals
+like me can't make my software as robust as products from large organizations.
+
+I don't know how to end this post really, just wanted to put that out there. I'm
+still thinking about the implications, and I hope you do as well.
+
+[Rue]: https://rue-lang.dev/
