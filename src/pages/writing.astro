@@ -21,7 +21,10 @@ seriesData.forEach((_, slug) => {
 let allPostsByDate = (() => {
   let posts: Record<string, Array<CollectionEntry<"blog">>> = {};
   allPosts.map((post) => {
-    let year = new Date(post.data.pubDate).getFullYear();
+    // pubDate parses as UTC midnight and is displayed with timeZone: "UTC"
+    // everywhere, so group by UTC year too (local time is a day early in
+    // negative-offset timezones).
+    let year = post.data.pubDate.getUTCFullYear();
     let array = posts[year.toString()];
 
     // if this is the first post of this year, we have to create the inner array

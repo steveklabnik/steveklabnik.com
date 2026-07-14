@@ -104,7 +104,11 @@ export function getAllSeriesWithMetadata(
         ...metadata,
         posts,
         postCount: posts.length,
-        latestPost: posts[posts.length - 1],
+        // posts is sorted by series order, which doesn't have to match
+        // chronology; "latest" means newest by publication date.
+        latestPost: posts.reduce((latest, post) =>
+          post.data.pubDate > latest.data.pubDate ? post : latest
+        ),
         firstPost: posts[0]
       });
     }

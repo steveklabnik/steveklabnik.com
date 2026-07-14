@@ -24,7 +24,8 @@ const { posts, metadata, slug } = Astro.props;
 // Group posts by year (same pattern as writing.astro)
 let postsByYear: Record<string, CollectionEntry<"blog">[]> = {};
 posts.forEach((post) => {
-  const year = new Date(post.data.pubDate).getFullYear().toString();
+  // UTC to match how dates are displayed (see writing.astro)
+  const year = post.data.pubDate.getUTCFullYear().toString();
   if (!postsByYear[year]) postsByYear[year] = [];
   postsByYear[year].push(post);
 });
