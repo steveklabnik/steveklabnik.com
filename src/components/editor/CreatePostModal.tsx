@@ -35,8 +35,8 @@ export default function CreatePostModal({ open, onClose }: Props) {
         slug: slug || undefined,
       });
       window.location.href = `/writing/${result.slug}/`;
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
       setCreating(false);
     }
   }

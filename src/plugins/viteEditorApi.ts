@@ -1,6 +1,7 @@
 import type { Plugin, ViteDevServer } from "vite";
 import fs from "node:fs";
 import path from "node:path";
+import { slugify } from "../utils/wikilinks";
 
 const NOTES_DIR = path.resolve("src/content/notes");
 const BLOG_DIR = path.resolve("src/content/blog");
@@ -256,13 +257,7 @@ function saveNote(
 }
 
 function createNote(data: { title: string; slug?: string }): Response {
-  const slug =
-    data.slug ??
-    data.title
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")
-      .replace(/[^\w-]/g, "");
+  const slug = data.slug ?? slugify(data.title);
   if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
   const filePath = path.join(NOTES_DIR, `${slug}.md`);
   if (fs.existsSync(filePath)) {
@@ -344,13 +339,7 @@ function createPost(data: {
   series?: { slug: string; order: number } | null;
   topic?: string | null;
 }): Response {
-  const slug =
-    data.slug ??
-    data.title
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")
-      .replace(/[^\w-]/g, "");
+  const slug = data.slug ?? slugify(data.title);
   if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
 
   const date = new Date(data.pubDate);

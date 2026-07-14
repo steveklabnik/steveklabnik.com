@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import { buildSeriesData, getSeriesMetadata } from "../utils/series.ts";
 import { getTopicMetadata } from "../utils/topics.ts";
+import { formatDate, postSlug } from "../utils/posts.ts";
 import DevCreateButton from "../components/editor/DevCreateButton";
 const pageTitle = "Steve Klabnik's Blog";
 const allPosts = await getCollection("blog");
@@ -64,7 +65,7 @@ const frontmatter = {
               return (
                 <li class="pl-6 relative">
                   <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
-                  <a href={`/writing/${post.id.replace(/^\d{4}-\d{2}\//, '')}/`} class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium">
+                  <a href={`/writing/${postSlug(post.id)}/`} class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium">
                     {post.data.title}
                   </a>
                   {series && post.data.series && (
@@ -88,7 +89,7 @@ const frontmatter = {
                     </span>
                   )}
                   <time class="block text-sm text-secondary mt-1">
-                    {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
+                    {formatDate(post.data.pubDate)}
                   </time>
                 </li>
               );
