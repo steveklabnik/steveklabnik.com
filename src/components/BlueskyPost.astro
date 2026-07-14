@@ -27,7 +27,8 @@ const render = renderPost(data);
     --max-feed-height: 600px;
     --text-primary: #000000;
     --text-secondary: #455668;
-    --text-link: #1083fe;
+    /* Bluesky's brand blue (#1083fe) is only 3.68:1 on white; WCAG AA needs 4.5:1 */
+    --text-link: #0168d5;
     --background-primary: #ffffff;
     --background-secondary: #455668;
     --divider-hover: #a9b7c5;
@@ -41,7 +42,7 @@ const render = renderPost(data);
   :where(.dark, .dark *) .bluesky-embed {
     --text-primary: #f1f3f5;
     --text-secondary: #aebbc9;
-    --text-link: #1083fe;
+    --text-link: #208bfe;
     --background-primary: #161e27;
     --background-secondary: #212d3b;
     --divider: #2e4052;
