@@ -15,6 +15,10 @@ export default defineConfig({
     port: 4321,
   },
   markdown: {
+    // Astro 6 leaves `gfm` undefined by default, and @astrojs/mdx@5 treats
+    // undefined as off, silently disabling GFM (footnotes, tables, etc.) in
+    // .mdx files — so it must be set explicitly.
+    gfm: true,
     remarkPlugins: [remarkWikiLinks],
   },
   vite: {

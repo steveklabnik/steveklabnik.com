@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
 import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
@@ -10,8 +10,8 @@ import DevEditorToggle from "../../components/editor/DevEditorToggle";
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => {
-    // Remove the date folder prefix (e.g., "2020-01/") from the slug
-    const cleanSlug = entry.slug.replace(/^\d{4}-\d{2}\//, '');
+    // Remove the date folder prefix (e.g., "2020-01/") from the id
+    const cleanSlug = entry.id.replace(/^\d{4}-\d{2}\//, '');
     return {
       params: { slug: cleanSlug },
       props: { entry },
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Build series data if this post is part of a series
 let seriesNavigation: SeriesNavigation | null = null;
@@ -36,7 +36,7 @@ const frontmatter = {
   description: `Blog post: ${entry.data.title} by Steve Klabnik`,
 };
 
-const cleanSlug = entry.slug.replace(/^\d{4}-\d{2}\//, '');
+const cleanSlug = entry.id.replace(/^\d{4}-\d{2}\//, '');
 ---
 
 <BaseLayout frontmatter={frontmatter}>

@@ -34,7 +34,7 @@ if (!seriesMetadata) {
     <div class="flex-1 min-w-0">
       {seriesData.prev ? (
         <a
-          href={`/writing/${seriesData.prev.slug.replace(/^\d{4}-\d{2}\//, '')}`}
+          href={`/writing/${seriesData.prev.id.replace(/^\d{4}-\d{2}\//, '')}`}
           class="text-sm text-accent hover:underline inline-flex items-start gap-1 group"
         >
           <span class="shrink-0 group-hover:translate-x-[-2px] transition-transform">←</span>
@@ -48,7 +48,7 @@ if (!seriesMetadata) {
     <div class="flex-1 min-w-0 sm:text-right">
       {seriesData.next ? (
         <a
-          href={`/writing/${seriesData.next.slug.replace(/^\d{4}-\d{2}\//, '')}`}
+          href={`/writing/${seriesData.next.id.replace(/^\d{4}-\d{2}\//, '')}`}
           class="text-sm text-accent hover:underline inline-flex items-start gap-1 sm:justify-end group"
         >
           <span class="break-words line-clamp-2 sm:text-right">{seriesData.next.data.title}</span>
