@@ -7,6 +7,32 @@ const BLOG_DIR = path.resolve("src/content/blog");
 
 // ── helpers ──────────────────────────────────────────────
 
+/**
+ * Slugs are joined into file paths, and the dev server listens on the LAN
+ * (server.host: true), so reject anything that could escape the content
+ * directories.
+ */
+function isSafeSlug(slug: string): boolean {
+  return /^[A-Za-z0-9_-]+$/.test(slug);
+}
+
+/** Serialize a frontmatter string value; JSON strings are valid YAML. */
+function yamlString(value: string): string {
+  return JSON.stringify(value);
+}
+
+/** Undo yamlString, tolerating the unquoted values in existing files. */
+function parseYamlString(value: string): string {
+  if (value.startsWith('"') && value.endsWith('"')) {
+    try {
+      return JSON.parse(value);
+    } catch {
+      // fall through to the legacy quote-stripping below
+    }
+  }
+  return value.replace(/^["']|["']$/g, "");
+}
+
 function parseNote(filePath: string) {
   const raw = fs.readFileSync(filePath, "utf-8");
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -18,7 +44,7 @@ function parseNote(filePath: string) {
     })
   );
   return {
-    title: fm.title ?? "",
+    title: parseYamlString(fm.title ?? ""),
     lastUpdated: fm.lastUpdated ?? null,
     body: match[2],
   };
@@ -36,22 +62,34 @@ function parsePost(filePath: string) {
   const fm: Record<string, string> = {};
   let seriesSlug: string | null = null;
   let seriesOrder: number | null = null;
+  // Frontmatter this editor doesn't understand (e.g. description), kept
+  // verbatim so saving a post doesn't destroy it.
+  const extraLines: string[] = [];
+  const knownKeys = new Set(["title", "pubDate", "blog", "topic"]);
+  let inSeries = false;
 
   const lines = frontmatterStr.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    if (line.startsWith("  ") && line.includes(":")) {
-      // nested under series
+    if (line.startsWith("series:")) {
+      inSeries = true;
+      continue;
+    }
+    if (inSeries && line.startsWith("  ") && line.includes(":")) {
       const [k, ...v] = line.trim().split(":");
       const key = k.trim();
       const val = v.join(":").trim();
       if (key === "slug") seriesSlug = val;
       if (key === "order") seriesOrder = parseInt(val, 10);
-    } else if (line.includes(":") && !line.startsWith("series")) {
-      const i = line.indexOf(":");
-      const key = line.slice(0, i).trim();
-      const val = line.slice(i + 1).trim().replace(/^["']|["']$/g, "");
-      fm[key] = val;
+      continue;
+    }
+    inSeries = false;
+    const colon = line.indexOf(":");
+    const key = colon === -1 ? null : line.slice(0, colon).trim();
+    if (key && knownKeys.has(key) && !line.startsWith(" ")) {
+      fm[key] = parseYamlString(line.slice(colon + 1).trim());
+    } else if (line.trim() !== "") {
+      extraLines.push(line);
     }
   }
 
@@ -61,6 +99,7 @@ function parsePost(filePath: string) {
     blog: fm.blog ?? null,
     series: seriesSlug ? { slug: seriesSlug, order: seriesOrder ?? 1 } : null,
     topic: fm.topic ?? null,
+    extraLines,
     body,
   };
 }
@@ -122,9 +161,13 @@ export default function editorApiPlugin(): Plugin {
             "Content-Type": "application/json",
           });
           res.end(await response.text());
-        } catch (e: any) {
+        } catch (e) {
           res.writeHead(500, { "Content-Type": "application/json" });
-          res.end(JSON.stringify({ error: e.message }));
+          res.end(
+            JSON.stringify({
+              error: e instanceof Error ? e.message : String(e),
+            })
+          );
         }
       });
     },
@@ -149,6 +192,7 @@ async function handleRequest(
   const noteMatch = pathname.match(/^\/__editor\/notes\/(.+)$/);
   if (noteMatch) {
     const slug = decodeURIComponent(noteMatch[1]);
+    if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
     if (method === "GET") return getNote(slug);
     if (method === "PUT") return saveNote(slug, JSON.parse(body!));
     if (method === "DELETE") return deleteNote(slug);
@@ -164,6 +208,7 @@ async function handleRequest(
   const postMatch = pathname.match(/^\/__editor\/posts\/(.+)$/);
   if (postMatch) {
     const slug = decodeURIComponent(postMatch[1]);
+    if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
     if (method === "GET") return getPost(slug);
     if (method === "PUT") return savePost(slug, JSON.parse(body!));
   }
@@ -205,7 +250,7 @@ function saveNote(
       .find((p) => fs.existsSync(p)) ?? path.join(NOTES_DIR, `${slug}.md`);
 
   const now = new Date().toISOString().slice(0, 10);
-  const content = `---\ntitle: ${data.title}\nlastUpdated: ${now}\n---\n${data.body}`;
+  const content = `---\ntitle: ${yamlString(data.title)}\nlastUpdated: ${now}\n---\n${data.body}`;
   fs.writeFileSync(filePath, content, "utf-8");
   return jsonResponse({ ok: true });
 }
@@ -218,13 +263,14 @@ function createNote(data: { title: string; slug?: string }): Response {
       .trim()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]/g, "");
+  if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
   const filePath = path.join(NOTES_DIR, `${slug}.md`);
   if (fs.existsSync(filePath)) {
     return jsonResponse({ error: "Note already exists" }, 409);
   }
   if (!fs.existsSync(NOTES_DIR)) fs.mkdirSync(NOTES_DIR, { recursive: true });
   const now = new Date().toISOString().slice(0, 10);
-  const content = `---\ntitle: ${data.title}\nlastUpdated: ${now}\n---\n\n`;
+  const content = `---\ntitle: ${yamlString(data.title)}\nlastUpdated: ${now}\n---\n\n`;
   fs.writeFileSync(filePath, content, "utf-8");
   return jsonResponse({ slug });
 }
@@ -273,12 +319,17 @@ function savePost(
   const filePath = slugMap.get(slug);
   if (!filePath) return jsonResponse({ error: "Not found" }, 404);
 
-  let fm = `---\ntitle: "${data.title}"\npubDate: ${data.pubDate}`;
+  // Carry over frontmatter this editor doesn't model (e.g. description)
+  // from the file on disk, so saving can't silently drop it.
+  const existing = parsePost(filePath);
+
+  let fm = `---\ntitle: ${yamlString(data.title)}\npubDate: ${data.pubDate}`;
   if (data.blog) fm += `\nblog: ${data.blog}`;
   if (data.series) {
     fm += `\nseries:\n  slug: ${data.series.slug}\n  order: ${data.series.order}`;
   }
   if (data.topic) fm += `\ntopic: ${data.topic}`;
+  for (const line of existing?.extraLines ?? []) fm += `\n${line}`;
   fm += `\n---\n`;
 
   fs.writeFileSync(filePath, fm + data.body, "utf-8");
@@ -300,8 +351,12 @@ function createPost(data: {
       .trim()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]/g, "");
+  if (!isSafeSlug(slug)) return jsonResponse({ error: "Invalid slug" }, 400);
 
   const date = new Date(data.pubDate);
+  if (Number.isNaN(date.getTime())) {
+    return jsonResponse({ error: "Invalid pubDate" }, 400);
+  }
   const yyyy = date.getUTCFullYear();
   const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
   const dirPath = path.join(BLOG_DIR, `${yyyy}-${mm}`);
@@ -312,7 +367,7 @@ function createPost(data: {
   }
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
 
-  let fm = `---\ntitle: "${data.title}"\npubDate: ${data.pubDate}`;
+  let fm = `---\ntitle: ${yamlString(data.title)}\npubDate: ${data.pubDate}`;
   if (data.blog) fm += `\nblog: ${data.blog}`;
   if (data.series) {
     fm += `\nseries:\n  slug: ${data.series.slug}\n  order: ${data.series.order}`;
