@@ -9,6 +9,24 @@ export async function getStaticPaths() {
   return [{ params: {} }];
 }
 
+/**
+ * Plain-text excerpt of rendered post HTML, for feed readers that show
+ * summaries instead of the full content.
+ */
+function excerpt(html: string, maxLength = 280): string {
+  const text = html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;|&#34;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= maxLength) return text;
+  return text.slice(0, text.lastIndexOf(" ", maxLength)) + "…";
+}
+
 export async function GET(context: APIContext) {
   const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
@@ -20,13 +38,14 @@ export async function GET(context: APIContext) {
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
       .map(async (post) => {
         const { Content } = await render(post);
+        const content = await container.renderToString(Content);
 
         return {
           title: post.data.title,
           pubDate: post.data.pubDate,
-          description: post.data.description,
+          description: post.data.description ?? excerpt(content),
           link: `/writing/${post.id.replace(/^\d{4}-\d{2}\//, '')}/`,
-          content: await container.renderToString(Content),
+          content,
         };
       }),
   );
