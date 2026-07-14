@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import remarkWikiLinks from "./src/plugins/remarkWikiLinks.ts";
@@ -14,7 +15,7 @@ export default defineConfig({
   // space between adjacent inline elements (nav links, dates) in rendered
   // text. Keep the old whitespace-collapsing behavior instead.
   compressHTML: true,
-  integrations: [mdx(), react()],
+  integrations: [mdx(), react(), sitemap()],
   server: {
     host: true,
     port: 4321,
