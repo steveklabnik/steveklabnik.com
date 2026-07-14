@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "astro dev",
@@ -21,20 +21,19 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/literata": "^5.2.8",
-    "@headlessui/react": "^2.2.10",
-    "@heroicons/react": "^2.1.3",
     "astro": "^7.0.9",
     "bluesky-post-embed": "^1.0.6",
-    "markdown-it": "^14.1.1",
-    "mdast-util-find-and-replace": "^3.0.2",
-    "sanitize-html": "^2.17.6"
+    "mdast-util-find-and-replace": "^3.0.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@headlessui/react": "^2.2.10",
+    "@heroicons/react": "^2.2.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^26.1.1",
+    "markdown-it": "^14.3.0",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   }
