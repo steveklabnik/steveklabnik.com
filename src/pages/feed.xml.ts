@@ -25,7 +25,7 @@ export async function GET(context: APIContext) {
           title: post.data.title,
           pubDate: post.data.pubDate,
           description: post.data.description,
-          link: `/writing/${post.slug.replace(/^\d{4}-\d{2}\//, '')}/`,
+          link: `/writing/${post.id.replace(/^\d{4}-\d{2}\//, '')}/`,
           content: await container.renderToString(Content),
         };
       }),
