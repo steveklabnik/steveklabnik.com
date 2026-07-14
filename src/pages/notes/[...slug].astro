@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { buildBacklinks, noteSlug } from "../../utils/notes";
 import type { Backlink } from "../../utils/notes";
+import { formatDate } from "../../utils/posts";
 import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
 export async function getStaticPaths() {
@@ -40,12 +41,7 @@ const currentSlug = noteSlug(entry.id);
       <p class="text-sm text-secondary mt-0">
         Last updated{" "}
         <time datetime={entry.data.lastUpdated.toISOString()}>
-          {entry.data.lastUpdated.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-            timeZone: "UTC",
-          })}
+          {formatDate(entry.data.lastUpdated)}
         </time>
       </p>
     )}

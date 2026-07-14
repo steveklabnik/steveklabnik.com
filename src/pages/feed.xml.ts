@@ -4,6 +4,7 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import { loadRenderers } from "astro:container";
 import type { APIContext } from "astro";
+import { postSlug, sortByDateDesc } from "../utils/posts";
 
 export async function getStaticPaths() {
   return [{ params: {} }];
@@ -34,20 +35,18 @@ export async function GET(context: APIContext) {
   const posts = await getCollection("blog");
 
   const items = await Promise.all(
-    posts
-      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-      .map(async (post) => {
-        const { Content } = await render(post);
-        const content = await container.renderToString(Content);
+    sortByDateDesc(posts).map(async (post) => {
+      const { Content } = await render(post);
+      const content = await container.renderToString(Content);
 
-        return {
-          title: post.data.title,
-          pubDate: post.data.pubDate,
-          description: post.data.description ?? excerpt(content),
-          link: `/writing/${post.id.replace(/^\d{4}-\d{2}\//, '')}/`,
-          content,
-        };
-      }),
+      return {
+        title: post.data.title,
+        pubDate: post.data.pubDate,
+        description: post.data.description ?? excerpt(content),
+        link: `/writing/${postSlug(post.id)}/`,
+        content,
+      };
+    }),
   );
 
   return rss({

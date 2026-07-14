@@ -22,9 +22,10 @@ function getExistingNoteSlugs(): Set<string> {
 }
 
 export default function remarkWikiLinks() {
-  const existingSlugs = getExistingNoteSlugs();
-
   return (tree: Root) => {
+    // Read per document rather than at plugin init, so notes created or
+    // deleted while the dev server runs are reflected without a restart.
+    const existingSlugs = getExistingNoteSlugs();
     findAndReplace(tree, [
       [
         wikiLinkRegex,

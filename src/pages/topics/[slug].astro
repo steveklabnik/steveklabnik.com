@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { topics } from "../../data/topics.ts";
 import { getPostsByTopic } from "../../utils/topics.ts";
 import { getSeriesMetadata } from "../../utils/series.ts";
+import { formatDate, postSlug } from "../../utils/posts.ts";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -24,7 +25,7 @@ const { posts, metadata, slug } = Astro.props;
 // Group posts by year (same pattern as writing.astro)
 let postsByYear: Record<string, CollectionEntry<"blog">[]> = {};
 posts.forEach((post) => {
-  // UTC to match how dates are displayed (see writing.astro)
+  // UTC to match how formatDate displays dates
   const year = post.data.pubDate.getUTCFullYear().toString();
   if (!postsByYear[year]) postsByYear[year] = [];
   postsByYear[year].push(post);
@@ -56,7 +57,7 @@ const frontmatter = {
                 <li class="pl-6 relative">
                   <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
                   <a
-                    href={`/writing/${post.id.replace(/^\d{4}-\d{2}\//, '')}/`}
+                    href={`/writing/${postSlug(post.id)}/`}
                     class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
                   >
                     {post.data.title}
@@ -72,7 +73,7 @@ const frontmatter = {
                     </span>
                   )}
                   <time class="block text-sm text-secondary mt-1">
-                    {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
+                    {formatDate(post.data.pubDate)}
                   </time>
                 </li>
               );

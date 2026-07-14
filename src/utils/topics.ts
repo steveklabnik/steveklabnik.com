@@ -1,5 +1,6 @@
 import { topics } from '../data/topics.ts';
 import type { CollectionEntry } from 'astro:content';
+import { sortByDateDesc } from './posts.ts';
 
 export interface TopicMetadata {
   title: string;
@@ -38,8 +39,8 @@ export function getPostsByTopic(
   }
 
   // Sort posts within each topic by date (newest first)
-  topicMap.forEach((posts) => {
-    posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  topicMap.forEach((posts, topic) => {
+    topicMap.set(topic, sortByDateDesc(posts));
   });
 
   return topicMap;

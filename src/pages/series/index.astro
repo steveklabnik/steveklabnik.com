@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { buildSeriesData, getAllSeriesWithMetadata } from "../../utils/series.ts";
+import { formatDate } from "../../utils/posts.ts";
 
 const allPosts = await getCollection("blog");
 const seriesData = buildSeriesData(allPosts);
@@ -38,7 +39,7 @@ const frontmatter = {
             <div class="flex items-center gap-4 text-sm text-muted">
               <span>{series.postCount} posts</span>
               <span>•</span>
-              <span>Last updated: {series.latestPost.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
+              <span>Last updated: {formatDate(series.latestPost.data.pubDate)}</span>
             </div>
           </article>
         ))}
