@@ -53,7 +53,8 @@ export async function GET(context: APIContext) {
   return rss({
     title: "Steve Klabnik",
     description: "Steve Klabniks blog",
-    site: context.site,
+    // `site` is set in astro.config.mjs, so this is always defined
+    site: context.site!,
     items,
   });
 }
