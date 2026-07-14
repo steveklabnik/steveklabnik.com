@@ -37,7 +37,7 @@ export default function ContentEditor({
   const [preview, setPreview] = useState("");
   const [saving, setSaving] = useState(false);
   const [dirty, setDirty] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const internalRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Debounced preview
