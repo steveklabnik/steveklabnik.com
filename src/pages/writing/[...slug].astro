@@ -33,7 +33,9 @@ if (entry.data.series?.slug) {
 
 const frontmatter = {
   pageTitle: entry.data.title,
-  description: `Blog post: ${entry.data.title} by Steve Klabnik`,
+  description:
+    entry.data.description ?? `Blog post: ${entry.data.title} by Steve Klabnik`,
+  pubDate: entry.data.pubDate,
 };
 
 const cleanSlug = entry.id.replace(/^\d{4}-\d{2}\//, '');

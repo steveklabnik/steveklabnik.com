@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const frontmatter = {
+  pageTitle: "Page not found - Steve Klabnik",
+  description: "This page doesn't exist.",
+};
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div class="prose prose-slate dark:prose-invert">
+    <h1>Page not found</h1>
+    <p>Sorry, there's nothing at this URL.</p>
+    <p>
+      You might be looking for something in my <a href="/writing">writing</a>,
+      or you can head back to the <a href="/">home page</a>.
+    </p>
+  </div>
+</BaseLayout>
