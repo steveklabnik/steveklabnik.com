@@ -95,5 +95,9 @@ const frontmatter = {
       ))
     }
   </div>
-  <DevCreateButton client:only="react" type="post" />
+  {
+    // client:only islands ship the React runtime even when the component
+    // renders null, so only emit the island at all in dev builds.
+    import.meta.env.DEV && <DevCreateButton client:only="react" type="post" />
+  }
 </BaseLayout>

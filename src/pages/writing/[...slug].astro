@@ -73,5 +73,11 @@ const cleanSlug = entry.id.replace(/^\d{4}-\d{2}\//, '');
       )
     }
   </article>
-  <DevEditorToggle client:only="react" type="post" slug={cleanSlug} />
+  {
+    // client:only islands ship the React runtime even when the component
+    // renders null, so only emit the island at all in dev builds.
+    import.meta.env.DEV && (
+      <DevEditorToggle client:only="react" type="post" slug={cleanSlug} />
+    )
+  }
 </BaseLayout>

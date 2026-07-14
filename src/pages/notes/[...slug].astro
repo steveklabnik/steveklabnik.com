@@ -70,5 +70,11 @@ const currentSlug = noteSlug(entry.id);
       </ul>
     </aside>
   )}
-  <DevEditorToggle client:only="react" type="note" slug={currentSlug} />
+  {
+    // client:only islands ship the React runtime even when the component
+    // renders null, so only emit the island at all in dev builds.
+    import.meta.env.DEV && (
+      <DevEditorToggle client:only="react" type="note" slug={currentSlug} />
+    )
+  }
 </BaseLayout>
