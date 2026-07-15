@@ -34,6 +34,14 @@ This is an Astro static site for steveklabnik.com with the following structure:
 - Static site generation with no server-side rendering
 - RSS feed generated at `/feed.xml` (`src/pages/feed.xml.ts`, renders full post content via the Container API)
 
+### Standard.site (AT Protocol)
+- The site publishes [standard.site](https://standard.site) lexicon records (`site.standard.publication` + one `site.standard.document` per post) to Steve's PDS
+- Config (DID, AT-URI helpers, publication record) lives in `src/data/standardSite.ts`; document rkeys are the post slugs, so AT-URIs are derived at build time
+- The build emits a sync manifest at `/standard-site.json` (`src/pages/standard-site.json.ts`) with the desired state of every record
+- Sync runs **automatically after every production deploy** via a local Netlify build plugin (`plugins/netlify-standard-site/`, `onSuccess` hook); it needs `STANDARD_SITE_APP_PASSWORD` (a Bluesky app password) set in the Netlify environment, and skips deploy previews/branch deploys
+- `npm run sync:standard-site` (`scripts/standard-site-sync.mjs`) is the same sync run manually: `--dry-run` needs no auth; `--prune` deletes records for removed posts (deliberately never passed in CI)
+- Verification: `public/.well-known/site.standard.publication` returns the publication AT-URI, and each post page gets a `<link rel="site.standard.document">` tag via `BaseLayout`
+
 ### Styling
 - Tailwind CSS 4 via `@tailwindcss/vite`; global styles and theme variables in `/src/styles/global.css`
 - Legacy JS config (`tailwind.config.js`) is bridged in with `@config` and holds the typography plugin customizations
