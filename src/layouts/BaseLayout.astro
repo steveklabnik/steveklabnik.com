@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import { PUBLICATION_AT_URI } from "../data/standardSite";
 
 const { frontmatter, section } = Astro.props;
 const description =
@@ -53,6 +54,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       title="Steve Klabnik"
       href="https://steveklabnik.com/feed.xml"
     />
+    <!-- Standard.site (AT Protocol) discovery hint and per-document verification -->
+    <link rel="site.standard.publication" href={PUBLICATION_AT_URI} />
+    {
+      frontmatter.documentAtUri && (
+        <link rel="site.standard.document" href={frontmatter.documentAtUri} />
+      )
+    }
     <title>{frontmatter.pageTitle}</title>
   </head>
   <body data-section={section}>

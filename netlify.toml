@@ -2,12 +2,23 @@
   command = "npm run build"
   publish = "dist"
 
+# Post-deploy: sync standard.site records to the PDS (production only).
+[[plugins]]
+  package = "./plugins/netlify-standard-site"
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Extensionless files are served as octet-stream by default; the
+# standard.site verification endpoint should read as plain text.
+[[headers]]
+  for = "/.well-known/site.standard.publication"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
 
 # Astro asset filenames are content-hashed, so they can be cached forever.
 [[headers]]

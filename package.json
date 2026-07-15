@@ -12,6 +12,7 @@
     "build": "astro build",
     "check": "astro check",
     "preview": "astro preview",
+    "sync:standard-site": "node scripts/standard-site-sync.mjs",
     "astro": "astro"
   },
   "dependencies": {
