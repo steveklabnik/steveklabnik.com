@@ -5,9 +5,11 @@
  * live, which is the ordering the records need — they should only ever
  * describe pages that are actually up.
  *
- * Deliberately does not pass --prune: a manifest-generation bug would turn
- * every record into an orphan and mass-delete them. Removing records for
- * deleted posts stays a manual `npm run sync:standard-site -- --prune`.
+ * The sync auto-prunes invalid-key records and small numbers of orphans
+ * (a deleted or renamed post). It deliberately never passes --prune, so a
+ * manifest-generation bug that orphans everything can't mass-delete
+ * records from CI — that case warns in the log and waits for a manual
+ * `npm run sync:standard-site -- --prune`.
  */
 import { execFileSync } from "node:child_process";
 
