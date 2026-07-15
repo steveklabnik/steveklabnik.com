@@ -1,6 +1,6 @@
 ---
 title: "Contributing to Ruby's documentation"
-pubDate: 2011-05-20
+pubDate: 2011-05-10
 blog: literate-programming
 topic: ruby-rails
 ---

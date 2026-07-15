@@ -1,6 +1,6 @@
 ---
 title: "Matz is nice so we are nice"
-pubDate: 2011-10-19
+pubDate: 2011-08-19
 blog: literate-programming
 topic: open-source
 ---
