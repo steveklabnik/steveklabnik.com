@@ -133,10 +133,17 @@ async function main() {
     }
   }
 
-  const orphans = [...existingDocs.keys()].filter((rkey) => !(rkey in manifest.documents));
+  const orphans = [
+    ...[...existingDocs.keys()]
+      .filter((rkey) => !(rkey in manifest.documents))
+      .map((rkey) => ({ collection: "site.standard.document", rkey })),
+    ...[...existingPubs.keys()]
+      .filter((rkey) => rkey !== manifest.publication.rkey)
+      .map((rkey) => ({ collection: "site.standard.publication", rkey })),
+  ];
   if (prune) {
-    for (const rkey of orphans) {
-      plan.push({ action: "delete", collection: "site.standard.document", rkey });
+    for (const orphan of orphans) {
+      plan.push({ action: "delete", ...orphan });
     }
   }
 
@@ -148,7 +155,10 @@ async function main() {
     console.log(`  ${op.action} ${op.collection}/${op.rkey}`);
   }
   if (orphans.length > 0 && !prune) {
-    console.log(`  ${orphans.length} record(s) on the PDS but not in the manifest (use --prune to delete): ${orphans.join(", ")}`);
+    console.log(
+      `  ${orphans.length} record(s) on the PDS but not in the manifest (use --prune to delete): ` +
+        orphans.map((o) => `${o.collection}/${o.rkey}`).join(", "),
+    );
   }
   if (plan.length === 0) {
     console.log("Nothing to do.");

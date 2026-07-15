@@ -6,7 +6,7 @@ import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
 import { getTopicMetadata } from "../../utils/topics.ts";
 import { formatDate, postSlug } from "../../utils/posts.ts";
-import { documentAtUri, isValidRkey } from "../../data/standardSite";
+import { documentAtUri } from "../../data/standardSite";
 import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
 export async function getStaticPaths() {
@@ -37,7 +37,7 @@ const frontmatter = {
     entry.data.description ?? `Blog post: ${entry.data.title} by Steve Klabnik`,
   pubDate: entry.data.pubDate,
   // Standard.site verification: ties this page to its AT Protocol record.
-  documentAtUri: isValidRkey(cleanSlug) ? documentAtUri(cleanSlug) : undefined,
+  documentAtUri: documentAtUri(cleanSlug, entry.data.pubDate),
 };
 ---
 
