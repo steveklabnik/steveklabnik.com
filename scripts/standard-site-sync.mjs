@@ -13,11 +13,18 @@
  *   STANDARD_SITE_APP_PASSWORD=xxxx-xxxx-xxxx-xxxx \
  *   node scripts/standard-site-sync.mjs               # apply changes
  *
+ * Records on the PDS but not in the manifest (orphans) are pruned
+ * automatically when it's safe: records with non-TID keys are invalid per
+ * the lexicons and always deleted, and up to AUTO_PRUNE_LIMIT TID-keyed
+ * orphans (a deleted or renamed post) are deleted too. Larger orphan sets
+ * usually mean a manifest bug, so they're skipped with a warning until a
+ * human confirms with --prune.
+ *
  * Flags:
  *   --source <url|file>  Manifest location. Defaults to the live site;
  *                        pass dist/standard-site.json to sync a local build.
  *   --dry-run            Print the plan without writing to the PDS.
- *   --prune              Delete records for posts no longer in the manifest.
+ *   --prune              Delete ALL orphans, even past the auto-prune limit.
  */
 
 import { readFile } from "node:fs/promises";
@@ -141,8 +148,14 @@ async function main() {
       .filter((rkey) => rkey !== manifest.publication.rkey)
       .map((rkey) => ({ collection: "site.standard.publication", rkey })),
   ];
-  if (prune) {
-    for (const orphan of orphans) {
+  const TID_RE = /^[234567abcdefghij][234567abcdefghijklmnopqrstuvwxyz]{12}$/;
+  const AUTO_PRUNE_LIMIT = 10;
+  const invalidKeyOrphans = orphans.filter((o) => !TID_RE.test(o.rkey));
+  const tidOrphans = orphans.filter((o) => TID_RE.test(o.rkey));
+  const skippedOrphans =
+    prune || tidOrphans.length <= AUTO_PRUNE_LIMIT ? [] : tidOrphans;
+  for (const orphan of orphans) {
+    if (!skippedOrphans.includes(orphan)) {
       plan.push({ action: "delete", ...orphan });
     }
   }
@@ -154,10 +167,12 @@ async function main() {
   for (const op of plan) {
     console.log(`  ${op.action} ${op.collection}/${op.rkey}`);
   }
-  if (orphans.length > 0 && !prune) {
-    console.log(
-      `  ${orphans.length} record(s) on the PDS but not in the manifest (use --prune to delete): ` +
-        orphans.map((o) => `${o.collection}/${o.rkey}`).join(", "),
+  if (skippedOrphans.length > 0) {
+    console.warn(
+      `  WARNING: ${skippedOrphans.length} orphaned record(s) exceed the ` +
+        `auto-prune limit (${AUTO_PRUNE_LIMIT}) — this usually means a ` +
+        `manifest bug. Not deleting them; re-run with --prune to confirm: ` +
+        skippedOrphans.map((o) => `${o.collection}/${o.rkey}`).join(", "),
     );
   }
   if (plan.length === 0) {

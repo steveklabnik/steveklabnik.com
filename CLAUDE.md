@@ -39,7 +39,7 @@ This is an Astro static site for steveklabnik.com with the following structure:
 - Config (DID, AT-URI helpers, publication record) lives in `src/data/standardSite.ts`; the lexicons require TID record keys, so document rkeys are TIDs minted deterministically from pubDate + a slug hash — AT-URIs still derive at build time with no lookup table. Changing a post's slug or pubDate mints a new record (the old one shows up as an orphan)
 - The build emits a sync manifest at `/standard-site.json` (`src/pages/standard-site.json.ts`) with the desired state of every record
 - Sync runs **automatically after every production deploy** via a local Netlify build plugin (`plugins/netlify-standard-site/`, `onSuccess` hook); it needs `STANDARD_SITE_APP_PASSWORD` (a Bluesky app password) set in the Netlify environment, and skips deploy previews/branch deploys
-- `npm run sync:standard-site` (`scripts/standard-site-sync.mjs`) is the same sync run manually: `--dry-run` needs no auth; `--prune` deletes records for removed posts (deliberately never passed in CI)
+- `npm run sync:standard-site` (`scripts/standard-site-sync.mjs`) is the same sync run manually: `--dry-run` needs no auth. Orphaned records auto-prune (invalid non-TID keys always; up to 10 TID-keyed orphans per run); larger orphan sets warn and wait for a manual `--prune`, so a manifest bug can't mass-delete from CI
 - Verification: `public/.well-known/site.standard.publication` returns the publication AT-URI, and each post page gets a `<link rel="site.standard.document">` tag via `BaseLayout`
 
 ### Styling
