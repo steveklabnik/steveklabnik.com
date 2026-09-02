@@ -1,13 +1,13 @@
 ---
-import { getCollection, render } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { buildBacklinks, noteSlug } from "../../utils/notes";
+import { buildBacklinks, getNotes, noteSlug } from "../../utils/notes";
 import type { Backlink } from "../../utils/notes";
 import { formatDate } from "../../utils/posts";
 import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
 export async function getStaticPaths() {
-  const allNotes = await getCollection("notes");
+  const allNotes = await getNotes();
   const backlinkMap = buildBacklinks(allNotes);
 
   return allNotes.map((entry) => ({
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, backlinks } = Astro.props as {
-  entry: Awaited<ReturnType<typeof getCollection<"notes">>>[number];
+  entry: CollectionEntry<"notes">;
   backlinks: Backlink[];
 };
 

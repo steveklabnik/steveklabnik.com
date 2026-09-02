@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import { noteSlug } from "../../utils/notes";
+import { getNotes, noteSlug } from "../../utils/notes";
 import { formatDate } from "../../utils/posts";
 import DevCreateButton from "../../components/editor/DevCreateButton";
 
 const pageTitle = "Notes";
-const allNotes = await getCollection("notes");
+const allNotes = await getNotes();
 
 // Sort by lastUpdated (most recent first), then alphabetically by title
 allNotes.sort((a, b) => {
