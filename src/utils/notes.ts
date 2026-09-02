@@ -1,7 +1,23 @@
-import type { CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { extractWikiLinkSlugs } from "./wikilinks";
 
 export { extractWikiLinkSlugs };
+
+// Resolved at build time; `{}` while src/content/notes/ holds no entries.
+const noteFiles = import.meta.glob("../content/notes/**/*.{md,mdx}");
+
+/**
+ * Load the notes collection, tolerating an empty one.
+ *
+ * getCollection() warns when a collection has no entries, and notes is
+ * allowed to be empty, so skip the call entirely until a note exists. The
+ * loader in src/content.config.ts stays quiet for the same reason.
+ */
+export async function getNotes(): Promise<CollectionEntry<"notes">[]> {
+  if (Object.keys(noteFiles).length === 0) return [];
+
+  return getCollection("notes");
+}
 
 export interface Backlink {
   slug: string;

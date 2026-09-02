@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { getNotes } from "../utils/notes.ts";
 import { getRecentTopics, getTopicMetadata } from "../utils/topics.ts";
 import { buildSeriesData, getAllSeriesWithMetadata } from "../utils/series.ts";
 import { formatDate, postSlug, sortByDateDesc } from "../utils/posts.ts";
 
 const allPosts = await getCollection("blog");
-const allNotes = await getCollection("notes");
+const allNotes = await getNotes();
 
 // Recent topics (top 5, sorted by recency)
 const recentTopics = getRecentTopics(allPosts, 5);
