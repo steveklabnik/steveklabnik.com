@@ -45,11 +45,46 @@ export function excerpt(html: string, maxLength = 280): string {
   return text.slice(0, text.lastIndexOf(" ", maxLength)) + "…";
 }
 
+/**
+ * Newest first, ties broken by entry id.
+ *
+ * Three days in the archive carry two posts each. A plain date comparison
+ * leaves those pairs in whatever order the loader handed them over, which
+ * is fine on its own but means a post's prev/next links can disagree with
+ * the order the same two posts appear in on /writing. Breaking the tie
+ * makes one ordering for the whole site.
+ */
+export function byNewestFirst(
+  a: CollectionEntry<"blog">,
+  b: CollectionEntry<"blog">,
+): number {
+  const byDate = b.data.pubDate.getTime() - a.data.pubDate.getTime();
+
+  return byDate !== 0 ? byDate : a.id.localeCompare(b.id);
+}
+
 /** Returns a copy of the posts sorted newest first. */
 export function sortByDateDesc(
   posts: CollectionEntry<"blog">[],
 ): CollectionEntry<"blog">[] {
-  return [...posts].sort(
-    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
-  );
+  return [...posts].sort(byNewestFirst);
+}
+
+export interface AdjacentPosts {
+  newer: CollectionEntry<"blog"> | null;
+  older: CollectionEntry<"blog"> | null;
+}
+
+/** The posts published either side of this one. */
+export function getAdjacentPosts(
+  entry: CollectionEntry<"blog">,
+  posts: CollectionEntry<"blog">[],
+): AdjacentPosts {
+  const ordered = sortByDateDesc(posts);
+  const index = ordered.findIndex((post) => post.id === entry.id);
+
+  return {
+    newer: index > 0 ? ordered[index - 1] : null,
+    older: index !== -1 ? (ordered[index + 1] ?? null) : null,
+  };
 }

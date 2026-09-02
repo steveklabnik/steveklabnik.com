@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import { buildSeriesData, getSeriesMetadata } from "../utils/series.ts";
 import { getTopicMetadata } from "../utils/topics.ts";
-import { formatDate, postSlug } from "../utils/posts.ts";
+import { byNewestFirst, formatDate, postSlug } from "../utils/posts.ts";
 import DevCreateButton from "../components/editor/DevCreateButton";
 const pageTitle = "Steve Klabnik's Blog";
 const allPosts = await getCollection("blog");
@@ -37,7 +37,7 @@ let allPostsByDate = (() => {
   });
 
   for (const value of Object.values(posts)) {
-    value.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+    value.sort(byNewestFirst);
   }
 
   return posts;
