@@ -6,6 +6,7 @@ import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
 import { getTopicMetadata } from "../../utils/topics.ts";
 import { formatDate, postSlug } from "../../utils/posts.ts";
+import { postDescription } from "../../utils/rendered.ts";
 import { documentAtUri } from "../../data/standardSite";
 import DevEditorToggle from "../../components/editor/DevEditorToggle";
 
@@ -33,8 +34,7 @@ const cleanSlug = postSlug(entry.id);
 
 const frontmatter = {
   pageTitle: entry.data.title,
-  description:
-    entry.data.description ?? `Blog post: ${entry.data.title} by Steve Klabnik`,
+  description: await postDescription(entry),
   pubDate: entry.data.pubDate,
   // Standard.site verification: ties this page to its AT Protocol record.
   documentAtUri: documentAtUri(cleanSlug, entry.data.pubDate),

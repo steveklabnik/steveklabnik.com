@@ -1,25 +1,19 @@
 import rss from "@astrojs/rss";
-import { getCollection, render } from "astro:content";
-import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx/container-renderer";
-import { loadRenderers } from "astro:container";
+import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { excerpt, postSlug, sortByDateDesc } from "../utils/posts";
+import { postHtml } from "../utils/rendered";
 
 export async function getStaticPaths() {
   return [{ params: {} }];
 }
 
 export async function GET(context: APIContext) {
-  const renderers = await loadRenderers([getMDXRenderer()]);
-  const container = await AstroContainer.create({ renderers });
-
   const posts = await getCollection("blog");
 
   const items = await Promise.all(
     sortByDateDesc(posts).map(async (post) => {
-      const { Content } = await render(post);
-      const content = await container.renderToString(Content);
+      const content = await postHtml(post);
 
       return {
         title: post.data.title,
