@@ -28,24 +28,35 @@ const frontmatter = {
       Interconnected, living documents. Unlike blog posts, these get updated
       over time as my understanding evolves.
     </p>
-    <ul class="space-y-2 list-none">
-      {allNotes.map((note) => (
-        <li class="pl-6 relative">
-          <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full"></span>
-          <a
-            href={`/notes/${noteSlug(note.id)}/`}
-            class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-          >
-            {note.data.title}
-          </a>
-          {note.data.lastUpdated && (
-            <time class="block text-sm text-secondary mt-1">
-              Updated {formatDate(note.data.lastUpdated)}
-            </time>
-          )}
-        </li>
-      ))}
-    </ul>
+    {
+      allNotes.length === 0 ? (
+        <p class="text-secondary">
+          There aren't any yet. Until there are, everything I've written is in{" "}
+          <a href="/writing" class="text-accent hover:text-accent-hover"
+            >the blog archive</a
+          >.
+        </p>
+      ) : (
+        <ul class="space-y-2 list-none">
+          {allNotes.map((note) => (
+            <li class="pl-6 relative">
+              <span class="absolute left-0 top-2 w-2 h-2 bg-accent-muted rounded-full" />
+              <a
+                href={`/notes/${noteSlug(note.id)}/`}
+                class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
+              >
+                {note.data.title}
+              </a>
+              {note.data.lastUpdated && (
+                <time class="block text-sm text-secondary mt-1">
+                  Updated {formatDate(note.data.lastUpdated)}
+                </time>
+              )}
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </div>
   {
     // client:only islands ship the React runtime even when the component
