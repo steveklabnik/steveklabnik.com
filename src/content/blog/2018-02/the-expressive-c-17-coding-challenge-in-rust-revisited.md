@@ -6,7 +6,7 @@ topic: rust
 ---
 
 
-In October of last year, I wrote a post, [“The Expressive C++17 Coding Challenge (in Rust)”](http://words.steveklabnik.com/the-expressive-c-17-coding-challenge-in-rust). For various reasons, it got brought up again in the D world, and [seb has written a new post](https://seb.wilzba.ch/b/2018/02/the-expressive-c17-coding-challenge-in-d/). It’s good, you should check it out!
+In October of last year, I wrote a post, [“The Expressive C++17 Coding Challenge (in Rust)”](/writing/the-expressive-c-17-coding-challenge-in-rust/). For various reasons, it got brought up again in the D world, and [seb has written a new post](https://seb.wilzba.ch/b/2018/02/the-expressive-c17-coding-challenge-in-d/). It’s good, you should check it out!
 
 However, it links to my gist, not my blog post. As I said back then:
 

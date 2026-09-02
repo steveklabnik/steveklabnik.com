@@ -6,7 +6,7 @@ topic: rust
 ---
 
 
-[My post yesterday](http://words.steveklabnik.com/rust-is-more-than-safety) got a lot of great responses. Two of them are from people I greatly respect, [Dave Herman](https://thefeedbackloop.xyz/safety-is-rusts-fireflower/) and [Graydon Hoare](http://graydon2.dreamwidth.org/247406.html). You should go read those two posts; this one is in response to them. I’m going to respond to both at the same time by mixing them together.
+[My post yesterday](/writing/rust-is-more-than-safety/) got a lot of great responses. Two of them are from people I greatly respect, [Dave Herman](https://thefeedbackloop.xyz/safety-is-rusts-fireflower/) and [Graydon Hoare](http://graydon2.dreamwidth.org/247406.html). You should go read those two posts; this one is in response to them. I’m going to respond to both at the same time by mixing them together.
 
 Graydon says:
 

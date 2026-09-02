@@ -28,7 +28,7 @@ Then, make a [pull request](https://github.com/steveklabnik/rust-community-versi
 ```
 ---
 layout: post
-url: http://words.steveklabnik.com/pointers-in-rust-a-guide
+url: /writing/pointers-in-rust-a-guide/
 title: "Pointers in Rust: a Guide"
 date: 2013-10-18
 start_version: 0.8
@@ -38,7 +38,7 @@ end_version: 0.9
 
 (`end_version` is optional)
 
-And bam! You get a nice looking badge. Check out out on this blog post of mine: http://words.steveklabnik.com/pointers-in-rust-a-guide
+And bam! You get a nice looking badge. Check out out on this blog post of mine: /writing/pointers-in-rust-a-guide/
 
 What’s nice about this approach is that, if your post ever gets out of date, someone else can modify the YAML in the repo, and your badge will automatically update to include the end date. No remembering to go back and fix it.
 

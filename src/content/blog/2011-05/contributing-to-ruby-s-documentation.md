@@ -8,7 +8,7 @@ topic: ruby-rails
 
 ### Update!
 
-I’m now making it even easier than this: [Read my new post about how I’ll do this for you](/2011/08/22/im-making-it-dead-simple-to-contribute-to-ruby-s-documentation.html). That said, if you want to do it yourself, the following will tell you how.
+I’m now making it even easier than this: [Read my new post about how I’ll do this for you](/writing/im-making-it-dead-simple-to-contribute-to-ruby-s-documentation/). That said, if you want to do it yourself, the following will tell you how.
 
 ### Original Article
 

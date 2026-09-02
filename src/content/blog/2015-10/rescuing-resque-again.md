@@ -6,7 +6,7 @@ topic: ruby-rails
 ---
 
 
-A long time ago, there was a big open source project, which was a huge part of the Rails world, but had almost no maintenance. This project was Resque, the go-to way to write background jobs for your Rails application. I attended a talk where the current maintainer was clearly getting burned out, and so, [offered to help](http://blog.steveklabnik.com/posts/2012-09-22-resque--let-s-do-this). The problem is, things have changed.
+A long time ago, there was a big open source project, which was a huge part of the Rails world, but had almost no maintenance. This project was Resque, the go-to way to write background jobs for your Rails application. I attended a talk where the current maintainer was clearly getting burned out, and so, [offered to help](/writing/resque--let-s-do-this/). The problem is, things have changed.
 
 It wasn’t just me. It was a bunch of people. We all used Resque, and loved it, and wanted to make it better. We made plans for a big 2.0 to pay off a bunch of technical debt, simplify the codebase, and add more features. A ton of people chipped in, I had some awesome remote pairing sessions. Things were good.
 

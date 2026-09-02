@@ -6,7 +6,7 @@ topic: ruby-rails
 ---
 
 
-Okay! So, if you’d read [my previous article on this](/2011/05/10/contributing-to-ruby-s-documentation.html), you’d know how easy it is to contribute to Ruby’s Documentaiton.
+Okay! So, if you’d read [my previous article on this](/writing/contributing-to-ruby-s-documentation/), you’d know how easy it is to contribute to Ruby’s Documentaiton.
 
 > But Steve, I’m still kinda scared.
 > 

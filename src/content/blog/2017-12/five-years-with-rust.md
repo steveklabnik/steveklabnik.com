@@ -6,7 +6,7 @@ topic: rust
 ---
 
 
-Today is five years since I first heard of Rust. [I wrote a post last year](http://words.steveklabnik.com/four-years-with-rust) about it. This year, I have something slightly different in mind.
+Today is five years since I first heard of Rust. [I wrote a post last year](/writing/four-years-with-rust/) about it. This year, I have something slightly different in mind.
 
 Five years is a long time in tech. It’s also a long time for me to be focused on one specific thing; other than the pizza job I held in high school and college, I’ve never stayed in a single job for five years. (This is true today as well; it’s not like I got a job with Rust the first day I learned of its existence.) I started with Ruby and Rails in 2008/2009, and my final commits to Rails were in August/September of 2013. So at this point, my career has basically been split in half, rather than dominated by Ruby.
 

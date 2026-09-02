@@ -12,7 +12,7 @@ Since I’ve posted this, I’ve refined a few of my positions on things. Everyo
 
 Furthermore, everything in engineering is ALWAYS a trade-off. I primarily wish that more people understood the tools that HTTP provides them with, and made an informed choice, rather than cargo-culting what they’ve seen others do.
 
-Update: Part II of this post is [here](/2011/08/07/some-people-understand-rest-and-http.html). Check it out, and there’s an announcement at the end!
+Update: Part II of this post is [here](/writing/some-people-understand-rest-and-http/). Check it out, and there’s an announcement at the end!
 
 Update: Please note that [REST is over. Hypermedia API is the new nomenclature.](/posts/2012-02-23-rest-is-over)
 

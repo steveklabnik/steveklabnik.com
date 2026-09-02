@@ -6,7 +6,7 @@ topic: rust
 ---
 
 
-Today is six years since I first heard of Rust. [I wrote a post last year](https://words.steveklabnik.com/five-years-with-rust) about it.
+Today is six years since I first heard of Rust. [I wrote a post last year](/writing/five-years-with-rust/) about it.
 
 This past year was… intense. Rust 1.31 was basically Rust 2.0, at least in the marketing sense. I burned myself out getting the first edition of the book together for Rust 1.0, and I burned myself out getting the edition shipped.
 

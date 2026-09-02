@@ -71,7 +71,7 @@ Let’s figure out the best way to share our love of Rust with the rest of the p
 
 Here’s some of the responses generated from this:
 
-I’ve written [Fire Mario, not Fire Flowers](http://words.steveklabnik.com/fire-mario-not-fire-flowers), as a response to two responses to this post.
+I’ve written [Fire Mario, not Fire Flowers](/writing/fire-mario-not-fire-flowers/), as a response to two responses to this post.
 
 The [/r/rust](https://www.reddit.com/r/rust/comments/5krhr0/rust_is_more_than_safety/), [proggit](https://www.reddit.com/r/programming/comments/5krw7r/rust_is_more_than_safety/), and [orange website](https://news.ycombinator.com/item?id=13272474) threads are full of good replies.
 

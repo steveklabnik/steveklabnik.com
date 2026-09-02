@@ -27,6 +27,6 @@ If you find one of the many, many nodes that people are publicly posting, please
 
 And if you’re a developer, consider helping out. It’s going to be rough going: the mailing list and issue trackers are full of people that have no idea what they’re doing. Be prepared to wade through tons of crap. But they could really, really use the help. I’ll be submitting another patch or two, but it needs much, much more than I can give.
 
-EDIT: Please check out [my follow up post](http://blog.steveklabnik.com/this-is-why-new-media-hates-old-media), where I talk about being misquoted regarding this post.
+EDIT: Please check out [my follow up post](https://web.archive.org/web/20100921045008/http://blog.steveklabnik.com/this-is-why-new-media-hates-old-media), where I talk about being misquoted regarding this post.
 
 EDIT 2: Patrick has a post up describing the exploits, now that there have been some patches applied. If you’re a technically inclined individual, you might be interested. You can find it on [his blog](http://www.kalzumeus.com/2010/09/22/security-lessons-learned-from-the-diaspora-launch/).

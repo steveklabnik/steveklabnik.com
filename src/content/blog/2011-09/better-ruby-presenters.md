@@ -6,7 +6,7 @@ topic: ruby-rails
 ---
 
 
-My [last blog post](/2011/09/06/the-secret-to-rails-oo-design.html) caused a bit of a stir in some circles. I got a bunch of emails. Apparently, I need to expand on a few things. So here we go. Let’s rap about the Presenter pattern, shall we?
+My [last blog post](/writing/the-secret-to-rails-oo-design/) caused a bit of a stir in some circles. I got a bunch of emails. Apparently, I need to expand on a few things. So here we go. Let’s rap about the Presenter pattern, shall we?
 
 ## No seriously, helpers suck
 

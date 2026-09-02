@@ -6,7 +6,7 @@ topic: open-source
 ---
 
 
-In [a previous post](https://words.steveklabnik.com/the-culture-war-at-the-heart-of-open-source), I discussed the history of open source, and ended with this claim:
+In [a previous post](/writing/the-culture-war-at-the-heart-of-open-source/), I discussed the history of open source, and ended with this claim:
 
 > Today’s developers have never learned about this history, or don’t care about it, or actively think it’s irrelevant. … For the same reasons that “open source” came up with a new name, I think the movement that will arise from today’s developers will also need a new name.
 > 
@@ -70,7 +70,7 @@ Let’s talk about what developers want first, and then we’ll get into why lic
 
 ## Developers care about production
 
-In [my previous post](https://words.steveklabnik.com/the-culture-war-at-the-heart-of-open-source), I claimed that developers are mostly confused about open source. Here’s two concrete examples of what I mean.
+In [my previous post](/writing/the-culture-war-at-the-heart-of-open-source/), I claimed that developers are mostly confused about open source. Here’s two concrete examples of what I mean.
 
 - Imagine a company wants to take some open source software using a permissive license and use it in their product. In the course of using it in their product, they improve it. Are they required to give anything back to the parent project, at all?
 - Imagine a company wants to take some free software using a copyleft license and use it in their product. In the course of using it in their product, they improve it. In order to comply with the license, they include a line in their 250 page “software license agreement” that says “Certain components of the software, and third party open source programs included with the software, have been or may be made available by $COMPANY on its Open Source web site (http://www.opensource.mycompany.com/”. That web site contains zip files with the contents of the (heavily modified) source. Are they required to do anything more than that?

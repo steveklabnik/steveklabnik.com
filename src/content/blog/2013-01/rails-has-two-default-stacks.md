@@ -40,7 +40,7 @@ Looking at history, the Prime Stack was born from the Omakase Stack. A certain g
 > Here at thoughtbot, we’ve had it with fixtures.
 > 
 
-But wait! Then, years later, you get a discussion on how factories are bad. My own “[Why I don’t like factory_girl](http://blog.steveklabnik.com/posts/2012-07-14-why-i-don-t-like-factory_girl)” is an example:
+But wait! Then, years later, you get a discussion on how factories are bad. My own “[Why I don’t like factory_girl](/writing/why-i-don-t-like-factory_girl/)” is an example:
 
 > So that’s what it really boils down to: the convenience of factories has set Rails testing strategies and software design back two years.
 > 

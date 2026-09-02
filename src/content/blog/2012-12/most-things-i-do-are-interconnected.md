@@ -6,7 +6,7 @@ topic: life
 ---
 
 
-I work on a *lot* of different things. Sometimes I get asked [how I find the time](http://words.steveklabnik.com/how-do-you-find-the-time), but there’s another aspect not related to time management: most of my projects build off of each other.
+I work on a *lot* of different things. Sometimes I get asked [how I find the time](/writing/how-do-you-find-the-time/), but there’s another aspect not related to time management: most of my projects build off of each other.
 
 ## Draper and RequestStore
 

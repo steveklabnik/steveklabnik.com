@@ -82,7 +82,7 @@ After that choice is made, we also need these things:
 
 ### Step 4: Create Media Types
 
-Based on this, I’ve made up [the application/vnd.tekpub.productions+json media type](/tekpub-productions.html). Key features, based on our evaluation:
+Based on this, I’ve made up [the application/vnd.tekpub.productions+json media type](https://web.archive.org/web/20160305182939/http://blog.steveklabnik.com/tekpub-productions.html). Key features, based on our evaluation:
 
 - Each transition in our state machine has a relation attribute
 - Each transition that needs to be parameterized has some sort of template syntax

@@ -45,7 +45,7 @@ So how do we analyze societies?
 
 ## It’s all about power and control
 
-Remember Structuralism? Well, it has some issues, and not just the opposition that Saussure faced from Chomsky. Along comes a bunch of French philosophers, and they have beef. I won’t get into it, except to mention the name of one: Michel Foucault. He wrote this book titled “Surveiller et punir: Naissance de la Prison,” which has some awkward title translation issues, and so ends up as “Discipline and Punish: The Birth of the Prison” in English. Long time readers of my blog will remember [my notes](http://blog.steveklabnik.com/posts/2011-01-22-a-few-notes-on-foucault) on this book, but the basics are as such:
+Remember Structuralism? Well, it has some issues, and not just the opposition that Saussure faced from Chomsky. Along comes a bunch of French philosophers, and they have beef. I won’t get into it, except to mention the name of one: Michel Foucault. He wrote this book titled “Surveiller et punir: Naissance de la Prison,” which has some awkward title translation issues, and so ends up as “Discipline and Punish: The Birth of the Prison” in English. Long time readers of my blog will remember [my notes](/writing/a-few-notes-on-foucault/) on this book, but the basics are as such:
 
 ### Foucault
 

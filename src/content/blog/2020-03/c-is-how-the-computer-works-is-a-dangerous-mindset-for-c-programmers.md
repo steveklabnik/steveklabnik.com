@@ -6,7 +6,7 @@ topic: technology
 ---
 
 
-A long time ago, I wrote [“Should you learn C to “learn how the computer works”?"](https://words.steveklabnik.com/should-you-learn-c-to-learn-how-the-computer-works). This was part 1 in a three part series. A year later, I got around to part 2, [““C is not how the computer works” can lead to inefficient code"](https://words.steveklabnik.com/c-is-not-how-the-computer-works-can-lead-to-inefficient-code).
+A long time ago, I wrote [“Should you learn C to “learn how the computer works”?"](/writing/should-you-learn-c-to-learn-how-the-computer-works/). This was part 1 in a three part series. A year later, I got around to part 2, [““C is not how the computer works” can lead to inefficient code"](/writing/c-is-not-how-the-computer-works-can-lead-to-inefficient-code/).
 
 It’s been five more months. I don’t think I really want to write out the third part; I expected this to be a quick series of blog posts, not something that was on my plate for a year and a half. Here’s the thesis of part 3:
 
