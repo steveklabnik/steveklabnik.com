@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "check": "astro check",
     "preview": "astro preview",
     "sync:standard-site": "node scripts/standard-site-sync.mjs",
@@ -36,6 +36,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.4.1",
     "markdown-it": "^15.0.1",
+    "pagefind": "^1.5.2",
     "satori": "^0.33.4",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
