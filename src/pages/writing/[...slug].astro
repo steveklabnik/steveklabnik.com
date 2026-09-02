@@ -35,6 +35,7 @@ const cleanSlug = postSlug(entry.id);
 const frontmatter = {
   pageTitle: entry.data.title,
   description: await postDescription(entry),
+  ogImage: `/og/writing/${cleanSlug}.png`,
   pubDate: entry.data.pubDate,
   // Standard.site verification: ties this page to its AT Protocol record.
   documentAtUri: documentAtUri(cleanSlug, entry.data.pubDate),
