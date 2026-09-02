@@ -6,7 +6,7 @@ topic: rest-hypermedia
 ---
 
 
-This is a follow-up post to my post [here](/2011/07/03/nobody-understands-rest-or-http.html). You probably want to read that first.
+This is a follow-up post to my post [here](/writing/nobody-understands-rest-or-http/). You probably want to read that first.
 
 UPDATE: Please note that ‘[REST is over’](/posts/2012-02-23-rest-is-over). ’Hypermedia API’ is the proper term now.
 

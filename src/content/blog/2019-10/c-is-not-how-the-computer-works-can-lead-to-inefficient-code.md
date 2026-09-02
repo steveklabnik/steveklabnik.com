@@ -6,7 +6,7 @@ topic: technology
 ---
 
 
-A little over a year ago, I wrote [“Should you learn C to ‘learn how the computer works’”](https://words.steveklabnik.com/should-you-learn-c-to-learn-how-the-computer-works). It was a bit controversial. I had promised two follow-up posts. It’s taken me a year, but here’s the first one.
+A little over a year ago, I wrote [“Should you learn C to ‘learn how the computer works’”](/writing/should-you-learn-c-to-learn-how-the-computer-works/). It was a bit controversial. I had promised two follow-up posts. It’s taken me a year, but here’s the first one.
 
 In that post, I argued that C doesn’t “work like the computer”, but rather, by a concept called the “C abstract machine.” It happens to be close to how computers operate in some sense, but that when you write C, you’re writing for the abstract machine, not the computer itself. Here’s the trick, though: the C abstract machine doesn’t define every single aspect of how computation happens. And so sometimes, you can write code in two different ways, that the C abstract machine says are equivalent, yet are *not* equivalent in performance. This means that, even if you buy into my original point, you still need to know the boundaries of this definition, and can exploit those boundaries in important ways.
 

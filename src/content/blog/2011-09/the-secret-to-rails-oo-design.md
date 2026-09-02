@@ -6,7 +6,7 @@ topic: ruby-rails
 ---
 
 
-UPDATE: I also have a follow-up [here](/2011/09/09/better-ruby-presenters.html).
+UPDATE: I also have a follow-up [here](/writing/better-ruby-presenters/).
 
 I often tell people that I learned Ruby via Rails. This is pretty much the worst way to do it, but I’d learned so many programming languages by then that it didn’t hinder me too much. The one thing that it did do, however, was give me a slightly twisted sense of how to properly design the classes needed in a Rails app. Luckily, I obsessively read other people’s code, and I’ve noticed that there’s one big thing that is common in most of the code that’s written by people whose design chops I respect.
 

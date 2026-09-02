@@ -8,7 +8,7 @@ topic: rust
 
 It’s been a while since I’ve mentioned my work on “The Rust Programming Language”, and I wanted to give you all an update. Before we get into the news, though, I’d like to take a moment to reflect on where the book has been, and then we’ll talk about it’s future.
 
-I [previously wrote about my history with Rust and docs](http://words.steveklabnik.com/rusts-documentation-is-about-to-drastically-improve). As I said back then:
+I [previously wrote about my history with Rust and docs](/writing/rusts-documentation-is-about-to-drastically-improve/). As I said back then:
 
 > But my first area of focus will be on the area of Rust’s documentation that’s the most weak, and simultaneously the most important: the tutorial.
 > 

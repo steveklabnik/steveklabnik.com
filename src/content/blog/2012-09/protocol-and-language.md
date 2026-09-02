@@ -6,7 +6,7 @@ topic: technology
 ---
 
 
-This is the second part of my series on protocol. The [first part](http://words.steveklabnik.com/protological-control-an-introduction) contained a lot of background information, but now we’re ready to get into what Protocol actually *is*.
+This is the second part of my series on protocol. The [first part](/writing/protological-control-an-introduction/) contained a lot of background information, but now we’re ready to get into what Protocol actually *is*.
 
 ---
 

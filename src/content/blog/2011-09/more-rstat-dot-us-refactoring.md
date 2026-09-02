@@ -8,7 +8,7 @@ topic: open-source
 
 Hey everyone! I just wanted to share One More Thing with you about this rstat.us refactoring.
 
-The main thrust of the last article I posted was to show you a technique for extracting a class, getting it under some kind of test, and then refactoring it a bit. Refactoring is always an iterative process, and Ryan Bates from the always awesome [Railscasts](http://railscasts.com/) asked me why I made the Salmon class into a module, especially given my recent [rant](/2011/09/06/the-secret-to-rails-oo-design.html) against modules. The answer was, ‘because it’s simpler, and the first thing I thought of.’ He shared with me an alternate implementation that I like too, and I wanted to share with you. Check it:
+The main thrust of the last article I posted was to show you a technique for extracting a class, getting it under some kind of test, and then refactoring it a bit. Refactoring is always an iterative process, and Ryan Bates from the always awesome [Railscasts](http://railscasts.com/) asked me why I made the Salmon class into a module, especially given my recent [rant](/writing/the-secret-to-rails-oo-design/) against modules. The answer was, ‘because it’s simpler, and the first thing I thought of.’ He shared with me an alternate implementation that I like too, and I wanted to share with you. Check it:
 
 ```ruby
 class SalmonNotifier

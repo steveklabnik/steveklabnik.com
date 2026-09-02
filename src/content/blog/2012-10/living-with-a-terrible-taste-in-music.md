@@ -48,7 +48,7 @@ From there, it was all over. All this edginess combined with my (just budding, o
 
 ## Metal
 
-Of course, slippery slopes are everywhere, and so I started searching for harder and harder music. Always the [min/maxer](http://words.steveklabnik.com/how-do-you-find-the-time), I looked for loopholes in my parent’s rules. The biggest hole: anything from the Christian Family Bookstore was fair game. So I scoured it for anything awesome. That’s when I found Zao:
+Of course, slippery slopes are everywhere, and so I started searching for harder and harder music. Always the [min/maxer](/writing/how-do-you-find-the-time/), I looked for loopholes in my parent’s rules. The biggest hole: anything from the Christian Family Bookstore was fair game. So I scoured it for anything awesome. That’s when I found Zao:
 
 Screw punk, metal was way more awesome. I grew my hair out long and learned to headbang.
 

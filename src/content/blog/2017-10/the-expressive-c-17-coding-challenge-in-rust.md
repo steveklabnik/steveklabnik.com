@@ -10,7 +10,7 @@ A few weeks ago, two C++ bloggers initiated a challenge ([here](https://www.flue
 
 ---
 
-I’ve written [a follow-up post](http://words.steveklabnik.com/the-expressive-c-17-coding-challenge-in-rust-revisited) too!
+I’ve written [a follow-up post](/writing/the-expressive-c-17-coding-challenge-in-rust-revisited/) too!
 
 ---
 

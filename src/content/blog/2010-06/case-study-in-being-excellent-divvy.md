@@ -9,7 +9,7 @@ The images in this post have been lost to time. Oh well. Original post below, im
 
 ---
 
-The other day I wrote a post about [being excellent to each other](http://blog.steveklabnik.com/being-excellent-to-each-other). Today, I’ve got a great example of that for you: Divvy.
+The other day I wrote a post about [being excellent to each other](https://web.archive.org/web/20100630002811/http://blog.steveklabnik.com/being-excellent-to-each-other). Today, I’ve got a great example of that for you: Divvy.
 
 What would you do if you received an email like this?
 

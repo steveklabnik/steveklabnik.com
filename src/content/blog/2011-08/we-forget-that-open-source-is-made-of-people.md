@@ -61,4 +61,4 @@ If you don’t contribute to Open Source: please consider thanking someone that 
 
 Thanks.
 
-[My next post is a bit of a follow-up to this](/2011/08/19/matz-is-nice-so-we-are-nice.html).
+[My next post is a bit of a follow-up to this](/writing/matz-is-nice-so-we-are-nice/).

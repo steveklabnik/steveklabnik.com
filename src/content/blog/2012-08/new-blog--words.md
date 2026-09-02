@@ -6,7 +6,7 @@ topic: life
 ---
 
 
-I’ve started a new blog: [Words](http://words.steveklabnik.com/).
+I’ve started a new blog: [Words](https://web.archive.org/web/20200604152340/https://words.steveklabnik.com/).
 
 You may have noticed that it’s a part of [the Svbtle blogging network](https://svbtle.com/). I’m super excited about this, but you may be confused. Let me explain.
 

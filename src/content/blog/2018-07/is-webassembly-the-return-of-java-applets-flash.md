@@ -6,7 +6,7 @@ topic: rust
 ---
 
 
-In my [last post on WebAssembly](http://words.steveklabnik.com/webassembly-is-more-than-just-the-web), I made the following claim:
+In my [last post on WebAssembly](/writing/webassembly-is-more-than-just-the-web/), I made the following claim:
 
 > Some have compared WebAssembly to Java applets; in some ways, they’re very right, but in some ways, they’re very wrong. Eventually I’ll write a post about the wrong, but for now, the right: in some sense, WebAssembly is a different way of accomplishing what the JVM set out to do: it’s a common virtual machine that can be used to build very cross-platform software.
 > 

@@ -6,7 +6,7 @@ topic: technology
 ---
 
 
-Today is the fourth [_why day](http://whyday.org/). So I thought I’d say a few words about his final gift to the rest of us, [CLOSURE](http://words.steveklabnik.com/closure).
+Today is the fourth [_why day](http://whyday.org/). So I thought I’d say a few words about his final gift to the rest of us, [CLOSURE](/writing/closure/).
 
 ## Be Skeptical
 
