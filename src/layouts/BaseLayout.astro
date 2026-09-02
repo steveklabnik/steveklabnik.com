@@ -65,6 +65,16 @@ const Masthead = isHome ? "h1" : "div";
       title="Steve Klabnik"
       href="https://steveklabnik.com/feed.xml"
     />
+    {
+      frontmatter.feed && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={frontmatter.feed.title}
+          href={new URL(frontmatter.feed.href, Astro.site)}
+        />
+      )
+    }
     <!-- Standard.site (AT Protocol) discovery hint and per-document verification -->
     <link rel="site.standard.publication" href={PUBLICATION_AT_URI} />
     {

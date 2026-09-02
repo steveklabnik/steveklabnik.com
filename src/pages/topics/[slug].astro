@@ -36,13 +36,29 @@ const years = Object.keys(postsByYear).sort().reverse();
 const frontmatter = {
   pageTitle: `${metadata.title} - Topics`,
   description: metadata.description,
+  ...(posts.length > 0 && {
+    feed: {
+      title: `Steve Klabnik — ${metadata.title}`,
+      href: `/topics/${slug}/feed.xml`,
+    },
+  }),
 };
 ---
 
 <BaseLayout frontmatter={frontmatter}>
   <div class="max-w-none">
     <h1 class="text-3xl font-bold mb-2">{metadata.title}</h1>
-    <p class="text-secondary mb-8">{metadata.description}</p>
+    <p class="text-secondary mb-2">{metadata.description}</p>
+    {
+      posts.length > 0 && (
+        <p class="text-sm text-secondary mb-8">
+          <a
+            href={`/topics/${slug}/feed.xml`}
+            class="text-accent hover:text-accent-hover">RSS for just this topic</a
+          >
+        </p>
+      )
+    }
 
     {posts.length === 0 ? (
       <p class="text-secondary">No posts in this topic yet.</p>
