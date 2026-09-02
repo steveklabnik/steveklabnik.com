@@ -10,7 +10,8 @@ export interface Props {
 const { seriesData } = Astro.props;
 const seriesMetadata = getSeriesMetadata(seriesData.slug);
 
-if (!seriesMetadata) {
+// Nothing to navigate in a series of one, and this renders twice per post.
+if (!seriesMetadata || seriesData.total <= 1) {
   return null;
 }
 ---

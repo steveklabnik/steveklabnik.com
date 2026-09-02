@@ -65,9 +65,7 @@ const frontmatter = {
           <div class="flex items-start justify-between">
             <div class="flex-1">
               <h3 class="mt-0 mb-1">
-                <a href={`/writing/${postSlug(post.id)}`} class="no-underline hover:underline">
-                  {post.data.title}
-                </a>
+                <a href={`/writing/${postSlug(post.id)}`} class="no-underline hover:underline">{post.data.title}</a>
               </h3>
               <p class="text-sm text-secondary m-0">
                 Part {index + 1} • {formatDate(post.data.pubDate)}

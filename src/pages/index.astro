@@ -59,11 +59,9 @@ const frontmatter = {
               <a
                 href={`/topics/${topic.slug}/`}
                 class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-              >
-                {topic.title}
-              </a>
+              >{topic.title}</a>
               <span class="text-sm text-secondary ml-2">
-                ({topic.postCount} posts)
+                ({topic.postCount} post{topic.postCount === 1 ? "" : "s"})
               </span>
             </li>
           ))
@@ -91,17 +89,13 @@ const frontmatter = {
                 <a
                   href={`/writing/${postSlug(post.id)}/`}
                   class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-                >
-                  {post.data.title}
-                </a>
+                >{post.data.title}</a>
                 {topicMeta && post.data.topic && (
                   <span class="ml-2">
                     <a
                       href={`/topics/${post.data.topic}/`}
                       class="topic-badge text-xs px-2 py-1 rounded"
-                    >
-                      {topicMeta.title}
-                    </a>
+                    >{topicMeta.title}</a>
                   </span>
                 )}
                 <time class="block text-sm text-secondary mt-1">
@@ -149,11 +143,9 @@ const frontmatter = {
                 <a
                   href={`/series/${s.slug}`}
                   class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-                >
-                  {s.title}
-                </a>
+                >{s.title}</a>
                 <span class="text-sm text-secondary ml-2">
-                  ({s.postCount} posts)
+                  ({s.postCount} post{s.postCount === 1 ? "" : "s"})
                 </span>
               </li>
             ))}

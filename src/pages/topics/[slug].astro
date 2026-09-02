@@ -59,17 +59,13 @@ const frontmatter = {
                   <a
                     href={`/writing/${postSlug(post.id)}/`}
                     class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-                  >
-                    {post.data.title}
-                  </a>
+                  >{post.data.title}</a>
                   {series && post.data.series && (
                     <span class="ml-2">
                       <a
                         href={`/series/${post.data.series.slug}`}
                         class="series-badge text-xs px-2 py-1 rounded"
-                      >
-                        {series.title}
-                      </a>
+                      >{series.title}</a>
                     </span>
                   )}
                   <time class="block text-sm text-secondary mt-1">

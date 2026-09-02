@@ -44,9 +44,7 @@ const frontmatter = {
               <a
                 href={`/notes/${noteSlug(note.id)}/`}
                 class="text-accent hover:text-accent-hover visited:text-accent-visited font-medium"
-              >
-                {note.data.title}
-              </a>
+              >{note.data.title}</a>
               {note.data.lastUpdated && (
                 <time class="block text-sm text-secondary mt-1">
                   Updated {formatDate(note.data.lastUpdated)}

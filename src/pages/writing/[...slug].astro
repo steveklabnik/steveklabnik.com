@@ -64,9 +64,7 @@ const frontmatter = {
         <a
           href={`/topics/${entry.data.topic}/`}
           class="topic-badge text-sm px-3 py-1 rounded"
-        >
-          {getTopicMetadata(entry.data.topic)!.title}
-        </a>
+        >{getTopicMetadata(entry.data.topic)!.title}</a>
       </div>
     )}
     {seriesNavigation && <SeriesNavigationComponent seriesData={seriesNavigation} />}
