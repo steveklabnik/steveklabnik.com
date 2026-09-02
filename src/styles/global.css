@@ -177,7 +177,7 @@
 }
 
 @media print {
-  nav, .sr-only, header {
+  nav, .sr-only, header, footer {
     display: none !important;
   }
 
