@@ -1,9 +1,7 @@
 import { readFile } from "node:fs/promises";
-import { getCollection, render } from "astro:content";
-import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx/container-renderer";
-import { loadRenderers } from "astro:container";
+import { getCollection } from "astro:content";
 import { excerpt, htmlToText, postSlug, sortByDateDesc } from "../utils/posts";
+import { postHtml } from "../utils/rendered";
 import {
   DID,
   DOCUMENT_COLLECTION,
@@ -38,9 +36,6 @@ export async function GET() {
     );
   }
 
-  const renderers = await loadRenderers([getMDXRenderer()]);
-  const container = await AstroContainer.create({ renderers });
-
   const posts = await getCollection("blog");
 
   const documents: Record<string, object> = {};
@@ -56,8 +51,7 @@ export async function GET() {
     }
     slugForTid[tid] = slug;
 
-    const { Content } = await render(post);
-    const html = await container.renderToString(Content);
+    const html = await postHtml(post);
 
     documents[tid] = {
       $type: DOCUMENT_COLLECTION,
