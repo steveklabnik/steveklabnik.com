@@ -12,7 +12,7 @@ const data = await fetchPost({ uri, contextless });
 const render = renderPost(data);
 ---
 
-<bluesky-post src={data.thread?.post.uri}>
+<bluesky-post src={data.thread?.post.uri} data-pagefind-ignore>
   <Fragment set:html={render} />
 </bluesky-post>
 

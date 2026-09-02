@@ -46,13 +46,21 @@ const frontmatter = {
 ---
 
 <BaseLayout frontmatter={frontmatter}>
-  <article class="prose prose-slate dark:prose-invert">
+  <article
+    class="prose prose-slate dark:prose-invert"
+    data-pagefind-body
+    data-pagefind-meta={`date:${formatDate(entry.data.pubDate)}`}
+  >
     <h1 class="mb-2">{entry.data.title}</h1>
-    <time datetime={entry.data.pubDate.toISOString()} class="text-secondary">
+    <time
+      datetime={entry.data.pubDate.toISOString()}
+      class="text-secondary"
+      data-pagefind-ignore
+    >
       {formatDate(entry.data.pubDate)}
     </time>
     {entry.data.topic && getTopicMetadata(entry.data.topic) && (
-      <div class="mt-2">
+      <div class="mt-2" data-pagefind-ignore>
         <a
           href={`/topics/${entry.data.topic}/`}
           class="topic-badge text-sm px-3 py-1 rounded"

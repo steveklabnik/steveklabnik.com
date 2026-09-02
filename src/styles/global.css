@@ -289,6 +289,19 @@ a.series-badge:focus-visible {
 }
 
 /* ==========================================================================
+   Search Result Highlights
+   ========================================================================== */
+
+/* Pagefind wraps matched terms in <mark>, whose UA default is a yellow that
+   belongs to no theme here and goes unreadable against dark text. */
+#search-results mark {
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  border-radius: 0.125rem;
+  padding: 0 0.125rem;
+}
+
+/* ==========================================================================
    Wiki Link Missing (Red Link) Styles
    ========================================================================== */
 
