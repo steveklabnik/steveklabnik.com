@@ -27,6 +27,14 @@
     --color-text-secondary: #475569;
     --color-text-muted: #64748b;
     --color-border: #e2e8f0;
+    /* Topic/series chips. accent-light sits at 1.02:1 against --color-bg,
+       so a chip painted with it is invisible on the page; these carry a
+       real tint plus a border that reads at 2.5:1. Text is AAA on both the
+       rest and hover fills. */
+    --color-badge-bg: #ede9fe;
+    --color-badge-bg-hover: #ddd6fe;
+    --color-badge-border: #a78bfa;
+    --color-badge-text: #4c1d95;
   }
 
   /* Dark mode (violet accent) — all pairs AAA (7:1+) */
@@ -44,6 +52,10 @@
     --color-text-secondary: #9ba9bd;
     --color-text-muted: #64748b;
     --color-border: #334155;
+    --color-badge-bg: #312e81;
+    --color-badge-bg-hover: #4c1d95;
+    --color-badge-border: #6d28d9;
+    --color-badge-text: #ddd6fe;
   }
 
   /* Notes section — teal accent (light) — all pairs AAA (7:1+) */
@@ -123,28 +135,6 @@
   }
   nav a:hover {
     color: var(--color-accent-hover);
-  }
-
-  /* Series badge link styles */
-  a.series-badge {
-    @apply no-underline;
-    outline: 2px solid transparent;
-    outline-offset: 1px;
-  }
-  a.series-badge:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 1px;
-  }
-
-  /* Topic badge link styles */
-  a.topic-badge {
-    @apply no-underline;
-    outline: 2px solid transparent;
-    outline-offset: 1px;
-  }
-  a.topic-badge:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 1px;
   }
 
   /* Site title link override */
@@ -232,6 +222,46 @@
   .dark body {
     background-color: #000000;
   }
+}
+
+/* ==========================================================================
+   Topic & Series Chips
+   ========================================================================== */
+
+/* Unlayered on purpose. The typography plugin's prose rules compile into
+   @layer utilities, which outranks @layer components no matter how specific
+   the selector is — so a chip inside an article picked up prose's underline.
+   Unlayered rules beat every layer, which also keeps the chip identical in
+   a list and in a post header.
+
+   Colors live here rather than as utilities on each of the five call sites,
+   which had drifted into an identical five-class incantation. */
+a.topic-badge,
+a.series-badge {
+  background-color: var(--color-badge-bg);
+  border: 1px solid var(--color-badge-border);
+  color: var(--color-badge-text);
+  text-decoration: none;
+  transition: background-color 150ms;
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+}
+
+a.topic-badge:visited,
+a.series-badge:visited {
+  color: var(--color-badge-text);
+}
+
+a.topic-badge:hover,
+a.series-badge:hover {
+  background-color: var(--color-badge-bg-hover);
+  text-decoration: none;
+}
+
+a.topic-badge:focus-visible,
+a.series-badge:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
 }
 
 /* ==========================================================================
