@@ -125,6 +125,23 @@ const ogImage = new URL(frontmatter.ogImage ?? "/og/site.png", Astro.site);
       <main id="main-content">
         <slot />
       </main>
+      <footer class="mt-16 pt-6 border-t border-base text-sm text-secondary">
+        <p>
+          <a href="/feed.xml" class="text-accent hover:text-accent-hover">RSS</a>
+          &middot;
+          <a
+            href="https://bsky.app/profile/steveklabnik.com"
+            rel="me"
+            class="text-accent hover:text-accent-hover">Bluesky</a
+          >
+          &middot;
+          <a
+            href="https://github.com/steveklabnik"
+            rel="me"
+            class="text-accent hover:text-accent-hover">GitHub</a
+          >
+        </p>
+      </footer>
     </div>
 
     <!-- Reapply dark class after view transitions -->
