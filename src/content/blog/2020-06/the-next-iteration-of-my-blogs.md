@@ -10,9 +10,9 @@ I've had a few different blogs over the years. Every so often, I change things. 
 
 My oldest blog that's survived is [Literate Programming](https://web.archive.org/web/20200519230707/http://blog.steveklabnik.com/). It looked like this:
 
-![untitled](/img/2020-06-08/Untitled.png)
-![untitled 01](/img/2020-06-08/Untitled%201.png)
-![untitled 02](/img/2020-06-08/Untitled%202.png)
+![The Literate Programming home page: a serif two-column layout with a Welcome heading and a sidebar linking All Posts and Feed](../../../assets/img/2020-06-08/untitled.png)
+![Literate Programming’s Archive page, listing posts including “Announcing emoji 1.0” and “Removing Turbolinks from Rails 4”](../../../assets/img/2020-06-08/untitled-1.png)
+![A Literate Programming post, “Redcarpet Is _awesome_!”, with a sidebar table of contents and a syntax-highlighted Ruby snippet](../../../assets/img/2020-06-08/untitled-2.png)
 
 This was my own static site generator! I loved making that table of contents stuff over on the left.
 
@@ -20,9 +20,9 @@ This was my own static site generator! I loved making that table of contents stu
 
 Then, there's [words](https://web.archive.org/web/20200604152340/https://words.steveklabnik.com/). This used [Svbtle](https://svbtle.com/), which is a great platform. I liked the Meeple, and the red, and the Kudos button that made random internet people *so mad* for some reason. Anyway, it looked like this:
 
-![untitled 03](/img/2020-06-08/Untitled%203.png)
-![untitled 04](/img/2020-06-08/Untitled%204.png)
-![untitled 05](/img/2020-06-08/Untitled%205.png)
+![The words home page on Svbtle: the red Meeple logo, an Emma Goldman epigraph, and the post “How often does Rust change?”](../../../assets/img/2020-06-08/untitled-3.png)
+![A words post, “‘C is not how the computer works’ can lead to inefficient code”, in Svbtle’s bold sans layout](../../../assets/img/2020-06-08/untitled-4.png)
+![The foot of a words post, showing Svbtle’s Kudos button at 822 and a “Now read this” recommendation](../../../assets/img/2020-06-08/untitled-5.png)
 
 The kudos count does nothing, other than record that you did it. The style was really nice, it was easy to write Markdown. Then Medium got popular. Oh well.
 
