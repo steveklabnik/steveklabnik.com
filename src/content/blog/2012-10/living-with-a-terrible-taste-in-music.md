@@ -24,7 +24,7 @@ But then, I discovered skateboarding, and punk rock.
 
 Of course, it wasn’t even good punk music, either. See, I had always thought skateboarding was neat, but wasn’t never had one because there was nowhere to ride it. I lived on a farm, we didn’t have any pavement anywhere. So I forgot about skating. But then I got a call from a friend, he’d just gotten a new video game:
 
-![thps 1 cover](/img/2012-10-12/TonyHawksProSkaterPlayStation1.jpg)
+![thps 1 cover](../../../assets/img/2012-10-12/tonyhawksproskaterplaystation1.jpg)
 
 Here’s the soundtrack list:
 
@@ -41,7 +41,7 @@ Here’s the soundtrack list:
 
 Pretty awesome. He also had this new album that came out at the same time…
 
-![enema of the state](/img/2012-10-12/blink-182-enema-of-the-state-front.jpg)
+![enema of the state](../../../assets/img/2012-10-12/blink-182-enema-of-the-state-front.jpg)
 
 
 From there, it was all over. All this edginess combined with my (just budding, of course) testosterone meant I was pretty much set. The funniest part about this period of my life was that I actually wasn’t really a particularly rebellious child: I maintained pretty damn good grades, save for a few semesters, I still went to church, and I was generally a good kid. I didn’t even smoke pot! Yet even the act of possessing these albums was heinously offensive. I got grounded for half a year for possessing Blink182’s “Take off your Pants and Jacket” and Limp Bizkit’s “Three Dollar Bill, Y’all$.” This constant conflict over music with my parents dominates my memories at the time. I literally printed out all the lyrics and wrote two pages explaining why I should be allowed to own a copy of the Offspring’s “Americana” even though they said ‘shit’ a few times. Punk, even third generation pop-punk, really spoke to my desire for autonomy and my attempts to be my own person.
@@ -54,7 +54,7 @@ Screw punk, metal was way more awesome. I grew my hair out long and learned to h
 
 I don’t think I need to explain to you why metal is ridiculous. I mean, come on:
 
-![dethklok](/img/2012-10-12/dethklokbandfeb2024_638.webp)
+![dethklok](../../../assets/img/2012-10-12/dethklokbandfeb2024-638.webp)
 
 ## Hardcore
 
@@ -64,21 +64,21 @@ My fascination with hardcore in late high school and early college was two-fold,
 
 To recap: hardcore punk:
 
-![minor threat poster](/img/2012-10-12/a18-MinorThreat.jpg)
+![minor threat poster](../../../assets/img/2012-10-12/a18-minorthreat.jpg)
 
 hardcore:
 
-![slam dancing](/img/2012-10-12/tumblr_lpqekrWMCt1qh3e7yo1_400.gif)
+![slam dancing](../../../assets/img/2012-10-12/tumblr-lpqekrwmct1qh3e7yo1-400.gif)
 
 Uuhhh yeah. Hardcore punk also brought me to straightedge, which leads to silliness like this:
 
-![my straightedge tattoo](/img/2012-10-12/KmCWp.jpg)
+![my straightedge tattoo](../../../assets/img/2012-10-12/kmcwp.jpg)
 
 To this day, I still don’t regret this tattoo, and anyone that’s seen me at a Ruby conference knows that I’m not straightedge anymore. But this music and philosophy defined who I was for about 8 years, which was, at the end of it, about a third of my life. It changed my college experience. I’m (basically) permanently marked by it.
 
 But no, seriously:
 
-![slam dancing](/img/2012-10-12/tumblr_lpqekrWMCt1qh3e7yo1_400.gif)
+![slam dancing](../../../assets/img/2012-10-12/tumblr-lpqekrwmct1qh3e7yo1-400.gif)
 
 ## Party Rock
 

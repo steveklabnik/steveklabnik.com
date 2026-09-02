@@ -8,7 +8,7 @@ topic: rest-hypermedia
 
 # REST is
 
-![Rest is OVER](/img/2012-02-23/restisover.png)
+![Rest is OVER](../../../assets/img/2012-02-23/restisover.png)
 
 ---
 

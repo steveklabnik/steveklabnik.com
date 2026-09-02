@@ -54,7 +54,7 @@ covering the CLI driven workflow. Let me know.
 
 After you SSO into the console, you're put on the Projects page:
 
-<img src="/img/2024-02-17/projects.png">
+![The Oxide console's Projects page](../../../assets/img/2024-02-17/projects.png)
 
 We're in a "silo" named Oxide. A silo is a grouping of users, projects, and
 resources that are isolated from one another. But we don't care about that:
@@ -65,11 +65,11 @@ and I'm already like ten layers deep in this yak shave.
 
 Let's make a new project:
 
-<img src="/img/2024-02-17/new-project.png">
+![The Oxide console's new-project form](../../../assets/img/2024-02-17/new-project.png)
 
 It's just that easy. After we push the button, we're put on the instances page:
 
-<img src="/img/2024-02-17/instances.png">
+![The Instances page for the gerrit project, with no instances yet](../../../assets/img/2024-02-17/instances.png)
 
 There's a nice little toast in the bottom left that I didn't manage to get a
 screenshot of because I was re-sizing my window too. Anyway, now that we have
@@ -78,7 +78,7 @@ machines, and so setting one up looks like you might expect. You can give it
 a name and description, but for this screenshot I'm only showing off one part
 of this page because this is already a ton of screenshots:
 
-<img src="/img/2024-02-17/create-instance.png">
+![The instance creation form: pre-configured hardware sizes with 2 vCPUs and 8 GiB RAM selected, and a 4 GiB Debian 12 boot disk](../../../assets/img/2024-02-17/create-instance.png)
 
 We can size instances however we'd like. Even though Gerrit is a Java
 application these days, I'm going to keep the instance small, because it's just
@@ -90,12 +90,12 @@ and that's fine. Is four gigabytes of disk enough? I don't know, let's find out.
 
 A few seconds later, our instance is up and running:
 
-<img src="/img/2024-02-17/instance.png">
+![The Oxide console showing the gerrit instance up and running](../../../assets/img/2024-02-17/instance.png)
 
 I am obscuring the external IP because, well, no reason to give that out.
 Anyway, that's it! We can `ssh` in:
 
-<img src="/img/2024-02-17/login.png">
+![A terminal after ssh-ing in, showing Debian's boot banner and a debian@gerrit prompt, with the external IP redacted](../../../assets/img/2024-02-17/login.png)
 
 ... how, you may ask? Well, I didn't show off the entire "Create instance" page:
 I have set up my ssh keys in my account previously, and so by default, because
@@ -109,12 +109,12 @@ to actually do much setup at all.
 That being said, I do need to open port 8080 so that I can poke at Gerrit in
 a web browser. If I go into the VPC configuration, I can add a new firewall rule:
 
-<img src="/img/2024-02-17/add-firewall-rule.png">
+![The new firewall rule form in the console's VPC configuration](../../../assets/img/2024-02-17/add-firewall-rule.png)
 
 Further down, I can pick port 8080, and that I want to allow TCP. After setting
 up Gerrit, we have success!
 
-<img src="/img/2024-02-17/success.png">
+![A browser tab showing Gerrit's change list served over port 8080, reading “No changes”, with the IP redacted](../../../assets/img/2024-02-17/success.png)
 
 ------
 

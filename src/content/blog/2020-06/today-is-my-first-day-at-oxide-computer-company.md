@@ -4,7 +4,7 @@ pubDate: 2020-06-15
 topic: life
 ---
 
-![Oxide Logo](/img/2020-06-15/oxide.png)
+![Oxide Logo](../../../assets/img/2020-06-15/oxide.png)
 
 Today is my first day at [Oxide Computer Company](https://oxide.computer/), where I will be doing engineering work.
 
