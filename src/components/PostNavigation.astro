@@ -1,0 +1,62 @@
+---
+import type { AdjacentPosts } from "../utils/posts";
+import { postSlug } from "../utils/posts";
+import { getTopicMetadata } from "../utils/topics";
+
+export interface Props {
+  adjacent: AdjacentPosts;
+  topic?: string;
+}
+
+const { adjacent, topic } = Astro.props;
+const topicMeta = topic ? getTopicMetadata(topic) : null;
+---
+
+<nav aria-label="More posts" class="mt-12 pt-6 border-t border-base">
+  {
+    (adjacent.older || adjacent.newer) && (
+      <div class="flex flex-col sm:flex-row gap-4 mb-4">
+        <div class="flex-1 min-w-0">
+          {adjacent.older && (
+            <a
+              href={`/writing/${postSlug(adjacent.older.id)}/`}
+              class="group no-underline hover:underline text-accent"
+            >
+              <span class="block text-sm text-secondary">&larr; Older</span>
+              <span class="font-medium">{adjacent.older.data.title}</span>
+            </a>
+          )}
+        </div>
+
+        <div class="flex-1 min-w-0 sm:text-right">
+          {adjacent.newer && (
+            <a
+              href={`/writing/${postSlug(adjacent.newer.id)}/`}
+              class="group no-underline hover:underline text-accent"
+            >
+              <span class="block text-sm text-secondary">Newer &rarr;</span>
+              <span class="font-medium">{adjacent.newer.data.title}</span>
+            </a>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  <p class="text-sm text-secondary">
+    {
+      topicMeta && topic && (
+        <span>
+          More in{" "}
+          <a href={`/topics/${topic}/`} class="text-accent hover:text-accent-hover"
+            >{topicMeta.title}</a
+          >
+          {" "}&middot;{" "}
+        </span>
+      )
+    }
+    <a href="/writing" class="text-accent hover:text-accent-hover"
+      >All writing</a
+    >
+  </p>
+</nav>

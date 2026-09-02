@@ -2,10 +2,11 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
+import PostNavigation from "../../components/PostNavigation.astro";
 import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
 import { getTopicMetadata } from "../../utils/topics.ts";
-import { formatDate, postSlug } from "../../utils/posts.ts";
+import { formatDate, getAdjacentPosts, postSlug } from "../../utils/posts.ts";
 import { postDescription } from "../../utils/rendered.ts";
 import { documentAtUri } from "../../data/standardSite";
 import DevEditorToggle from "../../components/editor/DevEditorToggle";
@@ -20,15 +21,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const allPosts = await getCollection("blog");
 
 // Build series data if this post is part of a series
 let seriesNavigation: SeriesNavigation | null = null;
 
 if (entry.data.series?.slug) {
-  const allPosts = await getCollection("blog");
   const seriesData = buildSeriesData(allPosts);
   seriesNavigation = getSeriesNavigation(entry, seriesData);
 }
+
+const adjacent = getAdjacentPosts(entry, allPosts);
 
 const cleanSlug = postSlug(entry.id);
 
@@ -62,6 +65,7 @@ const frontmatter = {
     <Content />
     {seriesNavigation && <SeriesNavigationComponent seriesData={seriesNavigation} />}
   </article>
+  <PostNavigation adjacent={adjacent} topic={entry.data.topic} />
   {
     // client:only islands ship the React runtime even when the component
     // renders null, so only emit the island at all in dev builds.
