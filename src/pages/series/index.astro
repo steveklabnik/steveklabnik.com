@@ -27,9 +27,7 @@ const frontmatter = {
         {allSeries.map((series) => (
           <article class="border border-base rounded-lg p-6 hover:shadow-lg transition-shadow">
             <h2 class="mt-0 mb-2 text-xl">
-              <a href={`/series/${series.slug}`} class="no-underline hover:underline">
-                {series.title}
-              </a>
+              <a href={`/series/${series.slug}`} class="no-underline hover:underline">{series.title}</a>
             </h2>
 
             {series.description && (
@@ -37,7 +35,7 @@ const frontmatter = {
             )}
 
             <div class="flex items-center gap-4 text-sm text-muted">
-              <span>{series.postCount} posts</span>
+              <span>{series.postCount} post{series.postCount === 1 ? "" : "s"}</span>
               <span>•</span>
               <span>Last updated: {formatDate(series.latestPost.data.pubDate)}</span>
             </div>

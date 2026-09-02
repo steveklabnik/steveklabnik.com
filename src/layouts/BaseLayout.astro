@@ -11,6 +11,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Generated social card (src/pages/og/[...slug].png.ts). Posts pass their
 // own; everything else shares the site card.
 const ogImage = new URL(frontmatter.ogImage ?? "/og/site.png", Astro.site);
+// On the homepage the site name is the page's heading; every other page has
+// an <h1> of its own, so there it's just the masthead.
+const isHome = Astro.url.pathname === "/";
+const Masthead = isHome ? "h1" : "div";
 ---
 
 <html lang="en">
@@ -83,14 +87,9 @@ const ogImage = new URL(frontmatter.ogImage ?? "/og/site.png", Astro.site);
       <header role="banner" class="border-b border-base pb-4 mb-8">
         <nav aria-label="Main navigation" class="mb-2">
           <div class="flex items-center justify-between mt-3">
-            <div class="text-4xl font-bold tracking-tight mb-0">
-              <a
-                href="/"
-                class="site-title no-underline"
-              >
-                Steve Klabnik
-              </a>
-            </div>
+            <Masthead class="text-4xl font-bold tracking-tight mb-0">
+              <a href="/" class="site-title no-underline">Steve Klabnik</a>
+            </Masthead>
             <ThemeToggle />
           </div>
           <div class="mt-2 space-x-4">

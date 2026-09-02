@@ -27,7 +27,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: "Steve Klabnik",
-    description: "Steve Klabniks blog",
+    description: "Steve Klabnik's blog",
     // `site` is set in astro.config.mjs, so this is always defined
     site: context.site!,
     items,
