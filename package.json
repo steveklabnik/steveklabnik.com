@@ -22,7 +22,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/literata": "^5.3.0",
-    "astro": "^7.2.10",
+    "astro": "^7.3.1",
     "bluesky-post-embed": "^1.0.6",
     "mdast-util-find-and-replace": "^3.0.2"
   },
