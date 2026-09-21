@@ -1,0 +1,499 @@
+---
+title: "Arguing about arguments"
+pubDate: 2026-09-21
+topic: rust
+---
+
+Here's some Rust code:
+
+```rust
+// define a function
+fn foo(x: i32, y: i32) -> i32 {
+    // body elided
+}
+
+// call it
+let z = foo(5, 6);
+```
+
+In programming language jargon, we call `x` and `y` *parameters* and `5` and `6`
+*arguments*.
+
+Rust does not have many fancy features related to parameters and arguments. But
+other languages do. For example, [here's a function in Ruby][redirect_to],
+another language I've written a ton of:
+
+```ruby
+# its definition in Rails
+def redirect_to(options = {}, response_options = {})
+  # body elided
+end
+
+# you can call it in all of these ways:
+
+# pass a string with a URL
+redirect_to "http://www.rubyonrails.org"
+
+# pass an instance of a model to go to it, if post.id = 5 then this might go to
+# "/posts/5"
+redirect_to @post
+
+# invoke an action directly, might be equivalent to the above in a Posts controller
+redirect_to action: "show", id: 5
+
+# redirect to a model's URL, passing a flash message
+redirect_to post_url(@post), alert: "Watch it, mister!"
+
+# do the same but also set a specific HTTP code
+redirect_to post_url(@post), status: :found
+
+# do both
+redirect_to post_url(@post), status: 301, flash: { updated_post_id: @post.id }
+```
+
+I used to love Ruby, and now I love Rust. And to be honest, `redirect_to` and
+friends are a huge reason why I am so against Rust gaining these sorts of fancy
+features: they can be really concise, and beautiful to a certain kind of eye,
+but it also makes it really, really hard to know what all you can do with a
+function. You pretty much have to hope that someone has written good documentation,
+and while Rails's documentation is pretty good, not every library is going to have
+it.
+
+To be clear about it, there are several things bundled together here: flexible
+argument types, options hashes, defaults, and keyword-looking syntax. It's that
+whole style of API that shaped my skepticism, not argument labels by themselves.
+
+So, what exactly are all of these features?
+
+## Named parameters
+
+The simplest one is *named parameters*. As you might guess, this means that we can
+explicitly use parameter names at the call site:
+
+```rust
+// without named parameters
+let z = foo(5, 6);
+
+// if Rust had them
+let z = foo(x: 5, y: 6);
+```
+
+Named parameters are nice because they can give you more information at the call
+site, but also they can be more flexible. Some languages also let you supply
+named arguments in a different order:
+
+```rust
+// since we have names, we can write this:
+let z = foo(x: 5, y: 6);
+
+// but we can also write this:
+let z = foo(y: 6, x: 5);
+```
+
+The downside of named parameters is that they can get quite verbose:
+
+```python
+# FastAPI in Python, UserOut class not shown
+@app.get(
+    "/me", 
+    response_model=UserOut, 
+    status_code=200, 
+    tags=["Users"],
+    summary="Get current user profile"
+)
+def get_current_user():
+```
+
+I tried to not strawman this by showing an extreme example, but `get` can take
+23 different keyword arguments, and so this could get quite, quite long.
+
+Named arguments can be good when passing expressions, so we can understand
+something more at the call site. In the above, `status_code=200` is much nicer
+than a bare `200`, if you know HTTP well it's kind of obvious what it is, but
+the additional clarity is nice. But it can be common to break truly complex
+examples down into variables that we end up forwarding to the function, and then
+it becomes verbose *and* redundant. As an example from inside FastAPI where
+`get` is invoked directly with all of those options:
+
+```python
+self.router.get(
+    path,
+    response_model=response_model,
+    status_code=status_code,
+    tags=tags,
+    dependencies=dependencies,
+    summary=summary,
+    description=description,
+    response_description=response_description,
+    responses=responses,
+    deprecated=deprecated,
+    operation_id=operation_id,
+    response_model_include=response_model_include,
+    response_model_exclude=response_model_exclude,
+    response_model_by_alias=response_model_by_alias,
+    response_model_exclude_unset=response_model_exclude_unset,
+    response_model_exclude_defaults=response_model_exclude_defaults,
+    response_model_exclude_none=response_model_exclude_none,
+    include_in_schema=include_in_schema,
+    response_class=response_class,
+    name=name,
+    callbacks=callbacks,
+    openapi_extra=openapi_extra,
+    generate_unique_id_function=generate_unique_id_function,
+)
+```
+
+We actually snuck in another two features into this example: how did we only
+pass five arguments into a function that has 23 parameters?
+
+## Optional and/or Default arguments
+
+As the name implies, optional arguments is a feature where you can choose to not pass in an argument,
+and default arguments lets you set a default when an argument is not passed.
+
+To go back to that example:
+
+```python
+@app.get(
+    "/me", 
+    response_model=UserOut, 
+    status_code=200, 
+    tags=["Users"],
+    summary="Get current user profile"
+)
+def get_current_user():
+```
+
+We only passed in five of the 22 possible arguments. If we had to pass all 22 every time, that would
+be extremely verbose. So by declaring defaults for some parameters, we can leave them off of the call
+site, and not pass arguments for them, and get the defaults instead. We saw this in the Ruby:
+
+```ruby
+# its definition in Rails
+def redirect_to(options = {}, response_options = {})
+```
+
+The `= {}` are defaults for `options` and `response_options`: they're an empty hash map.
+
+You'll often find optional and default arguments come together: after all, if you don't pass
+an argument in, what should the value of that parameter be? If your language has some sort of
+null value, that can be one solution, and it can feel like optional arguments without default
+arguments.
+
+But you can truly get one without the other with our next feature, function overloading:
+
+## Function Overloading
+
+Languages that support function overloading allow you to define multiple
+functions with the same name, but different signatures. Which function gets
+invoked depends on which arguments you pass. This lets us truly have optional
+arguments without default arguments. In Java:
+
+```java
+// Version 1: Requires both arguments
+void connect(String url, int timeout) { ... }
+
+// Version 2: Timeout is optional to the caller, and handled internally
+void connect(String url) {  ... }
+```
+
+Here, if you pass in a timeout, you get the first function, and if you don't,
+you get the second. Instead of null, the parameter just doesn't exist at all.
+
+This is a specific form of something called "function dispatch," which basically
+means "hey when a function is invoked, what *exactly* gets called?" There are a
+*lot* of different ways to do this, and I don't want this post to get into all
+of that right now, but there is a multitude of possibilities here: static vs
+dynamic, single vs multiple, predicate dispatch, pattern matching dispatch,
+prototype based dispatch... maybe I'll write a post about that someday too.
+
+So, what are the pros and cons here?
+
+## These features make me uneasy
+
+As I said above, Rust doesn't support any of these three features right now. And
+they have been a persistent request from the community for years. [Here][rfc] is
+a 12 year old GitHub issue about this support, and it even includes something we
+didn't talk about, "variable arity argument lists." 
+
+That gets me to the first thing that I don't like about these features: there
+are a *lot* of them. And they are all intertwined. As we mentioned before, if
+you have optional arguments, you probably want default arguments. If you have
+named parameters, do you want to support *only* named parameters, or do you want
+to support both? It's so tempting to just support all of them, and then you've
+added a huge mountain of complexity.
+
+In Rust right now, you have to write multiple functions with slightly different
+names:
+
+```rust
+// a new empty vector
+let v = Vec::new();
+
+// one with a set capacity
+let v = Vec::with_capacity(5);
+```
+
+For the simple cost of "write two different names for your functions," you get
+to keep the rules very simple: there is one function definition, and you invoke
+it by name. Done. Would it be nice to be able to say all of these:
+
+```rust
+let v = Vec::new();
+let v = Vec::new(5);
+let v = Vec::new(capacity: 5);
+```
+
+Sure, maybe. But the cost feels very, very high to me. If you're used to these
+features, maybe it doesn't seem that high, but I have a Ruby tattoo on my body.
+I've seen some shit. And so I've grown to enjoy Rust's simplicity in this area.
+Yes, if you have a function with tons of parameters, you may need to write a
+builder instead, and that comes with its own form of verbosity:
+
+```rust
+// if Vec had a builder
+let v = Vec::new()
+    .with_capacity(5)
+    .build();
+
+// all of the code you have to write to make the builder elided
+```
+
+But the language itself stays simple, and the rules are easy. For a language
+that's already perceived as complex, this has always felt right to me. And that's
+why I've pushed back against the various proposals to extend Rust in this way all
+of these years.
+
+But recently, I changed my opinion on one of these features, and one alone, and
+I would consider it okay if Rust gained them. Maybe. Also, it's important to note
+that I haven't worked on Rust in years, and so my opinions are kind of irrelevant,
+but whatever: it's my blog, this is what opinions are for.
+
+## I'm okay with named parameters now
+
+I think Rust could be okay with named parameters, but *not* optional or default
+ones. And what changed my opinion is coding agents, actually. I'm sorry, maybe
+you're sick of me talking about AI, but hear me out.
+
+One of my beefs with named parameters, as mentioned above, is verbosity. But
+what you gain for that verbosity is clarity. I don't think that verbosity and
+clarity are always the same thing; I like `{}` rather than `do`/`end`, and find
+it more readable, personally. But let's take this function from the `image` crate:
+
+```rust
+// definition
+pub fn crop_imm<I: GenericImageView>(
+    image: &I,
+    x: u32,
+    y: u32,
+    width: u32,
+    height: u32,
+) -> SubImage<&I> { ... }
+
+// calling it
+let cropped = image::imageops::crop_imm(&img, 10, 20, 200, 100);
+
+// if we had named arguments
+let cropped = image::imageops::crop_imm(
+    image: &img,
+    x: 10,
+    y: 20,
+    width: 200,
+    height: 100,
+);
+```
+
+This does really increase readability, no question about it. But for me, typing
+all of that out just isn't really super worth the squeeze. But when Claude is
+gonna write it? I care a lot less. And the readability advantage for humans is
+even stronger for agents: the extra clarity of the text inline seems to (I
+haven't run real evals on this yet...) be more helpful and use less tokens and
+calls when looking at the actual call site. If an agent were reading that named
+example above, it could tell that `10` is the `x` value without having to go
+look up the function signature itself. "What's good for humans is true for
+agents" strikes again.
+
+This is also why I'm still against optional arguments: they deliberately
+*hide* what is being passed in to the function, and obscure clarity at the call
+site. What's nice about them is that you have to type less. But I'm not typing
+myself anymore. So the benefit just isn't there, but the drawbacks are. This
+also doesn't solve the verbosity side of passing `foo=foo` in our FastAPI
+example, it is still redundant. But one part of the downsides have been
+ameliorated.
+
+Notably, all of this reasoning also applies to the builder pattern, and it's why
+I try to use builders sparingly in Rust. It can emulate named arguments, which
+is good, but it can also emulate optional/default/variable arguments, which is
+bad.  The juice is worth the squeeze sometimes, but not all the time, and
+probably not even the majority of the time.
+
+So we've ameliorated the largest downside, but get to keep the largest upside.
+That seems good. But even if we like the feature, there are still lots of
+practical concerns with Rust specifically that make it not a slam-dunk to add
+them to the language.
+
+## There's tons of practical issues though
+
+Now, "is this feature good in the abstract" is very different from "should this
+feature" be implemented? There are a *lot* of open questions and drawbacks to
+implementing named parameters. A simple one is that you don't get rid of all of
+those previous functions, `with_capacity` will exist forever. That's a
+relatively minor downside to some of the harder problems.
+
+First, strictly speaking Rust parameters aren't names, they're patterns. A
+name is a simple pattern, but you can get more complex:
+
+```rust
+fn foo((x, y): (i32, i32)) {
+```
+
+This parameter doesn't have a name, it's a pattern that introduces two bindings.
+You could come up with some syntax that gives things external names vs internal
+names, but there's that complexity revealing its head again.
+
+What happens when functions become values? I can write this today:
+
+```rust
+fn resize(width: u32, height: u32) {
+    // body elided
+}
+
+fn offset(dx: u32, dy: u32) {
+    // body elided
+}
+
+let f: fn(u32, u32) = if resizing { resize } else { offset };
+```
+
+What name do we use for `f`'s parameters? They can be named different things.
+Does this become an error? What names can you use when invoking `f`? Making this
+more complicated, Rust actually will accept this code right now:
+
+```rust
+type Callback = fn(width: u32, height: u32);
+
+fn f(g: Callback) {}
+
+fn bar(x: u32, y: u32) {}
+
+fn main() {
+    f(bar) ;
+}
+```
+
+The names in `Callback` are just documentation, as you can see they're not
+required.  Does this become an error? Do we require `bar` to change its names?
+The same goes for trait definitions, actually:
+
+```rust
+trait Writer {
+    fn write(&mut self, data: &[u8]);
+}
+
+struct Sink;
+
+impl Writer for Sink {
+    fn write(&mut self, bytes: &[u8]) {
+        // body elided
+    }
+}
+```
+
+Is this an error? Is it okay?
+
+Here's another problem: evaluation order.
+
+```rust
+fn consume(data: Vec<u8>, length: usize) {
+    // body elided
+}
+```
+
+Right now, Rust always evaluates parameters from left to right at the call site.
+So if we use the named version:
+
+```rust
+fn consume(data: Vec<u8>, length: usize) {
+    // body elided
+}
+
+fn consume2(length: usize, data: Vec<u8>) {
+    // body elided
+}
+
+fn main() {
+    let data = vec![1, 2, 3];
+
+    // this is an error, borrow after move
+    consume(data, data.len());
+    // this is okay
+    consume2(data.len(), data);
+
+    // does this compile or not?
+    consume(length: data.len(), data: data);
+}
+```
+
+If we keep left to right evaluation order according to the definition, but let
+you use named values in any order, suddenly some orders at the call site compile
+and some orders do not.  Do we change evaluation order to do whatever compiles?
+That feels very dangerous and confusing.
+
+Rust does let you do this with struct fields:
+
+```rust
+struct Args {
+    data: Vec<u8>,
+    length: usize,
+}
+
+fn main() {
+    let data = vec![1, 2, 3];
+    
+    // works
+    let args = Args {
+        length: data.len(),
+        data,
+    };
+
+    // doesn't
+    let args = Args {
+        data,
+        length: data.len(),
+    };
+}
+```
+
+This is one reason why a lot of proposals for named arguments try to unify them
+with structs. As I said before, not insurmountable, just things that need to be
+sorted.
+
+Another small thing is a compatibility hazard: if we start naming parameters,
+renaming them breaks callers. Is that okay? Could you introduce aliases to help
+with this? That's more complexity...
+
+These are just some of the problems that come up in the design space, and this
+post is getting long, so I'll leave it at this for now. But proposals for doing
+this have to engage with all of this and more, which is why language design is
+difficult.
+
+## In conclusion
+
+I like to think that I change my opinions over time as the world or my
+understanding of it changes. So I thought it might be interesting to share a way
+in which an opinion that I've held for over a decade has changed a bit lately.
+I'm still not sure if named parameters are right for Rust, but I'm at least
+somewhat open to the idea these days. We'll see what the language team decides
+if anyone does decide to keep trying to push this forward. And people do, for
+example, I am writing this in part because I saw [this post][post] go by today.
+This post isn't intended to be support or a rebuttal of it, I actually didn't
+even read it yet, it's just that I've been thinking about this a lot lately
+(while working on [Rue][rue]) and seeing that go by pushed me to write some of
+the thoughts down. You should probably go check it out, as it's an actual
+proposal in this space and this post is more of an exploration of the general
+idea and my own thoughts on it.
+
+[redirect_to]: https://api.rubyonrails.org/classes/ActionController/Redirecting.html#method-i-redirect_to
+[rfc]: https://github.com/rust-lang/rfcs/issues/323
+[post]: https://botahamec.dev/named-optional-args
+[rue]: https://rue-lang.dev/
