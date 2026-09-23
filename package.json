@@ -34,7 +34,7 @@
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^26.6.1",
+    "@types/node": "^26.6.2",
     "markdown-it": "^15.0.2",
     "pagefind": "^1.5.2",
     "satori": "^0.33.4",
