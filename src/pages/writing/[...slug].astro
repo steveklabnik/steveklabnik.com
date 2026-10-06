@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeriesNavigationComponent from "../../components/SeriesNavigation.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 import PostNavigation from "../../components/PostNavigation.astro";
 import { buildSeriesData, getSeriesNavigation } from "../../utils/series";
 import type { SeriesNavigation } from "../../utils/series.ts";
@@ -20,7 +21,9 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings, remarkPluginFrontmatter } = await render(entry);
+const tocIndices: number[] = remarkPluginFrontmatter.tocHeadingIndices ?? [];
+const tocHeadings = headings.filter((_, index) => tocIndices.includes(index));
 const allPosts = await getCollection("blog");
 
 // Build series data if this post is part of a series
@@ -68,6 +71,7 @@ const frontmatter = {
       </div>
     )}
     {seriesNavigation && <SeriesNavigationComponent seriesData={seriesNavigation} />}
+    {tocHeadings.length >= 3 && <TableOfContents headings={tocHeadings} />}
     <Content />
     {seriesNavigation && <SeriesNavigationComponent seriesData={seriesNavigation} />}
   </article>

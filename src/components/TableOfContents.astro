@@ -1,0 +1,51 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+const { headings } = Astro.props;
+const baseDepth = Math.min(...headings.map((heading) => heading.depth));
+---
+
+<details class="post-toc not-prose" data-pagefind-ignore>
+  <summary>On this page</summary>
+  <nav aria-label="Table of contents">
+    <ul>
+      {headings.map((heading) => (
+        <li style={`--toc-depth: ${heading.depth - baseDepth}`}>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</details>
+
+<style>
+  .post-toc {
+    margin-block: 1.5rem;
+    border-block: 1px solid var(--color-border);
+    font-size: 0.9rem;
+  }
+  summary {
+    padding-block: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.75rem;
+  }
+  li {
+    padding-inline-start: calc(min(var(--toc-depth), 2) * 0.75rem);
+  }
+  a {
+    display: block;
+    padding-block: 0.35rem;
+    overflow-wrap: anywhere;
+  }
+  @media print {
+    .post-toc { display: none; }
+  }
+</style>
