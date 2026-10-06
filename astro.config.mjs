@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import remarkWikiLinks from "./src/plugins/remarkWikiLinks.ts";
+import remarkTableOfContents from "./src/plugins/remarkTableOfContents.ts";
 import editorApiPlugin from "./src/plugins/viteEditorApi.ts";
 
 // https://astro.build/config
@@ -25,7 +26,7 @@ export default defineConfig({
     // remark plugins; keep the unified/remark pipeline for remarkWikiLinks.
     processor: unified({
       gfm: true,
-      remarkPlugins: [remarkWikiLinks],
+      remarkPlugins: [remarkWikiLinks, remarkTableOfContents],
     }),
   },
   vite: {
