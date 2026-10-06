@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import legacyImages from "./integrations/legacy-images.mjs";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -15,7 +16,7 @@ export default defineConfig({
   // space between adjacent inline elements (nav links, dates) in rendered
   // text. Keep the old whitespace-collapsing behavior instead.
   compressHTML: true,
-  integrations: [mdx(), react(), sitemap()],
+  integrations: [mdx(), react(), sitemap(), legacyImages()],
   server: {
     host: true,
     port: 4321,
