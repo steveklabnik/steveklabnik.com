@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx/container-renderer";
 import { loadRenderers } from "astro:container";
-import { excerpt } from "./posts";
+import { articleDescription } from "./articleMetadata";
 
 let rendered: Promise<Map<string, string>> | null = null;
 
@@ -55,5 +55,5 @@ export async function postHtml(
 export async function postDescription(
   entry: CollectionEntry<"blog">,
 ): Promise<string> {
-  return entry.data.description ?? excerpt(await postHtml(entry), 160);
+  return entry.data.description ?? articleDescription(await postHtml(entry));
 }
