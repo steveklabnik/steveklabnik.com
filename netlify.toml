@@ -25,3 +25,16 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Readers may reuse a full feed for 15 minutes before revalidating with
+# Netlify's ETag. These URLs are not immutable: a new post or correction
+# becomes visible within that interval to clients honoring this policy.
+[[headers]]
+  for = "/feed.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=900, must-revalidate"
+
+[[headers]]
+  for = "/topics/*/feed.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=900, must-revalidate"
