@@ -1,3 +1,6 @@
+// Each subscription carries recent full articles; the website keeps the archive.
+export const RSS_ITEM_LIMIT = 20;
+
 /**
  * Keep full HTML in RSS without expanding every HTML delimiter into an XML
  * entity. Decoding exactly one layer preserves the original HTML (including
