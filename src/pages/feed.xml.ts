@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { excerpt, postSlug, sortByDateDesc } from "../utils/posts";
 import { postHtml } from "../utils/rendered";
-import { withCdataContent } from "../utils/rss";
+import { RSS_ITEM_LIMIT, withCdataContent } from "../utils/rss";
 
 export async function getStaticPaths() {
   return [{ params: {} }];
@@ -13,7 +13,7 @@ export async function GET(context: APIContext) {
   const posts = await getCollection("blog");
 
   const items = await Promise.all(
-    sortByDateDesc(posts).map(async (post) => {
+    sortByDateDesc(posts).slice(0, RSS_ITEM_LIMIT).map(async (post) => {
       const content = await postHtml(post);
 
       return {
