@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { excerpt, postSlug, sortByDateDesc } from "../utils/posts";
 import { postHtml } from "../utils/rendered";
+import { withCdataContent } from "../utils/rss";
 
 export async function getStaticPaths() {
   return [{ params: {} }];
@@ -25,11 +26,12 @@ export async function GET(context: APIContext) {
     }),
   );
 
-  return rss({
+  return withCdataContent(await rss({
     title: "Steve Klabnik",
     description: "Steve Klabnik's blog",
     // `site` is set in astro.config.mjs, so this is always defined
     site: context.site!,
+    customData: "<ttl>15</ttl>",
     items,
-  });
+  }));
 }

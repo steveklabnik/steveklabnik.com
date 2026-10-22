@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { excerpt, postSlug, sortByDateDesc } from "../../../utils/posts";
 import { postHtml } from "../../../utils/rendered";
+import { withCdataContent } from "../../../utils/rss";
 import { getPostsByTopic, getTopicMetadata } from "../../../utils/topics";
 
 /**
@@ -39,12 +40,13 @@ export async function GET(context: APIContext) {
     }),
   );
 
-  return rss({
+  return withCdataContent(await rss({
     title: `Steve Klabnik — ${metadata?.title ?? slug}`,
     description:
       metadata?.description ?? `Steve Klabnik's posts about ${slug}`,
     // `site` is set in astro.config.mjs, so this is always defined
     site: context.site!,
+    customData: "<ttl>15</ttl>",
     items,
-  });
+  }));
 }
